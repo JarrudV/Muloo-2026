@@ -100,20 +100,26 @@
 }
 
 @layer utilities {
-  /* 1. Hero Gradient (Dark SaaS Style) - Added Orange hint */
+  /* 1. Hero Gradient - Enhanced with Orange/Purple vibrancy like the Dribbble shot */
   .bg-hero-gradient {
-    background: radial-gradient(circle at 50% 0%, hsl(233 81% 15%), hsl(233 81% 10%) 60%),
-                radial-gradient(circle at 80% 20%, hsl(182 100% 40% / 0.08), transparent 40%),
-                radial-gradient(circle at 20% 80%, hsl(24 90% 54% / 0.05), transparent 40%);
+    background: 
+      /* Top center deep glow */
+      radial-gradient(circle at 50% -20%, hsl(233 81% 25%) 0%, transparent 60%),
+      /* Right side teal glow */
+      radial-gradient(circle at 90% 30%, hsl(182 100% 40% / 0.12) 0%, transparent 50%),
+      /* Bottom left vibrant orange/purple intersection */
+      radial-gradient(circle at 10% 90%, hsl(24 90% 54% / 0.15) 0%, transparent 50%),
+      /* Base background */
+      hsl(233 81% 10%);
   }
 
-  /* 2. Section Soft Gradient (Alternating Sections) */
+  /* 2. Section Soft Gradient */
   .bg-section-soft {
-    background: linear-gradient(180deg, hsl(233 81% 10%) 0%, hsl(233 81% 12%) 100%);
+    background: linear-gradient(180deg, hsl(233 81% 10%) 0%, hsl(233 81% 13%) 100%);
   }
   
   .bg-section-soft-reverse {
-     background: linear-gradient(0deg, hsl(233 81% 10%) 0%, hsl(233 81% 12%) 100%);
+     background: linear-gradient(0deg, hsl(233 81% 10%) 0%, hsl(233 81% 13%) 100%);
   }
 
   /* 3. Teal Glow Accent */
@@ -124,21 +130,21 @@
     content: "";
     position: absolute;
     inset: -20px;
-    background: radial-gradient(circle, hsl(182 100% 40% / 0.15) 0%, transparent 70%);
+    background: radial-gradient(closest-side, hsl(182 100% 40% / 0.2) 0%, transparent 100%);
     z-index: -1;
     pointer-events: none;
     border-radius: inherit;
   }
   
-  /* Orange Glow Accent for Consulting/Team */
+  /* Orange Glow Accent */
   .orange-glow {
     position: relative;
   }
   .orange-glow::before {
     content: "";
     position: absolute;
-    inset: -20px;
-    background: radial-gradient(circle, hsl(24 90% 54% / 0.15) 0%, transparent 70%);
+    inset: -40px;
+    background: radial-gradient(closest-side, hsl(24 90% 54% / 0.15) 0%, transparent 100%);
     z-index: -1;
     pointer-events: none;
     border-radius: inherit;
@@ -161,12 +167,10 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
-  /* Updated Hover Effect to include Orange */
   .glass-panel-hover {
     @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-orange/30;
   }
   
-  /* Hover Text Orange Transition */
   .hover-text-orange {
     @apply transition-colors duration-300 hover:text-brand-orange;
   }

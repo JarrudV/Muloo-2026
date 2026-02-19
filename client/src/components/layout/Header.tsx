@@ -73,7 +73,8 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link href="/contact">
-            <Button variant="outline" className="border-brand-teal/50 text-brand-teal hover:bg-brand-teal hover:text-background cursor-pointer hover:border-brand-teal">
+            {/* Updated to Orange as requested */}
+            <Button className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.4)] transition-all hover:shadow-[0_0_25px_-5px_hsl(24,90%,54%,0.6)]">
               Book a call
             </Button>
           </Link>
@@ -108,7 +109,7 @@ export function Header() {
                 </div>
               ))}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-brand-teal text-background font-bold hover:bg-brand-teal/90 mt-4">
+                <Button className="w-full bg-brand-orange text-white font-bold hover:bg-brand-orange/90 mt-4">
                   Book a call
                 </Button>
               </Link>

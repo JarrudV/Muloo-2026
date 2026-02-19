@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import jarrudImg from "@assets/jarrud_profile_picture_1771486552112.png";
 import morneImg from "@assets/Component_25_–_1_1771486552111.png";
 import paulImg from "@assets/Component_77_–_1_1771486552111.png";
+import cultureImg from "@assets/happiness-at-workplace-GettyImages-1129332568_1771487221441.jpg";
 
 // Helper to get image by name since content is static
 const getImage = (imageName: string) => {
@@ -28,14 +29,28 @@ export function About() {
         </div>
       </Section>
 
+      {/* Culture Image Section */}
+      <div className="w-full h-96 relative overflow-hidden">
+         <img src={cultureImg} alt="Muloo team culture" className="w-full h-full object-cover opacity-60" />
+         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent" />
+         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
+            <div className="container mx-auto">
+               <div className="inline-block bg-brand-orange text-white px-4 py-2 font-bold rounded-lg mb-4 shadow-lg">Our Culture</div>
+               <h2 className="text-3xl md:text-4xl font-bold text-white max-w-2xl">
+                  Remote-first, but connected by a shared obsession with quality.
+               </h2>
+            </div>
+         </div>
+      </div>
+
       <Section className="py-24 bg-section-soft">
          <div className="grid md:grid-cols-2 gap-16">
             <div>
                <h2 className="text-3xl font-bold mb-6">Our Philosophy</h2>
                <div className="space-y-8">
                   {aboutContent.philosophy.map((item, i) => (
-                     <div key={i} className="pl-6 border-l-2 border-white/10 hover:border-brand-orange transition-colors">
-                        <h3 className="text-xl font-bold mb-2 hover-text-orange transition-colors">{item.title}</h3>
+                     <div key={i} className="pl-6 border-l-2 border-white/10 hover:border-brand-orange transition-colors group">
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h3>
                         <p className="text-muted-foreground">{item.desc}</p>
                      </div>
                   ))}
@@ -64,11 +79,13 @@ export function About() {
          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {aboutContent.team && aboutContent.team.map((member, i) => (
                 <div key={i} className="bg-card p-8 rounded-xl border border-white/10 flex flex-col items-center text-center gap-6 hover:border-brand-orange/50 transition-colors group">
-                   <div className="h-32 w-32 rounded-full border-2 border-brand-teal/20 p-1 group-hover:border-brand-orange/50 transition-colors">
+                   <div className="h-32 w-32 rounded-full border-2 border-brand-teal/20 p-1 group-hover:border-brand-orange/50 transition-colors relative">
                        <Avatar className="h-full w-full">
                            <AvatarImage src={getImage(member.image)} alt={member.name} className="object-cover" />
                            <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
                        </Avatar>
+                       {/* Role Indicator Dot */}
+                       <div className="absolute bottom-2 right-2 w-4 h-4 bg-brand-orange rounded-full border-2 border-card" />
                    </div>
                    <div>
                       <h3 className="text-xl font-bold group-hover:text-brand-orange transition-colors">{member.name}</h3>
@@ -76,7 +93,7 @@ export function About() {
                       <p className="text-sm text-muted-foreground mb-6">{member.bio}</p>
                       
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white">
+                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white hover:bg-white/5">
                             <Linkedin className="h-4 w-4 mr-2" /> LinkedIn
                         </Button>
                       </a>
@@ -89,7 +106,7 @@ export function About() {
       <Section className="py-32 text-center bg-white/5 border-t border-white/5">
         <h2 className="text-3xl md:text-5xl font-bold mb-8">Work with us</h2>
         <Link href="/contact">
-          <Button size="lg" className="bg-brand-teal text-brand-navy hover:bg-brand-teal/90 font-bold px-10 h-14">
+          <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 shadow-lg shadow-brand-orange/20">
             Get in touch <ArrowRight className="ml-2" />
           </Button>
         </Link>
