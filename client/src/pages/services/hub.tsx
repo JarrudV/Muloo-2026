@@ -1,12 +1,32 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, BarChart3, Users, LayoutDashboard, Settings, Database, Code2, LineChart } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { ArrowRight, BarChart3, Building2, Database, Code2, LineChart, ClipboardCheck, Layers } from "lucide-react";
 import { serviceHubContent } from "@/lib/content";
 import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
 
-const featureIcons = [LayoutDashboard, Database, Code2, Settings, LineChart, BarChart3, Users, CheckCircle2];
+const services = [
+  { icon: Building2, title: "Enterprise Architecture", desc: "Data modeling, object relationships, and pipeline configuration designed for scale." },
+  { icon: Database, title: "Data Migration", desc: "Schema mapping, validation rules, and incremental sync for moving between platforms." },
+  { icon: Code2, title: "Programmable Automation", desc: "Serverless functions, custom coded actions, and workflow orchestration." },
+  { icon: LineChart, title: "Advanced Reporting", desc: "SQL-based analytics, attribution modeling, and real-time revenue dashboards." },
+  { icon: ClipboardCheck, title: "Portal Audits", desc: "Systematic review of portal health, data hygiene, and configuration debt." },
+  { icon: Layers, title: "CRM UI Extensions", desc: "Custom cards, sidebar modules, and UI improvements for user adoption." },
+];
+
+const steps = [
+  { num: "01", title: "Discover", desc: "Deep audit of your current portal, data model, and integration landscape." },
+  { num: "02", title: "Architect", desc: "Solution design with documentation, data flow diagrams, and migration plans." },
+  { num: "03", title: "Ship", desc: "Iterative implementation with staging environments and stakeholder sign-off." },
+  { num: "04", title: "Support", desc: "Ongoing monitoring, optimisation, and knowledge transfer to your team." },
+];
+
+const outcomes = [
+  { title: "Single source of truth", desc: "Clean, deduplicated data with enforced naming conventions and lifecycle stages." },
+  { title: "Automated pipelines", desc: "Deal flows and task routing that run without manual intervention." },
+  { title: "Revenue attribution", desc: "Know exactly which channels, campaigns, and touchpoints drive closed revenue." },
+];
 
 export function ServicesHub() {
   return (
@@ -32,7 +52,7 @@ export function ServicesHub() {
           <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
             {serviceHubContent.h1}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed border-l-4 border-[#F47621] pl-6 max-w-3xl">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#F47621] pl-6 max-w-3xl">
             {serviceHubContent.intro}
           </p>
           <div className="mt-10">
@@ -49,50 +69,73 @@ export function ServicesHub() {
         </div>
       </Section>
 
-      {/* Before / After */}
-      <Section className="py-24 bg-section-soft">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10">
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-white">From Chaos</h2>
-              <ul className="space-y-4 text-muted-foreground">
-                <li className="flex items-center gap-3 text-destructive">
-                  <span className="w-2 h-2 rounded-full bg-destructive shrink-0" />
-                  Duplicate contacts & dirty data
-                </li>
-                <li className="flex items-center gap-3 text-destructive">
-                  <span className="w-2 h-2 rounded-full bg-destructive shrink-0" />
-                  No clear sales process
-                </li>
-                <li className="flex items-center gap-3 text-destructive">
-                  <span className="w-2 h-2 rounded-full bg-destructive shrink-0" />
-                  Reporting based on guesswork
-                </li>
-              </ul>
-            </div>
-            <div className="w-full h-px bg-white/10" />
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="text-gradient-orange">To Clarity</span>
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-[#F47621] shrink-0" />
-                  Single source of truth
-                </li>
-                <li className="flex items-center gap-3 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-[#F47621] shrink-0" />
-                  Automated, reliable pipelines
-                </li>
-                <li className="flex items-center gap-3 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-[#F47621] shrink-0" />
-                  Real-time revenue attribution
-                </li>
-              </ul>
-            </div>
-          </div>
+      {/* Problem Framing */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">The challenge</span>
+          <p className="text-lg md:text-xl text-muted-foreground leading-[1.8]">
+            Most HubSpot implementations are configured by marketers, not engineers. The result is duplicated data, brittle workflows, and reports no one trusts. You don't need more features — you need architecture.
+          </p>
+        </div>
+      </Section>
 
-          {/* Dashboard Mock */}
+      {/* What We Do */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">What we do</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">Enterprise HubSpot, Engineered</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((s, i) => (
+              <div
+                key={i}
+                data-testid={`card-service-${i}`}
+                className="glass-card flex items-start gap-4 p-6 rounded-xl hover:border-[#F47621]/30 hover:bg-white/[0.05] transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#F47621]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F47621]/20 transition-colors">
+                  <s.icon className="h-5 w-5 text-[#F47621]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">{s.title}</h3>
+                  <p className="text-muted-foreground leading-[1.8]">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* How We Work */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">How we work</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">Structured. Iterative. Transparent.</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((step, i) => (
+              <div
+                key={i}
+                data-testid={`card-step-${i}`}
+                className="relative glass-card rounded-xl p-6 group hover:border-[#F47621]/30 transition-all duration-300 overflow-hidden"
+              >
+                <span className="absolute top-4 right-4 text-5xl font-extrabold text-white/[0.04] select-none">{step.num}</span>
+                <div className="w-full h-0.5 bg-[#F47621]/30 mb-6 origin-left transition-all duration-500 group-hover:bg-[#F47621] group-hover:scale-x-100 scale-x-50" />
+                <h3 className="text-lg font-semibold text-white mb-2">{step.num} {step.title}</h3>
+                <p className="text-muted-foreground leading-[1.8]">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Visual Mock */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Live dashboards</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Revenue visibility, in real time</h2>
+            <p className="text-muted-foreground leading-[1.8]">
+              Custom reporting surfaces built on top of your HubSpot data — so leadership sees pipeline health, attribution, and forecasts without spreadsheets.
+            </p>
+          </div>
           <div className="relative">
             <div className="absolute inset-0 bg-[#F47621]/15 blur-3xl rounded-full opacity-30" />
             <div className="glass-card rounded-xl p-6 shadow-2xl relative z-10 glow-orange-sm">
@@ -135,43 +178,50 @@ export function ServicesHub() {
         </div>
       </Section>
 
-      {/* Features Grid */}
-      <Section className="py-24">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What we <span className="text-gradient-orange">deliver</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-            Enterprise-grade HubSpot capabilities, engineered with precision.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {serviceHubContent.features.map((feature, i) => {
-              const Icon = featureIcons[i % featureIcons.length];
-              return (
-                <div
-                  key={i}
-                  data-testid={`card-feature-${i}`}
-                  className="glass-card flex items-start gap-4 p-6 rounded-xl hover:border-[#F47621]/30 hover:bg-white/[0.05] transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#F47621]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F47621]/20 transition-colors">
-                    <Icon className="h-5 w-5 text-[#F47621]" />
-                  </div>
-                  <span className="text-lg font-medium text-white/90 pt-1.5">{feature}</span>
-                </div>
-              );
-            })}
+      {/* Outcomes */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Outcomes</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">What changes after we're involved</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {outcomes.map((o, i) => (
+              <div
+                key={i}
+                data-testid={`card-outcome-${i}`}
+                className="glass-card rounded-xl p-6 border-t-2 border-t-[#F47621]"
+              >
+                <h3 className="text-lg font-semibold text-white mb-2">{o.title}</h3>
+                <p className="text-muted-foreground leading-[1.8]">{o.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Mini Case Study */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="max-w-3xl">
+          <div className="glass-card rounded-xl p-8 border-l-4 border-l-[#F47621]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-6 block">Case study</span>
+            <blockquote className="text-lg md:text-xl text-white leading-[1.8] mb-6">
+              "Muloo restructured our entire HubSpot instance in 6 weeks. Pipeline visibility improved by 40% and our sales team finally trusts the data."
+            </blockquote>
+            <p className="text-muted-foreground text-sm">
+              <span className="text-white font-medium">Sarah Mitchell</span>, VP Revenue Ops — TechScale Group
+            </p>
           </div>
         </div>
       </Section>
 
       {/* CTA */}
-      <Section className="py-32 bg-section-soft border-t border-white/5">
-        <div className="max-w-3xl mx-auto text-center">
+      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
+        <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-6" data-testid="text-cta-headline">
-            {serviceHubContent.cta.headline}
+            Is your CRM technically sound?
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            {serviceHubContent.cta.body}
+          <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
+            Let's review your architecture and identify optimisation opportunities.
           </p>
           <Link href="/contact">
             <Button
