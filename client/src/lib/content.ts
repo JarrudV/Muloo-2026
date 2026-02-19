@@ -111,17 +111,17 @@ export const serviceBuildContent = {
 };
 
 export const serviceProductContent = {
-  h1: "Muloo Product",
-  intro: "We don't just build for clients; we build for the market. Our product division develops commercial SaaS solutions and internal tools that demonstrate our engineering capability.",
+  h1: "From concept to commercial SaaS.",
+  intro: "We design, build, and scale software products — internal tools and commercial platforms.",
   products: [
     {
       title: "Inventory Sync",
-      desc: "Real-time bidirectional sync between ERP systems and HubSpot Deals/Products.",
+      desc: "Real-time bidirectional sync between ERP systems and CRM platforms.",
       status: "Live"
     },
     {
       title: "Portal Framework",
-      desc: "A Next.js starter kit for building authenticated client portals on top of HubSpot CRM data.",
+      desc: "A starter kit for building authenticated client portals on top of CRM data.",
       status: "Beta"
     },
     {
