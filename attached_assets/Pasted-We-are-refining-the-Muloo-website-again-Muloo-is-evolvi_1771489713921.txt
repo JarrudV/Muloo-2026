@@ -1,0 +1,198 @@
+We are refining the Muloo website again.
+
+Muloo is evolving into a technical systems + AI acceleration partner.
+
+This is not a marketing agency.
+This is a premium engineering-led consultancy with product DNA.
+
+We are NOT rebuilding.
+We are refining structure, visuals, and colour architecture.
+
+----------------------------------------------------
+COLOUR SYSTEM (IMPORTANT)
+----------------------------------------------------
+
+Core Brand Foundation:
+- Navy: #050A30
+- Teal: #00C4CC
+- White: #FFFFFF
+- Soft Teal Tint: #E6FBFD
+
+Service Stream Accent Colours:
+
+Muloo Hub (HubSpot focused)
+- Orange: #F47621
+
+Muloo Build (Engineering & Integrations)
+- Blue: #155DFC
+
+Muloo AI (AI & Codex / Agents)
+- Purple: #C140FF
+
+Muloo Product (Commercial SaaS)
+- Green: #59BF96
+
+Rules:
+- Homepage primarily uses navy + teal.
+- Each service page introduces its stream accent colour in controlled ways.
+- Accent colours are used for:
+   • Badges
+   • Underlines
+   • Glow effects
+   • Small gradients
+   • Icon accents
+- Do NOT flood entire sections with stream colour.
+- Maintain visual restraint.
+
+----------------------------------------------------
+GRADIENT SYSTEM
+----------------------------------------------------
+
+Create structured gradient utilities:
+
+1. Core Hero Gradient:
+   Navy base with subtle teal radial glow.
+
+2. Stream Accent Glow:
+   Each service page uses a subtle radial glow of its accent colour.
+
+3. Soft Section Alternation:
+   White → Soft Teal Tint gradient for light sections.
+
+4. Button hover states:
+   Subtle gradient using the stream accent colour.
+
+Keep gradients refined and modern.
+Avoid loud rainbow or heavy saturation.
+
+----------------------------------------------------
+VISUAL UPGRADES (CRITICAL)
+----------------------------------------------------
+
+Add illustration and visual depth inspired by struto.io.
+
+Implement:
+
+1. Subtle background grid pattern in dark sections.
+2. Radial glow behind hero headline.
+3. At least one system architecture illustration block per service page.
+4. A stylised code snippet block on Muloo Build and Muloo AI pages.
+5. Dashboard-style UI mock section on Muloo Hub page.
+6. Product card visuals with soft green accent glow on Muloo Product page.
+
+Use minimal abstract geometric shapes.
+Use SVG line illustrations.
+Keep everything clean and technical.
+
+----------------------------------------------------
+HOMEPAGE IMPROVEMENTS
+----------------------------------------------------
+
+1. Hero section:
+   - Strong headline
+   - Subheadline
+   - Two CTAs
+   - Subtle core gradient + grid
+   - Micro text: “Cape Town based. Globally delivered.”
+
+2. Services overview section:
+   - Four clean cards:
+      Muloo Hub (orange accent)
+      Muloo Build (blue accent)
+      Muloo AI (purple accent)
+      Muloo Product (green accent)
+   - Subtle hover elevation + accent glow.
+
+3. Trusted Ecosystem Section:
+   Categorised logo grid:
+
+   Engineering Stack:
+      Azure
+      Google Cloud
+      Microsoft
+      SQL Server
+      SAP
+
+   CRM & Sales Tools:
+      HubSpot
+      Apollo
+      LinkedIn
+      HubLink
+
+   Data & Infrastructure:
+      Snowflake
+      Azure Data
+      BigQuery
+
+   Logos grayscale.
+   Teal glow on hover.
+
+4. “How We Work” section:
+   Discover
+   Architect
+   Ship
+   Support
+
+----------------------------------------------------
+SERVICE PAGE VISUAL REQUIREMENTS
+----------------------------------------------------
+
+Muloo Hub:
+- Dashboard mock
+- Reporting visual
+- Clean UI block
+
+Muloo Build:
+- API flow diagram
+- Code snippet block
+- Data sync illustration
+
+Muloo AI:
+- AI workflow diagram
+- Agent interaction visual
+- Codex-style code snippet UI
+
+Muloo Product:
+- Product cards
+- Soft green accent glow
+- SaaS style layout
+
+----------------------------------------------------
+DESIGN TONE
+----------------------------------------------------
+
+The site must feel:
+
+Calm.
+Confident.
+Technical.
+Structured.
+Product-led.
+Future-focused.
+
+Avoid:
+- Marketing agency feel
+- Overly playful gradients
+- Excessive colour noise
+- Over-animation
+
+Keep whitespace generous.
+Left-align key sections.
+Strengthen hierarchy.
+
+----------------------------------------------------
+TECH STRUCTURE
+----------------------------------------------------
+
+Maintain component-driven structure.
+Keep sections modular for future HubSpot CMS theme conversion.
+
+Update the styleguide page to show:
+- Colour tokens
+- Gradient tokens
+- Stream accent examples
+- Button styles
+- Card styles
+- Glow examples
+
+Refactor existing project to implement this system.

@@ -36,47 +36,49 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   
-  /* Muloo Core Colors */
-  --color-brand-navy: hsl(222 47% 11%); 
-  --color-brand-teal: hsl(182 100% 40%);
-  --color-brand-orange: hsl(24 90% 54%);
+  /* Core Brand Foundation */
+  --color-brand-navy: #050A30;
+  --color-brand-teal: #00C4CC;
+  --color-brand-orange: #F47621;
+  --color-soft-teal: #E6FBFD;
+  
+  /* Stream Accent Colours */
+  --color-stream-hub: #F47621;
+  --color-stream-build: #155DFC;
+  --color-stream-ai: #C140FF;
+  --color-stream-product: #59BF96;
   
   --font-sans: 'Montserrat', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace; /* Added for technical snippets */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 :root {
-  /* 
-   * Muloo Core Gradient System
-   * Base: Deep Navy (almost black) -> Lighter Navy
-   * Accents: Teal (Technical), Orange (HubSpot/Warmth)
-   */
-  --background: 222 47% 8%; 
+  --background: 233 81% 10%;
   --foreground: 210 40% 98%;
   
-  --card: 222 47% 13%; 
+  --card: 233 60% 14%;
   --card-foreground: 210 40% 98%;
   
-  --popover: 222 47% 13%;
+  --popover: 233 60% 14%;
   --popover-foreground: 210 40% 98%;
   
-  --primary: 24 90% 54%; 
-  --primary-foreground: 210 40% 98%;
+  --primary: 182 100% 40%;
+  --primary-foreground: 233 81% 10%;
   
-  --secondary: 182 100% 40%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 233 60% 20%;
+  --secondary-foreground: 210 40% 98%;
   
-  --muted: 217 33% 20%;
-  --muted-foreground: 215 20% 70%;
+  --muted: 233 40% 20%;
+  --muted-foreground: 215 20% 65%;
   
-  --accent: 217 33% 20%;
+  --accent: 233 40% 20%;
   --accent-foreground: 210 40% 98%;
   
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
+  --border: 233 30% 20%;
+  --input: 233 30% 20%;
   --ring: 182 100% 40%;
   
   --radius: 0.5rem;
@@ -88,9 +90,7 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    /* Subtle noise texture for depth */
-    background-color: hsl(222 47% 8%);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-color: #050A30;
     min-height: 100vh;
   }
   
@@ -98,7 +98,6 @@
     @apply font-bold tracking-tight text-white;
   }
   
-  /* Selection color */
   ::selection {
     @apply bg-brand-teal/30 text-white;
   }
@@ -109,46 +108,81 @@
 }
 
 @layer utilities {
-  /* 
-   * Gradient System 
-   */
+  /* ─────────────────────────────────────
+     1. GRADIENT SYSTEM
+     ───────────────────────────────────── */
   
-  /* 1. Muloo Core Gradient (Navy -> Deep -> Teal hint) */
-  .bg-gradient-core {
-    background: radial-gradient(circle at 50% 0%, hsl(222 47% 15%), hsl(222 47% 8%) 70%);
-  }
-  
-  /* 2. Teal Soft Gradient (Light background effect for contrast sections) */
-  .bg-gradient-teal-soft {
-    background: linear-gradient(135deg, hsl(222 47% 10%) 0%, hsl(182 100% 40% / 0.05) 100%);
+  /* Core Hero Gradient: Navy base with subtle teal radial glow */
+  .bg-hero-gradient {
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 196, 204, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 50%, rgba(0, 196, 204, 0.04), transparent),
+      #050A30;
   }
 
-  /* 3. Technical Accent Glow */
-  .glow-tech {
-    box-shadow: 0 0 40px -10px hsl(182 100% 40% / 0.15);
+  /* Stream Accent Glows */
+  .glow-hub { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244, 118, 33, 0.06), transparent), #050A30; }
+  .glow-build { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(21, 93, 252, 0.06), transparent), #050A30; }
+  .glow-ai { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193, 64, 255, 0.06), transparent), #050A30; }
+  .glow-product { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(89, 191, 150, 0.06), transparent), #050A30; }
+
+  /* Soft Section Alternation */
+  .bg-section-soft {
+    background: linear-gradient(180deg, #050A30 0%, #0A1040 100%);
+  }
+  .bg-section-light {
+    background: linear-gradient(180deg, #ffffff 0%, #E6FBFD 100%);
   }
 
-  /* 4. HubSpot Accent Gradient */
-  .bg-gradient-hubspot {
-    background: linear-gradient(135deg, hsl(24 90% 54%), hsl(340 80% 55%));
-  }
-
-  /* Glass Cards - cleaner, lighter border */
+  /* ─────────────────────────────────────
+     2. GLASS CARDS
+     ───────────────────────────────────── */
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-sm border border-white/[0.1] hover:bg-white/[0.05] hover:border-brand-teal/30 transition-all duration-300;
-  }
-  
-  /* Text Gradients */
-  .text-gradient-orange {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-orange-300;
-  }
-  
-  .text-gradient-teal {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-cyan-200;
+    @apply bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] transition-all duration-300;
   }
 
-  /* Code snippet container */
-  .code-block {
-    @apply font-mono text-sm bg-black/30 border border-white/10 rounded-md p-4 text-muted-foreground;
+  /* ─────────────────────────────────────
+     3. TEXT GRADIENTS
+     ───────────────────────────────────── */
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00C4CC, #80E8ED);
   }
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #F47621, #FFA366);
+  }
+
+  /* ─────────────────────────────────────
+     4. BACKGROUND GRID PATTERN
+     ───────────────────────────────────── */
+  .bg-grid-pattern {
+    background-size: 60px 60px;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  }
+  .bg-grid-pattern-fade {
+    background-size: 60px 60px;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse 70% 70% at center, black, transparent);
+  }
+
+  /* ─────────────────────────────────────
+     5. CODE BLOCK
+     ───────────────────────────────────── */
+  .code-block {
+    @apply font-mono text-sm bg-black/40 border border-white/10 rounded-lg p-4 text-muted-foreground overflow-x-auto;
+  }
+
+  /* ─────────────────────────────────────
+     6. GLOW EFFECTS
+     ───────────────────────────────────── */
+  .glow-teal-sm { box-shadow: 0 0 20px -5px rgba(0, 196, 204, 0.3); }
+  .glow-orange-sm { box-shadow: 0 0 20px -5px rgba(244, 118, 33, 0.3); }
+  .glow-blue-sm { box-shadow: 0 0 20px -5px rgba(21, 93, 252, 0.3); }
+  .glow-purple-sm { box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.3); }
+  .glow-green-sm { box-shadow: 0 0 20px -5px rgba(89, 191, 150, 0.3); }
 }
