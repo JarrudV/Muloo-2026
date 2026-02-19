@@ -2,6 +2,7 @@ import { Home } from "./pages/home";
 import { ServicesHub } from "./pages/services/hub";
 import { ServicesBuild } from "./pages/services/build";
 import { ServicesProduct } from "./pages/services/product";
+import { ServicesConsulting } from "./pages/services/consulting";
 import { About } from "./pages/about";
 import { Contact } from "./pages/contact";
 import { Styleguide } from "./pages/styleguide";
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/services/hub" component={ServicesHub} />
         <Route path="/services/build" component={ServicesBuild} />
         <Route path="/services/product" component={ServicesProduct} />
+        <Route path="/services/consulting" component={ServicesConsulting} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/styleguide" component={Styleguide} />

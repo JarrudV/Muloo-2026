@@ -5,7 +5,8 @@ export const navLinks = [
     subItems: [
       { name: "Muloo Hub", href: "/services/hub", desc: "HubSpot implementation & optimization" },
       { name: "Muloo Build", href: "/services/build", desc: "Integrations & custom software" },
-      { name: "Muloo Product", href: "/services/product", desc: "Internal tools & commercial apps" }
+      { name: "Muloo Product", href: "/services/product", desc: "Internal tools & commercial apps" },
+      { name: "Consulting", href: "/services/consulting", desc: "Outsourced CTO & Sales Engineering" }
     ]
   },
   { name: "Resources", href: "/resources", 
@@ -124,6 +125,28 @@ export const serviceProductContent = {
   ]
 };
 
+export const serviceConsultingContent = {
+  h1: "Specialist Consulting",
+  intro: "Strategic leadership on demand. We provide outsourced CTO, Sales Engineering, and Process Optimization services to help you scale without the overhead.",
+  services: [
+    {
+      title: "Outsourced CTO",
+      desc: "Strategic technical leadership to guide your product roadmap, architecture decisions, and engineering team culture.",
+      lead: "Morne Visagie"
+    },
+    {
+      title: "Sales Engineering",
+      desc: "Bridge the gap between sales and product. Technical demos, solution architecture, and deal support for complex sales cycles.",
+      lead: "Jarrud van der Merwe"
+    },
+    {
+      title: "Process Optimization",
+      desc: "Operational excellence. We analyze your workflows, identify bottlenecks, and implement streamlined processes.",
+      lead: "Paul Manson"
+    }
+  ]
+};
+
 export const aboutContent = {
   h1: "About Muloo",
   intro: "We are a technical partner for ambitious teams. We bridge the gap between marketing strategy and engineering reality.",
@@ -132,5 +155,28 @@ export const aboutContent = {
     { title: "Educational", desc: "We teach your team how to fish." },
     { title: "Helpful", desc: "We solve problems, we don't just log hours." },
     { title: "Bias toward shipping", desc: "We believe in getting things done." }
+  ],
+  team: [
+    {
+      name: "Jarrud van der Merwe",
+      role: "Lead HubSpot Architect & Sales Engineer",
+      bio: "CRM Guru and Sales Engineer. Leads Muloo Hub.",
+      linkedin: "https://www.linkedin.com/in/jarrud/",
+      image: "jarrud_profile_picture_1771486552112.png" 
+    },
+    {
+      name: "Morne Visagie",
+      role: "Partner & Outsourced CTO",
+      bio: "Leads Muloo Build and provides Outsourced CTO services.",
+      linkedin: "https://www.linkedin.com/in/mornevisagie/",
+      image: "Component_25_–_1_1771486552111.png" // Placeholder based on provided assets, assuming this is Morne
+    },
+    {
+      name: "Paul Manson",
+      role: "Business Analyst & Outsourced COO",
+      bio: "Trusted partner for Business Analysis and Outsourced COO Services.",
+      linkedin: "https://www.linkedin.com/in/paulmanson/",
+      image: "Component_77_–_1_1771486552111.png" // Placeholder based on provided assets, assuming this is Paul
+    }
   ]
 };

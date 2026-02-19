@@ -85,7 +85,6 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    /* Clean, deep navy background by default */
     background-color: hsl(233 81% 10%);
     min-height: 100vh;
   }
@@ -93,13 +92,19 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
+  
+  /* Selection color to use Orange for emphasis */
+  ::selection {
+    @apply bg-brand-orange text-white;
+  }
 }
 
 @layer utilities {
-  /* 1. Hero Gradient (Dark SaaS Style) */
+  /* 1. Hero Gradient (Dark SaaS Style) - Added Orange hint */
   .bg-hero-gradient {
     background: radial-gradient(circle at 50% 0%, hsl(233 81% 15%), hsl(233 81% 10%) 60%),
-                radial-gradient(circle at 80% 20%, hsl(182 100% 40% / 0.08), transparent 40%);
+                radial-gradient(circle at 80% 20%, hsl(182 100% 40% / 0.08), transparent 40%),
+                radial-gradient(circle at 20% 80%, hsl(24 90% 54% / 0.05), transparent 40%);
   }
 
   /* 2. Section Soft Gradient (Alternating Sections) */
@@ -124,6 +129,20 @@
     pointer-events: none;
     border-radius: inherit;
   }
+  
+  /* Orange Glow Accent for Consulting/Team */
+  .orange-glow {
+    position: relative;
+  }
+  .orange-glow::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, hsl(24 90% 54% / 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+  }
 
   /* 4. HubSpot Reference Badge Gradient */
   .bg-hubspot-gradient {
@@ -134,11 +153,21 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-white;
   }
   
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-white;
+  }
+  
   .glass-panel {
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
+  /* Updated Hover Effect to include Orange */
   .glass-panel-hover {
-    @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-teal/30;
+    @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-orange/30;
+  }
+  
+  /* Hover Text Orange Transition */
+  .hover-text-orange {
+    @apply transition-colors duration-300 hover:text-brand-orange;
   }
 }

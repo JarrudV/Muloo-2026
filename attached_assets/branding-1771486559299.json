@@ -1,0 +1,143 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Montserrat",
+      "role": "heading"
+    },
+    {
+      "family": "Raleway",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#454D54",
+    "accent": "#00C4CC",
+    "background": "#FFFFFF",
+    "textPrimary": "#050A30",
+    "link": "#050A30"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Raleway",
+      "heading": "Montserrat"
+    },
+    "fontStacks": {
+      "heading": [
+        "Montserrat"
+      ],
+      "body": [
+        "Montserrat"
+      ],
+      "paragraph": [
+        "Montserrat"
+      ]
+    },
+    "fontSizes": {
+      "h1": "50px",
+      "h2": "38px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "input": {
+      "background": "#F7F7F7",
+      "textColor": "#454D54",
+      "borderColor": "#CCCCCC",
+      "borderRadius": "4px",
+      "borderRadiusCorners": {
+        "topLeft": "4px",
+        "topRight": "4px",
+        "bottomRight": "4px",
+        "bottomLeft": "4px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#00C4CC",
+      "textColor": "#FFFFFF",
+      "borderColor": "#00C4CC",
+      "borderRadius": "4px",
+      "borderRadiusCorners": {
+        "topLeft": "4px",
+        "topRight": "4px",
+        "bottomRight": "4px",
+        "bottomLeft": "4px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "transparent",
+      "textColor": "#00C4CC",
+      "borderColor": "#00C4CC",
+      "borderRadius": "4px",
+      "borderRadiusCorners": {
+        "topLeft": "4px",
+        "topRight": "4px",
+        "bottomRight": "4px",
+        "bottomLeft": "4px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.png",
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png",
+    "logoHref": "//www.wearemuloo.com",
+    "logoAlt": "Muloo Inbound"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Muloo'.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Download",
+      "reasoning": "Button #0 has a vibrant brand color (#00C4CC) and action-oriented text ('Download'), making it the primary CTA."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Read the blog",
+      "reasoning": "Button #1 has a transparent background with a border, making it less prominent and suitable as a secondary CTA."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "businesses looking for HubSpot services"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Muloo'.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
