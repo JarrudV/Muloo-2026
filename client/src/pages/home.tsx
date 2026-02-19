@@ -230,13 +230,13 @@ export function Home() {
       </div>
 
       {/* ── PAIN POINTS ── */}
-      <Section className="py-32 md:py-40 border-t border-white/5">
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight">
               There's plenty of activity.<br />But not enough movement.
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg text-muted-foreground leading-[1.8] mb-10 max-w-lg">
               Teams are busy. Pipeline exists. Tools are in place. But revenue velocity, clarity, and confidence still lag.
             </p>
 
@@ -259,7 +259,7 @@ export function Home() {
       </Section>
 
       {/* ── SERVICES OVERVIEW ── */}
-      <Section className="py-28 bg-section-soft border-t border-white/5">
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What we do</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white max-w-2xl">Four streams. One technical partner.</h3>
@@ -285,7 +285,7 @@ export function Home() {
 
                   <h4 className="text-xs font-mono text-muted-foreground mb-2 uppercase tracking-wider">{pillar.subtitle}</h4>
                   <h3 className="text-2xl font-bold mb-3 text-white transition-colors">{pillar.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">{pillar.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{pillar.desc}</p>
 
                   <ul className="space-y-2 mb-6 border-t border-white/5 pt-4">
                     {pillar.features.slice(0, 3).map(feat => (
@@ -307,20 +307,18 @@ export function Home() {
       </Section>
 
       {/* ── TRUSTED ECOSYSTEM ── */}
-      <Section className="py-28 border-t border-white/5">
-        <div className="text-center mb-6">
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-14">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Technologies we integrate with</h3>
-          <p className="text-muted-foreground max-w-xl mx-auto">We work with the platforms your business already depends on.</p>
+          <p className="text-muted-foreground max-w-xl leading-[1.8]">We work with the platforms your business already depends on.</p>
         </div>
 
-        <div className="mb-6" />
-
-        <div className="grid md:grid-cols-3 gap-14 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-16 max-w-4xl">
           {Object.entries(ecosystemLogos).map(([category, logos]) => (
             <div key={category}>
               <h4 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-6 border-b border-white/5 pb-3">{category}</h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3.5">
                 {logos.map(logo => (
                   <a
                     key={logo}
@@ -340,11 +338,11 @@ export function Home() {
       </Section>
 
       {/* ── CERTIFICATIONS ── */}
-      <Section className="py-28 bg-[#080D2A] border-t border-white/5">
-        <div className="text-center mb-14">
+      <Section className="py-20 md:py-[120px] bg-[#080D2A] border-t border-white/5">
+        <div className="mb-14">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Credentials</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Certified & Accredited</h3>
-          <p className="text-muted-foreground max-w-lg mx-auto">Recognised expertise across platforms and architecture.</p>
+          <p className="text-muted-foreground max-w-lg leading-[1.8]">Recognised expertise across platforms and architecture.</p>
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
@@ -386,7 +384,7 @@ export function Home() {
       <LeadMagnetSection />
 
       {/* ── HOW WE WORK ── */}
-      <Section className="py-28 bg-section-soft border-t border-white/5">
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">How we work</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h3>
@@ -397,7 +395,7 @@ export function Home() {
             <div key={i} className="relative group" data-testid={`step-${step.title.toLowerCase()}`}>
               <div className="text-6xl font-black text-white/[0.04] mb-4 group-hover:text-brand-teal/10 transition-colors select-none">{step.step}</div>
               <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              <p className="text-sm text-muted-foreground leading-[1.8]">{step.desc}</p>
               <div className="w-10 h-0.5 bg-brand-teal/30 mt-6 group-hover:w-full group-hover:bg-brand-teal transition-all duration-500" />
             </div>
           ))}
@@ -405,13 +403,13 @@ export function Home() {
       </Section>
 
       {/* ── TESTIMONIALS ── */}
-      <Section className="py-32 border-t border-white/5">
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What clients say</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-white">Trusted by teams who build seriously</h3>
         </div>
 
-        <div className="space-y-16 max-w-4xl">
+        <div className="space-y-14 max-w-4xl">
           {[
             {
               quote: "Muloo brought clarity to a HubSpot instance that had become unmanageable. Within weeks, our reporting made sense and the sales team actually trusted the data again.",
@@ -433,7 +431,7 @@ export function Home() {
                 </svg>
               </div>
               <div>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 font-light">{testimonial.quote}</p>
+                <p className="text-lg md:text-xl text-white/80 leading-[1.8] mb-8 font-light">{testimonial.quote}</p>
                 <div>
                   <p className="text-sm font-semibold text-white">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
@@ -445,13 +443,13 @@ export function Home() {
       </Section>
 
       {/* ── INSIGHTS ── */}
-      <Section className="py-28 border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
         <div className="relative z-10">
           <div className="mb-16">
             <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights from the field</h3>
-            <p className="text-muted-foreground max-w-xl text-lg">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
+            <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -465,7 +463,7 @@ export function Home() {
                   {card.badge}
                 </span>
                 <h4 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-teal transition-colors">{card.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">{card.desc}</p>
+                <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{card.desc}</p>
                 <span className="text-sm font-semibold text-brand-teal/70 group-hover:text-brand-teal flex items-center transition-colors">
                   Read more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -484,11 +482,11 @@ export function Home() {
       </Section>
 
       {/* ── CTA ── */}
-      <Section className="py-28 text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to build <span className="text-gradient-teal">properly</span>?</h2>
-          <p className="text-xl text-muted-foreground mb-10">
+          <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
             Let's talk about your systems, your data, and what needs to change.
           </p>
           <Link href="/contact">
@@ -519,12 +517,12 @@ function LeadMagnetSection() {
 
   return (
     <>
-      <Section className="py-28 border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,196,204,0.04), transparent)" }} />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Free Resource</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Free HubSpot & Systems Health Check</h3>
-          <p className="text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-muted-foreground mb-10 leading-[1.8]">
             Get the 10-point checklist we use to stabilise CRM, integrations, and reporting foundations.
           </p>
           <Button
