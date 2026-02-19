@@ -248,8 +248,35 @@ export function ServicesProduct() {
         </div>
       </Section>
 
-      {/* Case Study */}
+      {/* Designed for Scale */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">Standards</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Designed for Scale</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Multi-tenant architecture", desc: "Isolated data, shared infrastructure — built to serve many customers from day one." },
+            { title: "Subscription-ready", desc: "Billing, plan management, and usage metering engineered into the product core." },
+            { title: "Secure authentication", desc: "Role-based access, SSO support, and token management as standard." },
+            { title: "Infrastructure planning", desc: "Cloud topology, scaling strategy, and cost modelling before the first deploy." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(89, 191, 150, 0.3)` }}
+              data-testid={`card-scale-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Case Study */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div
           className="glass-card rounded-2xl p-10 md:p-14 max-w-3xl"
           style={{ borderLeft: `4px solid ${streamGreen}` }}
