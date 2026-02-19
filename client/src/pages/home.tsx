@@ -404,6 +404,46 @@ export function Home() {
         </div>
       </Section>
 
+      {/* ── TESTIMONIALS ── */}
+      <Section className="py-32 border-t border-white/5">
+        <div className="mb-16">
+          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What clients say</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white">Trusted by teams who build seriously</h3>
+        </div>
+
+        <div className="space-y-16 max-w-4xl">
+          {[
+            {
+              quote: "Muloo brought clarity to a HubSpot instance that had become unmanageable. Within weeks, our reporting made sense and the sales team actually trusted the data again.",
+              name: "Sarah Mitchell",
+              title: "VP of Revenue Operations",
+              company: "TechScale Group",
+            },
+            {
+              quote: "We needed middleware that connected our ERP to HubSpot without breaking every time something changed. Muloo built it properly — and it's been running for over a year without a single issue.",
+              name: "James van der Berg",
+              title: "Head of Digital",
+              company: "Meridian Financial Services",
+            },
+          ].map((testimonial, i) => (
+            <div key={i} className="grid md:grid-cols-[80px_1fr] gap-8 md:gap-12" data-testid={`testimonial-${i}`}>
+              <div className="hidden md:block">
+                <svg viewBox="0 0 40 40" className="w-14 h-14 text-brand-teal/15" fill="currentColor">
+                  <path d="M0 25.6c0-6.4 4.48-12.16 11.2-16L13.12 12.8C9.6 15.36 7.68 18.56 7.04 22.4H11.2c2.24 0 4 1.76 4 4v9.6c0 2.24-1.76 4-4 4H4c-2.24 0-4-1.76-4-4V25.6zm21.6 0c0-6.4 4.48-12.16 11.2-16l1.92 3.2c-3.52 2.56-5.44 5.76-6.08 9.6h4.16c2.24 0 4 1.76 4 4v9.6c0 2.24-1.76 4-4 4h-7.2c-2.24 0-4-1.76-4-4V25.6z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 font-light">{testimonial.quote}</p>
+                <div>
+                  <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* ── INSIGHTS ── */}
       <Section className="py-28 border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
