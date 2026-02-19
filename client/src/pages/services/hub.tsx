@@ -265,8 +265,35 @@ export function ServicesHub() {
         </div>
       </Section>
 
-      {/* Outcomes */}
+      {/* Governance Built In */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Standards</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Governance Built In</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Role-based access", desc: "Permissions aligned to team structure — no one sees or edits what they shouldn't." },
+            { title: "Version-controlled workflows", desc: "Every automation change is documented, testable, and reversible." },
+            { title: "Structured property design", desc: "Naming conventions, field types, and lifecycle rules enforced from the start." },
+            { title: "Executive reporting clarity", desc: "Dashboards built on governed data that leadership actually trusts." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(244, 118, 33, 0.3)` }}
+              data-testid={`card-governance-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Outcomes */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Outcomes</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">What changes after we're involved</h2>
