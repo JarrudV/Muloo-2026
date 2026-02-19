@@ -1,0 +1,54 @@
+We are iterating an existing Next.js + Tailwind SaaS site for Muloo.
+
+Muloo is a Cape Town based technical partner delivering globally.
+
+The site should be inspired by the structure and tone of https://struto.io — clean, modern, modular, and confidence-focused.
+
+Muloo’s offerings are:
+1) Muloo Hub – HubSpot system mastery (implementation, onboarding, optimisation, UI improvements)
+2) Muloo Build – integrations, middleware, client portals, authenticated experiences, API-centric engineering
+3) Muloo Product – Muloo owned product and SaaS builds
+4) Muloo AI – AI workbench services including Codex dev agents, rapid prototypes, vibe coding, AI service agents, AI bug/security services
+
+Do NOT position Muloo as a marketing execution agency. Instead position it as:
+- technical partner
+- engineering focused
+- HubSpot + software + AI
+
+DESIGN REQUIREMENTS
+- Keep Tailwind CSS, Next.js with TypeScript.
+- Use modular sections (components/sections).
+- Integrate a modern structured gradient system:
+   • Muloo Core Gradient (navy → deep → teal)
+   • Teal Soft Gradient (light background)
+   • Technical accent glow
+   • HubSpot accent gradient (orange → warm)
+- Controlled gradients should enhance focus zones but never overwhelm text.
+
+SITE STRUCTURE
+- Home
+- Services + 4 detail pages
+- Resources (Case Studies + Insights)
+- About
+- Contact
+
+VISUAL DIRECTION
+• Strong typography — bold headings, clear spacing
+• Modern SaaS feel, lighter whitespace
+• Visual code language (monospace snippets for technical features)
+• Simple, consistent iconography
+• Subtle hover interactions
+
+CONTENT GUIDELINES
+• Use the current copy from the existing build but refresh it for technical clarity
+• Introduce AI service language on the homepage and on the new /services/ai page
+• Replace any marketing execution terms with technical delivery language
+
+DELIVERABLES
+- Updated Next.js project
+- Improved responsive design
+- Gradient system in Tailwind theme
+- Clean modular sections
+- A README explaining how the layout can be converted to a HubSpot CMS theme
+
+Make the site feel like it has real product depth, engineering credibility, and strategic AI capability.

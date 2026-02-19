@@ -31,13 +31,13 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
         isScrolled 
-          ? "bg-background/80 backdrop-blur-xl border-white/5 py-4" 
-          : "bg-transparent border-transparent py-6"
+          ? "bg-background/90 backdrop-blur-xl border-white/5 py-3" 
+          : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="hover:opacity-90 transition-opacity">
-            <img src={mulooLogo} alt="Muloo" className="h-8 md:h-10 w-auto" />
+            <img src={mulooLogo} alt="Muloo" className="h-8 md:h-9 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -46,16 +46,16 @@ export function Header() {
             if (link.subItems) {
               return (
                 <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-brand-orange transition-colors outline-none cursor-pointer group">
+                  <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-brand-teal transition-colors outline-none cursor-pointer group">
                     {link.name} <ChevronDown className="h-3 w-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80 bg-[#0A0F1C]/95 backdrop-blur-2xl border-white/10 p-3 shadow-2xl rounded-xl">
                     {link.subItems.map((sub) => (
                       <DropdownMenuItem key={sub.name} asChild className="cursor-pointer focus:bg-white/5 rounded-lg my-1">
                         <Link href={sub.href} className="flex flex-col items-start gap-1 p-3 w-full group">
-                          <span className="font-semibold text-white group-hover:text-brand-orange transition-colors flex items-center w-full justify-between">
+                          <span className="font-semibold text-white group-hover:text-brand-teal transition-colors flex items-center w-full justify-between">
                             {sub.name}
-                            <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-orange" />
+                            <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-teal" />
                           </span>
                           <span className="text-xs text-muted-foreground">{sub.desc}</span>
                         </Link>
@@ -67,8 +67,8 @@ export function Header() {
             }
             return (
               <Link key={link.name} href={link.href} className={cn(
-                  "text-sm font-medium hover:text-brand-orange transition-colors cursor-pointer text-white/90",
-                  location === link.href ? "text-brand-orange" : ""
+                  "text-sm font-medium hover:text-brand-teal transition-colors cursor-pointer text-white/90",
+                  location === link.href ? "text-brand-teal" : ""
                 )}>
                   {link.name}
               </Link>
@@ -78,7 +78,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link href="/contact">
-            <Button className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold rounded-full px-6 shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.4)] transition-all hover:shadow-[0_0_25px_-5px_hsl(24,90%,54%,0.6)] hover:-translate-y-0.5">
+            <Button className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold rounded-full px-6 shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.4)] transition-all hover:shadow-[0_0_25px_-5px_hsl(24,90%,54%,0.6)] hover:-translate-y-0.5 text-sm">
               Let's Talk
             </Button>
           </Link>
@@ -100,13 +100,13 @@ export function Header() {
                     <div className="flex flex-col gap-4">
                       <span className="text-lg font-bold text-muted-foreground/50 border-b border-white/10 pb-2">{link.name}</span>
                       {link.subItems.map(sub => (
-                        <Link key={sub.name} href={sub.href} onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-medium pl-4 border-l-2 border-transparent hover:border-brand-orange hover:text-brand-orange transition-all text-white">
+                        <Link key={sub.name} href={sub.href} onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-medium pl-4 border-l-2 border-transparent hover:border-brand-teal hover:text-brand-teal transition-all text-white">
                             {sub.name}
                         </Link>
                       ))}
                     </div>
                   ) : (
-                    <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold hover:text-brand-orange transition-colors text-white">
+                    <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold hover:text-brand-teal transition-colors text-white">
                         {link.name}
                     </Link>
                   )}
@@ -114,7 +114,7 @@ export function Header() {
               ))}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full bg-brand-orange text-white font-bold hover:bg-brand-orange/90 mt-4 h-12 rounded-xl">
-                  Start Shipping
+                  Let's Talk
                 </Button>
               </Link>
             </div>

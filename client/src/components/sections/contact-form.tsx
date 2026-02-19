@@ -13,7 +13,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Section } from "@/components/ui/section";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { Loader2, CheckCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -40,17 +42,33 @@ export function ContactForm() {
     },
   });
 
+  const mutation = useMutation({
+    mutationFn: async (values: z.infer<typeof formSchema>) => {
+      const res = await apiRequest("POST", "/api/inquiries", values);
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    },
+  });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you shortly.",
-    });
-    console.log(values);
-    form.reset();
+    mutation.mutate(values);
   }
 
   return (
-    <div className="max-w-xl mx-auto bg-card p-8 rounded-2xl border border-white/10 shadow-2xl">
+    <div className="max-w-xl mx-auto glass-card p-8 rounded-2xl shadow-2xl" data-testid="contact-form">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -60,7 +78,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" />
+                    <Input placeholder="John Doe" {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" data-testid="input-name" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -73,7 +91,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="john@company.com" {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" />
+                    <Input placeholder="john@company.com" {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" data-testid="input-email" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -86,7 +104,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Company (Optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Acme Inc." {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" />
+                    <Input placeholder="Acme Inc." {...field} className="bg-background/50 border-white/10 focus:border-brand-teal" data-testid="input-company" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -102,15 +120,27 @@ export function ContactForm() {
                     <Textarea 
                       placeholder="Tell us about your project..." 
                       className="resize-none h-32 bg-background/50 border-white/10 focus:border-brand-teal" 
-                      {...field} 
+                      {...field}
+                      data-testid="input-message"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-brand-teal text-brand-navy hover:bg-brand-teal/90 font-bold h-12">
-              Send Message
+            <Button 
+              type="submit" 
+              className="w-full bg-brand-orange text-white hover:bg-brand-orange/90 font-bold h-12 rounded-lg shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.3)]"
+              disabled={mutation.isPending}
+              data-testid="button-submit"
+            >
+              {mutation.isPending ? (
+                <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</>
+              ) : mutation.isSuccess ? (
+                <><CheckCircle className="mr-2 h-4 w-4" /> Sent!</>
+              ) : (
+                "Send Message"
+              )}
             </Button>
           </form>
         </Form>

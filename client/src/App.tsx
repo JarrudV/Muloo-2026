@@ -3,6 +3,7 @@ import { ServicesHub } from "./pages/services/hub";
 import { ServicesBuild } from "./pages/services/build";
 import { ServicesProduct } from "./pages/services/product";
 import { ServicesConsulting } from "./pages/services/consulting";
+import { ServicesAi } from "./pages/services/ai"; // Imported
 import { About } from "./pages/about";
 import { Contact } from "./pages/contact";
 import { Styleguide } from "./pages/styleguide";
@@ -27,6 +28,7 @@ function Router() {
         <Route path="/services/build" component={ServicesBuild} />
         <Route path="/services/product" component={ServicesProduct} />
         <Route path="/services/consulting" component={ServicesConsulting} />
+        <Route path="/services/ai" component={ServicesAi} /> {/* Added Route */}
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/styleguide" component={Styleguide} />

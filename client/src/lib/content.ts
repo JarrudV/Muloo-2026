@@ -3,128 +3,163 @@
 export const navLinks = [
   { name: "Expertise", href: "/services", 
     subItems: [
-      { name: "Platform Engineering", href: "/services/build", desc: "Custom software, AI & Integrations" },
-      { name: "HubSpot RevOps", href: "/services/hub", desc: "Enterprise CRM Architecture" },
-      { name: "Product Development", href: "/services/product", desc: "SaaS & Internal Tools" },
-      { name: "Strategic Consulting", href: "/services/consulting", desc: "CTO & Process Optimization" }
+      { name: "Muloo Hub", href: "/services/hub", desc: "Enterprise HubSpot Architecture" },
+      { name: "Muloo Build", href: "/services/build", desc: "API-Centric Engineering" },
+      { name: "Muloo Product", href: "/services/product", desc: "SaaS & Internal Tools" },
+      { name: "Muloo AI", href: "/services/ai", desc: "AI Agents & Vibe Coding" }
     ]
   },
-  { name: "Work", href: "/case-studies", 
+  { name: "Resources", href: "/resources", 
     subItems: [
-      { name: "Case Studies", href: "/case-studies", desc: "Outcomes delivered" },
-      { name: "Insights", href: "/blog", desc: "Technical thinking" }
+      { name: "Case Studies", href: "/case-studies", desc: "Technical outcomes" },
+      { name: "Insights", href: "/blog", desc: "Engineering guides" }
     ]
   },
-  { name: "Company", href: "/about" },
+  { name: "About", href: "/about" },
 ];
 
 export const homeContent = {
   hero: {
-    badge: "Full Stack Development & RevOps",
-    headline: "Stop buying hours. Start shipping software.",
-    subhead: "We are a full-stack development house that bridges the gap between enterprise HubSpot architecture and custom software engineering. We build the systems that drive your revenue.",
-    primaryCta: "Discuss your project",
-    secondaryCta: "View our work",
-    techStack: ["HubSpot", "React", "Node.js", "Python", "AWS", "Azure", "PostgreSQL", "OpenAI"]
+    badge: "Technical Partner for HubSpot + AI",
+    headline: "Engineering the future of revenue.",
+    subhead: "We are a full-stack technical partner. We implement HubSpot, engineer custom software, and deploy AI agents to solve complex operational problems.",
+    primaryCta: "Talk Engineering",
+    secondaryCta: "View Our Work",
+    techStack: ["HubSpot", "React", "Node.js", "Python", "OpenAI", "Anthropic", "AWS", "Vercel"]
   },
   valueProp: {
-    title: "Engineering, not just implementation.",
-    subtitle: "Most agencies click buttons. We write code.",
-    desc: "We solve complex operational problems that off-the-shelf tools can't handle. From rapid prototyping to AI agents and complex integrations, we build the missing pieces of your stack."
+    title: "Code. Config. Context.",
+    subtitle: "Beyond implementation",
+    desc: "Marketing agencies implement software. We engineer systems. From complex HubSpot architectures to autonomous AI agents, we build the technical foundation your revenue relies on."
   },
   pillars: [
     {
-      id: "build",
-      title: "Custom Engineering",
-      subtitle: "Full Stack & Integrations",
-      desc: "We build what HubSpot can't do. Custom client portals, complex API integrations, middleware, and proprietary internal tools.",
-      features: ["React & Node.js Apps", "Bi-directional Syncs", "AI Agents", "Data Warehousing"],
-      href: "/services/build"
-    },
-    {
       id: "hub",
-      title: "Enterprise HubSpot",
-      subtitle: "RevOps Architecture",
-      desc: "Technical implementation for scale. We treat your CRM like a software product—version controlled, documented, and built for data integrity.",
-      features: ["CRM Architecture", "Programmable Automation", "Data Migration", "Reporting Infrastructure"],
+      title: "Muloo Hub",
+      subtitle: "System Mastery",
+      desc: "Deep technical HubSpot implementation. We treat CRM configuration like software engineering—versioned, documented, and scalable.",
+      features: ["Enterprise Architecture", "Data Migration", "Programmable Automation", "UI/UX Improvements"],
       href: "/services/hub"
     },
     {
-      id: "consult",
-      title: "Strategic Consulting",
-      subtitle: "Fractional Leadership",
-      desc: "Senior technical leadership to guide your roadmap. We provide the architectural oversight and process optimization you need to scale.",
-      features: ["Outsourced CTO", "Sales Engineering", "Process Mining", "Tech Stack Audit"],
-      href: "/services/consulting"
+      id: "build",
+      title: "Muloo Build",
+      subtitle: "Full Stack Engineering",
+      desc: "Where HubSpot stops, we begin. Custom middleware, client portals, authenticated experiences, and API-centric development.",
+      features: ["Custom Middleware", "Client Portals", "External Integrations", "Secure Auth Systems"],
+      href: "/services/build"
+    },
+    {
+      id: "product",
+      title: "Muloo Product",
+      subtitle: "SaaS & Tools",
+      desc: "We build and maintain proprietary SaaS products and internal tools that solve specific operational gaps in the market.",
+      features: ["Internal Tools", "Commercial SaaS", "Product Strategy", "MVP Development"],
+      href: "/services/product"
+    },
+    {
+      id: "ai",
+      title: "Muloo AI",
+      subtitle: "Intelligence Layer",
+      desc: "Practical AI implementation. From coding agents that speed up dev to service agents that handle customer queries.",
+      features: ["Codex Dev Agents", "AI Service Agents", "Rapid Prototyping", "Security Audits"],
+      href: "/services/ai"
     }
   ],
   stats: [
-    { label: "Integrations Built", value: "200+" },
-    { label: "Revenue Influenced", value: "$50M+" },
-    { label: "Custom Apps Shipped", value: "45+" }
+    { label: "API Endpoints Managed", value: "500+" },
+    { label: "AI Agents Deployed", value: "12+" },
+    { label: "Systems Integrated", value: "50+" }
   ],
   partners: {
-    headline: "Strategic collaborators",
-    body: "We do not offer day to day marketing execution. When design, content, or campaign delivery is needed, we collaborate closely with trusted partners.",
+    headline: "Ecosystem Partners",
+    body: "We focus on engineering. For brand, design, and campaign execution, we partner with the best.",
     list: ["Tusk", "Sol Creative"]
   }
 };
 
 export const serviceHubContent = {
   h1: "Muloo Hub",
-  intro: "HubSpot is powerful, but only if it is implemented with clean data, clear process, and reporting you can trust. Muloo Hub covers implementation, onboarding, optimisation, and ongoing technical support.",
+  intro: "Enterprise-grade HubSpot architecture. We move beyond basic setup to complex data modeling, programmable automation, and UI enhancements that drive user adoption.",
   features: [
-    "HubSpot onboarding and implementation",
-    "Portal clean up and optimisation",
-    "CRM architecture and pipeline design",
-    "Custom properties, workflows, and permissions",
-    "Dashboards, reporting, and attribution foundations",
-    "Sales, marketing, and service enablement",
-    "Website builds on HubSpot CMS",
-    "Integrations and data migrations into HubSpot"
+    "HubSpot Enterprise Implementation",
+    "Complex Data Modeling & Custom Objects",
+    "Serverless Functions & Programmable Automation",
+    "CRM UI/UX Customization",
+    "Advanced Reporting & SQL",
+    "Attribution Modeling",
+    "Migration Engineering",
+    "Portal Audits & Refactoring"
   ],
   cta: {
-    headline: "Need HubSpot to feel calm and predictable again?",
-    body: "Let’s map what is working, what is broken, and what needs to change."
+    headline: "Is your CRM technically sound?",
+    body: "Let's review your architecture and identify optimization opportunities."
   }
 };
 
 export const serviceBuildContent = {
   h1: "Muloo Build",
-  intro: "Integrations, apps, and full stack development. We connect platforms, automate workflows, and build custom software where off the shelf tools stop short.",
+  intro: "We bridge the gap between SaaS platforms. Custom middleware, secure integrations, and purpose-built applications that orchestrate your business logic.",
   approach: [
-    { step: "01", title: "Discover", desc: "We map your current stack and identify the gaps." },
-    { step: "02", title: "Architect", desc: "We design a scalable solution with clear data flows." },
-    { step: "03", title: "Ship", desc: "We build, test, and deploy iteratively." },
-    { step: "04", title: "Support", desc: "We ensure stability and handle maintenance." }
+    { step: "01", title: "Spec", desc: "Technical requirements gathering and API schema definition." },
+    { step: "02", title: "Build", desc: "Iterative development with strict type safety and testing." },
+    { step: "03", title: "Deploy", desc: "CI/CD pipelines, monitoring, and error tracking." },
+    { step: "04", title: "Scale", desc: "Performance optimization and infrastructure management." }
   ]
 };
 
 export const serviceProductContent = {
   h1: "Muloo Product",
-  intro: "Commercial software and internal tools built by Muloo. Products that solve real operational problems and plug neatly into modern CRM stacks.",
+  intro: "We don't just build for clients; we build for the market. Our product division develops commercial SaaS solutions and internal tools that demonstrate our engineering capability.",
   products: [
     {
-      title: "Inventory Manager",
-      desc: "A lightweight inventory management tool that syncs directly with HubSpot Deals and Products.",
-      status: "Commercial Product"
+      title: "Inventory Sync",
+      desc: "Real-time bidirectional sync between ERP systems and HubSpot Deals/Products.",
+      status: "Live"
     },
     {
-      title: "Client Portal Kit",
-      desc: "A secure, white-labeled portal framework for HubSpot customers to view tickets and invoices.",
-      status: "In Development"
+      title: "Portal Framework",
+      desc: "A Next.js starter kit for building authenticated client portals on top of HubSpot CRM data.",
+      status: "Beta"
     },
     {
-      title: "Data Sync Helper",
-      desc: "Middleware to clean and standardize phone numbers and addresses before they hit your CRM.",
-      status: "Internal Tool"
+      title: "Data Sanitizer",
+      desc: "Middleware service for normalizing phone numbers and addresses before CRM ingestion.",
+      status: "Internal"
+    }
+  ]
+};
+
+export const serviceAiContent = {
+  h1: "Muloo AI",
+  intro: "The workbench for the AI age. We help companies deploy practical AI agents, use 'vibe coding' for rapid prototyping, and secure their AI infrastructure.",
+  services: [
+    {
+      title: "Codex Dev Agents",
+      desc: "Implementation of AI coding assistants to accelerate your internal development velocity.",
+      lead: "Engineering Team"
+    },
+    {
+      title: "Rapid Prototyping",
+      desc: "'Vibe coding' sessions to go from idea to functional prototype in days, not weeks.",
+      lead: "Product Team"
+    },
+    {
+      title: "AI Service Agents",
+      desc: "Autonomous agents that triage support tickets and handle routine customer inquiries.",
+      lead: "Automation Team"
+    },
+    {
+      title: "AI Security",
+      desc: "Auditing LLM prompts and data pipelines for security vulnerabilities and data leakage.",
+      lead: "Security Team"
     }
   ]
 };
 
 export const serviceConsultingContent = {
-  h1: "Specialist Consulting",
-  intro: "Strategic leadership on demand. We provide outsourced CTO, Sales Engineering, and Process Optimization services to help you scale without the overhead.",
+  h1: "Strategic Consulting",
+  intro: "Fractional leadership for scaling technical teams. We provide the architectural oversight and process optimization you need to scale.",
   services: [
     {
       title: "Outsourced CTO",
@@ -135,14 +170,10 @@ export const serviceConsultingContent = {
       title: "Sales Engineering",
       desc: "Bridge the gap between sales and product. Technical demos, solution architecture, and deal support for complex sales cycles.",
       lead: "Jarrud van der Merwe"
-    },
-    {
-      title: "Process Optimization",
-      desc: "Operational excellence. We analyze your workflows, identify bottlenecks, and implement streamlined processes.",
-      lead: "Paul Manson"
     }
   ]
 };
+
 
 export const aboutContent = {
   h1: "About Muloo",
