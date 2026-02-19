@@ -37,16 +37,16 @@ export function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="hover:opacity-90 transition-opacity">
-            <img src={mulooLogo} alt="Muloo" className="h-8 md:h-9 w-auto" />
+            <img src={mulooLogo} alt="Muloo" className="h-10 md:h-11 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => {
             if (link.subItems) {
               return (
                 <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-brand-teal transition-colors outline-none cursor-pointer group">
+                  <DropdownMenuTrigger className="flex items-center gap-1 text-[15px] font-medium text-white/90 hover:text-brand-teal transition-colors outline-none cursor-pointer group">
                     {link.name} <ChevronDown className="h-3 w-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80 bg-[#0A0F1C]/95 backdrop-blur-2xl border-white/10 p-3 shadow-2xl rounded-xl">
@@ -67,7 +67,7 @@ export function Header() {
             }
             return (
               <Link key={link.name} href={link.href} className={cn(
-                  "text-sm font-medium hover:text-brand-teal transition-colors cursor-pointer text-white/90",
+                  "text-[15px] font-medium hover:text-brand-teal transition-colors cursor-pointer text-white/90",
                   location === link.href ? "text-brand-teal" : ""
                 )}>
                   {link.name}

@@ -1,0 +1,119 @@
+We are refining the Muloo homepage again.
+
+IMPORTANT:
+Do NOT change the hero section.
+Do NOT change hero layout, typography, badge animation, or right-side capability cards.
+Hero is final.
+
+All refinements apply to sections below the hero only.
+
+----------------------------------------------------
+HEADER REFINEMENT
+----------------------------------------------------
+
+1. Increase logo size by approximately 20%.
+2. Increase navigation font size by 3px.
+3. Increase spacing between navigation items slightly.
+4. Maintain current color system and structure.
+
+----------------------------------------------------
+ADD NEW SECTION AFTER HERO
+----------------------------------------------------
+
+Add a new section directly below the hero:
+
+Headline:
+"If any of this sounds familiar…"
+
+Add 4 pain-point cards with short sharp copy:
+
+• HubSpot feels messy and unreliable.
+• Systems don’t talk to each other.
+• Reporting lacks clarity.
+• AI feels exciting but unclear how to apply.
+
+Keep styling consistent with dark theme.
+Use subtle card borders and light hover effects.
+Do not overuse accent colours here.
+
+----------------------------------------------------
+FOUR STREAMS SECTION
+----------------------------------------------------
+
+1. Fix routing so clicking “Explore” scrolls to the top of each service page, not the middle.
+2. Slightly increase hover glow per stream colour (subtle only).
+3. Maintain current card layout and structure.
+
+----------------------------------------------------
+TRUSTED ECOSYSTEM SECTION
+----------------------------------------------------
+
+1. Increase primary platform logos by 35%.
+2. Improve spacing between logo rows.
+3. Add short intro line above logos:
+   "We work with the platforms your business already depends on."
+4. Keep grayscale logos.
+5. On hover, apply subtle teal glow.
+
+Affiliate readiness:
+Make all ecosystem tags clickable links with placeholder href="#".
+They must open in new tab.
+Maintain tag design.
+
+----------------------------------------------------
+ADD LEAD MAGNET SECTION
+----------------------------------------------------
+
+Insert new section before Outcomes section:
+
+Title:
+"Free HubSpot & Systems Health Check"
+
+Body:
+"Get the 10-point checklist we use to stabilise CRM, integrations, and reporting foundations."
+
+Add CTA button:
+"Download the checklist"
+
+Button should trigger modal placeholder with email input field.
+No backend required.
+
+Design:
+Dark section.
+Subtle radial teal glow.
+Premium, minimal.
+
+----------------------------------------------------
+CERTIFICATIONS SECTION REFINEMENT
+----------------------------------------------------
+
+Refactor certification badge layout:
+
+1. Align badges in clean structured grid.
+2. Reduce visual clutter.
+3. Add small heading above:
+   "Certified & Accredited"
+4. Maintain current badge assets.
+
+----------------------------------------------------
+OUTCOMES & TESTIMONIALS
+----------------------------------------------------
+
+1. Keep current structure.
+2. Improve spacing and alignment.
+3. Reduce excessive empty vertical padding.
+4. Keep tone premium and restrained.
+
+----------------------------------------------------
+GLOBAL RULES
+----------------------------------------------------
+
+• Do not change hero.
+• Do not introduce new bright gradients.
+• Keep navy + teal dominant.
+• Maintain stream accent system.
+• Reduce any unnecessary visual noise.
+• Increase whitespace slightly between major sections.
+
+Refactor existing layout.
+Do not rebuild from scratch.
