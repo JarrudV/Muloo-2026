@@ -1,6 +1,6 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Webhook, Code2, Shield, Zap, Database, Terminal, Server, RefreshCw, Lock, Activity } from "lucide-react";
+import { ArrowRight, Webhook, Code2, Shield, Zap, Database, Terminal, RefreshCw, Lock, Activity, Layers, Server, HardDrive } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { serviceBuildContent } from "@/lib/content";
@@ -31,20 +31,20 @@ export function ServicesBuild() {
 
       {/* Problem Framing */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">The challenge</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
-            Modern stacks rarely fail because of strategy.<br />They fail because of architecture.
+            Disconnected systems quietly erode performance.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Integration gaps compound silently. APIs drift out of sync, middleware breaks on edge cases, and data inconsistencies erode trust in every downstream system. Your platforms work individually — but they don't work together. The problem isn't the tools. It's the connective tissue between them.
+            APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automation misfires, and scale becomes expensive. Modern businesses don't need more tools. They need coherent systems.
           </p>
         </div>
       </Section>
 
       {/* What We Build */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">What we build</span>
           <h2 className="text-3xl md:text-5xl font-bold text-white">Engineering That Connects Systems</h2>
         </div>
@@ -76,13 +76,42 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* Architecture Visual Block */}
+      {/* Tech Stack */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Ecosystem</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Platforms we engineer across</h2>
+        </div>
+
+        <div className="flex flex-wrap gap-3 max-w-3xl">
+          {[
+            "Microsoft Azure",
+            "Google Cloud",
+            "SAP",
+            "SQL Server",
+            "Snowflake",
+            "HubSpot",
+            "Salesforce",
+            "Custom APIs",
+          ].map((platform) => (
+            <span
+              key={platform}
+              className="px-4 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-sm font-mono text-white/50 hover:text-[#155DFC] hover:border-[#155DFC]/20 transition-all duration-300"
+              data-testid={`tag-platform-${platform.toLowerCase().replace(/\s/g, '-')}`}
+            >
+              {platform}
+            </span>
+          ))}
+        </div>
+      </Section>
+
+      {/* Architecture Visual Block */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="max-w-xl">
             <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Architecture</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">How Data Moves Through Your Stack</h2>
-            <p className="text-muted-foreground leading-[1.8] mb-8">
+            <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
               We design integration pipelines that handle failure gracefully, log extensively, and scale with your data volume. Every layer is typed, tested, and monitored.
             </p>
             <ul className="space-y-4">
@@ -100,104 +129,140 @@ export function ServicesBuild() {
             </ul>
           </div>
 
-          <div className="bg-[#0a0e1a] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden" data-testid="diagram-architecture">
+          <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="diagram-architecture">
             <div
               className="absolute top-0 right-0 w-full h-full pointer-events-none"
               style={{
-                background: `radial-gradient(circle at top right, rgba(21, 93, 252, 0.06), transparent)`,
+                background: `radial-gradient(circle at top right, rgba(21, 93, 252, 0.05), transparent)`,
               }}
             />
 
             <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-8 pb-4 border-b border-white/5">
-                <div className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
-                <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/50" />
-                <div className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
-                <span className="ml-3 text-xs font-mono text-muted-foreground">system-architecture</span>
+              <div className="flex items-center gap-2 mb-6 pb-3 border-b border-white/5">
+                <div className="h-2 w-2 rounded-full bg-red-500/40" />
+                <div className="h-2 w-2 rounded-full bg-yellow-500/40" />
+                <div className="h-2 w-2 rounded-full bg-green-500/40" />
+                <span className="ml-3 text-[10px] font-mono text-white/20">system-architecture.diagram</span>
               </div>
 
-              <div className="flex flex-col gap-4">
-                {/* Source Systems */}
-                <div className="flex items-center gap-3">
-                  <div className="flex gap-2">
-                    {["ERP", "CRM", "Payments"].map((label) => (
-                      <div key={label} className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-muted-foreground">
-                        {label}
+              <div className="flex flex-col gap-3">
+                {/* Source Layer */}
+                <div>
+                  <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.2em] mb-2 block">Source Systems</span>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { label: "CRM", icon: <Layers className="h-3.5 w-3.5" /> },
+                      { label: "ERP", icon: <Server className="h-3.5 w-3.5" /> },
+                      { label: "External Services", icon: <Zap className="h-3.5 w-3.5" /> },
+                    ].map((s) => (
+                      <div key={s.label} className="px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center gap-2">
+                        <span className="text-white/20">{s.icon}</span>
+                        <span className="text-[11px] font-mono text-white/40">{s.label}</span>
                       </div>
                     ))}
                   </div>
-                  <span className="text-[10px] font-mono text-white/30 uppercase tracking-wider ml-auto">Sources</span>
                 </div>
 
-                {/* Arrow Down */}
-                <div className="flex justify-center py-1">
-                  <div className="w-px h-6" style={{ backgroundColor: `rgba(21, 93, 252, 0.3)` }} />
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(21, 93, 252, 0.4)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
+                  </div>
                 </div>
 
                 {/* API Gateway */}
                 <div
-                  className="p-4 rounded-xl flex items-center gap-4"
+                  className="p-3.5 rounded-xl flex items-center gap-3"
                   style={{
-                    backgroundColor: `rgba(21, 93, 252, 0.05)`,
-                    border: `1px solid rgba(21, 93, 252, 0.2)`,
-                    boxShadow: `0 0 30px -10px rgba(21, 93, 252, 0.15)`,
+                    backgroundColor: `rgba(21, 93, 252, 0.04)`,
+                    border: `1px solid rgba(21, 93, 252, 0.15)`,
                   }}
                 >
-                  <Shield className="h-5 w-5 shrink-0" style={{ color: streamBlue }} />
+                  <Shield className="h-4 w-4 shrink-0" style={{ color: `rgba(21, 93, 252, 0.6)` }} />
                   <div>
-                    <span className="font-mono text-sm font-semibold" style={{ color: streamBlue }}>API Gateway</span>
-                    <span className="text-[10px] text-muted-foreground block font-mono">Auth · Rate Limit · Validate</span>
+                    <span className="font-mono text-xs font-medium" style={{ color: `rgba(21, 93, 252, 0.8)` }}>API Gateway</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Auth · Rate Limit · Validate</span>
                   </div>
                 </div>
 
-                {/* Arrow Down */}
-                <div className="flex justify-center py-1">
-                  <div className="w-px h-6" style={{ backgroundColor: `rgba(21, 93, 252, 0.3)` }} />
-                </div>
-
-                {/* Middleware */}
-                <div
-                  className="p-4 rounded-xl flex items-center gap-4"
-                  style={{
-                    backgroundColor: `rgba(21, 93, 252, 0.08)`,
-                    border: `1px solid rgba(21, 93, 252, 0.3)`,
-                    boxShadow: `0 0 30px -10px rgba(21, 93, 252, 0.25)`,
-                  }}
-                >
-                  <Terminal className="h-5 w-5 shrink-0" style={{ color: streamBlue }} />
-                  <div>
-                    <span className="font-mono text-sm font-semibold" style={{ color: streamBlue }}>Middleware Pipeline</span>
-                    <span className="text-[10px] text-muted-foreground block font-mono">Transform · Validate · Route</span>
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(21, 93, 252, 0.5)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
                   </div>
                 </div>
 
-                {/* Arrow Down */}
-                <div className="flex justify-center py-1">
-                  <div className="w-px h-6" style={{ backgroundColor: `rgba(21, 93, 252, 0.3)` }} />
+                {/* Middleware + Event Queue row */}
+                <div className="grid grid-cols-2 gap-2">
+                  <div
+                    className="p-3.5 rounded-xl flex items-center gap-3"
+                    style={{
+                      backgroundColor: `rgba(21, 93, 252, 0.06)`,
+                      border: `1px solid rgba(21, 93, 252, 0.25)`,
+                      boxShadow: `0 0 20px -8px rgba(21, 93, 252, 0.15)`,
+                    }}
+                  >
+                    <Terminal className="h-4 w-4 shrink-0" style={{ color: streamBlue }} />
+                    <div>
+                      <span className="font-mono text-xs font-medium" style={{ color: streamBlue }}>Middleware</span>
+                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Transform · Route</span>
+                    </div>
+                  </div>
+                  <div
+                    className="p-3.5 rounded-xl flex items-center gap-3"
+                    style={{
+                      backgroundColor: `rgba(21, 93, 252, 0.04)`,
+                      border: `1px solid rgba(21, 93, 252, 0.15)`,
+                    }}
+                  >
+                    <Activity className="h-4 w-4 shrink-0" style={{ color: `rgba(21, 93, 252, 0.6)` }} />
+                    <div>
+                      <span className="font-mono text-xs font-medium" style={{ color: `rgba(21, 93, 252, 0.8)` }}>Event Queue</span>
+                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Async · Retry</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Destination Systems */}
-                <div className="flex items-center gap-3">
-                  <div className="flex gap-2">
-                    {["Database", "Analytics", "Webhooks"].map((label) => (
-                      <div key={label} className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-muted-foreground">
-                        {label}
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(21, 93, 252, 0.4)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(21, 93, 252, 0.2)` }} />
+                  </div>
+                </div>
+
+                {/* Target Layer */}
+                <div>
+                  <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.2em] mb-2 block">Target Systems</span>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { label: "Data Warehouse", icon: <HardDrive className="h-3.5 w-3.5" /> },
+                      { label: "CRM", icon: <Layers className="h-3.5 w-3.5" /> },
+                      { label: "Webhooks", icon: <Webhook className="h-3.5 w-3.5" /> },
+                    ].map((t) => (
+                      <div key={t.label} className="px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center gap-2">
+                        <span className="text-white/20">{t.icon}</span>
+                        <span className="text-[11px] font-mono text-white/40">{t.label}</span>
                       </div>
                     ))}
                   </div>
-                  <span className="text-[10px] font-mono text-white/30 uppercase tracking-wider ml-auto">Targets</span>
                 </div>
               </div>
 
               {/* Status bar */}
-              <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+              <div className="mt-6 pt-3 border-t border-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Activity className="h-3.5 w-3.5" style={{ color: streamBlue }} />
-                  <span className="text-[11px] font-mono text-muted-foreground">Pipeline healthy</span>
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  <span className="text-[10px] font-mono text-white/25">Pipeline healthy</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-[11px] font-mono text-white/30">Latency: 42ms</span>
-                  <span className="text-[11px] font-mono text-white/30">Uptime: 99.98%</span>
+                  <span className="text-[10px] font-mono text-white/20">42ms avg</span>
+                  <span className="text-[10px] font-mono text-white/20">99.98% uptime</span>
                 </div>
               </div>
             </div>
@@ -206,8 +271,8 @@ export function ServicesBuild() {
       </Section>
 
       {/* Our Approach */}
-      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="mb-16 max-w-3xl">
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Our approach</span>
           <h2 className="text-3xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h2>
         </div>
@@ -229,18 +294,56 @@ export function ServicesBuild() {
         </div>
       </Section>
 
+      {/* How We Engage */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-16 max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Delivery</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Project-Based Builds",
+              desc: "Scoped architecture and engineering engagements with defined deliverables, timelines, and handover documentation.",
+            },
+            {
+              title: "Embedded Engineering",
+              desc: "Our engineers integrate directly into your team — attending standups, shipping code, and owning outcomes alongside your people.",
+            },
+            {
+              title: "Optimisation Retainers",
+              desc: "Ongoing monitoring, performance tuning, and incremental improvements to keep your systems stable and evolving.",
+            },
+          ].map((model, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-2xl p-8 group hover:border-[#155DFC]/15 transition-all duration-300"
+              data-testid={`card-engagement-${i}`}
+            >
+              <h3 className="text-lg font-bold mb-3 text-white">{model.title}</h3>
+              <p className="text-muted-foreground text-sm leading-[1.8]">{model.desc}</p>
+              <div
+                className="w-10 h-0.5 mt-6 opacity-40 group-hover:opacity-100 group-hover:w-full transition-all duration-500"
+                style={{ backgroundColor: streamBlue }}
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Outcomes */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Outcomes</span>
           <h2 className="text-3xl md:text-5xl font-bold text-white">What changes after we're involved</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { title: "Zero manual syncs", desc: "Data flows automatically between systems with retry logic and structured error handling. No more spreadsheets bridging the gaps." },
-            { title: "Type-safe pipelines", desc: "Every integration is typed end-to-end. Errors are caught at build time, not discovered in production at 2am." },
-            { title: "Production confidence", desc: "Monitoring, alerting, and graceful degradation built into every deployment. You ship knowing it won't break silently." },
+            { title: "Zero manual syncs", desc: "Data flows automatically between systems with retry logic and structured error handling." },
+            { title: "Type-safe pipelines", desc: "Every integration is typed end-to-end. Errors caught at build time, not discovered in production." },
+            { title: "Production confidence", desc: "Monitoring, alerting, and graceful degradation built into every deployment." },
           ].map((item, i) => (
             <div
               key={i}
@@ -255,21 +358,18 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* Mini Case Study */}
+      {/* Mini Case Example */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div
-          className="glass-card rounded-2xl p-10 md:p-14 max-w-4xl"
+          className="glass-card rounded-2xl p-10 md:p-14 max-w-3xl"
           style={{ borderLeft: `4px solid ${streamBlue}` }}
-          data-testid="card-case-study"
+          data-testid="card-case-example"
         >
-          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Case study</span>
-          <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "We needed middleware that connected our ERP to our CRM without breaking every time something changed. Muloo built it properly — typed, tested, and monitored. It's been running for over a year without a single issue."
-          </blockquote>
-          <div>
-            <p className="text-white font-bold">James van der Berg</p>
-            <p className="text-muted-foreground text-sm">Head of Digital — Meridian Financial Services</p>
-          </div>
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Example</span>
+          <h3 className="text-2xl font-bold text-white mb-6">Consolidating a fragmented stack</h3>
+          <p className="text-muted-foreground leading-[1.8]">
+            A mid-market client was running five disconnected tools across sales, finance, and operations. We designed a unified middleware layer that consolidated data flows, eliminated manual reporting, and reduced integration maintenance from 20 hours per week to zero. Clean data in, clean reports out.
+          </p>
         </div>
       </Section>
 
@@ -277,18 +377,18 @@ export function ServicesBuild() {
       <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Need custom engineering?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to stabilise your architecture?</h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            Let's scope out your architecture requirements and build a roadmap.
+            Let's scope your requirements and build a roadmap.
           </p>
           <Link href="/contact">
             <Button
               size="lg"
               className="font-bold px-10 h-14 text-white rounded-lg"
               style={{ backgroundColor: streamBlue }}
-              data-testid="button-discuss-architecture"
+              data-testid="button-book-architecture-call"
             >
-              Discuss your architecture <ArrowRight className="ml-2" />
+              Book an architecture call <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

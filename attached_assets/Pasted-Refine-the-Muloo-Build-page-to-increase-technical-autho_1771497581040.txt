@@ -1,0 +1,113 @@
+Refine the Muloo Build page to increase technical authority and reduce generic language.
+
+Do not modify homepage or other service pages.
+
+----------------------------------------------------
+1. SHARPEN PROBLEM FRAMING
+----------------------------------------------------
+
+Replace current problem paragraph with:
+
+Headline:
+"Disconnected systems quietly erode performance."
+
+Body:
+"APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automation misfires, and scale becomes expensive. Modern businesses don’t need more tools. They need coherent systems."
+
+Keep concise.
+Reduce marketing tone.
+Increase authority.
+
+----------------------------------------------------
+2. STRENGTHEN ARCHITECTURE SECTION
+----------------------------------------------------
+
+Enhance the visual block to feel more engineering-driven.
+
+Add labelled components in diagram:
+- API Gateway
+- Middleware Layer
+- Event Queue
+- CRM
+- ERP
+- Data Warehouse
+- External Services
+
+Add subtle motion lines or data flow indicators.
+Keep blue accent (#155DFC).
+No orange accents on this page.
+
+----------------------------------------------------
+3. ADD "TECH STACK WE WORK WITH" SECTION
+----------------------------------------------------
+
+Add new section after What We Build:
+
+Heading:
+"Platforms we engineer across"
+
+Include structured grid:
+- Microsoft Azure
+- Google Cloud
+- SAP
+- SQL Server
+- Snowflake
+- HubSpot
+- Salesforce
+- Custom APIs
+
+Design as subtle tags or minimal icon grid.
+No heavy colour blocks.
+
+----------------------------------------------------
+4. ADD DELIVERY MODEL CLARITY
+----------------------------------------------------
+
+Add new section:
+
+Heading:
+"How we engage"
+
+Three models:
+- Project-based architecture builds
+- Embedded engineering support
+- Ongoing optimisation retainers
+
+Short description for each.
+
+----------------------------------------------------
+5. ADD MINI CASE EXAMPLE
+----------------------------------------------------
+
+Add short case-style block:
+
+Headline:
+"Example: Consolidating a fragmented stack"
+
+Short 3-line description of:
+Multiple tools → Unified middleware → Clean reporting → Reduced manual work
+
+Keep concise.
+No fake logos.
+
+----------------------------------------------------
+6. STRONGER CTA
+----------------------------------------------------
+
+Replace CTA with:
+
+Headline:
+"Ready to stabilise your architecture?"
+
+Button:
+"Book an architecture call"
+
+----------------------------------------------------
+7. DESIGN REFINEMENT
+----------------------------------------------------
+
+Increase whitespace between sections.
+Reduce paragraph width slightly for readability.
+Ensure consistent section padding.
+Maintain blue accent.
+Remove any lingering HubSpot-heavy emphasis.
