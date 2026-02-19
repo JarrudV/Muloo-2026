@@ -178,35 +178,35 @@ export const serviceConsultingContent = {
 
 export const advisoryContent = {
   hero: {
-    headline: "Embedded Leadership Without Full-Time Overhead.",
-    subtext: "We provide senior technical and operational capability inside growing businesses."
+    headline: "Embedded leadership without permanent overhead.",
+    subtext: "We step in where clarity, structure, and execution are required."
   },
   services: [
     {
       id: "cto",
       title: "Outsourced CTO",
-      desc: "Strategic technical leadership for product roadmap, architecture decisions, and engineering team culture. We embed into your business as a fractional CTO.",
+      desc: "Technical strategy, architecture oversight, and engineering leadership embedded directly into your business on a fractional basis.",
       accent: "#155DFC",
       stream: "build"
     },
     {
       id: "sales-eng",
-      title: "Outsourced Sales Engineering",
-      desc: "Technical pre-sales support, solution architecture, and deal enablement. We bridge the gap between your product and your pipeline.",
+      title: "Sales Engineering",
+      desc: "Technical pre-sales, solution architecture, and deal enablement. We bridge the gap between product capability and revenue.",
       accent: "#F47621",
       stream: "hub"
     },
     {
-      id: "coo",
-      title: "Outsourced COO",
-      desc: "Operational strategy, process design, and execution oversight. We bring structure and accountability to your operations.",
-      accent: "#59BF96",
-      stream: "product"
+      id: "process",
+      title: "Process Optimisation",
+      desc: "Operational workflow design, tooling selection, and execution frameworks that reduce friction and increase throughput.",
+      accent: "#C140FF",
+      stream: "ai"
     },
     {
-      id: "ba",
-      title: "Business Analysis",
-      desc: "Requirements gathering, stakeholder alignment, and technical specification. We translate business needs into engineering deliverables.",
+      id: "coo",
+      title: "Embedded COO",
+      desc: "Operational leadership for growing businesses — accountability structures, team coordination, and strategic execution.",
       accent: "#59BF96",
       stream: "product"
     }
