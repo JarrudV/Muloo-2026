@@ -253,8 +253,19 @@ export function ServicesAi() {
         </div>
       </Section>
 
-      {/* Engagement Model */}
+      {/* AI Should Reduce Risk */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="max-w-2xl">
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Assurance</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">AI Should Reduce Risk, Not Add It.</h2>
+          <p className="text-lg text-muted-foreground leading-[1.8]">
+            Every AI deployment we deliver is scoped, tested, and monitored before it touches production data. We don't experiment on your business. Agents are validated against real scenarios, deployed with rollback capability, and measured against defined success criteria — so leadership can approve with confidence, not anxiety.
+          </p>
+        </div>
+      </Section>
+
+      {/* Engagement Model */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Engagement</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>

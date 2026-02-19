@@ -321,8 +321,19 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* How We Engage */}
+      {/* Not Just Integration */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Philosophy</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Not Just Integration. System Design.</h2>
+          <p className="text-lg text-muted-foreground leading-[1.8]">
+            Connecting two systems is easy. Designing architecture that scales, maintains data integrity under load, and reduces technical debt with every release — that's engineering. We build middleware, APIs, and data pipelines that your team can extend without calling us back.
+          </p>
+        </div>
+      </Section>
+
+      {/* How We Engage */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Delivery</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>

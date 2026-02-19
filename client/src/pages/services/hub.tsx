@@ -292,8 +292,35 @@ export function ServicesHub() {
         </div>
       </Section>
 
-      {/* Outcomes */}
+      {/* What Clean CRM Feels Like */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">The difference</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">What Clean CRM Actually Feels Like</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Reports you trust", desc: "Leadership makes decisions from dashboards — not spreadsheets exported and manually corrected." },
+            { title: "Automations that hold", desc: "Workflows run reliably because the data model underneath them is governed and stable." },
+            { title: "Sales teams that adopt", desc: "Reps use the CRM because it helps them sell — not because they're told to." },
+            { title: "Onboarding in days", desc: "New hires understand the system quickly because properties, pipelines, and naming conventions make sense." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(244, 118, 33, 0.3)` }}
+              data-testid={`card-clean-crm-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Outcomes */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Outcomes</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">What changes after we're involved</h2>

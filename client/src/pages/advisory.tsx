@@ -49,10 +49,10 @@ export function Advisory() {
         <div className="max-w-2xl">
           <span className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-6 block">The gap</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
-            Growing businesses need senior capability before they can afford it full-time.
+            You need senior capability now — not after the next funding round.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            The gap between where you are and where you need to be requires experienced operators — people who've built, scaled, and shipped before. Not more junior hires. Not another agency. Leadership that embeds, decides, and delivers.
+            The distance between where you are and where the board expects you to be requires operators who've done it before. Not more junior hires. Not another agency. Embedded leadership that owns decisions, presents to the board, and ships alongside your team.
           </p>
         </div>
       </Section>
@@ -97,7 +97,7 @@ export function Advisory() {
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4 block">Leadership</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The people behind the advisory.</h2>
-          <p className="text-muted-foreground leading-[1.8]">Senior practitioners who embed directly into your business. Not consultants who disappear after a slide deck.</p>
+          <p className="text-muted-foreground leading-[1.8]">Operators who've led teams, reported to boards, and passed technology due diligence — not consultants who disappear after a slide deck.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl">
@@ -161,15 +161,15 @@ export function Advisory() {
           {[
             {
               title: "Fractional",
-              desc: "Ongoing part-time leadership embedded in your team — attending standups, making decisions, and driving outcomes on a retained basis.",
+              desc: "Ongoing part-time leadership embedded in your team — attending standups, presenting to the board, and driving measurable outcomes on a retained basis.",
             },
             {
               title: "Interim",
-              desc: "Full-time senior leadership for a defined period — covering a gap, managing a transition, or stabilising before a permanent hire.",
+              desc: "Full-time senior leadership for a defined period — managing a transition, preparing for due diligence, or stabilising before a permanent hire.",
             },
             {
               title: "Project-Led",
-              desc: "Scoped strategic engagements with clear deliverables — audits, roadmaps, team assessments, or transformation programmes.",
+              desc: "Scoped strategic engagements with clear deliverables — technical audits, architecture reviews, team assessments, or board-ready transformation programmes.",
             },
           ].map((model, i) => (
             <div
@@ -194,9 +194,9 @@ export function Advisory() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { title: "Strategic clarity", desc: "Clear technical direction with documented architecture decisions and prioritised roadmaps." },
-            { title: "Team acceleration", desc: "Your existing team levels up through embedded mentorship and knowledge transfer." },
-            { title: "Reduced risk", desc: "Senior oversight on critical decisions without the overhead of a full-time executive hire." },
+            { title: "Board-ready reporting", desc: "Technical progress, risk posture, and roadmap status presented in language the board understands." },
+            { title: "Team acceleration", desc: "Your existing team levels up through embedded mentorship, code review, and knowledge transfer." },
+            { title: "Due diligence readiness", desc: "Architecture documentation, security posture, and technical debt assessment prepared for investor scrutiny." },
           ].map((outcome, i) => (
             <div
               key={i}
@@ -219,10 +219,10 @@ export function Advisory() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { title: "Scaling too fast", desc: "Growth is outpacing your team's ability to maintain quality and stability." },
-            { title: "Preparing for investment", desc: "You need technical due diligence readiness and a credible architecture story." },
-            { title: "CRM rebuild required", desc: "Your systems have drifted too far from the original design to patch incrementally." },
-            { title: "Technology debt accumulating", desc: "Shortcuts are compounding and slowing delivery across every sprint." },
+            { title: "Scaling too fast", desc: "Growth is outpacing your team's ability to maintain quality, stability, and board-level reporting." },
+            { title: "Preparing for investment", desc: "You need technical due diligence readiness — architecture documentation, security posture, and a credible roadmap." },
+            { title: "CRM rebuild required", desc: "Systems have drifted beyond incremental fixes. You need someone who's restructured portals before." },
+            { title: "Technology debt accumulating", desc: "Shortcuts are compounding across every sprint and the team can't course-correct alone." },
           ].map((item, i) => (
             <div
               key={i}

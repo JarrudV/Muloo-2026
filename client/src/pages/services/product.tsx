@@ -275,8 +275,35 @@ export function ServicesProduct() {
         </div>
       </Section>
 
-      {/* Case Study */}
+      {/* Built for Commercial Reality */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">Commercial</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Built for Commercial Reality</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Production hosting", desc: "Cloud infrastructure sized for real workloads — not demo environments that collapse under traffic." },
+            { title: "Subscription lifecycle", desc: "Trial, upgrade, downgrade, cancellation, and renewal flows engineered into the product from launch." },
+            { title: "Product analytics", desc: "Usage tracking, cohort analysis, and churn indicators built in — not bolted on after the fact." },
+            { title: "Customer support", desc: "Ticketing, knowledge bases, and escalation workflows integrated so support scales with the product." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(89, 191, 150, 0.3)` }}
+              data-testid={`card-commercial-reality-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Case Study */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div
           className="glass-card rounded-2xl p-10 md:p-14 max-w-3xl"
           style={{ borderLeft: `4px solid ${streamGreen}` }}

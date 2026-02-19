@@ -24,10 +24,10 @@ const streamColors: Record<string, { accent: string; border: string; bg: string;
 };
 
 const painPoints = [
-  "Systems feel heavy.",
-  "Data feels unreliable.",
-  "Automation feels fragile.",
-  "AI feels unclear.",
+  "Systems slow teams down instead of accelerating them.",
+  "Data exists but nobody trusts the reports it produces.",
+  "Automations break silently and nobody notices until revenue is affected.",
+  "AI investment grows but measurable outcomes don't follow.",
 ];
 
 const pillarIcons: Record<string, React.ReactNode> = {
@@ -44,10 +44,10 @@ const ecosystemLogos = {
 };
 
 const processSteps = [
-  { step: "01", title: "Discover", desc: "We map your existing systems, data flows, and pain points." },
-  { step: "02", title: "Architect", desc: "We design the technical blueprint with clear deliverables." },
-  { step: "03", title: "Ship", desc: "We build iteratively with weekly demos and sprint reviews." },
-  { step: "04", title: "Support", desc: "We maintain, monitor, and evolve your systems over time." },
+  { step: "01", title: "Discover", desc: "Full audit of systems, data flows, and bottlenecks — delivered as a documented findings report." },
+  { step: "02", title: "Architect", desc: "Technical blueprint with measurable success criteria and defined timelines." },
+  { step: "03", title: "Ship", desc: "Iterative delivery with weekly demos — working software, not slide decks." },
+  { step: "04", title: "Support", desc: "Ongoing monitoring, SLA-backed maintenance, and continuous improvement." },
 ];
 
 function RotatingBadge() {
@@ -332,7 +332,7 @@ export function Home() {
         <div className="relative z-10">
           <div className="mb-16">
             <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights from the field</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">How modern revenue systems are built.</h3>
             <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
           </div>
 
@@ -369,7 +369,8 @@ export function Home() {
       <Section className="py-16 md:py-24 border-t border-white/5">
         <div className="mb-10">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Built on platforms that power global businesses.</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Built on platforms that power global businesses.</h3>
+          <p className="text-sm text-muted-foreground leading-[1.8] max-w-xl">We architect on proven infrastructure — not trends.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-4xl">
