@@ -47,7 +47,7 @@ export const homeContent = {
       id: "build",
       title: "Muloo Build",
       subtitle: "Full Stack Engineering",
-      desc: "Where HubSpot stops, we begin. Custom middleware, client portals, authenticated experiences, and API-centric development.",
+      desc: "Where platforms disconnect, we connect them. Custom middleware, client portals, authenticated experiences, and API-centric development.",
       features: ["Custom Middleware", "Client Portals", "External Integrations", "Secure Auth Systems"],
       href: "/services/build"
     },
@@ -101,12 +101,12 @@ export const serviceHubContent = {
 
 export const serviceBuildContent = {
   h1: "Muloo Build",
-  intro: "We bridge the gap between SaaS platforms. Custom middleware, secure integrations, and purpose-built applications that orchestrate your business logic.",
+  intro: "Where platforms disconnect, we connect them. Custom middleware, secure integrations, and purpose-built applications that orchestrate your business logic across any stack.",
   approach: [
-    { step: "01", title: "Spec", desc: "Technical requirements gathering and API schema definition." },
-    { step: "02", title: "Build", desc: "Iterative development with strict type safety and testing." },
-    { step: "03", title: "Deploy", desc: "CI/CD pipelines, monitoring, and error tracking." },
-    { step: "04", title: "Scale", desc: "Performance optimization and infrastructure management." }
+    { step: "01", title: "Discover", desc: "Technical requirements gathering, API schema definition, and stakeholder alignment." },
+    { step: "02", title: "Architect", desc: "System design with typed contracts, data flow diagrams, and infrastructure planning." },
+    { step: "03", title: "Ship", desc: "Iterative development with CI/CD, testing, and staging environment validation." },
+    { step: "04", title: "Support", desc: "Production monitoring, error tracking, performance optimisation, and knowledge transfer." }
   ]
 };
 
