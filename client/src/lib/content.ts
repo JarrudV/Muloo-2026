@@ -81,8 +81,8 @@ export const homeContent = {
 };
 
 export const serviceHubContent = {
-  h1: "Muloo Hub",
-  intro: "Enterprise-grade HubSpot architecture. We move beyond basic setup to complex data modeling, programmable automation, and UI enhancements that drive user adoption.",
+  h1: "HubSpot. Built properly.",
+  intro: "Most portals are configured quickly and grow messy over time. We design CRM architecture with structure, governance, reporting clarity, and long-term scalability.",
   features: [
     "HubSpot Enterprise Implementation",
     "Complex Data Modeling & Custom Objects",
@@ -94,8 +94,8 @@ export const serviceHubContent = {
     "Portal Audits & Refactoring"
   ],
   cta: {
-    headline: "Is your CRM technically sound?",
-    body: "Let's review your architecture and identify optimization opportunities."
+    headline: "Ready for a structured HubSpot?",
+    body: "Let's review your portal architecture and build a roadmap."
   }
 };
 
