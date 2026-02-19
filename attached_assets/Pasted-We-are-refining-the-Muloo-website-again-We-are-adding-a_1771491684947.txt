@@ -1,0 +1,103 @@
+We are refining the Muloo website again.
+
+We are adding a new top-level navigation item: Advisory.
+
+Muloo is evolving into:
+Technical Systems + AI Acceleration + Embedded Leadership Partner.
+
+----------------------------------------------------
+NEW NAV STRUCTURE
+----------------------------------------------------
+
+Home
+Services
+Advisory
+Resources
+About
+Contact
+
+----------------------------------------------------
+ADVISORY PAGE
+----------------------------------------------------
+
+Create a new page:
+
+Hero:
+“Embedded Leadership Without Full-Time Overhead.”
+Subtext:
+“We provide senior technical and operational capability inside growing businesses.”
+
+Sections:
+
+1) Advisory Services Grid:
+- Outsourced CTO
+- Outsourced Sales Engineering
+- Outsourced COO
+- Business Analysis
+
+Each card:
+- Short description
+- Accent colour system matching stream where relevant
+   CTO → Blue (#155DFC)
+   Sales Engineering → Orange (#F47621)
+   COO → Green (#59BF96)
+   AI Advisory → Purple (#C140FF) if needed
+
+2) Leadership Section:
+
+Add profile cards for:
+
+Morne Visagie
+Partner
+Leads Muloo Build
+Outsourced CTO
+LinkedIn link placeholder
+
+Jarrud van der Merwe
+Partner
+Lead HubSpot Architect
+Sales Engineering Lead
+Leads Muloo Hub
+LinkedIn link placeholder
+
+Paul Manson
+Strategic Partner
+Business Analysis
+Outsourced COO Services
+LinkedIn link placeholder
+
+Design Requirements:
+- Circular portrait placeholder
+- Accent glow ring per leader
+- Clean, premium layout
+- Short, strong bio paragraph (not long CV style)
+
+----------------------------------------------------
+DESIGN RULES
+----------------------------------------------------
+
+- Maintain structured stream colour system:
+   Hub → Orange
+   Build → Blue
+   AI → Purple
+   Product → Green
+
+- Use subtle glow effects.
+- Do not oversaturate pages with accent colours.
+- Maintain navy + teal foundation.
+
+----------------------------------------------------
+VISUAL STRUCTURE
+----------------------------------------------------
+
+- Add subtle background grid to Advisory hero.
+- Increase whitespace.
+- Use strong left alignment.
+- Add subtle divider lines between sections.
+
+----------------------------------------------------
+DELIVERABLE
+----------------------------------------------------
+
+Refactor the site to integrate Advisory cleanly.
+Maintain modular section structure for HubSpot conversion later.

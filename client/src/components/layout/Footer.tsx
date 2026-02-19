@@ -29,6 +29,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-white text-sm">Company</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
+              <li><Link href="/advisory" className="hover:text-brand-teal transition-colors">Advisory</Link></li>
               <li><Link href="/about" className="hover:text-brand-teal transition-colors">About</Link></li>
               <li><Link href="/contact" className="hover:text-brand-teal transition-colors">Contact</Link></li>
               <li><Link href="/case-studies" className="hover:text-brand-teal transition-colors">Case Studies</Link></li>

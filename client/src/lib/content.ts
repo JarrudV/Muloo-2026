@@ -1,14 +1,15 @@
 // Content Structure for Muloo Website
 
 export const navLinks = [
-  { name: "Expertise", href: "/services", 
+  { name: "Services", href: "/services", 
     subItems: [
       { name: "Muloo Hub", href: "/services/hub", desc: "Enterprise HubSpot Architecture" },
       { name: "Muloo Build", href: "/services/build", desc: "API-Centric Engineering" },
-      { name: "Muloo Product", href: "/services/product", desc: "SaaS & Internal Tools" },
-      { name: "Muloo AI", href: "/services/ai", desc: "AI Agents & Vibe Coding" }
+      { name: "Muloo AI", href: "/services/ai", desc: "AI Agents & Vibe Coding" },
+      { name: "Muloo Product", href: "/services/product", desc: "SaaS & Internal Tools" }
     ]
   },
+  { name: "Advisory", href: "/advisory" },
   { name: "Resources", href: "/resources", 
     subItems: [
       { name: "Case Studies", href: "/case-studies", desc: "Technical outcomes" },
@@ -16,6 +17,7 @@ export const navLinks = [
     ]
   },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const homeContent = {
@@ -170,6 +172,72 @@ export const serviceConsultingContent = {
       title: "Sales Engineering",
       desc: "Bridge the gap between sales and product. Technical demos, solution architecture, and deal support for complex sales cycles.",
       lead: "Jarrud van der Merwe"
+    }
+  ]
+};
+
+export const advisoryContent = {
+  hero: {
+    headline: "Embedded Leadership Without Full-Time Overhead.",
+    subtext: "We provide senior technical and operational capability inside growing businesses."
+  },
+  services: [
+    {
+      id: "cto",
+      title: "Outsourced CTO",
+      desc: "Strategic technical leadership for product roadmap, architecture decisions, and engineering team culture. We embed into your business as a fractional CTO.",
+      accent: "#155DFC",
+      stream: "build"
+    },
+    {
+      id: "sales-eng",
+      title: "Outsourced Sales Engineering",
+      desc: "Technical pre-sales support, solution architecture, and deal enablement. We bridge the gap between your product and your pipeline.",
+      accent: "#F47621",
+      stream: "hub"
+    },
+    {
+      id: "coo",
+      title: "Outsourced COO",
+      desc: "Operational strategy, process design, and execution oversight. We bring structure and accountability to your operations.",
+      accent: "#59BF96",
+      stream: "product"
+    },
+    {
+      id: "ba",
+      title: "Business Analysis",
+      desc: "Requirements gathering, stakeholder alignment, and technical specification. We translate business needs into engineering deliverables.",
+      accent: "#59BF96",
+      stream: "product"
+    }
+  ],
+  leaders: [
+    {
+      name: "Morne Visagie",
+      title: "Partner",
+      roles: ["Leads Muloo Build", "Outsourced CTO"],
+      bio: "Full-stack engineer and technical strategist. Morne leads architecture decisions across client engagements and provides fractional CTO services to scaling teams.",
+      accent: "#155DFC",
+      linkedin: "https://www.linkedin.com/in/mornevisagie/",
+      image: "Component_25_–_1_1771486552111.png"
+    },
+    {
+      name: "Jarrud van der Merwe",
+      title: "Partner",
+      roles: ["Lead HubSpot Architect", "Sales Engineering Lead", "Leads Muloo Hub"],
+      bio: "CRM architect and sales engineer. Jarrud designs enterprise HubSpot implementations and provides technical pre-sales support for complex deal cycles.",
+      accent: "#F47621",
+      linkedin: "https://www.linkedin.com/in/jarrud/",
+      image: "jarrud_profile_picture_1771486552112.png"
+    },
+    {
+      name: "Paul Manson",
+      title: "Strategic Partner",
+      roles: ["Business Analysis", "Outsourced COO Services"],
+      bio: "Operations specialist and business analyst. Paul brings structure to growing businesses through process design, requirement mapping, and operational oversight.",
+      accent: "#59BF96",
+      linkedin: "https://www.linkedin.com/in/paulmanson/",
+      image: "Component_77_–_1_1771486552111.png"
     }
   ]
 };
