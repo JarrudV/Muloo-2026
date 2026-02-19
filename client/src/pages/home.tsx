@@ -314,24 +314,7 @@ export function Home() {
           <p className="text-muted-foreground max-w-xl mx-auto">We work with the platforms your business already depends on.</p>
         </div>
 
-        <div className="mb-4" />
-
-        {/* ── Certifications ── */}
-        <div className="mb-16">
-          <h4 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-8 text-center">Certified & Accredited</h4>
-          <div className="flex justify-center gap-16 md:gap-24 items-center flex-wrap">
-            <div className="group relative">
-              <div className="absolute inset-0 bg-stream-hub/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img src={hubspotBadge} alt="HubSpot Gold Partner" className="h-28 md:h-32 w-auto relative z-10" data-testid="img-hubspot-badge" />
-            </div>
-            <div className="group relative">
-              <div className="absolute inset-0 bg-brand-teal/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img src={googleBadge} alt="Google Partner" className="h-11 md:h-14 w-auto opacity-50 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0 relative z-10" data-testid="img-google-badge" />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-px bg-white/5 mb-14" />
+        <div className="mb-6" />
 
         <div className="grid md:grid-cols-3 gap-14 max-w-4xl mx-auto">
           {Object.entries(ecosystemLogos).map(([category, logos]) => (
@@ -351,6 +334,49 @@ export function Home() {
                   </a>
                 ))}
               </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── CERTIFICATIONS ── */}
+      <Section className="py-28 bg-[#080D2A] border-t border-white/5">
+        <div className="text-center mb-14">
+          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Credentials</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Certified & Accredited</h3>
+          <p className="text-muted-foreground max-w-lg mx-auto">Recognised expertise across platforms and architecture.</p>
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+          {[
+            { img: hubspotBadge, alt: "HubSpot Gold Partner", isImage: true },
+            { label: "HubSpot CRM Implementation Accreditation", icon: "HS" },
+            { label: "HubSpot Platform Enablement", icon: "HS" },
+            { img: googleBadge, alt: "Google Partner", isImage: true, small: true },
+            { label: "Microsoft Azure Expertise", icon: "AZ" },
+          ].map((badge, i) => (
+            <div
+              key={i}
+              className="group glass-card rounded-xl border-white/[0.06] hover:-translate-y-1 hover:border-white/10 transition-all duration-300 flex items-center justify-center"
+              style={{ width: badge.isImage ? "auto" : undefined }}
+              data-testid={`badge-cert-${i}`}
+            >
+              {badge.isImage ? (
+                <div className="p-5">
+                  <img
+                    src={badge.img}
+                    alt={badge.alt}
+                    className={`${badge.small ? "h-8 md:h-9 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0" : "h-20 md:h-22"} w-auto transition-all duration-300`}
+                  />
+                </div>
+              ) : (
+                <div className="px-6 py-5 flex items-center gap-3 min-w-[200px]">
+                  <span className="shrink-0 h-9 w-9 rounded-lg bg-brand-teal/5 border border-brand-teal/10 flex items-center justify-center text-[11px] font-mono font-bold text-brand-teal/60">
+                    {badge.icon}
+                  </span>
+                  <span className="text-xs font-medium text-white/60 leading-tight group-hover:text-white/80 transition-colors">{badge.label}</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
