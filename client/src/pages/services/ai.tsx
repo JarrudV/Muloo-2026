@@ -4,13 +4,12 @@ import {
   ArrowRight,
   Bot,
   Code2,
-  Sparkles,
   ShieldCheck,
   Zap,
-  MessageSquare,
-  RotateCcw,
   Brain,
   Workflow,
+  BarChart3,
+  Activity,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
@@ -18,27 +17,7 @@ import { serviceAiContent } from "@/lib/content";
 
 const streamPurple = "#C140FF";
 
-const whatWeDoItems = [
-  { icon: Code2, title: "Codex Dev Agents", desc: "AI coding assistants that accelerate internal development velocity and reduce time to ship." },
-  { icon: Sparkles, title: "Rapid Prototyping", desc: "Vibe coding sessions to go from idea to functional prototype in days, not weeks." },
-  { icon: Bot, title: "AI Service Agents", desc: "Autonomous agents that triage support tickets and handle routine customer inquiries." },
-  { icon: ShieldCheck, title: "AI Security Audits", desc: "Auditing LLM prompts and data pipelines for vulnerabilities and data leakage." },
-  { icon: Workflow, title: "Workflow Automation", desc: "Intelligent automation that connects AI reasoning to your existing business processes." },
-  { icon: Brain, title: "Model Selection", desc: "Choosing the right model for the job — balancing cost, latency, and accuracy." },
-];
-
-const howWeWorkSteps = [
-  { num: "01", title: "Discover", desc: "Identify high-impact use cases and audit existing data pipelines for AI readiness." },
-  { num: "02", title: "Architect", desc: "Design agent architecture, define guardrails, and select models for each use case." },
-  { num: "03", title: "Ship", desc: "Build, test, and deploy agents with monitoring, feedback loops, and safety nets." },
-  { num: "04", title: "Support", desc: "Continuous improvement through usage analytics, prompt refinement, and model updates." },
-];
-
-const outcomes = [
-  { title: "Faster development", desc: "AI-assisted coding reduces development cycles by 40-60% on routine engineering tasks." },
-  { title: "Autonomous operations", desc: "Support agents handle tier-1 queries without human intervention, 24/7." },
-  { title: "Production confidence", desc: "Every agent ships with monitoring, guardrails, and human escalation paths." },
-];
+const serviceIcons = [Bot, Code2, Workflow, ShieldCheck];
 
 export function ServicesAi() {
   return (
@@ -56,7 +35,7 @@ export function ServicesAi() {
           <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
             {serviceAiContent.h1}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#C140FF] pl-6">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#C140FF] pl-6 max-w-2xl">
             {serviceAiContent.intro}
           </p>
         </div>
@@ -64,42 +43,41 @@ export function ServicesAi() {
 
       {/* Problem Framing */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="max-w-3xl">
-          <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4">
-            The challenge
-          </p>
+        <div className="max-w-2xl">
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-6 block">The problem</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
+            Most AI projects never leave the demo.
+          </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Everyone's talking about AI, but most implementations are demos, not systems. Chatbots that hallucinate. Agents with no guardrails. Prototypes that never ship. You need practical AI that actually runs in production.
+            Chatbots that hallucinate. Agents with no guardrails. Prototypes that impressed in a meeting but never shipped. AI only creates value when it's deployed into real workflows with monitoring, safety nets, and measurable outcomes.
           </p>
         </div>
       </Section>
 
-      {/* What We Do */}
+      {/* What We Deploy */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4">
-            What we do
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
-            Practical AI, Production-Ready
-          </h2>
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">What we deploy</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Four Applied AI Systems</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {whatWeDoItems.map((item, i) => {
-            const IconComponent = item.icon;
+        <div className="grid md:grid-cols-2 gap-6">
+          {serviceAiContent.services.map((service, i) => {
+            const IconComponent = serviceIcons[i];
             return (
               <div
                 key={i}
-                className="glass-card p-8 rounded-2xl flex items-start gap-6"
+                className="glass-card p-8 rounded-2xl group hover:border-[#C140FF]/20 transition-all duration-300"
                 data-testid={`card-service-${i}`}
               >
-                <div className="h-12 w-12 rounded-lg flex items-center justify-center shrink-0 bg-[#C140FF]/10">
-                  <IconComponent className="h-6 w-6 text-[#C140FF]" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
-                  <p className="text-muted-foreground leading-[1.8]">{item.desc}</p>
+                <div className="flex items-start gap-5">
+                  <div className="h-12 w-12 rounded-lg flex items-center justify-center shrink-0 bg-[#C140FF]/10">
+                    <IconComponent className="h-6 w-6 text-[#C140FF]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-[1.8]">{service.desc}</p>
+                  </div>
                 </div>
               </div>
             );
@@ -107,173 +85,214 @@ export function ServicesAi() {
         </div>
       </Section>
 
-      {/* How We Work */}
+      {/* Workflow Visual */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4">
-            How we work
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
-            Structured. Iterative. Transparent.
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {howWeWorkSteps.map((step, i) => (
-            <div key={i} className="group relative" data-testid={`step-${i}`}>
-              <span className="text-6xl font-black text-white/[0.04] block mb-4">
-                {step.num}
-              </span>
-              <div
-                className="w-12 h-1 mb-6 opacity-50 group-hover:opacity-100 group-hover:w-full transition-all duration-500"
-                style={{ backgroundColor: streamPurple }}
-              />
-              <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
-              <p className="text-muted-foreground leading-[1.8]">{step.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Visual Mock — Continuous Intelligence Loop */}
-      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4">
-              Intelligence loop
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-xl">
+            <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">How it works</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Agent Workflow Loop</h2>
+            <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
+              Every agent follows the same disciplined loop: a trigger fires, the agent reasons and acts, results are logged, and the system learns. No black boxes.
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Continuous Intelligence Loop
-            </h2>
-            <p className="text-muted-foreground leading-[1.8]">
-              Every agent is designed to observe, decide, act, and improve — turning raw signals into reliable outcomes.
-            </p>
+            <ul className="space-y-4">
+              {[
+                "Deterministic triggers — no ambiguous activation",
+                "Structured reasoning with guardrails",
+                "Actions logged and auditable",
+                "Continuous feedback improves accuracy over time",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm text-white/70">
+                  <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: streamPurple }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div
-            className="bg-[#0f1115] border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
-            data-testid="diagram-ai-workflow"
-          >
+          <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="diagram-ai-workflow">
             <div
               className="absolute top-0 right-0 w-full h-full pointer-events-none"
-              style={{
-                background: `radial-gradient(circle at top right, rgba(193, 64, 255, 0.08), transparent)`,
-              }}
+              style={{ background: `radial-gradient(circle at top right, rgba(193, 64, 255, 0.04), transparent)` }}
             />
 
-            <div className="relative z-10 flex flex-col items-center gap-6">
-              {/* Input Signal */}
-              <div className="flex items-center gap-4 w-full">
-                <div className="h-16 w-16 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
-                  <MessageSquare className="h-8 w-8 text-muted-foreground" />
-                </div>
-                <span className="font-mono text-sm text-muted-foreground">Input Signal</span>
-                <div className="flex-1" />
-                <ArrowRight className="h-4 w-4 text-[#C140FF] rotate-90 md:rotate-0" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-6 pb-3 border-b border-white/5">
+                <div className="h-2 w-2 rounded-full bg-red-500/40" />
+                <div className="h-2 w-2 rounded-full bg-yellow-500/40" />
+                <div className="h-2 w-2 rounded-full bg-green-500/40" />
+                <span className="ml-3 text-[10px] font-mono text-white/20">agent-workflow.loop</span>
               </div>
 
-              {/* AI Agent */}
-              <div className="flex items-center gap-4 w-full">
+              <div className="flex flex-col gap-3">
+                {/* Trigger */}
                 <div
-                  className="h-16 w-16 rounded-xl flex items-center justify-center shrink-0 glow-purple-sm"
+                  className="p-4 rounded-xl flex items-center gap-4"
                   style={{
-                    backgroundColor: `rgba(193, 64, 255, 0.1)`,
-                    border: `1px solid rgba(193, 64, 255, 0.3)`,
+                    backgroundColor: `rgba(193, 64, 255, 0.03)`,
+                    border: `1px solid rgba(193, 64, 255, 0.1)`,
                   }}
                 >
-                  <Brain className="h-8 w-8" style={{ color: streamPurple }} />
+                  <Zap className="h-5 w-5 shrink-0" style={{ color: `rgba(193, 64, 255, 0.5)` }} />
+                  <div>
+                    <span className="font-mono text-xs font-medium" style={{ color: `rgba(193, 64, 255, 0.7)` }}>Trigger</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Webhook · Schedule · Event</span>
+                  </div>
                 </div>
-                <span className="font-mono text-sm" style={{ color: streamPurple }}>AI Agent</span>
-                <div className="flex-1" />
-                <ArrowRight className="h-4 w-4 text-[#C140FF] rotate-90 md:rotate-0" />
-              </div>
 
-              {/* Action */}
-              <div className="flex items-center gap-4 w-full">
-                <div className="h-16 w-16 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
-                  <Zap className="h-8 w-8 text-muted-foreground" />
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(193, 64, 255, 0.4)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                  </div>
                 </div>
-                <span className="font-mono text-sm text-muted-foreground">Action</span>
-                <div className="flex-1" />
-                <ArrowRight className="h-4 w-4 text-[#C140FF] rotate-90 md:rotate-0" />
-              </div>
 
-              {/* Feedback */}
-              <div className="flex items-center gap-4 w-full">
+                {/* Agent */}
                 <div
-                  className="h-16 w-16 rounded-xl flex items-center justify-center shrink-0"
+                  className="p-4 rounded-xl flex items-center gap-4"
                   style={{
-                    backgroundColor: `rgba(193, 64, 255, 0.05)`,
-                    border: `1px solid rgba(193, 64, 255, 0.2)`,
+                    backgroundColor: `rgba(193, 64, 255, 0.06)`,
+                    border: `1px solid rgba(193, 64, 255, 0.25)`,
+                    boxShadow: `0 0 20px -8px rgba(193, 64, 255, 0.15)`,
                   }}
                 >
-                  <RotateCcw className="h-8 w-8" style={{ color: streamPurple }} />
+                  <Brain className="h-5 w-5 shrink-0" style={{ color: streamPurple }} />
+                  <div>
+                    <span className="font-mono text-xs font-medium" style={{ color: streamPurple }}>Agent</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Reason · Decide · Guardrails</span>
+                  </div>
                 </div>
-                <span className="font-mono text-sm" style={{ color: streamPurple }}>Feedback</span>
+
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(193, 64, 255, 0.4)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                  </div>
+                </div>
+
+                {/* Action */}
+                <div
+                  className="p-4 rounded-xl flex items-center gap-4"
+                  style={{
+                    backgroundColor: `rgba(193, 64, 255, 0.03)`,
+                    border: `1px solid rgba(193, 64, 255, 0.1)`,
+                  }}
+                >
+                  <Activity className="h-5 w-5 shrink-0" style={{ color: `rgba(193, 64, 255, 0.5)` }} />
+                  <div>
+                    <span className="font-mono text-xs font-medium" style={{ color: `rgba(193, 64, 255, 0.7)` }}>Action</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Execute · Log · Notify</span>
+                  </div>
+                </div>
+
+                {/* Flow indicator */}
+                <div className="flex justify-center py-0.5">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                    <div className="h-1 w-1 rounded-full" style={{ backgroundColor: `rgba(193, 64, 255, 0.4)` }} />
+                    <div className="w-px h-3" style={{ backgroundColor: `rgba(193, 64, 255, 0.15)` }} />
+                  </div>
+                </div>
+
+                {/* Reporting Loop */}
+                <div
+                  className="p-4 rounded-xl flex items-center gap-4"
+                  style={{
+                    backgroundColor: `rgba(193, 64, 255, 0.04)`,
+                    border: `1px solid rgba(193, 64, 255, 0.15)`,
+                  }}
+                >
+                  <BarChart3 className="h-5 w-5 shrink-0" style={{ color: `rgba(193, 64, 255, 0.6)` }} />
+                  <div>
+                    <span className="font-mono text-xs font-medium" style={{ color: `rgba(193, 64, 255, 0.8)` }}>Reporting Loop</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Measure · Learn · Improve</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Status bar */}
+              <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-500/60" />
+                  <span className="text-[10px] font-mono text-white/25">Agent active</span>
+                </div>
+                <span className="text-[10px] font-mono text-white/20">Loop: continuous</span>
               </div>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Outcomes */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5">
+      {/* Engagement Model */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4">
-            Outcomes
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
-            What changes after we're involved
-          </h2>
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Engagement</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {outcomes.map((outcome, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { num: "01", title: "Pilot", desc: "Identify the highest-value use case, build a scoped proof of concept, and measure impact." },
+            { num: "02", title: "Deploy", desc: "Production deployment with monitoring, guardrails, and human escalation paths." },
+            { num: "03", title: "Monitor", desc: "Track accuracy, latency, cost, and user satisfaction across every agent interaction." },
+            { num: "04", title: "Optimise", desc: "Prompt refinement, model updates, and workflow adjustments based on real usage data." },
+          ].map((step, i) => (
             <div
               key={i}
-              className="glass-card p-8 rounded-2xl border-t-2 border-[#C140FF]"
-              data-testid={`card-outcome-${i}`}
+              data-testid={`card-engagement-${i}`}
+              className="relative glass-card rounded-xl p-6 group hover:border-[#C140FF]/20 transition-all duration-300 overflow-hidden"
             >
-              <h3 className="text-xl font-bold mb-3 text-white">{outcome.title}</h3>
-              <p className="text-muted-foreground leading-[1.8]">{outcome.desc}</p>
+              <span className="absolute top-3 right-3 text-4xl font-extrabold text-white/[0.03] select-none">{step.num}</span>
+              <div
+                className="w-full h-0.5 mb-5 origin-left transition-all duration-500 group-hover:scale-x-100 scale-x-[0.3]"
+                style={{ backgroundColor: `rgba(193, 64, 255, 0.3)` }}
+              />
+              <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-muted-foreground text-sm leading-[1.8]">{step.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Mini Case Study */}
-      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="glass-card p-10 md:p-14 rounded-2xl border-l-4 border-[#C140FF] max-w-4xl">
-          <p className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-6">
-            Case study
-          </p>
-          <blockquote className="text-xl md:text-2xl text-white leading-[1.8] mb-6">
+      {/* Case Study */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div
+          className="glass-card rounded-2xl p-10 md:p-14 max-w-3xl"
+          style={{ borderLeft: `4px solid ${streamPurple}` }}
+          data-testid="card-case-study"
+        >
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-6 block">Case study</span>
+          <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
             "Muloo deployed a triage agent that handles 60% of our inbound support tickets automatically. Response times dropped from hours to seconds."
           </blockquote>
-          <p className="text-muted-foreground">
-            <span className="text-white font-semibold">David Chen</span>, Head of Support — Nexus Systems
-          </p>
+          <div>
+            <p className="text-white font-bold">David Chen</p>
+            <p className="text-muted-foreground text-sm">Head of Support — Nexus Systems</p>
+          </div>
         </div>
       </Section>
 
       {/* CTA */}
       <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
-        <div className="relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            Ready to deploy intelligence?
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Ready to deploy applied AI?
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Move from AI hype to practical engineering.
+          <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
+            Let's identify where AI creates real operational lift for your business.
           </p>
           <Link href="/contact">
             <Button
               size="lg"
               className="font-bold px-10 h-14 text-white"
-              style={{ backgroundColor: "#C140FF" }}
-              data-testid="button-book-ai-audit"
+              style={{ backgroundColor: streamPurple }}
+              data-testid="button-explore-ai"
             >
-              Book an AI Audit <ArrowRight className="ml-2" />
+              Explore AI opportunities <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

@@ -133,28 +133,28 @@ export const serviceProductContent = {
 };
 
 export const serviceAiContent = {
-  h1: "Muloo AI",
-  intro: "The workbench for the AI age. We help companies deploy practical AI agents, use 'vibe coding' for rapid prototyping, and secure their AI infrastructure.",
+  h1: "Applied AI. Not experimentation.",
+  intro: "We deploy AI agents and workflow automation where it creates measurable operational lift — not novelty.",
   services: [
     {
-      title: "Codex Dev Agents",
-      desc: "Implementation of AI coding assistants to accelerate your internal development velocity.",
-      lead: "Engineering Team"
+      title: "Service Agents",
+      desc: "Autonomous agents that handle customer inquiries, triage tickets, and resolve routine requests without human intervention.",
+      lead: "Operations"
     },
     {
-      title: "Rapid Prototyping",
-      desc: "'Vibe coding' sessions to go from idea to functional prototype in days, not weeks.",
-      lead: "Product Team"
+      title: "Dev Acceleration Agents",
+      desc: "AI-powered engineering support — code generation, review automation, and testing acceleration embedded in your dev workflow.",
+      lead: "Engineering"
     },
     {
-      title: "AI Service Agents",
-      desc: "Autonomous agents that triage support tickets and handle routine customer inquiries.",
-      lead: "Automation Team"
+      title: "Workflow AI Automation",
+      desc: "Intelligent automation that connects AI reasoning to your existing business processes, replacing manual steps with agent-driven logic.",
+      lead: "Process"
     },
     {
-      title: "AI Security",
-      desc: "Auditing LLM prompts and data pipelines for security vulnerabilities and data leakage.",
-      lead: "Security Team"
+      title: "AI QA & Security Review",
+      desc: "Auditing LLM prompts, data pipelines, and agent behaviour for vulnerabilities, hallucination risk, and data leakage.",
+      lead: "Security"
     }
   ]
 };
