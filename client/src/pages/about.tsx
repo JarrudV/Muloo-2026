@@ -20,9 +20,12 @@ const getImage = (imageName: string) => {
 export function About() {
   return (
     <div className="flex flex-col">
-      <Section className="pt-32 pb-20 bg-hero-gradient">
+      <Section className="pt-32 pb-20 bg-hero-cosmic">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8">{aboutContent.h1}</h1>
+           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-brand-orange mb-8 backdrop-blur-md">
+            Who we are
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">{aboutContent.h1}</h1>
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
             {aboutContent.intro}
           </p>
@@ -32,11 +35,10 @@ export function About() {
       {/* Culture Image Section */}
       <div className="w-full h-96 relative overflow-hidden">
          <img src={cultureImg} alt="Muloo team culture" className="w-full h-full object-cover opacity-60" />
-         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent" />
+         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
          <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
             <div className="container mx-auto">
-               <div className="inline-block bg-brand-orange text-white px-4 py-2 font-bold rounded-lg mb-4 shadow-lg">Our Culture</div>
-               <h2 className="text-3xl md:text-4xl font-bold text-white max-w-2xl">
+               <h2 className="text-3xl md:text-4xl font-bold text-white max-w-2xl drop-shadow-lg">
                   Remote-first, but connected by a shared obsession with quality.
                </h2>
             </div>
@@ -46,21 +48,21 @@ export function About() {
       <Section className="py-24 bg-section-soft">
          <div className="grid md:grid-cols-2 gap-16">
             <div>
-               <h2 className="text-3xl font-bold mb-6">Our Philosophy</h2>
+               <h2 className="text-3xl font-bold mb-8 text-white">Our Philosophy</h2>
                <div className="space-y-8">
                   {aboutContent.philosophy.map((item, i) => (
                      <div key={i} className="pl-6 border-l-2 border-white/10 hover:border-brand-orange transition-colors group">
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-white group-hover:text-brand-orange transition-colors">{item.title}</h3>
                         <p className="text-muted-foreground">{item.desc}</p>
                      </div>
                   ))}
                </div>
             </div>
-            <div className="bg-card border border-white/10 rounded-2xl p-8 relative overflow-hidden orange-glow">
+            <div className="glass-card rounded-2xl p-8 relative overflow-hidden">
                <div className="absolute top-0 right-0 p-4 opacity-20">
                   <Terminal className="w-24 h-24 text-brand-orange" />
                </div>
-               <h3 className="text-2xl font-bold mb-4">Technical & Human</h3>
+               <h3 className="text-2xl font-bold mb-4 text-white">Technical & Human</h3>
                <p className="text-muted-foreground leading-relaxed mb-6">
                   We built Muloo because we saw a gap. Agencies were great at creative, but bad at systems. Developers were great at code, but bad at strategy.
                </p>
@@ -73,22 +75,22 @@ export function About() {
 
       <Section className="py-24">
          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Leadership</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">Leadership</h2>
             <p className="text-muted-foreground">The people setting the technical standard.</p>
          </div>
          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {aboutContent.team && aboutContent.team.map((member, i) => (
-                <div key={i} className="bg-card p-8 rounded-xl border border-white/10 flex flex-col items-center text-center gap-6 hover:border-brand-orange/50 transition-colors group">
+                <div key={i} className="glass-card p-8 rounded-xl flex flex-col items-center text-center gap-6 group">
                    <div className="h-32 w-32 rounded-full border-2 border-brand-teal/20 p-1 group-hover:border-brand-orange/50 transition-colors relative">
                        <Avatar className="h-full w-full">
                            <AvatarImage src={getImage(member.image)} alt={member.name} className="object-cover" />
                            <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
                        </Avatar>
                        {/* Role Indicator Dot */}
-                       <div className="absolute bottom-2 right-2 w-4 h-4 bg-brand-orange rounded-full border-2 border-card" />
+                       <div className="absolute bottom-2 right-2 w-4 h-4 bg-brand-orange rounded-full border-2 border-card shadow-md" />
                    </div>
                    <div>
-                      <h3 className="text-xl font-bold group-hover:text-brand-orange transition-colors">{member.name}</h3>
+                      <h3 className="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">{member.name}</h3>
                       <div className="text-brand-teal font-mono text-sm mb-3 mt-1 h-10 flex items-center justify-center">{member.role}</div>
                       <p className="text-sm text-muted-foreground mb-6">{member.bio}</p>
                       
@@ -103,10 +105,10 @@ export function About() {
          </div>
       </Section>
 
-      <Section className="py-32 text-center bg-white/5 border-t border-white/5">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8">Work with us</h2>
+      <Section className="py-32 text-center border-t border-white/5 bg-[#050A15]">
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white">Work with us</h2>
         <Link href="/contact">
-          <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 shadow-lg shadow-brand-orange/20">
+          <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 shadow-lg shadow-brand-orange/20 rounded-full">
             Get in touch <ArrowRight className="ml-2" />
           </Button>
         </Link>

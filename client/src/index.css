@@ -112,6 +112,19 @@
       /* Base */
       hsl(222 47% 6%);
   }
+  
+  /* Backward compatibility / Section styles */
+  .bg-hero-gradient {
+     @apply bg-hero-cosmic;
+  }
+
+  .bg-section-soft {
+    background: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 9%) 100%);
+  }
+  
+  .bg-section-soft-reverse {
+     background: linear-gradient(0deg, hsl(222 47% 6%) 0%, hsl(222 47% 9%) 100%);
+  }
 
   /* Glass Cards */
   .glass-card {
@@ -135,6 +148,10 @@
   .glow-teal {
     box-shadow: 0 0 30px -10px hsl(182 100% 40% / 0.3);
   }
+  
+  .orange-glow {
+     @apply glow-orange;
+  }
 
   /* Grid Pattern Background */
   .bg-grid-pattern {
@@ -142,5 +159,13 @@
     background-image: linear-gradient(to right, hsl(255 255 255 / 0.03) 1px, transparent 1px),
                       linear-gradient(to bottom, hsl(255 255 255 / 0.03) 1px, transparent 1px);
     mask-image: radial-gradient(circle at center, black, transparent 80%);
+  }
+  
+  .glass-panel {
+    @apply glass-card;
+  }
+  
+  .hover-text-orange {
+    @apply transition-colors duration-300 hover:text-brand-orange;
   }
 }
