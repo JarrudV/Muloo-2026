@@ -226,8 +226,35 @@ export function ServicesAi() {
         </div>
       </Section>
 
-      {/* Engagement Model */}
+      {/* AI With Guardrails */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Standards</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">AI With Guardrails</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Controlled deployment", desc: "Staged rollouts with kill switches — no agent goes live without validation." },
+            { title: "Data boundary protection", desc: "Strict controls on what data agents can access, process, and store." },
+            { title: "Audit logging", desc: "Every agent decision, action, and outcome is logged and traceable." },
+            { title: "Performance monitoring", desc: "Accuracy, latency, and cost tracked continuously across every interaction." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(193, 64, 255, 0.3)` }}
+              data-testid={`card-guardrail-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Engagement Model */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Engagement</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>
