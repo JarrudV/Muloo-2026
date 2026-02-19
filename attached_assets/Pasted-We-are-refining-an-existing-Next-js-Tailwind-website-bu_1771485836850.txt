@@ -1,0 +1,254 @@
+We are refining an existing Next.js + Tailwind website build for Muloo.
+
+Do NOT start from scratch.
+Improve the current design system, visual hierarchy, and service positioning.
+
+Context:
+
+Muloo is a Cape Town based technical partner delivering globally.
+We specialise in:
+
+1. Muloo Hub – HubSpot focused implementation and optimisation
+2. Muloo Build – integrations, APIs, full stack dev, portals, custom apps
+3. Muloo Product – commercial software and internal SaaS tools
+
+We DO NOT provide day to day marketing execution.
+We collaborate with trusted creative partners when needed.
+
+We want to extract:
+- Structural clarity and trust positioning from wearemuloo.com
+- Technical credibility and dev depth energy from Hyperboliq
+- A more modern SaaS aesthetic
+
+This is now a premium technical consultancy brand.
+
+----------------------------------------------------
+DESIGN REFINEMENT OBJECTIVES
+----------------------------------------------------
+
+1. Upgrade visual hierarchy and spacing.
+2. Introduce a controlled gradient system.
+3. Increase technical credibility.
+4. Reduce marketing agency feel.
+5. Improve SaaS product aesthetic.
+6. Keep everything modular for HubSpot CMS conversion later.
+
+----------------------------------------------------
+GRADIENT SYSTEM
+----------------------------------------------------
+
+Create a structured gradient system using brand colours.
+
+Primary brand colours:
+#050A30 (deep navy)
+#00C4CC (teal)
+#FFFFFF
+#F47621 (HubSpot reference only)
+
+Create these gradient styles:
+
+1. Hero gradient (dark SaaS style):
+   radial or mesh gradient blending navy and teal.
+   Example direction:
+   from #050A30
+   via slightly lighter navy
+   subtle teal glow in one corner.
+
+2. Section soft gradient:
+   very subtle white to light teal tint for alternating sections.
+
+3. Teal glow accent:
+   subtle blurred teal glow behind key cards or CTAs.
+
+4. HubSpot reference badge gradient:
+   small orange gradient for HubSpot mentions only.
+   Do not overuse orange.
+
+Make gradients refined and modern. No loud rainbow gradients.
+Think Vercel / Linear / modern SaaS.
+
+----------------------------------------------------
+HOMEPAGE REFINEMENT
+----------------------------------------------------
+
+Hero:
+- Strong bold H1
+- Clean subtext
+- Two CTA buttons
+- Optional abstract background gradient mesh
+
+Add a subtle “Cape Town based. Globally delivered.” micro line below CTA.
+
+Below hero:
+Replace generic marketing blocks with:
+
+1. Three Pillars Section:
+   Muloo Hub
+   Muloo Build
+   Muloo Product
+
+Each with:
+- Small badge
+- Strong title
+- Short description
+- Subtle hover interaction
+- Teal accent underline animation
+
+2. Capability grid:
+Pull inspiration from Hyperboliq technical depth.
+Add a clean grid of capabilities:
+- CRM Architecture
+- HubSpot CMS
+- API Development
+- Data Sync
+- Client Portals
+- Workflow Automation
+- Reporting Foundations
+- Middleware
+
+3. “Built properly” section:
+More engineering tone.
+Less fluff.
+Add short paragraphs with bold subheaders.
+
+4. Partner Section:
+Position Tusk and Sol Creative as trusted collaborators.
+Not resellers.
+Not subcontractors.
+Strategic collaborators.
+
+----------------------------------------------------
+MULOO BUILD PAGE – UPGRADE
+----------------------------------------------------
+
+Make this page feel stronger technically.
+
+Add:
+- Architecture style visual block (diagram style UI placeholder)
+- API / Integration section with code styled UI element
+- “How we approach build” section with 4 steps:
+   Discover
+   Architect
+   Ship
+   Support
+
+Use subtle dark backgrounds and teal accents.
+
+----------------------------------------------------
+MULOO HUB PAGE – REFINEMENT
+----------------------------------------------------
+
+Make this feel calm and structured.
+
+Add:
+- Before and after concept section
+- Clean reporting dashboard style UI mock block
+- HubSpot badge element with subtle orange accent
+
+Focus on:
+Stability
+Clean data
+Clear reporting
+Permission structure
+Operational clarity
+
+----------------------------------------------------
+MULOO PRODUCT PAGE – ELEVATE
+----------------------------------------------------
+
+Make this page feel like a SaaS product company.
+
+Add:
+- Product cards with subtle hover elevation
+- “In development” label
+- “Commercial product” label
+- Soft gradient backgrounds per card
+
+This page should signal:
+We can ship real software.
+Not just implement tools.
+
+----------------------------------------------------
+RESOURCES PAGE
+----------------------------------------------------
+
+Reposition from marketing blog to technical insights.
+
+Categories:
+- HubSpot Foundations
+- Integration Patterns
+- CRM Architecture
+- Product Notes
+
+Use a clean SaaS blog layout.
+Dark header.
+Light content area.
+
+----------------------------------------------------
+ABOUT PAGE – REPOSITION
+----------------------------------------------------
+
+Tone:
+Confident.
+Technical.
+Approachable.
+
+Add:
+- Short founder section
+- Build lead section
+- Philosophy section:
+   “Approachable”
+   “Educational”
+   “Helpful”
+   “Bias toward shipping”
+
+Avoid agency fluff language.
+
+----------------------------------------------------
+TECH STRUCTURE
+----------------------------------------------------
+
+Maintain:
+
+- Component driven sections in /components/sections
+- Reusable Card component
+- Reusable CTA section
+- Reusable Hero section
+- Reusable Badge component
+- Gradient utility classes
+- Styleguide page updated with gradient examples
+
+Keep Tailwind clean.
+Avoid heavy animation libraries.
+Subtle transitions only.
+
+----------------------------------------------------
+HUBSPOT CONVERSION READINESS
+----------------------------------------------------
+
+Structure pages so that each major section can later be turned into:
+
+- Hero module
+- 3 column card module
+- Capability grid module
+- CTA band module
+- Testimonial module
+- Resource card module
+
+Keep markup clean and semantic.
+
+----------------------------------------------------
+DELIVERABLE
+----------------------------------------------------
+
+Refactor the existing project.
+Upgrade visuals.
+Improve hierarchy.
+Add gradient system.
+Strengthen technical positioning.
+
+Do not introduce marketing services.
+Keep Muloo positioned as:
+HubSpot specialist + Integration and Build partner + Product builder.
+
+Make it feel premium and modern.

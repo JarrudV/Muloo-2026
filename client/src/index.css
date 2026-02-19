@@ -43,29 +43,24 @@
   --font-sans: 'Montserrat', sans-serif;
 }
 
-/* 
-  Brand Colors:
-  Navy: #050A30 -> hsl(233, 81%, 10%)
-  Teal: #00C4CC -> hsl(182, 100%, 40%)
-  Orange: #F47621 -> hsl(24, 90%, 54%)
-  White: #FFFFFF -> hsl(0, 0%, 100%)
-*/
-
 :root {
-  /* Default to Dark Mode aesthetic as requested */
-  --background: 233 81% 10%; /* Brand Navy */
+  /* Brand Navy: #050A30 -> 233 81% 10% */
+  /* Brand Teal: #00C4CC -> 182 100% 40% */
+  /* Brand Orange: #F47621 -> 24 90% 54% */
+
+  --background: 233 81% 10%; 
   --foreground: 0 0% 100%;
   
-  --card: 233 70% 14%; /* Slightly lighter navy for cards */
+  --card: 233 70% 14%; 
   --card-foreground: 0 0% 100%;
   
   --popover: 233 81% 10%;
   --popover-foreground: 0 0% 100%;
   
-  --primary: 182 100% 40%; /* Brand Teal */
-  --primary-foreground: 233 81% 10%; /* Navy text on Teal */
+  --primary: 182 100% 40%; 
+  --primary-foreground: 233 81% 10%; 
   
-  --secondary: 233 60% 20%; /* Even lighter navy for secondary actions */
+  --secondary: 233 60% 20%; 
   --secondary-foreground: 0 0% 100%;
   
   --muted: 233 40% 25%;
@@ -90,35 +85,60 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-image: radial-gradient(circle at 50% 0%, hsl(182 100% 40% / 0.15), transparent 60%);
+    /* Clean, deep navy background by default */
+    background-color: hsl(233 81% 10%);
     min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
+}
 
-  h1 {
-    @apply text-4xl md:text-6xl lg:text-7xl font-extrabold;
+@layer utilities {
+  /* 1. Hero Gradient (Dark SaaS Style) */
+  .bg-hero-gradient {
+    background: radial-gradient(circle at 50% 0%, hsl(233 81% 15%), hsl(233 81% 10%) 60%),
+                radial-gradient(circle at 80% 20%, hsl(182 100% 40% / 0.08), transparent 40%);
   }
 
-  h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
-  }
-
-  h3 {
-    @apply text-xl md:text-2xl font-semibold;
+  /* 2. Section Soft Gradient (Alternating Sections) */
+  .bg-section-soft {
+    background: linear-gradient(180deg, hsl(233 81% 10%) 0%, hsl(233 81% 12%) 100%);
   }
   
-  p {
-    @apply leading-relaxed;
+  .bg-section-soft-reverse {
+     background: linear-gradient(0deg, hsl(233 81% 10%) 0%, hsl(233 81% 12%) 100%);
   }
-}
 
-.glass-panel {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
-}
+  /* 3. Teal Glow Accent */
+  .teal-glow {
+    position: relative;
+  }
+  .teal-glow::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, hsl(182 100% 40% / 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+  }
 
-.text-gradient-teal {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-white;
+  /* 4. HubSpot Reference Badge Gradient */
+  .bg-hubspot-gradient {
+    background: linear-gradient(135deg, hsl(24 90% 54%), hsl(24 90% 60%));
+  }
+  
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-white;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-teal/30;
+  }
 }
