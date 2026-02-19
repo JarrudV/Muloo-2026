@@ -229,36 +229,7 @@ export function Home() {
         </div>
       </div>
 
-      {/* ── PAIN POINTS ── */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight">
-              There's plenty of activity.<br />But not enough movement.
-            </h2>
-            <p className="text-lg text-muted-foreground leading-[1.8] mb-10 max-w-lg">
-              Teams are busy. Pipeline exists. Tools are in place. But revenue velocity, clarity, and confidence still lag.
-            </p>
-
-            <div className="w-12 h-px bg-brand-teal/30 mb-8" />
-
-            <ul className="space-y-5">
-              {painPoints.map((point, i) => (
-                <li key={i} className="flex items-start gap-4" data-testid={`card-pain-${i}`}>
-                  <span className="mt-0.5 shrink-0 h-6 w-6 rounded-full bg-brand-teal/10 flex items-center justify-center">
-                    <Check className="h-3.5 w-3.5 text-brand-teal" />
-                  </span>
-                  <span className="text-[15px] text-white/80 leading-relaxed">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <DashboardMock />
-        </div>
-      </Section>
-
-      {/* ── SERVICES OVERVIEW ── */}
+      {/* ── 2. FOUR STREAMS ── */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What we do</h2>
@@ -306,7 +277,96 @@ export function Home() {
         </div>
       </Section>
 
-      {/* ── TRUSTED ECOSYSTEM ── */}
+      {/* ── 3. PAIN POINTS ── */}
+      <Section className="py-16 md:py-24 border-t border-white/5">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight">
+              There's plenty of activity.<br />But not enough movement.
+            </h2>
+            <p className="text-lg text-muted-foreground leading-[1.8] mb-10 max-w-lg">
+              Teams are busy. Pipeline exists. Tools are in place. But revenue velocity, clarity, and confidence still lag.
+            </p>
+
+            <div className="w-12 h-px bg-brand-teal/30 mb-8" />
+
+            <ul className="space-y-5">
+              {painPoints.map((point, i) => (
+                <li key={i} className="flex items-start gap-4" data-testid={`card-pain-${i}`}>
+                  <span className="mt-0.5 shrink-0 h-6 w-6 rounded-full bg-brand-teal/10 flex items-center justify-center">
+                    <Check className="h-3.5 w-3.5 text-brand-teal" />
+                  </span>
+                  <span className="text-[15px] text-white/80 leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <DashboardMock />
+        </div>
+      </Section>
+
+      {/* ── 4. OUTCOMES ── */}
+      <LeadMagnetSection />
+
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-16">
+          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">How we work</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h3>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-8">
+          {processSteps.map((step, i) => (
+            <div key={i} className="relative group" data-testid={`step-${step.title.toLowerCase()}`}>
+              <div className="text-6xl font-black text-white/[0.04] mb-4 group-hover:text-brand-teal/10 transition-colors select-none">{step.step}</div>
+              <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
+              <p className="text-sm text-muted-foreground leading-[1.8]">{step.desc}</p>
+              <div className="w-10 h-0.5 bg-brand-teal/30 mt-6 group-hover:w-full group-hover:bg-brand-teal transition-all duration-500" />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── 5. RESOURCES PREVIEW ── */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
+        <div className="relative z-10">
+          <div className="mb-16">
+            <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights from the field</h3>
+            <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              { badge: "HubSpot Foundations", title: "Why portal audits should come before automation", desc: "Most teams jump to workflows before fixing the data model. Here's why sequencing matters." },
+              { badge: "Integration Patterns", title: "The hidden cost of point-to-point integrations", desc: "When every tool connects directly to every other tool, maintenance costs compound fast." },
+              { badge: "AI Workflows", title: "Where AI agents add value vs. where they don't", desc: "Not everything needs an agent. A framework for deciding where automation truly helps." },
+            ].map((card, i) => (
+              <a key={i} href="#" className="group glass-card rounded-2xl p-7 flex flex-col hover:-translate-y-1 hover:border-brand-teal/15 transition-all duration-300" data-testid={`card-insight-${i}`}>
+                <span className="inline-flex self-start items-center rounded-full bg-brand-teal/5 border border-brand-teal/10 px-3 py-1 text-[11px] font-mono text-brand-teal/70 uppercase tracking-wider mb-5">
+                  {card.badge}
+                </span>
+                <h4 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-teal transition-colors">{card.title}</h4>
+                <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{card.desc}</p>
+                <span className="text-sm font-semibold text-brand-teal/70 group-hover:text-brand-teal flex items-center transition-colors">
+                  Read more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="#">
+              <Button variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 hover:border-brand-teal/20 px-8 h-12 rounded-lg" data-testid="button-explore-insights">
+                Explore all insights <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── 6. TRUSTED ECOSYSTEM ── */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-14">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
@@ -337,72 +397,7 @@ export function Home() {
         </div>
       </Section>
 
-      {/* ── CERTIFICATIONS ── */}
-      <Section className="py-20 md:py-[120px] bg-[#080D2A] border-t border-white/5">
-        <div className="mb-14">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Credentials</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Certified & Accredited</h3>
-          <p className="text-muted-foreground max-w-lg leading-[1.8]">Recognised expertise across platforms and architecture.</p>
-        </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
-          {[
-            { img: hubspotBadge, alt: "HubSpot Gold Partner", isImage: true },
-            { label: "HubSpot CRM Implementation Accreditation", icon: "HS" },
-            { label: "HubSpot Platform Enablement", icon: "HS" },
-            { img: googleBadge, alt: "Google Partner", isImage: true, small: true },
-            { label: "Microsoft Azure Expertise", icon: "AZ" },
-          ].map((badge, i) => (
-            <div
-              key={i}
-              className="group glass-card rounded-xl border-white/[0.06] hover:-translate-y-1 hover:border-white/10 transition-all duration-300 flex items-center justify-center"
-              style={{ width: badge.isImage ? "auto" : undefined }}
-              data-testid={`badge-cert-${i}`}
-            >
-              {badge.isImage ? (
-                <div className="p-5">
-                  <img
-                    src={badge.img}
-                    alt={badge.alt}
-                    className={`${badge.small ? "h-8 md:h-9 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0" : "h-20 md:h-22"} w-auto transition-all duration-300`}
-                  />
-                </div>
-              ) : (
-                <div className="px-6 py-5 flex items-center gap-3 min-w-[200px]">
-                  <span className="shrink-0 h-9 w-9 rounded-lg bg-brand-teal/5 border border-brand-teal/10 flex items-center justify-center text-[11px] font-mono font-bold text-brand-teal/60">
-                    {badge.icon}
-                  </span>
-                  <span className="text-xs font-medium text-white/60 leading-tight group-hover:text-white/80 transition-colors">{badge.label}</span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── LEAD MAGNET ── */}
-      <LeadMagnetSection />
-
-      {/* ── HOW WE WORK ── */}
-      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="mb-16">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">How we work</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h3>
-        </div>
-
-        <div className="grid md:grid-cols-4 gap-8">
-          {processSteps.map((step, i) => (
-            <div key={i} className="relative group" data-testid={`step-${step.title.toLowerCase()}`}>
-              <div className="text-6xl font-black text-white/[0.04] mb-4 group-hover:text-brand-teal/10 transition-colors select-none">{step.step}</div>
-              <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-[1.8]">{step.desc}</p>
-              <div className="w-10 h-0.5 bg-brand-teal/30 mt-6 group-hover:w-full group-hover:bg-brand-teal transition-all duration-500" />
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── TESTIMONIALS ── */}
+      {/* ── 7. TESTIMONIALS ── */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What clients say</h2>
@@ -442,46 +437,7 @@ export function Home() {
         </div>
       </Section>
 
-      {/* ── INSIGHTS ── */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
-        <div className="relative z-10">
-          <div className="mb-16">
-            <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights from the field</h3>
-            <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              { badge: "HubSpot Foundations", title: "Why portal audits should come before automation", desc: "Most teams jump to workflows before fixing the data model. Here's why sequencing matters." },
-              { badge: "Integration Patterns", title: "The hidden cost of point-to-point integrations", desc: "When every tool connects directly to every other tool, maintenance costs compound fast." },
-              { badge: "AI Workflows", title: "Where AI agents add value vs. where they don't", desc: "Not everything needs an agent. A framework for deciding where automation truly helps." },
-            ].map((card, i) => (
-              <a key={i} href="#" className="group glass-card rounded-2xl p-7 flex flex-col hover:-translate-y-1 hover:border-brand-teal/15 transition-all duration-300" data-testid={`card-insight-${i}`}>
-                <span className="inline-flex self-start items-center rounded-full bg-brand-teal/5 border border-brand-teal/10 px-3 py-1 text-[11px] font-mono text-brand-teal/70 uppercase tracking-wider mb-5">
-                  {card.badge}
-                </span>
-                <h4 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-teal transition-colors">{card.title}</h4>
-                <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{card.desc}</p>
-                <span className="text-sm font-semibold text-brand-teal/70 group-hover:text-brand-teal flex items-center transition-colors">
-                  Read more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="#">
-              <Button variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 hover:border-brand-teal/20 px-8 h-12 rounded-lg" data-testid="button-explore-insights">
-                Explore all insights <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── CTA ── */}
+      {/* ── 8. FINAL CTA ── */}
       <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
