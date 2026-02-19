@@ -4,14 +4,14 @@ import { Link } from "wouter";
 import { ArrowRight, Linkedin, Shield, TrendingUp, Settings, FileSearch } from "lucide-react";
 import { advisoryContent } from "@/lib/content";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import jarrudImg from "@assets/jarrud_profile_picture_1771486552112.png";
-import morneImg from "@assets/Component_25_–_1_1771486552111.png";
-import paulImg from "@assets/Component_77_–_1_1771486552111.png";
+import jarrudImg from "@assets/d1bde727-2cda-4a05-ad55-08a4eeb1c30f_1771492083207.png";
+import morneImg from "@assets/Morne_1771492100987.png";
+import paulImg from "@assets/e03647df-fb65-4c59-b350-b505eb0fd17b_1771492117754.png";
 
 const getImage = (imageName: string) => {
   if (imageName.includes("jarrud")) return jarrudImg;
-  if (imageName.includes("Component_25")) return morneImg;
-  if (imageName.includes("Component_77")) return paulImg;
+  if (imageName.includes("morne")) return morneImg;
+  if (imageName.includes("paul")) return paulImg;
   return "";
 };
 

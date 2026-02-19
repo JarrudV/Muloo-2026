@@ -219,7 +219,7 @@ export const advisoryContent = {
       bio: "Full-stack engineer and technical strategist. Morne leads architecture decisions across client engagements and provides fractional CTO services to scaling teams.",
       accent: "#155DFC",
       linkedin: "https://www.linkedin.com/in/mornevisagie/",
-      image: "Component_25_–_1_1771486552111.png"
+      image: "morne"
     },
     {
       name: "Jarrud van der Merwe",
@@ -228,7 +228,7 @@ export const advisoryContent = {
       bio: "CRM architect and sales engineer. Jarrud designs enterprise HubSpot implementations and provides technical pre-sales support for complex deal cycles.",
       accent: "#F47621",
       linkedin: "https://www.linkedin.com/in/jarrud/",
-      image: "jarrud_profile_picture_1771486552112.png"
+      image: "jarrud"
     },
     {
       name: "Paul Manson",
@@ -237,7 +237,7 @@ export const advisoryContent = {
       bio: "Operations specialist and business analyst. Paul brings structure to growing businesses through process design, requirement mapping, and operational oversight.",
       accent: "#59BF96",
       linkedin: "https://www.linkedin.com/in/paulmanson/",
-      image: "Component_77_–_1_1771486552111.png"
+      image: "paul"
     }
   ]
 };
@@ -258,21 +258,21 @@ export const aboutContent = {
       role: "Lead HubSpot Architect & Sales Engineer",
       bio: "CRM Guru and Sales Engineer. Leads Muloo Hub.",
       linkedin: "https://www.linkedin.com/in/jarrud/",
-      image: "jarrud_profile_picture_1771486552112.png" 
+      image: "jarrud" 
     },
     {
       name: "Morne Visagie",
       role: "Partner & Outsourced CTO",
       bio: "Leads Muloo Build and provides Outsourced CTO services.",
       linkedin: "https://www.linkedin.com/in/mornevisagie/",
-      image: "Component_25_–_1_1771486552111.png"
+      image: "morne"
     },
     {
       name: "Paul Manson",
       role: "Business Analyst & Outsourced COO",
       bio: "Trusted partner for Business Analysis and Outsourced COO Services.",
       linkedin: "https://www.linkedin.com/in/paulmanson/",
-      image: "Component_77_–_1_1771486552111.png" 
+      image: "paul" 
     }
   ]
 };
