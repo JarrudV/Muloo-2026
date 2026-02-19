@@ -2,7 +2,7 @@ import { Section } from "@/components/ui/section";
 import { homeContent } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight, Cloud, Server, Workflow, Shield, AlertTriangle, X } from "lucide-react";
+import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight, Cloud, Server, Workflow, Shield, Check, X, TrendingUp, Zap } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation as useWouterLocation } from "wouter";
@@ -24,9 +24,9 @@ const streamColors: Record<string, { accent: string; border: string; bg: string;
 };
 
 const painPoints = [
-  "HubSpot feels messy and unreliable.",
+  "HubSpot feels complex instead of calm.",
   "Systems don't talk to each other.",
-  "Reporting lacks clarity.",
+  "Reporting doesn't tell a clear story.",
   "AI feels exciting but unclear how to apply.",
 ];
 
@@ -122,6 +122,68 @@ function SystemDiagram() {
   );
 }
 
+function DashboardMock() {
+  return (
+    <div className="relative w-full max-w-md mx-auto" data-testid="dashboard-mock">
+      <div className="absolute -inset-8 bg-brand-teal/[0.03] blur-3xl rounded-full pointer-events-none" />
+      <div className="relative space-y-4">
+        <div className="glass-card rounded-xl p-5 border-white/[0.06]">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Revenue Velocity</span>
+            <TrendingUp className="h-4 w-4 text-brand-teal/60" />
+          </div>
+          <div className="flex items-end gap-1 h-16">
+            {[35, 42, 38, 55, 48, 62, 58, 72, 68, 80, 75, 88].map((h, i) => (
+              <div
+                key={i}
+                className="flex-1 rounded-sm bg-brand-teal/20 hover:bg-brand-teal/30 transition-colors"
+                style={{ height: `${h}%` }}
+              />
+            ))}
+          </div>
+          <div className="flex justify-between mt-3">
+            <span className="text-[10px] text-muted-foreground/40 font-mono">Jan</span>
+            <span className="text-[10px] text-muted-foreground/40 font-mono">Dec</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="glass-card rounded-xl p-5 border-white/[0.06]">
+            <span className="text-xs font-mono text-muted-foreground/60 block mb-2">Pipeline</span>
+            <div className="space-y-2">
+              <div className="h-2 rounded-full bg-white/[0.03] overflow-hidden">
+                <div className="h-full rounded-full bg-brand-teal/40 w-[72%]" />
+              </div>
+              <div className="h-2 rounded-full bg-white/[0.03] overflow-hidden">
+                <div className="h-full rounded-full bg-brand-teal/25 w-[48%]" />
+              </div>
+              <div className="h-2 rounded-full bg-white/[0.03] overflow-hidden">
+                <div className="h-full rounded-full bg-brand-teal/15 w-[31%]" />
+              </div>
+            </div>
+            <span className="text-[10px] text-muted-foreground/40 font-mono mt-3 block">3 stages active</span>
+          </div>
+
+          <div className="glass-card rounded-xl p-5 border-white/[0.06]">
+            <span className="text-xs font-mono text-muted-foreground/60 block mb-3">Automations</span>
+            <div className="flex items-center gap-2 mb-3">
+              <Zap className="h-4 w-4 text-brand-teal/50" />
+              <span className="text-xs text-white/60">12 active</span>
+            </div>
+            <div className="flex gap-1.5">
+              {[1, 2, 3, 4].map(n => (
+                <div key={n} className="h-1.5 w-1.5 rounded-full bg-brand-teal/30" />
+              ))}
+              <div className="h-1.5 w-1.5 rounded-full bg-white/10" />
+            </div>
+            <span className="text-[10px] text-muted-foreground/40 font-mono mt-3 block">Workflows synced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Home() {
   const [, navigate] = useWouterLocation();
   return (
@@ -168,17 +230,31 @@ export function Home() {
       </div>
 
       {/* ── PAIN POINTS ── */}
-      <Section className="py-20 border-t border-white/5">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">If any of this sounds familiar…</h2>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {painPoints.map((point, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 flex items-start gap-4 hover:border-white/15 transition-colors" data-testid={`card-pain-${i}`}>
-                <AlertTriangle className="h-5 w-5 text-muted-foreground/50 shrink-0 mt-0.5" />
-                <p className="text-[15px] text-white/80 leading-relaxed">{point}</p>
-              </div>
-            ))}
+      <Section className="py-32 md:py-40 border-t border-white/5">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight">
+              There's plenty of activity.<br />But not enough movement.
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
+              Teams are busy. Pipeline exists. Tools are in place. But revenue velocity, clarity, and confidence still lag.
+            </p>
+
+            <div className="w-12 h-px bg-brand-teal/30 mb-8" />
+
+            <ul className="space-y-5">
+              {painPoints.map((point, i) => (
+                <li key={i} className="flex items-start gap-4" data-testid={`card-pain-${i}`}>
+                  <span className="mt-0.5 shrink-0 h-6 w-6 rounded-full bg-brand-teal/10 flex items-center justify-center">
+                    <Check className="h-3.5 w-3.5 text-brand-teal" />
+                  </span>
+                  <span className="text-[15px] text-white/80 leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <DashboardMock />
         </div>
       </Section>
 
