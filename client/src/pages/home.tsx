@@ -24,10 +24,10 @@ const streamColors: Record<string, { accent: string; border: string; bg: string;
 };
 
 const painPoints = [
-  "HubSpot feels complex instead of calm.",
-  "Systems don't talk to each other.",
-  "Reporting doesn't tell a clear story.",
-  "AI feels exciting but unclear how to apply.",
+  "Systems feel heavy.",
+  "Data feels unreliable.",
+  "Automation feels fragile.",
+  "AI feels unclear.",
 ];
 
 const pillarIcons: Record<string, React.ReactNode> = {
@@ -278,17 +278,16 @@ export function Home() {
       </Section>
 
       {/* ── 3. PAIN POINTS ── */}
-      <Section className="py-16 md:py-24 border-t border-white/5">
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight">
-              There's plenty of activity.<br />But not enough movement.
+          <div className="max-w-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-10 leading-tight">
+              Busy isn't the same as effective.
             </h2>
-            <p className="text-lg text-muted-foreground leading-[1.8] mb-10 max-w-lg">
-              Teams are busy. Pipeline exists. Tools are in place. But revenue velocity, clarity, and confidence still lag.
-            </p>
 
-            <div className="w-12 h-px bg-brand-teal/30 mb-8" />
+            <p className="text-lg text-muted-foreground leading-[1.8] mb-12">
+              Tools are in place. Teams are working. But velocity, clarity, and confidence still lag.
+            </p>
 
             <ul className="space-y-5">
               {painPoints.map((point, i) => (
@@ -328,7 +327,7 @@ export function Home() {
       </Section>
 
       {/* ── 5. RESOURCES PREVIEW ── */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
         <div className="relative z-10">
           <div className="mb-16">
@@ -367,29 +366,25 @@ export function Home() {
       </Section>
 
       {/* ── 6. TRUSTED ECOSYSTEM ── */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="mb-14">
+      <Section className="py-16 md:py-24 border-t border-white/5">
+        <div className="mb-10">
           <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Technologies we integrate with</h3>
-          <p className="text-muted-foreground max-w-xl leading-[1.8]">We work with the platforms your business already depends on.</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Built on platforms that power global businesses.</h3>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-16 max-w-4xl">
+        <div className="grid md:grid-cols-3 gap-12 max-w-4xl">
           {Object.entries(ecosystemLogos).map(([category, logos]) => (
             <div key={category}>
-              <h4 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-6 border-b border-white/5 pb-3">{category}</h4>
-              <div className="flex flex-wrap gap-3.5">
+              <h4 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-5 border-b border-white/5 pb-3">{category}</h4>
+              <div className="flex flex-wrap gap-3">
                 {logos.map(logo => (
-                  <a
+                  <span
                     key={logo}
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-md bg-white/5 border border-white/5 text-xs font-mono text-muted-foreground hover:text-brand-teal hover:border-brand-teal/20 hover:shadow-[0_0_12px_-4px_rgba(0,196,204,0.25)] transition-all duration-300"
+                    className="px-3 py-1.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-xs font-mono text-white/40 hover:text-brand-teal hover:border-brand-teal/20 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_-4px_rgba(0,196,204,0.2)] transition-all duration-300 cursor-default"
                     data-testid={`logo-${logo.toLowerCase().replace(/\s/g, '-')}`}
                   >
                     {logo}
-                  </a>
+                  </span>
                 ))}
               </div>
             </div>
