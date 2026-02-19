@@ -1,71 +1,68 @@
 // Content Structure for Muloo Website
 
 export const navLinks = [
-  { name: "Services", href: "/services", 
+  { name: "Expertise", href: "/services", 
     subItems: [
-      { name: "Muloo Hub", href: "/services/hub", desc: "HubSpot implementation & optimization" },
-      { name: "Muloo Build", href: "/services/build", desc: "Integrations & custom software" },
-      { name: "Muloo Product", href: "/services/product", desc: "Internal tools & commercial apps" },
-      { name: "Consulting", href: "/services/consulting", desc: "Outsourced CTO & Sales Engineering" }
+      { name: "Platform Engineering", href: "/services/build", desc: "Custom software, AI & Integrations" },
+      { name: "HubSpot RevOps", href: "/services/hub", desc: "Enterprise CRM Architecture" },
+      { name: "Product Development", href: "/services/product", desc: "SaaS & Internal Tools" },
+      { name: "Strategic Consulting", href: "/services/consulting", desc: "CTO & Process Optimization" }
     ]
   },
-  { name: "Resources", href: "/resources", 
+  { name: "Work", href: "/case-studies", 
     subItems: [
-      { name: "Case Studies", href: "/case-studies", desc: "See our work in action" },
-      { name: "Insights", href: "/blog", desc: "Technical guides & thoughts" }
+      { name: "Case Studies", href: "/case-studies", desc: "Outcomes delivered" },
+      { name: "Insights", href: "/blog", desc: "Technical thinking" }
     ]
   },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Company", href: "/about" },
 ];
 
 export const homeContent = {
   hero: {
-    headline: "HubSpot and custom dev, built properly.",
-    subhead: "Muloo is a Cape Town based technical partner that helps teams implement HubSpot, connect their systems, and ship software that drives revenue. Practical, hands on, and built to scale.",
-    primaryCta: "Book a call",
-    secondaryCta: "Explore services",
-    microLine: "Cape Town based. Globally delivered."
+    badge: "Full Stack Development & RevOps",
+    headline: "Stop buying hours. Start shipping software.",
+    subhead: "We are a full-stack development house that bridges the gap between enterprise HubSpot architecture and custom software engineering. We build the systems that drive your revenue.",
+    primaryCta: "Discuss your project",
+    secondaryCta: "View our work",
+    techStack: ["HubSpot", "React", "Node.js", "Python", "AWS", "Azure", "PostgreSQL", "OpenAI"]
+  },
+  valueProp: {
+    title: "Engineering, not just implementation.",
+    subtitle: "Most agencies click buttons. We write code.",
+    desc: "We solve complex operational problems that off-the-shelf tools can't handle. From rapid prototyping to AI agents and complex integrations, we build the missing pieces of your stack."
   },
   pillars: [
     {
-      id: "hub",
-      title: "Muloo Hub",
-      desc: "HubSpot focused implementation and optimisation.",
-      href: "/services/hub"
-    },
-    {
       id: "build",
-      title: "Muloo Build",
-      desc: "Integrations, APIs, full stack dev, portals, custom apps.",
+      title: "Custom Engineering",
+      subtitle: "Full Stack & Integrations",
+      desc: "We build what HubSpot can't do. Custom client portals, complex API integrations, middleware, and proprietary internal tools.",
+      features: ["React & Node.js Apps", "Bi-directional Syncs", "AI Agents", "Data Warehousing"],
       href: "/services/build"
     },
     {
-      id: "product",
-      title: "Muloo Product",
-      desc: "Commercial software and internal SaaS tools.",
-      href: "/services/product"
+      id: "hub",
+      title: "Enterprise HubSpot",
+      subtitle: "RevOps Architecture",
+      desc: "Technical implementation for scale. We treat your CRM like a software product—version controlled, documented, and built for data integrity.",
+      features: ["CRM Architecture", "Programmable Automation", "Data Migration", "Reporting Infrastructure"],
+      href: "/services/hub"
+    },
+    {
+      id: "consult",
+      title: "Strategic Consulting",
+      subtitle: "Fractional Leadership",
+      desc: "Senior technical leadership to guide your roadmap. We provide the architectural oversight and process optimization you need to scale.",
+      features: ["Outsourced CTO", "Sales Engineering", "Process Mining", "Tech Stack Audit"],
+      href: "/services/consulting"
     }
   ],
-  capabilities: [
-    "CRM Architecture",
-    "HubSpot CMS",
-    "API Development",
-    "Data Sync",
-    "Client Portals",
-    "Workflow Automation",
-    "Reporting Foundations",
-    "Middleware"
+  stats: [
+    { label: "Integrations Built", value: "200+" },
+    { label: "Revenue Influenced", value: "$50M+" },
+    { label: "Custom Apps Shipped", value: "45+" }
   ],
-  builtProperly: {
-    title: "Built Properly.",
-    desc: "We don't just hack things together. We build scalable, maintainable systems that your team can rely on.",
-    features: [
-      { title: "Documentation First", desc: "Every system we build comes with clear, developer-friendly documentation." },
-      { title: "Version Control", desc: "We treat your CRM configuration like code. Changes are tracked and managed." },
-      { title: "Security Focused", desc: "Data privacy and security are baked into our architecture from day one." }
-    ]
-  },
   partners: {
     headline: "Strategic collaborators",
     body: "We do not offer day to day marketing execution. When design, content, or campaign delivery is needed, we collaborate closely with trusted partners.",
@@ -169,14 +166,14 @@ export const aboutContent = {
       role: "Partner & Outsourced CTO",
       bio: "Leads Muloo Build and provides Outsourced CTO services.",
       linkedin: "https://www.linkedin.com/in/mornevisagie/",
-      image: "Component_25_–_1_1771486552111.png" // Placeholder based on provided assets, assuming this is Morne
+      image: "Component_25_–_1_1771486552111.png"
     },
     {
       name: "Paul Manson",
       role: "Business Analyst & Outsourced COO",
       bio: "Trusted partner for Business Analysis and Outsourced COO Services.",
       linkedin: "https://www.linkedin.com/in/paulmanson/",
-      image: "Component_77_–_1_1771486552111.png" // Placeholder based on provided assets, assuming this is Paul
+      image: "Component_77_–_1_1771486552111.png" 
     }
   ]
 };

@@ -36,45 +36,42 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   
-  --color-brand-navy: hsl(233 81% 10%);
+  --color-brand-navy: hsl(222 47% 11%); /* Deeper, more slate navy */
   --color-brand-teal: hsl(182 100% 40%);
   --color-brand-orange: hsl(24 90% 54%);
-
+  
   --font-sans: 'Montserrat', sans-serif;
 }
 
 :root {
-  /* Brand Navy: #050A30 -> 233 81% 10% */
-  /* Brand Teal: #00C4CC -> 182 100% 40% */
-  /* Brand Orange: #F47621 -> 24 90% 54% */
+  /* Struto-inspired deep aesthetic */
+  --background: 222 47% 6%; /* Almost black */
+  --foreground: 210 40% 98%;
+  
+  --card: 222 47% 11%; /* Brand Navy as card bg */
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 24 90% 54%; /* Orange is now primary */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 182 100% 40%; /* Teal is secondary */
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
 
-  --background: 233 81% 10%; 
-  --foreground: 0 0% 100%;
-  
-  --card: 233 70% 14%; 
-  --card-foreground: 0 0% 100%;
-  
-  --popover: 233 81% 10%;
-  --popover-foreground: 0 0% 100%;
-  
-  --primary: 182 100% 40%; 
-  --primary-foreground: 233 81% 10%; 
-  
-  --secondary: 233 60% 20%; 
-  --secondary-foreground: 0 0% 100%;
-  
-  --muted: 233 40% 25%;
-  --muted-foreground: 233 20% 70%;
-  
-  --accent: 182 100% 40%;
-  --accent-foreground: 233 81% 10%;
-  
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 233 50% 25%;
-  --input: 233 50% 25%;
-  --ring: 182 100% 40%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 24 90% 54%;
   
   --radius: 0.5rem;
 }
@@ -85,93 +82,65 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-color: hsl(233 81% 10%);
+    background-color: hsl(222 47% 6%);
+    background-image: 
+        radial-gradient(circle at 15% 50%, hsl(222 47% 15% / 0.4), transparent 25%),
+        radial-gradient(circle at 85% 30%, hsl(222 47% 15% / 0.4), transparent 25%);
     min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-bold tracking-tight text-white;
   }
   
-  /* Selection color to use Orange for emphasis */
+  /* Selection color */
   ::selection {
     @apply bg-brand-orange text-white;
   }
 }
 
 @layer utilities {
-  /* 1. Hero Gradient - Enhanced with Orange/Purple vibrancy like the Dribbble shot */
-  .bg-hero-gradient {
+  /* Cosmic Hero Gradient */
+  .bg-hero-cosmic {
     background: 
-      /* Top center deep glow */
-      radial-gradient(circle at 50% -20%, hsl(233 81% 25%) 0%, transparent 60%),
-      /* Right side teal glow */
-      radial-gradient(circle at 90% 30%, hsl(182 100% 40% / 0.12) 0%, transparent 50%),
-      /* Bottom left vibrant orange/purple intersection */
-      radial-gradient(circle at 10% 90%, hsl(24 90% 54% / 0.15) 0%, transparent 50%),
-      /* Base background */
-      hsl(233 81% 10%);
+      /* Center spotlight */
+      radial-gradient(circle at 50% 0%, hsl(222 47% 20%), transparent 60%),
+      /* Subtle orange glow bottom left */
+      radial-gradient(circle at 0% 100%, hsl(24 90% 54% / 0.08), transparent 40%),
+      /* Subtle teal glow top right */
+      radial-gradient(circle at 100% 0%, hsl(182 100% 40% / 0.08), transparent 40%),
+      /* Base */
+      hsl(222 47% 6%);
   }
 
-  /* 2. Section Soft Gradient */
-  .bg-section-soft {
-    background: linear-gradient(180deg, hsl(233 81% 10%) 0%, hsl(233 81% 13%) 100%);
+  /* Glass Cards */
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.06] hover:border-brand-orange/40 transition-all duration-300;
   }
   
-  .bg-section-soft-reverse {
-     background: linear-gradient(0deg, hsl(233 81% 10%) 0%, hsl(233 81% 13%) 100%);
-  }
-
-  /* 3. Teal Glow Accent */
-  .teal-glow {
-    position: relative;
-  }
-  .teal-glow::before {
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background: radial-gradient(closest-side, hsl(182 100% 40% / 0.2) 0%, transparent 100%);
-    z-index: -1;
-    pointer-events: none;
-    border-radius: inherit;
-  }
-  
-  /* Orange Glow Accent */
-  .orange-glow {
-    position: relative;
-  }
-  .orange-glow::before {
-    content: "";
-    position: absolute;
-    inset: -40px;
-    background: radial-gradient(closest-side, hsl(24 90% 54% / 0.15) 0%, transparent 100%);
-    z-index: -1;
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
-  /* 4. HubSpot Reference Badge Gradient */
-  .bg-hubspot-gradient {
-    background: linear-gradient(135deg, hsl(24 90% 54%), hsl(24 90% 60%));
+  /* Text Gradients */
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-orange-400;
   }
   
   .text-gradient-teal {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-white;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-cyan-300;
   }
   
-  .text-gradient-orange {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-white;
+  /* Glow Effects */
+  .glow-orange {
+    box-shadow: 0 0 30px -10px hsl(24 90% 54% / 0.3);
   }
   
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  .glow-teal {
+    box-shadow: 0 0 30px -10px hsl(182 100% 40% / 0.3);
   }
-  
-  .glass-panel-hover {
-    @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-orange/30;
-  }
-  
-  .hover-text-orange {
-    @apply transition-colors duration-300 hover:text-brand-orange;
+
+  /* Grid Pattern Background */
+  .bg-grid-pattern {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, hsl(255 255 255 / 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, hsl(255 255 255 / 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
   }
 }
