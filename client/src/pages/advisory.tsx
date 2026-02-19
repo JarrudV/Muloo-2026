@@ -40,6 +40,7 @@ export function Advisory() {
             <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] max-w-2xl font-light">
               {advisoryContent.hero.subtext}
             </p>
+            <p className="text-sm text-white/40 font-mono mt-6">For businesses between growth and complexity.</p>
           </div>
         </div>
       </div>

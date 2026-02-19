@@ -24,10 +24,10 @@ const streamColors: Record<string, { accent: string; border: string; bg: string;
 };
 
 const painPoints = [
-  "Systems slow teams down instead of accelerating them.",
-  "Data exists but nobody trusts the reports it produces.",
-  "Automations break silently and nobody notices until revenue is affected.",
-  "AI investment grows but measurable outcomes don't follow.",
+  "Your systems cost more to maintain than they return.",
+  "Your data exists everywhere but nobody trusts the reports.",
+  "Your automations break silently — and revenue leaks before anyone notices.",
+  "Your AI spend is growing but measurable ROI isn't.",
 ];
 
 const pillarIcons: Record<string, React.ReactNode> = {
@@ -44,10 +44,10 @@ const ecosystemLogos = {
 };
 
 const processSteps = [
-  { step: "01", title: "Discover", desc: "Full audit of systems, data flows, and bottlenecks — delivered as a documented findings report." },
-  { step: "02", title: "Architect", desc: "Technical blueprint with measurable success criteria and defined timelines." },
-  { step: "03", title: "Ship", desc: "Iterative delivery with weekly demos — working software, not slide decks." },
-  { step: "04", title: "Support", desc: "Ongoing monitoring, SLA-backed maintenance, and continuous improvement." },
+  { step: "01", title: "Discover", desc: "Full audit of systems, data flows, and bottlenecks — delivered as a documented findings report within 10 business days." },
+  { step: "02", title: "Architect", desc: "Technical blueprint with measurable KPIs, defined milestones, and cost estimates before any code is written." },
+  { step: "03", title: "Ship", desc: "Iterative delivery with weekly demos and stakeholder sign-off — working software, not slide decks." },
+  { step: "04", title: "Support", desc: "SLA-backed monitoring, quarterly reviews, and proactive recommendations as your business evolves." },
 ];
 
 function RotatingBadge() {
@@ -286,7 +286,7 @@ export function Home() {
             </h2>
 
             <p className="text-lg text-muted-foreground leading-[1.8] mb-12">
-              Tools are in place. Teams are working. But velocity, clarity, and confidence still lag.
+              The tools are in place. The team is working. But the numbers don't move.
             </p>
 
             <ul className="space-y-5">
@@ -332,6 +332,7 @@ export function Home() {
         <div className="relative z-10">
           <div className="mb-16">
             <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
+            <p className="text-sm text-muted-foreground mb-4 max-w-xl leading-[1.8]">Written by the team that builds these systems — not a content department.</p>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">How modern revenue systems are built.</h3>
             <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
           </div>

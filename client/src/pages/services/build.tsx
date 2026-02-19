@@ -42,69 +42,6 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* What We Build */}
-      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
-        <div className="mb-16 max-w-2xl">
-          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">What we build</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Engineering That Connects Systems</h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            { icon: Code2, title: "API Development", desc: "RESTful and GraphQL APIs designed with typed contracts, versioning, and comprehensive documentation." },
-            { icon: Webhook, title: "Middleware Architecture", desc: "Typed data pipelines that sync, transform, and route data between any two systems with retry logic and structured error handling." },
-            { icon: Lock, title: "Client Portals", desc: "Authenticated web applications with role-based access, giving your customers and teams self-service capabilities." },
-            { icon: Zap, title: "Event-Based Integrations", desc: "Webhook listeners, message queues, and event-driven architectures that react to changes across your stack in real time." },
-            { icon: Database, title: "Data Sync & Governance", desc: "Schema mapping, validation rules, deduplication, and incremental sync to keep data consistent across every platform." },
-            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect any system — CRMs, ERPs, payment gateways, shipping providers, or proprietary internal tools." },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="glass-card rounded-2xl p-8 group hover:border-[#155DFC]/20 transition-all duration-300"
-              data-testid={`card-capability-${i}`}
-            >
-              <div
-                className="h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors"
-                style={{ backgroundColor: `rgba(21, 93, 252, 0.1)` }}
-              >
-                <item.icon className="h-6 w-6" style={{ color: streamBlue }} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-              <p className="text-muted-foreground text-sm leading-[1.8]">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Tech Stack */}
-      <Section className="py-20 md:py-[120px] border-t border-white/5">
-        <div className="mb-14 max-w-2xl">
-          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Ecosystem</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Platforms we engineer across</h2>
-        </div>
-
-        <div className="flex flex-wrap gap-3 max-w-3xl">
-          {[
-            "Microsoft Azure",
-            "Google Cloud",
-            "SAP",
-            "SQL Server",
-            "Snowflake",
-            "HubSpot",
-            "Salesforce",
-            "Custom APIs",
-          ].map((platform) => (
-            <span
-              key={platform}
-              className="px-4 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-sm font-mono text-white/50 hover:text-[#155DFC] hover:border-[#155DFC]/20 transition-all duration-300"
-              data-testid={`tag-platform-${platform.toLowerCase().replace(/\s/g, '-')}`}
-            >
-              {platform}
-            </span>
-          ))}
-        </div>
-      </Section>
-
       {/* Architecture Visual Block */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -267,6 +204,69 @@ export function ServicesBuild() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* What We Build */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-16 max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">What we build</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Engineering That Connects Systems</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { icon: Code2, title: "API Development", desc: "RESTful and GraphQL APIs designed with typed contracts, versioning, and comprehensive documentation." },
+            { icon: Webhook, title: "Middleware Architecture", desc: "Typed data pipelines that sync, transform, and route data between any two systems with retry logic and structured error handling." },
+            { icon: Lock, title: "Client Portals", desc: "Authenticated web applications with role-based access, giving your customers and teams self-service capabilities." },
+            { icon: Zap, title: "Event-Based Integrations", desc: "Webhook listeners, message queues, and event-driven architectures that react to changes across your stack in real time." },
+            { icon: Database, title: "Data Sync & Governance", desc: "Schema mapping, validation rules, deduplication, and incremental sync to keep data consistent across every platform." },
+            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect any system — CRMs, ERPs, payment gateways, shipping providers, or proprietary internal tools." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-2xl p-8 group hover:border-[#155DFC]/20 transition-all duration-300"
+              data-testid={`card-capability-${i}`}
+            >
+              <div
+                className="h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors"
+                style={{ backgroundColor: `rgba(21, 93, 252, 0.1)` }}
+              >
+                <item.icon className="h-6 w-6" style={{ color: streamBlue }} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+              <p className="text-muted-foreground text-sm leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Tech Stack */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Ecosystem</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Platforms we engineer across</h2>
+        </div>
+
+        <div className="flex flex-wrap gap-3 max-w-3xl">
+          {[
+            "Microsoft Azure",
+            "Google Cloud",
+            "SAP",
+            "SQL Server",
+            "Snowflake",
+            "HubSpot",
+            "Salesforce",
+            "Custom APIs",
+          ].map((platform) => (
+            <span
+              key={platform}
+              className="px-4 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-sm font-mono text-white/50 hover:text-[#155DFC] hover:border-[#155DFC]/20 transition-all duration-300"
+              data-testid={`tag-platform-${platform.toLowerCase().replace(/\s/g, '-')}`}
+            >
+              {platform}
+            </span>
+          ))}
         </div>
       </Section>
 

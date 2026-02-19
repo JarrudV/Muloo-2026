@@ -44,6 +44,7 @@ export function ServicesHub() {
           <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#F47621] pl-6 max-w-2xl">
             {serviceHubContent.intro}
           </p>
+          <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">This is about operational calm, not configuration.</p>
           <div className="mt-10">
             <Link href="/contact">
               <Button
