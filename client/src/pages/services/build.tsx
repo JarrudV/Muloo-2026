@@ -294,8 +294,35 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* How We Engage */}
+      {/* Engineering Principles */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Standards</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Engineering Principles</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Idempotent APIs", desc: "Every request produces the same result, no matter how many times it's sent." },
+            { title: "Event-driven architecture", desc: "Systems react to changes in real time instead of polling for updates." },
+            { title: "Data integrity first", desc: "Validation at every boundary — nothing enters a system unchecked." },
+            { title: "Observable systems", desc: "Structured logging, tracing, and alerting from day one." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-xl p-6"
+              style={{ borderTop: `2px solid rgba(21, 93, 252, 0.3)` }}
+              data-testid={`card-principle-${i}`}
+            >
+              <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* How We Engage */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Delivery</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">How we engage</h2>
