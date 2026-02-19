@@ -378,6 +378,45 @@ export function Home() {
         </div>
       </Section>
 
+      {/* ── INSIGHTS ── */}
+      <Section className="py-28 border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
+        <div className="relative z-10">
+          <div className="mb-16">
+            <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights from the field</h3>
+            <p className="text-muted-foreground max-w-xl text-lg">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              { badge: "HubSpot Foundations", title: "Why portal audits should come before automation", desc: "Most teams jump to workflows before fixing the data model. Here's why sequencing matters." },
+              { badge: "Integration Patterns", title: "The hidden cost of point-to-point integrations", desc: "When every tool connects directly to every other tool, maintenance costs compound fast." },
+              { badge: "AI Workflows", title: "Where AI agents add value vs. where they don't", desc: "Not everything needs an agent. A framework for deciding where automation truly helps." },
+            ].map((card, i) => (
+              <a key={i} href="#" className="group glass-card rounded-2xl p-7 flex flex-col hover:-translate-y-1 hover:border-brand-teal/15 transition-all duration-300" data-testid={`card-insight-${i}`}>
+                <span className="inline-flex self-start items-center rounded-full bg-brand-teal/5 border border-brand-teal/10 px-3 py-1 text-[11px] font-mono text-brand-teal/70 uppercase tracking-wider mb-5">
+                  {card.badge}
+                </span>
+                <h4 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-teal transition-colors">{card.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">{card.desc}</p>
+                <span className="text-sm font-semibold text-brand-teal/70 group-hover:text-brand-teal flex items-center transition-colors">
+                  Read more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="#">
+              <Button variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 hover:border-brand-teal/20 px-8 h-12 rounded-lg" data-testid="button-explore-insights">
+                Explore all insights <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
       {/* ── CTA ── */}
       <Section className="py-28 text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
