@@ -1,0 +1,43 @@
+import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+
+export function Blog() {
+  const posts = [
+    { id: 1, title: "Why your HubSpot data is messy", date: "Oct 12, 2025", readTime: "5 min read" },
+    { id: 2, title: "Building custom React apps on HubSpot CMS", date: "Sep 28, 2025", readTime: "8 min read" },
+    { id: 3, title: "The modern revenue stack: 2026 Edition", date: "Sep 15, 2025", readTime: "6 min read" },
+  ];
+
+  return (
+    <div className="flex flex-col">
+      <Section className="pt-32 pb-20">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Insights.</h1>
+        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+          Thoughts on engineering, design, and growth from the Muloo team.
+        </p>
+      </Section>
+
+      <Section className="bg-white/5 py-20">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {posts.map((post) => (
+            <Link key={post.id} href={`/blog/${post.id}`}>
+              <div className="group cursor-pointer border-b border-white/10 pb-8 hover:border-brand-teal/50 transition-colors">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3 font-mono">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                </div>
+                <h2 className="text-3xl font-bold mb-4 group-hover:text-brand-teal transition-colors">{post.title}</h2>
+                <div className="flex items-center text-brand-teal font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    Read article <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Section>
+    </div>
+  );
+}
