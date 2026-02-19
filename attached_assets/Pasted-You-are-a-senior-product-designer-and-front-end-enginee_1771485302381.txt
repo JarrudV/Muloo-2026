@@ -1,0 +1,116 @@
+You are a senior product designer and front end engineer. Build a modern SaaS style marketing website for Muloo, a Cape Town based HubSpot focused technical partner delivering globally.
+
+Goal:
+Create a high quality website design and working codebase that can later be converted into a HubSpot CMS theme. Use a component driven approach and keep page sections modular.
+
+Tech requirements:
+- Use Next.js App Router with TypeScript and Tailwind CSS (preferred).
+- No external UI kits that are hard to port to HubSpot. Keep components simple and clean.
+- Use a /components/sections folder where each page is composed of reusable section components.
+- Include a /content folder with structured content objects for services, case studies, and FAQs.
+- Provide a style guide page at /styleguide showing typography, buttons, cards, spacing, and colour usage.
+- Use UK spelling in all copy.
+
+Brand rules:
+- Primary navy: #050A30
+- White: #FFFFFF
+- Teal accent: #00C4CC
+- Orange accent: #F47621 ONLY when referencing HubSpot. Do not use orange as a general accent.
+- Typography: use Google Font Montserrat with weights 200, 400, 600, 800. Headings bold, body regular, subtitles extra light.
+
+Look and feel:
+- Modern, premium, technical, human.
+- Dark mode aesthetic with plenty of whitespace and strong contrast.
+- Subtle gradient backgrounds inspired by teal and navy, plus a very light pattern option.
+- Clean icon style. Use simple line icons.
+
+Information architecture:
+Pages:
+- Home
+- Services index
+- Service detail pages:
+  - Muloo Hub (HubSpot focused)
+  - Muloo Build (integrations and software development)
+  - Muloo Product (Muloo owned products and apps)
+- Resources index
+- Case Studies listing + case study detail template
+- Insights blog listing + blog post template
+- About
+- Contact
+
+Functional requirements:
+- Sticky header with dropdown for Services and Resources.
+- Clear CTAs: Book a call, Talk to an expert, Get a quote.
+- Contact page includes a form UI component (no backend needed).
+- Add a placeholder for a service agent bot widget in the bottom right (just a styled launcher button and panel skeleton, labelled “Muloo Assist”). This will later be replaced by a HubSpot agent.
+
+Content requirements:
+Use the copy below exactly as provided in this prompt. Place it appropriately across pages. Do not invent marketing services. Mention that marketing execution is handled by trusted partners Tusk and Sol Creative.
+
+SEO:
+- Add good meta titles and descriptions for each page.
+- Use sensible H1 per page, then H2 sections.
+- Create an accessible layout.
+
+Deliverables:
+- Working Next.js project with all pages.
+- Reusable section components.
+- Content objects in code.
+- Responsive design for mobile first.
+- A brief README explaining how the project is structured and how to export for HubSpot theme conversion.
+
+Copy to use:
+
+Home hero:
+Headline: “HubSpot and custom dev, built properly.”
+Subhead: “Muloo is a Cape Town based technical partner that helps teams implement HubSpot, connect their systems, and ship software that drives revenue. Practical, hands on, and built to scale.”
+Primary CTA: “Book a call”
+Secondary CTA: “Explore services”
+
+Home proof points:
+- “HubSpot implementations and optimisation”
+- “Integrations and data sync that stays stable”
+- “Custom apps, portals, and product builds”
+
+Home services summary:
+Muloo Hub:
+Title: “Muloo Hub”
+Blurb: “Your HubSpot foundation, cleaned up and built for growth. We implement, migrate, optimise, and enable teams so HubSpot becomes the system your business actually runs on.”
+CTA: “Explore Muloo Hub”
+
+Muloo Build:
+Title: “Muloo Build”
+Blurb: “Integrations, apps, and full stack development. We connect platforms, automate workflows, and build custom software where off the shelf tools stop short.”
+CTA: “Explore Muloo Build”
+
+Muloo Product:
+Title: “Muloo Product”
+Blurb: “Commercial software and internal tools built by Muloo. Products that solve real operational problems and plug neatly into modern CRM stacks.”
+CTA: “Explore Muloo Product”
+
+Home local and global:
+Headline: “Based in Cape Town. Built for global teams.”
+Body: “We deliver remotely across time zones, with clear documentation, structured delivery, and a strong bias to shipping.”
+
+Partners:
+Headline: “Creative partners we trust”
+Body: “We do not offer day to day marketing execution. When design, content, or campaign delivery is needed, we collaborate closely with trusted partners.”
+Partners list:
+- “Tusk”
+- “Sol Creative”
+
+Muloo Hub page:
+H1: “Muloo Hub”
+Intro: “HubSpot is powerful, but only if it is implemented with clean data, clear process, and reporting you can trust. Muloo Hub covers implementation, onboarding, optimisation, and ongoing technical support.”
+What we do bullets:
+- “HubSpot onboarding and implementation”
+- “Portal clean up and optimisation”
+- “CRM architecture and pipeline design”
+- “Custom properties, workflows, and permissions”
+- “Dashboards, reporting, and attribution foundations”
+- “Sales, marketing, and service enablement”
+- “Website builds on HubSpot CMS”
+- “Integrations and data migrations into HubSpot”
+CTA section:
+Headline: “Need HubSpot to feel calm and predictable again?”
+Body: “Let’s map what is working, what is broken, and what t
