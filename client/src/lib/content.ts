@@ -25,7 +25,7 @@ export const homeContent = {
     badge: "Technical Partner for HubSpot + AI",
     headline: "Engineering the future of revenue.",
     subhead: "We are a full-stack technical partner. We implement HubSpot, engineer custom software, and deploy AI agents to solve complex operational problems.",
-    primaryCta: "Talk Engineering",
+    primaryCta: "Start a conversation",
     secondaryCta: "View Our Work",
     techStack: ["HubSpot", "React", "Node.js", "Python", "OpenAI", "Anthropic", "AWS", "Vercel"]
   },

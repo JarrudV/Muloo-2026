@@ -1,10 +1,18 @@
 import { Section } from "@/components/ui/section";
 import { homeContent } from "@/lib/content";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight } from "lucide-react";
+import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight, Cloud, Server, Workflow, Shield } from "lucide-react";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
 import googleBadge from "@assets/google-partner-logo_1771487221441.png";
+
+const rotatingPhrases = [
+  "Technical Partner for HubSpot",
+  "Systems & Integration Specialists",
+  "AI Workflow & Agent Builders",
+  "Embedded CTO & Sales Engineering",
+];
 
 const streamColors: Record<string, { accent: string; border: string; bg: string; text: string; glow: string }> = {
   hub: { accent: "bg-stream-hub", border: "border-stream-hub/30", bg: "bg-stream-hub/10", text: "text-stream-hub", glow: "group-hover:shadow-[0_0_30px_-10px_rgba(244,118,33,0.3)]" },
@@ -33,45 +41,118 @@ const processSteps = [
   { step: "04", title: "Support", desc: "We maintain, monitor, and evolve your systems over time." },
 ];
 
+function RotatingBadge() {
+  const [index, setIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % rotatingPhrases.length);
+        setIsVisible(true);
+      }, 400);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal/5 px-4 py-1.5 text-sm font-medium text-brand-teal mb-8 backdrop-blur-sm h-9 min-w-[280px]" data-testid="badge-hero">
+      <span className="flex h-2 w-2 rounded-full bg-brand-teal mr-2 animate-pulse shrink-0" />
+      <span
+        className="transition-all duration-400"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0)" : "translateY(-6px)",
+        }}
+      >
+        {rotatingPhrases[index]}
+      </span>
+    </div>
+  );
+}
+
+function SystemDiagram() {
+  return (
+    <div className="relative w-full max-w-md mx-auto hidden lg:block" data-testid="hero-system-diagram">
+      <div className="absolute inset-0 bg-brand-teal/5 blur-3xl rounded-full" />
+      <div className="relative space-y-4">
+        {[
+          { icon: <Cloud className="h-5 w-5" />, label: "CRM & Data", sub: "HubSpot · Salesforce", color: "#F47621" },
+          { icon: <Server className="h-5 w-5" />, label: "Middleware", sub: "APIs · Sync · Auth", color: "#155DFC" },
+          { icon: <Workflow className="h-5 w-5" />, label: "AI Agents", sub: "Codex · Automation", color: "#C140FF" },
+          { icon: <Shield className="h-5 w-5" />, label: "Products", sub: "SaaS · Portals", color: "#59BF96" },
+        ].map((node, i) => (
+          <div key={i} className="relative">
+            {i > 0 && (
+              <div className="absolute -top-4 left-8 w-px h-4 bg-white/10" />
+            )}
+            <div
+              className="glass-card rounded-xl p-4 flex items-center gap-4 hover:-translate-x-1 transition-transform duration-300"
+              style={{ borderColor: `${node.color}15` }}
+            >
+              <div
+                className="p-2.5 rounded-lg shrink-0"
+                style={{ backgroundColor: `${node.color}12`, color: node.color }}
+              >
+                {node.icon}
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-white">{node.label}</div>
+                <div className="text-xs text-muted-foreground font-mono">{node.sub}</div>
+              </div>
+              <div
+                className="ml-auto h-1.5 w-1.5 rounded-full opacity-60"
+                style={{ backgroundColor: node.color }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Home() {
   return (
     <div className="flex flex-col">
       {/* ── HERO ── */}
-      <div className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-hero-gradient">
+      <div className="relative pt-32 pb-24 md:pt-44 md:pb-28 overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal/5 px-4 py-1.5 text-sm font-medium text-brand-teal mb-8 backdrop-blur-sm" data-testid="badge-hero">
-              <span className="flex h-2 w-2 rounded-full bg-brand-teal mr-2 animate-pulse" />
-              {homeContent.hero.badge}
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[1.05] text-white">
-              {homeContent.hero.headline.split("revenue.")[0]}
-              <span className="text-gradient-teal">revenue.</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl font-light">
-              {homeContent.hero.subhead}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/contact">
-                <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-8 h-14 rounded-lg glow-orange-sm hover:-translate-y-0.5 transition-all" data-testid="button-hero-cta">
-                  {homeContent.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/case-studies">
-                <Button size="lg" variant="outline" className="border-white/15 text-white hover:bg-white/5 px-8 h-14 rounded-lg" data-testid="button-hero-secondary">
-                  {homeContent.hero.secondaryCta}
-                </Button>
-              </Link>
+          <div className="flex items-center gap-16">
+            <div className="max-w-3xl flex-1">
+              <RotatingBadge />
+              
+              <h1 className="text-4xl md:text-[3.5rem] lg:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-white">
+                {homeContent.hero.headline.split("revenue.")[0]}
+                <span className="text-gradient-teal">revenue.</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl font-light">
+                {homeContent.hero.subhead}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-8 h-14 rounded-lg glow-orange-sm hover:-translate-y-0.5 transition-all" data-testid="button-hero-cta">
+                    {homeContent.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/case-studies">
+                  <Button size="lg" variant="outline" className="border-white/15 text-white hover:bg-white/5 px-8 h-14 rounded-lg" data-testid="button-hero-secondary">
+                    {homeContent.hero.secondaryCta}
+                  </Button>
+                </Link>
+              </div>
+
+              <p className="text-sm font-mono text-muted-foreground/50 tracking-wider">
+                Cape Town based. Globally delivered.
+              </p>
             </div>
 
-            <p className="text-sm font-mono text-muted-foreground/50 tracking-wider">
-              Cape Town based. Globally delivered.
-            </p>
+            <SystemDiagram />
           </div>
         </div>
       </div>
