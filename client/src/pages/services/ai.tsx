@@ -10,6 +10,7 @@ import {
   Workflow,
   BarChart3,
   Activity,
+  Share2,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
@@ -23,22 +24,89 @@ export function ServicesAi() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <Section className="pt-32 pb-20 bg-hero-gradient">
-        <div className="max-w-4xl">
-          <Badge
-            variant="outline"
-            className="mb-6 border-[#C140FF]/30 text-[#C140FF] bg-[#C140FF]/5"
-            data-testid="badge-ai"
-          >
-            Muloo AI
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
-            {serviceAiContent.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#C140FF] pl-6 max-w-2xl">
-            {serviceAiContent.intro}
-          </p>
-          <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">We apply AI inside defined business boundaries, not as experimental overlays.</p>
+      <Section className="pt-20 pb-20 md:pt-28 md:pb-24 bg-hero-gradient glow-ai relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex items-center gap-16">
+            <div className="max-w-xl flex-1">
+              <Badge
+                variant="outline"
+                className="mb-6 border-[#C140FF]/30 text-[#C140FF] bg-[#C140FF]/5"
+                data-testid="badge-ai"
+              >
+                Muloo AI
+              </Badge>
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
+                {serviceAiContent.h1}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#C140FF] pl-6">
+                {serviceAiContent.intro}
+              </p>
+              <p className="text-sm text-white/40 font-mono mt-6">We apply AI inside defined business boundaries, not as experimental overlays.</p>
+            </div>
+
+            <div className="hidden lg:block flex-1">
+              <div className="relative w-full max-w-md mx-auto h-[320px]" data-testid="ai-hero-visual">
+                <div className="absolute inset-0 bg-[#C140FF] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+
+                {/* Top Right: Agent Context */}
+                <div className="absolute top-4 right-0 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-20 animate-float-slow">
+                  <div className="flex items-center gap-3 mb-3 border-b border-white/5 pb-2">
+                    <div className="p-1.5 rounded-md bg-[#C140FF]/10 text-[#C140FF]">
+                      <Brain className="h-3.5 w-3.5" />
+                    </div>
+                    <div className="text-xs font-semibold text-white">Active Reasoning Loop</div>
+                  </div>
+                  <div className="space-y-1.5 font-mono text-[8px] text-white/50">
+                    <div className="flex gap-2"><span className="text-[#C140FF]">&gt;</span> Parsing knowledge base...</div>
+                    <div className="flex gap-2"><span className="text-[#C140FF]">&gt;</span> Selecting tool: <code>sql_query</code></div>
+                    <div className="flex gap-2"><span className="text-green-400">OK</span> Action generated</div>
+                  </div>
+                </div>
+
+                {/* Middle Left: Vector Embedding */}
+                <div className="absolute top-24 -left-6 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 animate-float-medium">
+                  <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+                    <div className="flex items-center gap-2">
+                      <Share2 className="h-4 w-4 text-[#C140FF]" />
+                      <span className="text-xs font-medium text-white">Vector Search</span>
+                    </div>
+                    <span className="text-[9px] text-white/40">k=5</span>
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden flex">
+                      <div className="bg-[#C140FF] h-full w-[35%] opacity-40"></div>
+                      <div className="bg-[#C140FF] h-full w-[15%] opacity-80"></div>
+                      <div className="bg-[#C140FF] h-full w-[25%] opacity-60"></div>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden flex">
+                      <div className="bg-[#C140FF] h-full w-[10%] opacity-30"></div>
+                      <div className="bg-[#C140FF] h-full w-[60%] opacity-50"></div>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden flex">
+                      <div className="bg-[#C140FF] h-full w-[45%] opacity-70"></div>
+                      <div className="bg-[#C140FF] h-full w-[20%] opacity-90"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Right: Output */}
+                <div className="absolute bottom-6 right-6 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-30 animate-float-fast">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                      <Zap className="h-4 w-4 text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-semibold text-white">Task Completed</div>
+                      <div className="text-[9px] text-muted-foreground">0.8s execution time</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </Section>
 
@@ -315,7 +383,7 @@ export function ServicesAi() {
       </Section>
 
       {/* CTA */}
-      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient glow-ai border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">

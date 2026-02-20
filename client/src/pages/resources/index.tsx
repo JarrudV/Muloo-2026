@@ -20,7 +20,7 @@ export function ResourcesIndex() {
         description="Muloo resources and insights."
         robots="noindex,nofollow"
       />
-      <Section className="pt-32 pb-20 bg-hero-gradient">
+      <Section className="pt-20 pb-16 md:pt-28 md:pb-20 bg-hero-gradient">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Technical Insights.</h1>
         <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
           No fluff. Just practical guides on engineering, design, and growth operations.

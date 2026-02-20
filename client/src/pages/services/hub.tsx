@@ -2,7 +2,7 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart3, Building2, Database, Code2, LineChart, ClipboardCheck, Layers, AlertTriangle, GitBranch, Workflow, Eye, Users, Settings, Shield, TrendingUp } from "lucide-react";
+import { ArrowRight, BarChart3, Building2, Database, Code2, LineChart, ClipboardCheck, Layers, AlertTriangle, GitBranch, Workflow, Eye, Users, Settings, Shield, TrendingUp, Check } from "lucide-react";
 import { serviceHubContent } from "@/lib/content";
 import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
 
@@ -21,40 +21,115 @@ export function ServicesHub() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <Section className="pt-32 pb-24 bg-hero-gradient glow-hub relative overflow-hidden">
+      <Section className="pt-20 pb-20 md:pt-28 md:pb-24 bg-hero-gradient glow-hub relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
-        <div className="relative z-10 max-w-4xl">
-          <div className="flex items-center gap-4 mb-8">
-            <Badge
-              data-testid="badge-hubspot-partner"
-              className="bg-[#F47621]/10 text-[#F47621] border-[#F47621]/30 hover:bg-[#F47621]/20"
-            >
-              HubSpot Partners
-            </Badge>
-            <img
-              src={hubspotBadge}
-              alt="HubSpot Gold Partner Badge"
-              className="h-12 w-auto"
-              data-testid="img-hubspot-badge"
-            />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
-            {serviceHubContent.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#F47621] pl-6 max-w-2xl">
-            {serviceHubContent.intro}
-          </p>
-          <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">This is about operational calm, not configuration.</p>
-          <div className="mt-10">
-            <Link href="/contact">
-              <Button
-                size="lg"
-                data-testid="button-hero-cta"
-                className="bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14"
-              >
-                Book a HubSpot architecture review <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex items-center gap-16">
+            <div className="max-w-xl flex-1">
+              <div className="flex items-center gap-4 mb-8">
+                <Badge
+                  data-testid="badge-hubspot-partner"
+                  className="bg-[#F47621]/10 text-[#F47621] border-[#F47621]/30 hover:bg-[#F47621]/20"
+                >
+                  HubSpot Partners
+                </Badge>
+                <img
+                  src={hubspotBadge}
+                  alt="HubSpot Gold Partner Badge"
+                  className="h-12 w-auto"
+                  data-testid="img-hubspot-badge"
+                />
+              </div>
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
+                {serviceHubContent.h1}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#F47621] pl-6 max-w-2xl">
+                {serviceHubContent.intro}
+              </p>
+              <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">This is about operational calm, not configuration.</p>
+              <div className="mt-10">
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    data-testid="button-hero-cta"
+                    className="bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14"
+                  >
+                    Book a HubSpot architecture review <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="hidden lg:block flex-1">
+              <div className="relative w-full max-w-md mx-auto h-[320px]" data-testid="hub-hero-visual">
+                <div className="absolute inset-0 bg-[#F47621] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+
+                {/* Top Card: Pipeline */}
+                <div className="absolute top-4 -left-3 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-20 animate-float-slow">
+                  <div className="flex items-center gap-3 mb-3 border-b border-white/5 pb-2">
+                    <div className="p-1.5 rounded-md bg-[#F47621]/10 text-[#F47621]">
+                      <LineChart className="h-3.5 w-3.5" />
+                    </div>
+                    <div className="text-xs font-semibold text-white">Enterprise Sales Pipeline</div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-[10px] text-white/60 font-mono">
+                      <span>Discovery</span> <span>$2.4M</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#F47621] w-[80%] rounded-full opacity-80" />
+                    </div>
+                    <div className="flex justify-between text-[10px] text-white/60 font-mono">
+                      <span>Proposal</span> <span>$1.1M</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#F47621] w-[45%] rounded-full opacity-60" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Middle Right: Data Model */}
+                <div className="absolute top-28 -right-8 w-56 glass-card rounded-xl p-4 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 animate-float-medium">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Database className="h-4 w-4 text-[#F47621]/70" />
+                    <span className="text-xs font-mono text-white/80">Clean Data Model</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded bg-white/5 border border-white/5">
+                      <div className="h-2 w-2 rounded-full bg-green-400/50" />
+                      <span className="text-[10px] text-white/60">Company Object</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded bg-white/5 border border-white/5">
+                      <div className="h-2 w-2 rounded-full bg-green-400/50" />
+                      <span className="text-[10px] text-white/60">Custom Deal Object</span>
+                    </div>
+                    <div className="flex items-center justify-between px-2 pt-1">
+                      <span className="text-[9px] text-white/40">0 duplicates</span>
+                      <Badge className="h-4 px-1 text-[8px] bg-[#F47621]/20 text-[#F47621] border-none font-mono tracking-widest uppercase">Healthy</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Left: Automation */}
+                <div className="absolute bottom-4 left-5 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-30 animate-float-fast">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-[#F47621]/15 text-[#F47621]">
+                      <Workflow className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-white">Lead Routing Matrix</div>
+                      <div className="text-[10px] text-muted-foreground mt-0.5">Condition: Region = EMEA</div>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="h-5 w-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <Check className="h-3 w-3 text-green-400" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </Section>
@@ -215,7 +290,7 @@ export function ServicesHub() {
                     <Workflow className="h-3.5 w-3.5 shrink-0" style={{ color: `rgba(244, 118, 33, 0.5)` }} />
                     <div>
                       <span className="font-mono text-[11px] font-medium" style={{ color: `rgba(244, 118, 33, 0.7)` }}>Automations</span>
-                      <span className="text-[9px] text-white/20 block font-mono">12 active · 0 errors</span>
+                      <span className="text-[9px] text-white/20 block font-mono">12 active - 0 errors</span>
                     </div>
                   </div>
                 </div>

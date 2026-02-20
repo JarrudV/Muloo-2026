@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/content";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   DropdownMenu,
@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import mulooLogo from "@assets/logo.png";
+import { Logo } from "./Logo";
 
 export function Header() {
   const [location] = useLocation();
@@ -30,14 +30,14 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
-        isScrolled 
-          ? "bg-background/90 backdrop-blur-xl border-white/5 py-3" 
+        isScrolled
+          ? "bg-background/90 backdrop-blur-xl border-white/5 py-3"
           : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="hover:opacity-90 transition-opacity">
-            <img src={mulooLogo} alt="Muloo" className="h-10 md:h-11 w-auto" />
+          <Logo className="text-2xl md:text-3xl" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -67,10 +67,10 @@ export function Header() {
             }
             return (
               <Link key={link.name} href={link.href} className={cn(
-                  "text-[15px] font-medium hover:text-brand-teal transition-colors cursor-pointer text-white/90",
-                  location === link.href ? "text-brand-teal" : ""
-                )}>
-                  {link.name}
+                "text-[15px] font-medium hover:text-brand-teal transition-colors cursor-pointer text-white/90",
+                location === link.href ? "text-brand-teal" : ""
+              )}>
+                {link.name}
               </Link>
             );
           })}
@@ -78,7 +78,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link href="/contact">
-            <Button className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold rounded-full px-6 shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.4)] transition-all hover:shadow-[0_0_25px_-5px_hsl(24,90%,54%,0.6)] hover:-translate-y-0.5 text-sm">
+            <Button className="bg-gradient-muloo border-none text-white hover:brightness-110 font-bold rounded-full px-6 glow-muloo-sm transition-all hover:scale-105 hover:-translate-y-0.5 text-sm">
               Let's Talk
             </Button>
           </Link>
@@ -92,7 +92,7 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="bg-[#0A0F1C] border-l-white/10 w-full sm:w-[400px] p-6 overflow-y-auto">
-             <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+            <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
             <div className="flex flex-col gap-8 mt-10">
               {navLinks.map((link) => (
                 <div key={link.name} className="flex flex-col gap-4">
@@ -101,19 +101,19 @@ export function Header() {
                       <span className="text-lg font-bold text-muted-foreground/50 border-b border-white/10 pb-2">{link.name}</span>
                       {link.subItems.map(sub => (
                         <Link key={sub.name} href={sub.href} onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-medium pl-4 border-l-2 border-transparent hover:border-brand-teal hover:text-brand-teal transition-all text-white">
-                            {sub.name}
+                          {sub.name}
                         </Link>
                       ))}
                     </div>
                   ) : (
                     <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold hover:text-brand-teal transition-colors text-white">
-                        {link.name}
+                      {link.name}
                     </Link>
                   )}
                 </div>
               ))}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-brand-orange text-white font-bold hover:bg-brand-orange/90 mt-4 h-12 rounded-xl">
+                <Button className="w-full bg-gradient-muloo border-none text-white font-bold hover:brightness-110 mt-4 h-12 rounded-xl">
                   Let's Talk
                 </Button>
               </Link>

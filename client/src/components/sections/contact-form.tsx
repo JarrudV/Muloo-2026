@@ -68,7 +68,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="max-w-xl mx-auto glass-card p-8 rounded-2xl shadow-2xl" data-testid="contact-form">
+    <div className="max-w-2xl mx-auto glass-card border border-white/10 p-8 md:p-10 rounded-2xl shadow-2xl" data-testid="contact-form">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -130,7 +130,7 @@ export function ContactForm() {
             />
             <Button 
               type="submit" 
-              className="w-full bg-brand-orange text-white hover:bg-brand-orange/90 font-bold h-12 rounded-lg shadow-[0_0_20px_-5px_hsl(24,90%,54%,0.3)]"
+              className="w-full bg-gradient-muloo border-none text-white hover:brightness-110 font-bold h-12 rounded-lg glow-muloo-sm"
               disabled={mutation.isPending}
               data-testid="button-submit"
             >

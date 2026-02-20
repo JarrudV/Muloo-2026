@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Linkedin, Shield, TrendingUp, Settings, Cog } from "lucide-react";
+import { ArrowRight, Linkedin, Shield, TrendingUp, Settings, Cog, Calendar, Network, Search, Briefcase } from "lucide-react";
 import { advisoryContent } from "@/lib/content";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import jarrudImg from "@assets/d1bde727-2cda-4a05-ad55-08a4eeb1c30f_1771492083207.png";
@@ -26,24 +26,98 @@ export function Advisory() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <div className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-hero-gradient">
+      <Section className="pt-20 pb-20 md:pt-32 md:pb-24 bg-hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal/5 px-4 py-1.5 text-sm font-medium text-brand-teal mb-8 backdrop-blur-sm" data-testid="badge-advisory">
-              <span className="flex h-2 w-2 rounded-full bg-brand-teal mr-2" />
-              Advisory
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="max-w-3xl flex-1">
+              <div className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal/5 px-4 py-1.5 text-sm font-medium text-brand-teal mb-8 backdrop-blur-sm" data-testid="badge-advisory">
+                <span className="flex h-2 w-2 rounded-full bg-brand-teal mr-2" />
+                Advisory
+              </div>
+              <h1 className="text-4xl md:text-[3.5rem] lg:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-white" data-testid="text-advisory-headline">
+                {advisoryContent.hero.headline.endsWith("overhead.") ? (
+                  <>
+                    {advisoryContent.hero.headline.slice(0, -"overhead.".length)}
+                    <span className="text-gradient-muloo">overhead.</span>
+                  </>
+                ) : (
+                  advisoryContent.hero.headline
+                )}
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                {advisoryContent.hero.subtext}
+              </p>
+              <p className="text-sm text-white/40 font-mono mt-6">For businesses between growth and complexity.</p>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-[1.05] text-white" data-testid="text-advisory-headline">
-              {advisoryContent.hero.headline}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] max-w-2xl font-light">
-              {advisoryContent.hero.subtext}
-            </p>
-            <p className="text-sm text-white/40 font-mono mt-6">For businesses between growth and complexity.</p>
+
+            <div className="hidden lg:block flex-1 w-full relative">
+              <div className="relative w-full max-w-md mx-auto h-[320px]" data-testid="advisory-hero-visual">
+                <div className="absolute inset-0 bg-brand-teal opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+
+                {/* Top Card: Strategy */}
+                <div className="absolute top-4 right-0 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-20 animate-float-medium">
+                  <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+                    <div className="flex items-center gap-2 text-white">
+                      <Network className="h-4 w-4 text-brand-teal" />
+                      <span className="text-xs font-semibold">Organisational Structure</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 pt-1 pb-1">
+                    <div className="h-4 w-24 bg-white/10 rounded-sm"></div>
+                    <div className="w-px h-3 bg-white/10"></div>
+                    <div className="w-32 h-px bg-white/10"></div>
+                    <div className="flex gap-4">
+                      <div className="h-3 w-10 bg-white/10 rounded-sm"></div>
+                      <div className="h-3 w-10 bg-brand-teal/40 rounded-sm border border-brand-teal/50 shadow-[0_0_10px_rgba(0,196,204,0.3)]"></div>
+                      <div className="h-3 w-10 bg-white/10 rounded-sm"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Middle Left: Due Diligence */}
+                <div className="absolute top-24 -left-6 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 animate-float-slow">
+                  <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+                    <div className="flex items-center gap-2 text-white">
+                      <Search className="h-4 w-4 text-[#F47621]" />
+                      <span className="text-xs font-semibold">Due Diligence Audit</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-green-400/50" />
+                      <span className="text-[10px] text-white/60">Architecture Review</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-green-400/50" />
+                      <span className="text-[10px] text-white/60">Compliance & Security</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-yellow-400/50" />
+                      <span className="text-[10px] text-white/60">Tech Debt Analysis</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Right: Fractional Leadership */}
+                <div className="absolute bottom-6 right-8 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-30 animate-float-fast">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-full bg-[#155DFC]/10 flex items-center justify-center">
+                      <Briefcase className="h-4 w-4 text-[#155DFC]" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-semibold text-white">Fractional Board Seat</div>
+                      <div className="text-[9px] text-muted-foreground">Active Engagement</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
+      </Section>
 
       {/* Problem Framing */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
@@ -101,51 +175,60 @@ export function Advisory() {
           <p className="text-muted-foreground leading-[1.8]">Operators who've led teams, reported to boards, and passed technology due diligence — not consultants who disappear after a slide deck.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl">
+        <div className="flex flex-col gap-10 w-full max-w-6xl">
           {advisoryContent.leaders.map((leader, i) => (
-            <div key={i} className="glass-card p-8 rounded-2xl flex flex-col items-start group" data-testid={`card-leader-${i}`}>
-              <div className="mb-6 relative">
+            <div key={i} className="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-8 group" data-testid={`card-leader-${i}`}>
+              <div className="shrink-0 relative">
                 <div
-                  className="h-24 w-24 rounded-full p-[2px] transition-all duration-300"
+                  className="h-32 w-32 md:h-48 md:w-48 rounded-full p-[3px] transition-all duration-300 shadow-2xl"
                   style={{
-                    background: `linear-gradient(135deg, ${leader.accent}30, transparent 60%)`,
+                    background: `linear-gradient(135deg, ${leader.accent}50, transparent 70%)`,
                   }}
                 >
-                  <div className="h-full w-full rounded-full overflow-hidden">
+                  <div className="h-full w-full rounded-full overflow-hidden border-2 border-[#030614]">
                     <Avatar className="h-full w-full">
                       <AvatarImage src={getImage(leader.image)} alt={leader.name} className="object-cover" />
-                      <AvatarFallback className="text-lg font-bold">{leader.name.substring(0, 2).toUpperCase()}</AvatarFallback>
+                      <AvatarFallback className="text-2xl font-bold">{leader.name.substring(0, 2).toUpperCase()}</AvatarFallback>
                     </Avatar>
                   </div>
                 </div>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-1">{leader.name}</h3>
-              <p className="text-xs font-mono mb-4" style={{ color: leader.accent }}>{leader.title}</p>
+              <div className="flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-white mb-1">{leader.name}</h3>
+                <p className="text-sm font-mono mb-4" style={{ color: leader.accent }}>{leader.title}</p>
 
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {leader.roles.map((role, ri) => (
-                  <span
-                    key={ri}
-                    className="text-[11px] px-2 py-0.5 rounded border font-mono"
-                    style={{
-                      borderColor: `${leader.accent}20`,
-                      backgroundColor: `${leader.accent}08`,
-                      color: `${leader.accent}99`,
-                    }}
-                  >
-                    {role}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {leader.roles.map((role, ri) => (
+                    <span
+                      key={ri}
+                      className="text-[12px] px-2.5 py-1 rounded border font-mono"
+                      style={{
+                        borderColor: `${leader.accent}20`,
+                        backgroundColor: `${leader.accent}08`,
+                        color: `${leader.accent}99`,
+                      }}
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-base text-muted-foreground leading-[1.8] mb-8 lg:pr-6">{leader.bio}</p>
+
+                <div className="flex flex-wrap gap-3">
+                  <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" data-testid={`link-linkedin-${i}`}>
+                    <Button variant="outline" size="sm" className="bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-colors border">
+                      <Linkedin className="h-4 w-4 mr-2" style={{ color: leader.accent }} /> View Profile
+                    </Button>
+                  </a>
+                  <Link href="/contact" data-testid={`link-meeting-${i}`}>
+                    <Button size="sm" className="text-white hover:opacity-90 font-bold transition-opacity" style={{ backgroundColor: leader.accent }}>
+                      <Calendar className="h-4 w-4 mr-2" /> Book a Meeting
+                    </Button>
+                  </Link>
+                </div>
               </div>
-
-              <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{leader.bio}</p>
-
-              <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" className="mt-auto" data-testid={`link-linkedin-${i}`}>
-                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white hover:bg-white/5 px-0">
-                  <Linkedin className="h-4 w-4 mr-2" /> LinkedIn
-                </Button>
-              </a>
             </div>
           ))}
         </div>

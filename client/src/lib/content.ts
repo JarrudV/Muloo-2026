@@ -1,7 +1,8 @@
 // Content Structure for Muloo Website
 
 export const navLinks = [
-  { name: "Services", href: "/services", 
+  {
+    name: "Services", href: "/services",
     subItems: [
       { name: "Muloo Hub", href: "/services/hub", desc: "Enterprise HubSpot Architecture" },
       { name: "Muloo Build", href: "/services/build", desc: "API-Centric Engineering" },
@@ -10,7 +11,8 @@ export const navLinks = [
     ]
   },
   { name: "Advisory", href: "/advisory" },
-  { name: "Resources", href: "/resources", 
+  {
+    name: "Resources", href: "/resources",
     subItems: [
       { name: "Case Studies", href: "/case-studies", desc: "Technical outcomes" },
       { name: "Insights", href: "/blog", desc: "Engineering guides" }
@@ -215,8 +217,8 @@ export const advisoryContent = {
     {
       name: "Morne Visagie",
       title: "Partner",
-      roles: ["Leads Muloo Build", "Outsourced CTO"],
-      bio: "Full-stack engineer and technical strategist. Morne leads architecture decisions across client engagements and provides fractional CTO services to scaling teams.",
+      roles: ["Leads Muloo Build", "Outsourced CTO", "System Architecture"],
+      bio: "Full-stack engineer and technical strategist with over 15 years of experience architecting complex software systems. Morne leads architecture decisions across client engagements, specialising in API-centric design, middleware structures, and cloud infrastructure. As an Outsourced CTO, he embeds directly into scaling businesses to guide their product roadmaps, conduct technical due diligence, mentor engineering teams, and ensure that every technical decision aligns perfectly with commercial objectives.",
       accent: "#155DFC",
       linkedin: "https://www.linkedin.com/in/mornevisagie/",
       image: "morne"
@@ -224,8 +226,8 @@ export const advisoryContent = {
     {
       name: "Jarrud van der Merwe",
       title: "Partner",
-      roles: ["Lead HubSpot Architect", "Sales Engineering Lead", "Leads Muloo Hub"],
-      bio: "CRM architect and sales engineer. Jarrud designs enterprise HubSpot implementations and provides technical pre-sales support for complex deal cycles.",
+      roles: ["Lead HubSpot Architect", "Sales Engineering", "Revenue Operations"],
+      bio: "Enterprise CRM architect and technical sales engineer. Jarrud specialises in translating complex commercial requirements into scalable data models and programmable automation workflows within HubSpot. He provides technical pre-sales support for high-stakes deal cycles, helping B2B revenue teams map out their entire customer journey. His approach ensures that marketing, sales, and success operations run on a single, unified source of truth—eliminating silos and accelerating revenue velocity.",
       accent: "#F47621",
       linkedin: "https://www.linkedin.com/in/jarrud/",
       image: "jarrud"
@@ -233,8 +235,8 @@ export const advisoryContent = {
     {
       name: "Paul Manson",
       title: "Strategic Partner",
-      roles: ["Business Analysis", "Outsourced COO Services"],
-      bio: "Operations specialist and business analyst. Paul brings structure to growing businesses through process design, requirement mapping, and operational oversight.",
+      roles: ["Business Analysis", "Process Engineering", "Outsourced COO"],
+      bio: "Operations specialist, business analyst, and strategic partner. Paul brings rigorous structure to growing businesses through comprehensive process design, requirement mapping, and operational oversight. Drawing on extensive experience in enterprise environments, he identifies friction points in existing workflows, designs scalable operating models, and enforces governance. As an Outsourced COO, he aligns technical implementations with core business operations, ensuring that the technology actually drives efficiency.",
       accent: "#59BF96",
       linkedin: "https://www.linkedin.com/in/paulmanson/",
       image: "paul"
@@ -258,7 +260,7 @@ export const aboutContent = {
       role: "Lead HubSpot Architect & Sales Engineer",
       bio: "CRM Guru and Sales Engineer. Leads Muloo Hub.",
       linkedin: "https://www.linkedin.com/in/jarrud/",
-      image: "jarrud" 
+      image: "jarrud"
     },
     {
       name: "Morne Visagie",
@@ -272,7 +274,7 @@ export const aboutContent = {
       role: "Business Analyst & Outsourced COO",
       bio: "Trusted partner for Business Analysis and Outsourced COO Services.",
       linkedin: "https://www.linkedin.com/in/paulmanson/",
-      image: "paul" 
+      image: "paul"
     }
   ]
 };

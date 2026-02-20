@@ -18,7 +18,7 @@ export function CaseStudies() {
         description="Muloo case studies."
         robots="noindex,nofollow"
       />
-      <Section className="pt-32 pb-20">
+      <Section className="pt-20 pb-16 md:pt-28 md:pb-20">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Case Studies.</h1>
       </Section>
 

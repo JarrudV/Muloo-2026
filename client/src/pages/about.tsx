@@ -19,7 +19,7 @@ const getImage = (imageName: string) => {
 export function About() {
   return (
     <div className="flex flex-col">
-      <Section className="pt-32 pb-20 bg-hero-cosmic">
+      <Section className="pt-20 pb-16 md:pt-28 md:pb-20 bg-hero-cosmic">
         <div className="max-w-4xl">
            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-brand-orange mb-8 backdrop-blur-md">
             Who we are

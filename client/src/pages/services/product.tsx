@@ -1,6 +1,6 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wrench, Laptop, Rocket, BarChart3, Settings, Lightbulb, Users, CreditCard, Server, HeadphonesIcon, Activity } from "lucide-react";
+import { ArrowRight, Wrench, Laptop, Rocket, BarChart3, Settings, Lightbulb, Users, CreditCard, Server, HeadphonesIcon, Activity, Star, Cloud } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { serviceProductContent } from "@/lib/content";
@@ -11,21 +11,85 @@ export function ServicesProduct() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <Section className="pt-32 pb-20 bg-hero-gradient">
-        <div className="max-w-4xl">
-          <Badge
-            variant="outline"
-            className="mb-6 border-[#59BF96]/30 text-[#59BF96] bg-[#59BF96]/5"
-            data-testid="badge-product"
-          >
-            Muloo Product
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
-            {serviceProductContent.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#59BF96] pl-6 max-w-2xl">
-            {serviceProductContent.intro}
-          </p>
+      <Section className="pt-20 pb-20 md:pt-28 md:pb-24 bg-hero-gradient glow-product relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex items-center gap-16">
+            <div className="max-w-xl flex-1">
+              <Badge
+                variant="outline"
+                className="mb-6 border-[#59BF96]/30 text-[#59BF96] bg-[#59BF96]/5"
+                data-testid="badge-product"
+              >
+                Muloo Product
+              </Badge>
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
+                {serviceProductContent.h1}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#59BF96] pl-6">
+                {serviceProductContent.intro}
+              </p>
+            </div>
+
+            <div className="hidden lg:block flex-1">
+              <div className="relative w-full max-w-md mx-auto h-[320px]" data-testid="product-hero-visual">
+                <div className="absolute inset-0 bg-[#59BF96] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+
+                {/* Main App Window */}
+                <div className="absolute inset-4 glass-card rounded-xl border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 flex flex-col overflow-hidden animate-float-medium">
+                  {/* App Header */}
+                  <div className="h-8 border-b border-white/5 bg-white/[0.02] flex items-center px-3 gap-1.5">
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-400/50" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-yellow-400/50" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-green-400/50" />
+                    <div className="mx-auto h-3 w-24 bg-white/5 rounded-full" />
+                  </div>
+                  {/* App Body */}
+                  <div className="flex-1 p-4 flex flex-col gap-4">
+                    {/* Stats Row */}
+                    <div className="flex gap-3">
+                      <div className="flex-1 h-16 rounded-lg bg-white/5 border border-white/5 p-2.5 flex flex-col justify-between">
+                        <div className="h-2 w-10 bg-white/20 rounded-full" />
+                        <div className="flex items-end gap-2">
+                          <span className="text-white text-lg font-bold leading-none">$12k</span>
+                          <span className="text-green-400 text-[9px] font-mono leading-none">+14%</span>
+                        </div>
+                      </div>
+                      <div className="flex-1 h-16 rounded-lg bg-white/5 border border-white/5 p-2.5 flex flex-col justify-between">
+                        <div className="h-2 w-12 bg-white/20 rounded-full" />
+                        <div className="flex items-end gap-2">
+                          <span className="text-white text-lg font-bold leading-none">842</span>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Chart Area */}
+                    <div className="flex-1 rounded-lg bg-white/5 border border-white/5 p-3 flex flex-col justify-end gap-1 overflow-hidden relative">
+                      <div className="flex items-end justify-between h-full px-2">
+                        {[30, 45, 25, 60, 40, 70, 50, 85].map((h, i) => (
+                          <div key={i} className="w-4 bg-[#59BF96]/40 rounded-t-sm" style={{ height: `${h}%` }} />
+                        ))}
+                      </div>
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Feature Tag */}
+                <div className="absolute top-12 -right-6 glass-card rounded-lg p-2.5 border-white/10 shadow-xl z-20 animate-float-slow flex items-center gap-2">
+                  <Star className="h-3.5 w-3.5 text-yellow-400" />
+                  <span className="text-[10px] font-semibold text-white">Version 2.0 Live</span>
+                </div>
+
+                {/* Floating Deploy Tag */}
+                <div className="absolute bottom-16 -left-6 glass-card rounded-lg p-2.5 border-white/10 shadow-xl z-20 animate-float-fast flex items-center gap-2">
+                  <Cloud className="h-3.5 w-3.5 text-[#59BF96]" />
+                  <span className="text-[10px] font-semibold text-white">Edge Deployed</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </Section>
 
@@ -417,7 +481,7 @@ export function ServicesProduct() {
       </Section>
 
       {/* CTA */}
-      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient glow-product border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">

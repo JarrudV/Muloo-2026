@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import mulooLogo from "@assets/logo.png";
+import { Logo } from "./Logo";
 import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
 import googleBadge from "@assets/google-partner-logo_1771487221441.png";
 
@@ -10,14 +10,14 @@ export function Footer() {
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           <div>
             <Link href="/" className="block mb-6 hover:opacity-90">
-                <img src={mulooLogo} alt="Muloo" className="h-8 w-auto" />
+              <Logo className="text-xl md:text-2xl" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Based in Cape Town. <br/>
+              Based in Cape Town. <br />
               Built for global teams.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-bold mb-6 text-white text-sm">Expertise</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
@@ -40,8 +40,8 @@ export function Footer() {
           </div>
 
           <div>
-             <h4 className="font-bold mb-6 text-white text-sm">Connect</h4>
-             <ul className="space-y-4 text-sm text-muted-foreground">
+            <h4 className="font-bold mb-6 text-white text-sm">Connect</h4>
+            <ul className="space-y-4 text-sm text-muted-foreground">
               <li><span>LinkedIn</span></li>
               <li><span>GitHub</span></li>
               <li><Link href="/styleguide" className="hover:text-brand-teal transition-colors">Styleguide</Link></li>
@@ -50,14 +50,14 @@ export function Footer() {
 
           <div className="md:text-right">
             <h4 className="font-bold mb-6 text-white text-sm">Accreditations</h4>
-            <div className="flex flex-col gap-4 items-start md:items-end">
-              <img src={hubspotBadge} alt="HubSpot Gold Partner" className="h-11 w-auto" data-testid="footer-hubspot-badge" />
-              <img src={googleBadge} alt="Google Partner" className="h-5 w-auto opacity-40 grayscale" data-testid="footer-google-badge" />
-              <span className="text-[10px] text-muted-foreground/30 font-mono">More coming soon</span>
+            <div className="flex flex-col gap-5 items-start md:items-end">
+              <img src={hubspotBadge} alt="HubSpot Gold Partner" className="h-16 w-auto drop-shadow-lg" data-testid="footer-hubspot-badge" />
+              <img src={googleBadge} alt="Google Partner" className="h-8 w-auto opacity-50 grayscale hover:grayscale-0 transition-all duration-300" data-testid="footer-google-badge" />
+              <span className="text-[10px] text-muted-foreground/30 font-mono mt-1">More coming soon</span>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Muloo. All rights reserved.</p>
           <div className="flex gap-6">

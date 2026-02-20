@@ -1,6 +1,6 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Webhook, Code2, Shield, Zap, Database, Terminal, RefreshCw, Lock, Activity, Layers, Server, HardDrive } from "lucide-react";
+import { ArrowRight, Webhook, Code2, Shield, Zap, Database, Terminal, RefreshCw, Lock, Activity, Layers, Server, HardDrive, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { serviceBuildContent } from "@/lib/content";
@@ -11,21 +11,90 @@ export function ServicesBuild() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <Section className="pt-32 pb-20 bg-hero-gradient">
-        <div className="max-w-4xl">
-          <Badge
-            variant="outline"
-            className="mb-6 border-[#155DFC]/30 text-[#155DFC] bg-[#155DFC]/5"
-            data-testid="badge-build"
-          >
-            Muloo Build
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
-            {serviceBuildContent.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#155DFC] pl-6">
-            {serviceBuildContent.intro}
-          </p>
+      <Section className="pt-20 pb-20 md:pt-28 md:pb-24 bg-hero-gradient glow-build relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex items-center gap-16">
+            <div className="max-w-xl flex-1">
+              <Badge
+                variant="outline"
+                className="mb-6 border-[#155DFC]/30 text-[#155DFC] bg-[#155DFC]/5"
+                data-testid="badge-build"
+              >
+                Muloo Build
+              </Badge>
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">
+                {serviceBuildContent.h1}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#155DFC] pl-6">
+                {serviceBuildContent.intro}
+              </p>
+            </div>
+
+            <div className="hidden lg:block flex-1">
+              <div className="relative w-full max-w-md mx-auto h-[320px]" data-testid="build-hero-visual">
+                <div className="absolute inset-0 bg-[#155DFC] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+
+                {/* Top Card: API Gateway */}
+                <div className="absolute top-4 right-0 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-20 animate-float-medium">
+                  <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+                    <div className="flex items-center gap-2 text-white">
+                      <Shield className="h-4 w-4 text-[#155DFC]" />
+                      <span className="text-xs font-semibold">API Gateway</span>
+                    </div>
+                    <span className="text-[10px] text-green-400 font-mono bg-green-400/10 px-1.5 py-0.5 rounded">200 OK</span>
+                  </div>
+                  <div className="space-y-1 font-mono text-[8px] text-muted-foreground bg-black/40 p-1.5 rounded border border-white/5">
+                    <div><span className="text-purple-400">POST</span> /api/v2/webhooks/stripe</div>
+                    <div><span className="text-blue-400">Authorization:</span> Bearer token_***</div>
+                    <div><span className="text-orange-400">Content-Type:</span> application/json</div>
+                  </div>
+                </div>
+
+                {/* Middle Left: Data Pipeline */}
+                <div className="absolute top-24 -left-6 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 animate-float-slow">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Database className="h-4 w-4 text-[#155DFC]" />
+                        <span className="text-xs font-medium text-white">Data Pipeline</span>
+                      </div>
+                      <div className="flex gap-1 items-end h-4">
+                        {[40, 70, 45, 90, 60].map((h, i) => (
+                          <div key={i} className="w-1 bg-[#155DFC]/60 rounded-t-sm" style={{ height: `${h}%` }} />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="text-[10px] text-white/50 flex justify-between">
+                        <span>Transforming Payload</span>
+                        <span>42ms</span>
+                      </div>
+                      <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full bg-[#155DFC] rounded-full w-[65%] animate-pulse" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Right: Middleware Success */}
+                <div className="absolute bottom-6 right-8 w-52 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-30 animate-float-fast">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-semibold text-white">ERP Sync Complete</div>
+                      <div className="text-[9px] text-muted-foreground">1,204 records updated</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </Section>
 
@@ -120,7 +189,7 @@ export function ServicesBuild() {
                   <Shield className="h-4 w-4 shrink-0" style={{ color: `rgba(21, 93, 252, 0.6)` }} />
                   <div>
                     <span className="font-mono text-xs font-medium" style={{ color: `rgba(21, 93, 252, 0.8)` }}>API Gateway</span>
-                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Auth · Rate Limit · Validate</span>
+                    <span className="text-[9px] text-white/20 block font-mono mt-0.5">Auth - Rate Limit - Validate</span>
                   </div>
                 </div>
 
@@ -146,7 +215,7 @@ export function ServicesBuild() {
                     <Terminal className="h-4 w-4 shrink-0" style={{ color: streamBlue }} />
                     <div>
                       <span className="font-mono text-xs font-medium" style={{ color: streamBlue }}>Middleware</span>
-                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Transform · Route</span>
+                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Transform - Route</span>
                     </div>
                   </div>
                   <div
@@ -159,7 +228,7 @@ export function ServicesBuild() {
                     <Activity className="h-4 w-4 shrink-0" style={{ color: `rgba(21, 93, 252, 0.6)` }} />
                     <div>
                       <span className="font-mono text-xs font-medium" style={{ color: `rgba(21, 93, 252, 0.8)` }}>Event Queue</span>
-                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Async · Retry</span>
+                      <span className="text-[9px] text-white/20 block font-mono mt-0.5">Async - Retry</span>
                     </div>
                   </div>
                 </div>
@@ -412,7 +481,7 @@ export function ServicesBuild() {
       </Section>
 
       {/* CTA */}
-      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient glow-build border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to stabilise your architecture?</h2>

@@ -7,80 +7,81 @@
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
-  
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   /* Core Brand Foundation */
   --color-brand-navy: #050A30;
   --color-brand-teal: #00C4CC;
   --color-brand-orange: #F47621;
   --color-soft-teal: #E6FBFD;
-  
+
   /* Stream Accent Colours */
   --color-stream-hub: #F47621;
   --color-stream-build: #155DFC;
   --color-stream-ai: #C140FF;
   --color-stream-product: #59BF96;
-  
+
   --font-sans: 'Montserrat', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-aileron: 'Aileron', 'Montserrat', sans-serif;
 }
 
 :root {
   --background: 233 81% 10%;
   --foreground: 210 40% 98%;
-  
+
   --card: 233 60% 14%;
   --card-foreground: 210 40% 98%;
-  
+
   --popover: 233 60% 14%;
   --popover-foreground: 210 40% 98%;
-  
+
   --primary: 182 100% 40%;
   --primary-foreground: 233 81% 10%;
-  
+
   --secondary: 233 60% 20%;
   --secondary-foreground: 210 40% 98%;
-  
+
   --muted: 233 40% 20%;
   --muted-foreground: 215 20% 65%;
-  
+
   --accent: 233 40% 20%;
   --accent-foreground: 210 40% 98%;
-  
+
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 233 30% 20%;
   --input: 233 30% 20%;
   --ring: 182 100% 40%;
-  
+
   --radius: 0.5rem;
 }
 
@@ -88,21 +89,35 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
     background-color: #050A30;
     min-height: 100vh;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight text-white;
+    font-weight: 600;
+    /* Semi-Bold */
   }
-  
+
+  h1 {
+    font-weight: 800;
+    /* Extra Bold */
+  }
+
   ::selection {
     @apply bg-brand-teal/30 text-white;
   }
-  
-  code, pre {
+
+  code,
+  pre {
     @apply font-mono;
   }
 }
@@ -111,25 +126,37 @@
   /* ─────────────────────────────────────
      1. GRADIENT SYSTEM
      ───────────────────────────────────── */
-  
+
   /* Core Hero Gradient: Navy base with subtle teal radial glow */
   .bg-hero-gradient {
-    background: 
+    background:
       radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 196, 204, 0.08), transparent),
       radial-gradient(ellipse 60% 40% at 80% 50%, rgba(0, 196, 204, 0.04), transparent),
       #050A30;
   }
 
   /* Stream Accent Glows */
-  .glow-hub { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244, 118, 33, 0.06), transparent), #050A30; }
-  .glow-build { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(21, 93, 252, 0.06), transparent), #050A30; }
-  .glow-ai { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193, 64, 255, 0.06), transparent), #050A30; }
-  .glow-product { background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(89, 191, 150, 0.06), transparent), #050A30; }
+  .glow-hub {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244, 118, 33, 0.06), transparent), #050A30;
+  }
+
+  .glow-build {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(21, 93, 252, 0.06), transparent), #050A30;
+  }
+
+  .glow-ai {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193, 64, 255, 0.06), transparent), #050A30;
+  }
+
+  .glow-product {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(89, 191, 150, 0.06), transparent), #050A30;
+  }
 
   /* Soft Section Alternation */
   .bg-section-soft {
     background: linear-gradient(180deg, #050A30 0%, #0A1040 100%);
   }
+
   .bg-section-light {
     background: linear-gradient(180deg, #ffffff 0%, #E6FBFD 100%);
   }
@@ -142,12 +169,22 @@
   }
 
   /* ─────────────────────────────────────
-     3. TEXT GRADIENTS
+     3. TEXT MULTI-COLOR BURST GRADIENTS
      ───────────────────────────────────── */
+  .text-gradient-muloo {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00C4CC 0%, #C140FF 50%, #F47621 100%);
+  }
+
+  .bg-gradient-muloo {
+    background-image: linear-gradient(135deg, #00C4CC 0%, #C140FF 50%, #F47621 100%);
+  }
+
   .text-gradient-teal {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, #00C4CC, #80E8ED);
   }
+
   .text-gradient-orange {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, #F47621, #FFA366);
@@ -158,15 +195,16 @@
      ───────────────────────────────────── */
   .bg-grid-pattern {
     background-size: 60px 60px;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   }
+
   .bg-grid-pattern-fade {
     background-size: 60px 60px;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     mask-image: radial-gradient(ellipse 70% 70% at center, black, transparent);
   }
 
@@ -180,9 +218,85 @@
   /* ─────────────────────────────────────
      6. GLOW EFFECTS
      ───────────────────────────────────── */
-  .glow-teal-sm { box-shadow: 0 0 20px -5px rgba(0, 196, 204, 0.3); }
-  .glow-orange-sm { box-shadow: 0 0 20px -5px rgba(244, 118, 33, 0.3); }
-  .glow-blue-sm { box-shadow: 0 0 20px -5px rgba(21, 93, 252, 0.3); }
-  .glow-purple-sm { box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.3); }
-  .glow-green-sm { box-shadow: 0 0 20px -5px rgba(89, 191, 150, 0.3); }
+  .glow-muloo-sm {
+    box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.4);
+  }
+
+  .glow-teal-sm {
+    box-shadow: 0 0 20px -5px rgba(0, 196, 204, 0.3);
+  }
+
+  .glow-orange-sm {
+    box-shadow: 0 0 20px -5px rgba(244, 118, 33, 0.3);
+  }
+
+  .glow-blue-sm {
+    box-shadow: 0 0 20px -5px rgba(21, 93, 252, 0.3);
+  }
+
+  .glow-purple-sm {
+    box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.3);
+  }
+
+  .glow-green-sm {
+    box-shadow: 0 0 20px -5px rgba(89, 191, 150, 0.3);
+  }
+
+  /* ─────────────────────────────────────
+     7. LOGO SPECIFIC STYLES
+     ───────────────────────────────────── */
+  .muloo-logo {
+    font-family: var(--font-aileron);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 2rem;
+  }
+
+  .muloo-logo .service-name {
+    color: var(--accent-primary);
+  }
+
+  /* ─────────────────────────────────────
+     8. ANIMATIONS
+     ───────────────────────────────────── */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
 }

@@ -15,7 +15,7 @@ export function CaseStudyDetail() {
         description="Muloo case study details."
         robots="noindex,nofollow"
       />
-       <Section className="pt-32 pb-12">
+       <Section className="pt-20 pb-10 md:pt-24 md:pb-12">
         <Link href="/case-studies">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all text-muted-foreground hover:text-brand-teal">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies

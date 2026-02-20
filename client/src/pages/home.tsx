@@ -1,13 +1,9 @@
 import { Section } from "@/components/ui/section";
 import { homeContent } from "@/lib/content";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight, Cloud, Server, Workflow, Shield, Check, X, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, Database, Cpu, Bot, Layout, ChevronRight, Server, Workflow, Check, TrendingUp, Zap } from "lucide-react";
 import { Link } from "wouter";
-import { useState, useEffect, useCallback } from "react";
-import { useLocation as useWouterLocation } from "wouter";
-import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
-import googleBadge from "@assets/google-partner-logo_1771487221441.png";
+import { useState, useEffect } from "react";
 
 const rotatingPhrases = [
   "Technical Partner for HubSpot",
@@ -81,44 +77,115 @@ function RotatingBadge() {
   );
 }
 
-function SystemDiagram() {
+function UICascade() {
   return (
-    <div className="relative w-full max-w-md mx-auto hidden lg:block" data-testid="hero-system-diagram">
-      <div className="absolute inset-0 bg-brand-teal/5 blur-3xl rounded-full" />
-      <div className="relative space-y-4">
-        {[
-          { icon: <Cloud className="h-5 w-5" />, label: "CRM & Data", sub: "HubSpot · Salesforce", color: "#F47621" },
-          { icon: <Server className="h-5 w-5" />, label: "Middleware", sub: "APIs · Sync · Auth", color: "#155DFC" },
-          { icon: <Workflow className="h-5 w-5" />, label: "AI Agents", sub: "Codex · Automation", color: "#C140FF" },
-          { icon: <Shield className="h-5 w-5" />, label: "Products", sub: "SaaS · Portals", color: "#59BF96" },
-        ].map((node, i) => (
-          <div key={i} className="relative">
-            {i > 0 && (
-              <div className="absolute -top-4 left-8 w-px h-4 bg-white/10" />
-            )}
-            <div
-              className="glass-card rounded-xl p-4 flex items-center gap-4 hover:-translate-x-1 transition-transform duration-300"
-              style={{ borderColor: `${node.color}15` }}
-            >
-              <div
-                className="p-2.5 rounded-lg shrink-0"
-                style={{ backgroundColor: `${node.color}12`, color: node.color }}
-              >
-                {node.icon}
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-white">{node.label}</div>
-                <div className="text-xs text-muted-foreground font-mono">{node.sub}</div>
-              </div>
-              <div
-                className="ml-auto h-1.5 w-1.5 rounded-full opacity-60"
-                style={{ backgroundColor: node.color }}
-              />
+    <div className="relative w-full max-w-md mx-auto hidden lg:block h-[340px]" data-testid="hero-ui-cascade">
+      <div className="absolute inset-0 bg-gradient-muloo opacity-[0.03] blur-[100px] rounded-full pointer-events-none" />
+
+      {/* 1. Analytics / Revenue (Top Left) */}
+      <div className="absolute top-4 -left-3 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-10 animate-float-slow">
+        <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-3">
+          <div className="p-2 rounded-lg bg-white/5 text-stream-product">
+            <TrendingUp className="h-4 w-4" />
+          </div>
+          <div>
+            <div className="text-xs font-semibold text-white">Revenue Velocity</div>
+            <div className="text-[10px] text-muted-foreground font-mono">+24.5% MoM</div>
+          </div>
+        </div>
+        <div className="flex items-end gap-1 h-12">
+          {[3, 5, 4, 7, 6, 9, 8, 12, 10, 14].map((h, i) => (
+            <div key={i} className={`flex-1 rounded-[2px] ${i >= 8 ? 'bg-gradient-muloo' : 'bg-white/10'}`} style={{ height: `${h * 10}%` }} />
+          ))}
+        </div>
+      </div>
+
+      {/* 2. Middleware / Data Hub (Middle Right) */}
+      <div className="absolute top-24 -right-6 w-60 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-20 animate-float-medium">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded bg-stream-hub/20 flex items-center justify-center text-stream-hub">
+              <Database className="h-3 w-3" />
+            </div>
+            <div className="h-px w-4 bg-white/20" />
+            <div className="p-1 rounded bg-white/5 border border-white/10 text-white/60">
+              <Workflow className="h-3 w-3" />
+            </div>
+            <div className="h-px w-4 bg-white/20" />
+            <div className="h-6 w-6 rounded bg-stream-build/20 flex items-center justify-center text-stream-build">
+              <Server className="h-3 w-3" />
             </div>
           </div>
-        ))}
+          <div className="flex items-center gap-1.5">
+            <div className="h-1.5 w-1.5 rounded-full bg-[#59BF96] animate-pulse" />
+            <span className="text-[10px] text-muted-foreground font-mono">Syncing</span>
+          </div>
+        </div>
+        <div className="space-y-2">
+          <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+            <div className="h-full bg-gradient-muloo w-3/4 rounded-full" />
+          </div>
+          <div className="flex justify-between text-[10px] text-muted-foreground">
+            <span>Processing 1.2M rows</span>
+            <span>2ms lat</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 3. AI Agent (Bottom Center) */}
+      <div className="absolute bottom-6 left-6 w-56 glass-card rounded-xl p-3 border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] z-30 animate-float-fast">
+        <div className="flex items-start gap-3">
+          <div className="p-2 rounded-lg bg-stream-ai/20 text-stream-ai shrink-0 mt-0.5">
+            <Bot className="h-4 w-4" />
+          </div>
+          <div>
+            <div className="text-xs font-semibold text-white mb-1.5">Codex Agent Deployed</div>
+            <div className="text-[11px] text-white/70 leading-relaxed mb-3 italic">
+              "Analyzed Q3 pipeline. Created 14 missing deal associations."
+            </div>
+            <div className="flex gap-2">
+              <div className="h-6 rounded bg-white/5 border border-white/10 px-3 flex items-center justify-center text-[10px] text-muted-foreground font-mono hover:bg-white/10 cursor-pointer transition-colors">
+                Review
+              </div>
+              <div className="h-6 w-8 rounded bg-gradient-muloo flex items-center justify-center text-white glow-muloo-sm cursor-pointer hover:brightness-110 transition-all">
+                <Check className="h-3 w-3" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  );
+}
+
+const clientLogos = [
+  "Chat Inc.", "Phillips Law", "Group Elephant", "EPI-USE", "WConsulting",
+  "Eviare", "Virgin Active", "SNG Grant Thornton", "Aerobotics", "Nubeva"
+];
+
+function ClientMarquee() {
+  return (
+    <Section className="py-[15px] border-t border-b border-white/5 bg-[#030614]/50 overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050A30] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050A30] to-transparent z-10 pointer-events-none" />
+
+      <div className="flex w-max animate-marquee hover:[animation-play-state:paused] transition-all">
+        <div className="flex gap-20 items-center px-10">
+          {clientLogos.map((client, i) => (
+            <span key={`logo1-${i}`} className="text-xl md:text-2xl font-black tracking-tighter text-white/20 uppercase hover:text-white/40 transition-colors cursor-default" style={{ fontFamily: "'Aileron', sans-serif" }}>
+              {client}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-20 items-center px-10" aria-hidden="true">
+          {clientLogos.map((client, i) => (
+            <span key={`logo2-${i}`} className="text-xl md:text-2xl font-black tracking-tighter text-white/20 uppercase hover:text-white/40 transition-colors cursor-default" style={{ fontFamily: "'Aileron', sans-serif" }}>
+              {client}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Section>
   );
 }
 
@@ -185,30 +252,29 @@ function DashboardMock() {
 }
 
 export function Home() {
-  const [, navigate] = useWouterLocation();
   return (
     <div className="flex flex-col">
       {/* ── HERO ── */}
-      <div className="relative pt-32 pb-24 md:pt-44 md:pb-28 overflow-hidden bg-hero-gradient">
+      <div className="relative pt-20 pb-20 md:pt-32 md:pb-24 overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center gap-16">
             <div className="max-w-3xl flex-1">
               <RotatingBadge />
-              
+
               <h1 className="text-4xl md:text-[3.5rem] lg:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-white">
                 {homeContent.hero.headline.split("revenue.")[0]}
-                <span className="text-gradient-teal">revenue.</span>
+                <span className="text-gradient-muloo">revenue.</span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl font-light">
                 {homeContent.hero.subhead}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/contact">
-                  <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-8 h-14 rounded-lg glow-orange-sm hover:-translate-y-0.5 transition-all" data-testid="button-hero-cta">
+                  <Button size="lg" className="bg-gradient-muloo border-none text-white hover:brightness-110 font-bold px-8 h-14 rounded-lg glow-muloo-sm hover:-translate-y-0.5 transition-all" data-testid="button-hero-cta">
                     {homeContent.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -224,15 +290,17 @@ export function Home() {
               </p>
             </div>
 
-            <SystemDiagram />
+            <UICascade />
           </div>
         </div>
       </div>
 
+      <ClientMarquee />
+
       {/* ── 2. FOUR STREAMS ── */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What we do</h2>
+          <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">What we do</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white max-w-2xl">Four streams. One technical partner.</h3>
         </div>
 
@@ -240,14 +308,9 @@ export function Home() {
           {homeContent.pillars.map((pillar) => {
             const colors = streamColors[pillar.id];
             return (
-              <a
+              <Link
                 key={pillar.id}
                 href={pillar.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate(pillar.href);
-                  window.scrollTo({ top: 0, behavior: "instant" });
-                }}
               >
                 <div className={`group glass-card h-full p-8 rounded-2xl flex flex-col cursor-pointer hover:-translate-y-1 transition-all duration-300 ${colors.glow}`} data-testid={`card-service-${pillar.id}`}>
                   <div className={`mb-6 p-3 rounded-xl w-fit ${colors.bg} ${colors.text}`}>
@@ -255,7 +318,9 @@ export function Home() {
                   </div>
 
                   <h4 className="text-xs font-mono text-muted-foreground mb-2 uppercase tracking-wider">{pillar.subtitle}</h4>
-                  <h3 className="text-2xl font-bold mb-3 text-white transition-colors">{pillar.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-white transition-colors">
+                    muloo <span className={colors.text}>{pillar.title.replace("Muloo ", "")}</span>
+                  </h3>
                   <p className="text-sm text-muted-foreground leading-[1.8] mb-6 flex-grow">{pillar.desc}</p>
 
                   <ul className="space-y-2 mb-6 border-t border-white/5 pt-4">
@@ -271,7 +336,7 @@ export function Home() {
                     Explore <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -310,7 +375,7 @@ export function Home() {
 
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">How we work</h2>
+          <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">How we work</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h3>
         </div>
 
@@ -331,7 +396,7 @@ export function Home() {
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-30" />
         <div className="relative z-10">
           <div className="mb-16">
-            <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Knowledge</h2>
+            <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">Knowledge</h2>
             <p className="text-sm text-muted-foreground mb-4 max-w-xl leading-[1.8]">Written by the team that builds these systems — not a content department.</p>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">How modern revenue systems are built.</h3>
             <p className="text-muted-foreground max-w-xl text-lg leading-[1.8]">Practical notes on HubSpot, integrations, AI workflows, and system design.</p>
@@ -339,11 +404,26 @@ export function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { badge: "HubSpot Foundations", title: "Why portal audits should come before automation", desc: "Most teams jump to workflows before fixing the data model. Here's why sequencing matters." },
-              { badge: "Integration Patterns", title: "The hidden cost of point-to-point integrations", desc: "When every tool connects directly to every other tool, maintenance costs compound fast." },
-              { badge: "AI Workflows", title: "Where AI agents add value vs. where they don't", desc: "Not everything needs an agent. A framework for deciding where automation truly helps." },
+              {
+                badge: "HubSpot Foundations",
+                title: "Why portal audits should come before automation",
+                desc: "Most teams jump to workflows before fixing the data model. Here's why sequencing matters.",
+                href: "/blog",
+              },
+              {
+                badge: "Integration Patterns",
+                title: "The hidden cost of point-to-point integrations",
+                desc: "When every tool connects directly to every other tool, maintenance costs compound fast.",
+                href: "/blog",
+              },
+              {
+                badge: "AI Workflows",
+                title: "Where AI agents add value vs. where they don't",
+                desc: "Not everything needs an agent. A framework for deciding where automation truly helps.",
+                href: "/blog",
+              },
             ].map((card, i) => (
-              <a key={i} href="#" className="group glass-card rounded-2xl p-7 flex flex-col hover:-translate-y-1 hover:border-brand-teal/15 transition-all duration-300" data-testid={`card-insight-${i}`}>
+              <Link key={i} href={card.href} className="group block h-full glass-card rounded-2xl p-7 flex flex-col hover:-translate-y-1 hover:border-brand-teal/15 transition-all duration-300" data-testid={`card-insight-${i}`}>
                 <span className="inline-flex self-start items-center rounded-full bg-brand-teal/5 border border-brand-teal/10 px-3 py-1 text-[11px] font-mono text-brand-teal/70 uppercase tracking-wider mb-5">
                   {card.badge}
                 </span>
@@ -352,12 +432,12 @@ export function Home() {
                 <span className="text-sm font-semibold text-brand-teal/70 group-hover:text-brand-teal flex items-center transition-colors">
                   Read more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="text-center">
-            <Link href="#">
+            <Link href="/resources">
               <Button variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 hover:border-brand-teal/20 px-8 h-12 rounded-lg" data-testid="button-explore-insights">
                 Explore all insights <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -369,7 +449,7 @@ export function Home() {
       {/* ── 6. TRUSTED ECOSYSTEM ── */}
       <Section className="py-16 md:py-24 border-t border-white/5">
         <div className="mb-10">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
+          <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">Trusted Ecosystem</h2>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Built on platforms that power global businesses.</h3>
           <p className="text-sm text-muted-foreground leading-[1.8] max-w-xl">We architect on proven infrastructure — not trends.</p>
         </div>
@@ -397,7 +477,7 @@ export function Home() {
       {/* ── 7. TESTIMONIALS ── */}
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">What clients say</h2>
+          <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">What clients say</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-white">Trusted by teams who build seriously</h3>
         </div>
 
@@ -438,12 +518,12 @@ export function Home() {
       <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to build <span className="text-gradient-teal">properly</span>?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to build <span className="text-gradient-muloo">properly</span>?</h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
             Let's talk about your systems, your data, and what needs to change.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 rounded-lg glow-orange-sm" data-testid="button-cta-final">
+            <Button size="lg" className="bg-gradient-muloo border-none text-white hover:brightness-110 font-bold px-10 h-14 rounded-lg glow-muloo-sm" data-testid="button-cta-final">
               Start a Conversation <ArrowRight className="ml-2" />
             </Button>
           </Link>
@@ -454,74 +534,25 @@ export function Home() {
 }
 
 function LeadMagnetSection() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setIsOpen(false);
-      setSubmitted(false);
-      setEmail("");
-    }, 2500);
-  }, []);
-
   return (
-    <>
-      <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,196,204,0.04), transparent)" }} />
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <h2 className="text-sm font-mono text-brand-teal uppercase tracking-widest mb-4">Free Resource</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Free HubSpot & Systems Health Check</h3>
-          <p className="text-muted-foreground mb-10 leading-[1.8]">
-            Get the 10-point checklist we use to stabilise CRM, integrations, and reporting foundations.
-          </p>
+    <Section className="py-20 md:py-[120px] border-t border-white/5 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(193,64,255,0.04), transparent)" }} />
+      <div className="relative z-10 max-w-2xl mx-auto text-center">
+        <h2 className="text-sm font-mono text-gradient-muloo uppercase tracking-widest mb-4">Free Resource</h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Free HubSpot & Systems Health Check</h3>
+        <p className="text-muted-foreground mb-10 leading-[1.8]">
+          Get the 10-point checklist we use to stabilise CRM, integrations, and reporting foundations.
+        </p>
+        <a href="https://audit.wearemuloo.com/" target="_blank" rel="noopener noreferrer">
           <Button
             size="lg"
-            className="bg-brand-teal text-brand-navy hover:bg-brand-teal/90 font-bold px-10 h-14 rounded-lg glow-teal-sm"
-            onClick={() => setIsOpen(true)}
+            className="bg-gradient-muloo border-none text-white hover:brightness-110 font-bold px-10 h-14 rounded-lg glow-muloo-sm"
             data-testid="button-lead-magnet"
           >
-            Download the checklist <ArrowRight className="ml-2" />
+            Go to the Audit Tool <ArrowRight className="ml-2" />
           </Button>
-        </div>
-      </Section>
-
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" data-testid="modal-lead-magnet">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-          <div className="relative bg-[#0A0F1C] border border-white/10 rounded-2xl p-8 max-w-md w-full shadow-2xl">
-            <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-white transition-colors">
-              <X className="h-5 w-5" />
-            </button>
-            <h3 className="text-2xl font-bold text-white mb-2">Get the checklist</h3>
-            <p className="text-sm text-muted-foreground mb-6">Enter your email and we'll send the 10-point health check straight to your inbox.</p>
-            {submitted ? (
-              <div className="text-center py-6">
-                <div className="text-brand-teal text-lg font-semibold mb-2">Thanks!</div>
-                <p className="text-sm text-muted-foreground">Check your inbox shortly.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="you@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="h-12 bg-white/5 border-white/10 focus:border-brand-teal"
-                  data-testid="input-lead-email"
-                />
-                <Button type="submit" className="w-full h-12 bg-brand-teal text-brand-navy hover:bg-brand-teal/90 font-bold" data-testid="button-lead-submit">
-                  Send me the checklist
-                </Button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-    </>
+        </a>
+      </div>
+    </Section>
   );
 }

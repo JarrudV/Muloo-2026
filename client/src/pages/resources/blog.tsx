@@ -18,7 +18,7 @@ export function Blog() {
         description="Muloo insights."
         robots="noindex,nofollow"
       />
-      <Section className="pt-32 pb-20">
+      <Section className="pt-20 pb-16 md:pt-28 md:pb-20">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Insights.</h1>
         <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
           Thoughts on engineering, design, and growth from the Muloo team.
@@ -32,7 +32,7 @@ export function Blog() {
               <div className="group cursor-pointer border-b border-white/10 pb-8 hover:border-brand-teal/50 transition-colors">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3 font-mono">
                     <span>{post.date}</span>
-                    <span>•</span>
+                    <span>-</span>
                     <span>{post.readTime}</span>
                 </div>
                 <h2 className="text-3xl font-bold mb-4 group-hover:text-brand-teal transition-colors">{post.title}</h2>

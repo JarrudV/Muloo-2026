@@ -15,7 +15,7 @@ export function BlogPost() {
         description="Muloo insight article."
         robots="noindex,nofollow"
       />
-       <Section className="pt-32 pb-12 max-w-3xl mx-auto">
+       <Section className="pt-20 pb-10 md:pt-24 md:pb-12 max-w-3xl mx-auto">
         <Link href="/blog">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all text-muted-foreground hover:text-brand-teal">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Insights
@@ -23,7 +23,7 @@ export function BlogPost() {
         </Link>
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6 font-mono">
              <span>Oct 12, 2025</span>
-             <span>•</span>
+             <span>-</span>
              <span>5 min read</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">Why your HubSpot data is messy (and how to fix it)</h1>
