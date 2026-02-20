@@ -1,10 +1,10 @@
-import { servicesConsultingModules } from "@/content/services";
+import { services } from "@/content/services";
 import { renderModule } from "@/modules/registry";
 
 export function ServicesConsulting() {
   return (
     <div className="flex flex-col">
-      {servicesConsultingModules.map((module) => renderModule(module))}
+      {services.consulting.modules.map((module) => renderModule(module))}
     </div>
   );
 }

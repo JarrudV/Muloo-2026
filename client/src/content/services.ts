@@ -1207,9 +1207,3 @@ export const services: Record<ServiceRouteKey, ServiceRouteDefinition> = {
     modules: consultingModules,
   },
 };
-
-export const servicesHubModules = services.hub.modules;
-export const servicesBuildModules = services.build.modules;
-export const servicesAiModules = services.ai.modules;
-export const servicesProductModules = services.product.modules;
-export const servicesConsultingModules = services.consulting.modules;
