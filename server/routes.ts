@@ -21,14 +21,9 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/inquiries", async (_req, res) => {
-    try {
-      const all = await storage.getInquiries();
-      return res.json(all);
-    } catch (err) {
-      console.error("Failed to fetch inquiries:", err);
-      return res.status(500).json({ error: "Failed to fetch inquiries" });
-    }
+  // Explicit JSON 404 for unknown API routes.
+  app.use("/api/{*path}", (_req, res) => {
+    return res.status(404).json({ error: "Not Found" });
   });
 
   return httpServer;

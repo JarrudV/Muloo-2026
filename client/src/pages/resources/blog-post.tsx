@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/layout/SEO";
 
 export function BlogPost() {
   const [match, params] = useRoute("/blog/:id");
@@ -9,6 +10,11 @@ export function BlogPost() {
 
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Insight | Muloo"
+        description="Muloo insight article."
+        robots="noindex,nofollow"
+      />
        <Section className="pt-32 pb-12 max-w-3xl mx-auto">
         <Link href="/blog">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all text-muted-foreground hover:text-brand-teal">

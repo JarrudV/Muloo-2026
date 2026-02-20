@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/layout/SEO";
 
 export function CaseStudyDetail() {
   const [match, params] = useRoute("/case-studies/:id");
@@ -9,6 +10,11 @@ export function CaseStudyDetail() {
 
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Case Study | Muloo"
+        description="Muloo case study details."
+        robots="noindex,nofollow"
+      />
        <Section className="pt-32 pb-12">
         <Link href="/case-studies">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all text-muted-foreground hover:text-brand-teal">

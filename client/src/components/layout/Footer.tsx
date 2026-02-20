@@ -42,8 +42,8 @@ export function Footer() {
           <div>
              <h4 className="font-bold mb-6 text-white text-sm">Connect</h4>
              <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-brand-teal transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-brand-teal transition-colors">GitHub</a></li>
+              <li><span>LinkedIn</span></li>
+              <li><span>GitHub</span></li>
               <li><Link href="/styleguide" className="hover:text-brand-teal transition-colors">Styleguide</Link></li>
             </ul>
           </div>
@@ -61,8 +61,8 @@ export function Footer() {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Muloo. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
           </div>
         </div>
       </div>
