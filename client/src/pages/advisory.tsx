@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Linkedin, Shield, TrendingUp, Settings, Cog } from "lucide-react";
@@ -25,6 +26,10 @@ const serviceIcons: Record<string, React.ReactNode> = {
 export function Advisory() {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Muloo Advisory | Strategic Technical Leadership"
+        description="Expert technical advisory for high-growth companies. We bridge the gap between business strategy and engineering execution with fractional CTO services and strategic planning."
+      />
       {/* Hero */}
       <div className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />

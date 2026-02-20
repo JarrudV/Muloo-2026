@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
@@ -12,6 +13,10 @@ export function CaseStudies() {
 
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Case Studies | Real-World Solutions by Muloo"
+        description="Explore how we've helped companies scale through custom engineering, HubSpot optimization, and strategic technical leadership."
+      />
       <Section className="pt-32 pb-20">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Case Studies.</h1>
       </Section>

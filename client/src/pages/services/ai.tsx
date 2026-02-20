@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -14,14 +15,28 @@ import {
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { serviceAiContent } from "@/lib/content";
+import { CodexSnippet } from "@/components/sections/CodexSnippet";
 
 const streamPurple = "#C140FF";
 
 const serviceIcons = [Bot, Code2, Workflow, ShieldCheck];
+const codexSnippetLines = [
+  "const ticket = await queue.next();",
+  "const context = await crm.enrich(ticket.customerId);",
+  "const plan = await agent.reason({ ticket, context, policy });",
+  "const action = await agent.execute(plan);",
+  "await audit.log({ ticketId: ticket.id, action, model: plan.model });",
+  "if (action.escalationRequired) await human.handoff(action);",
+  "return monitor.capture({ latency: action.ms, cost: action.usd });",
+];
 
 export function ServicesAi() {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Muloo AI | Applied AI & Agentic Automation"
+        description="Practical AI systems for enterprise. We deploy autonomous agents, automated triage systems, and intelligent workflows with strict safety guardrails."
+      />
       {/* Hero */}
       <Section className="pt-32 pb-20 bg-hero-gradient">
         <div className="max-w-4xl">
@@ -224,6 +239,41 @@ export function ServicesAi() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Codex Acceleration Snippet */}
+      <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="max-w-xl">
+            <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Codex acceleration</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Where AI assistance fits in production delivery
+            </h2>
+            <p className="text-muted-foreground leading-[1.8] mb-8">
+              We use code agents to accelerate deterministic implementation tasks, then enforce human review, policy checks, and audit logging before deployment. Speed without control is still risk.
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Agent output is scoped to defined contracts",
+                "Every action emits structured audit events",
+                "Escalation to humans is explicit and immediate",
+                "Performance and cost are monitored continuously",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm text-white/70">
+                  <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: streamPurple }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <CodexSnippet
+            title="agent-ticket-triage.ts"
+            fileLabel="muloo-ai/pipelines/support"
+            lines={codexSnippetLines}
+            accentColor={streamPurple}
+          />
         </div>
       </Section>
 

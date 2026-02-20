@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wrench, Laptop, Rocket, BarChart3, Settings, Lightbulb, Users, CreditCard, Server, HeadphonesIcon, Activity } from "lucide-react";
 import { Link } from "wouter";
@@ -10,6 +11,10 @@ const streamGreen = "#59BF96";
 export function ServicesProduct() {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Muloo Product | Custom SaaS & MVP Engineering"
+        description="High-performance product development. We build scalable SaaS platforms, internal tools, and production-ready MVPs with multi-tenant architecture."
+      />
       {/* Hero */}
       <Section className="pt-32 pb-20 bg-hero-gradient">
         <div className="max-w-4xl">

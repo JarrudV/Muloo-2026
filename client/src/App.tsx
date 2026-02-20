@@ -1,3 +1,4 @@
+import React from "react";
 import { Home } from "./pages/home";
 import { ServicesHub } from "./pages/services/hub";
 import { ServicesBuild } from "./pages/services/build";
@@ -16,6 +17,8 @@ import { BlogPost } from "./pages/resources/blog-post";
 import NotFound from "./pages/not-found";
 import { Switch, Route } from "wouter";
 import { Layout } from "./components/layout/Layout";
+import { SEO } from "./components/layout/SEO";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,6 +26,8 @@ import { Toaster } from "@/components/ui/toaster";
 function Router() {
   return (
     <Layout>
+      <SEO />
+      <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/services/hub" component={ServicesHub} />
@@ -34,13 +39,13 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/styleguide" component={Styleguide} />
-        
+
         <Route path="/resources" component={ResourcesIndex} />
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/case-studies/:id" component={CaseStudyDetail} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:id" component={BlogPost} />
-        
+
         <Route component={NotFound} />
       </Switch>
     </Layout>

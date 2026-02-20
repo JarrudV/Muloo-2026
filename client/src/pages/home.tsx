@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { homeContent } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -188,24 +189,28 @@ export function Home() {
   const [, navigate] = useWouterLocation();
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Muloo | Technical Systems & AI Acceleration Partner"
+        description="Cape Town-based engineering consultancy. We implement HubSpot, engineer custom software, and deploy AI agents to solve complex revenue operations."
+      />
       {/* ── HERO ── */}
       <div className="relative pt-32 pb-24 md:pt-44 md:pb-28 overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center gap-16">
             <div className="max-w-3xl flex-1">
               <RotatingBadge />
-              
+
               <h1 className="text-4xl md:text-[3.5rem] lg:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-white">
                 {homeContent.hero.headline.split("revenue.")[0]}
                 <span className="text-gradient-teal">revenue.</span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl font-light">
                 {homeContent.hero.subhead}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/contact">
                   <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-8 h-14 rounded-lg glow-orange-sm hover:-translate-y-0.5 transition-all" data-testid="button-hero-cta">

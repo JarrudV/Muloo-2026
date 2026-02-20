@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/section";
+import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
@@ -369,7 +370,7 @@ export function ServicesHub() {
       </Section>
 
       {/* CTA */}
-      <Section className="py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
+      <Section className="text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-fade pointer-events-none opacity-50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-cta-headline">
