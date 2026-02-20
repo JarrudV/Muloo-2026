@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
 import { ArrowLeft } from "lucide-react";
@@ -10,10 +9,6 @@ export function CaseStudyDetail() {
 
     return (
         <div className="flex flex-col">
-            <SEO
-                title="Case Study | Muloo Applied Engineering"
-                description="Detailed look at how we solved complex technical challenges for our clients."
-            />
             <Section className="pt-32 pb-12">
                 <Link href="/case-studies">
                     <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all text-muted-foreground hover:text-brand-teal">

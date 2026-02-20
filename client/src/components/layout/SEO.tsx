@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+import { getRouteMeta } from "@/content/meta";
 
 interface SEOProps {
   title?: string;
@@ -9,95 +11,79 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const DEFAULT_TITLE = "Muloo | Technical Systems & AI Acceleration Partner";
-const DEFAULT_DESCRIPTION = "Cape Town-based engineering consultancy specializing in HubSpot architecture, custom engineering, and AI automation.";
-const DEFAULT_OG_IMAGE = "/opengraph.jpg";
-const DEFAULT_OG_TYPE = "website";
+function upsertMeta(
+  selector: string,
+  attributes: Record<string, string>,
+  content: string,
+) {
+  let tag = document.querySelector(selector) as HTMLMetaElement | null;
+  if (!tag) {
+    tag = document.createElement("meta");
+    Object.entries(attributes).forEach(([key, value]) => {
+      tag?.setAttribute(key, value);
+    });
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
 
 export function SEO({
-  title = DEFAULT_TITLE,
-  description = DEFAULT_DESCRIPTION,
-  ogImage = DEFAULT_OG_IMAGE,
-  ogType = DEFAULT_OG_TYPE,
+  title,
+  description,
+  ogImage,
+  ogType,
   canonical,
   noindex,
-}: SEOProps) {
+}: SEOProps = {}) {
+  const [pathname] = useLocation();
+  const routeMeta = getRouteMeta(pathname);
+
+  const resolved = {
+    title: title ?? routeMeta.title,
+    description: description ?? routeMeta.description,
+    ogImage: ogImage ?? routeMeta.ogImage,
+    ogType: ogType ?? routeMeta.ogType,
+    canonical: canonical ?? routeMeta.canonical,
+    noindex: typeof noindex === "boolean" ? noindex : routeMeta.noindex,
+  };
+
   useEffect(() => {
-    // Update Document Title
-    document.title = title;
+    document.title = resolved.title;
 
-    // Update Meta Description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
+    upsertMeta('meta[name="description"]', { name: "description" }, resolved.description);
+    upsertMeta('meta[property="og:title"]', { property: "og:title" }, resolved.title);
+    upsertMeta(
+      'meta[property="og:description"]',
+      { property: "og:description" },
+      resolved.description,
+    );
+    upsertMeta('meta[property="og:image"]', { property: "og:image" }, resolved.ogImage);
+    upsertMeta('meta[property="og:type"]', { property: "og:type" }, resolved.ogType);
+    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title" }, resolved.title);
+    upsertMeta(
+      'meta[name="twitter:description"]',
+      { name: "twitter:description" },
+      resolved.description,
+    );
 
-    // Update OG Title
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", title);
+    let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalTag) {
+      canonicalTag = document.createElement("link");
+      canonicalTag.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalTag);
     }
+    canonicalTag.setAttribute("href", resolved.canonical);
 
-    // Update OG Description
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) {
-      ogDesc.setAttribute("content", description);
-    }
-
-    // Update OG Image
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) {
-      ogImg.setAttribute("content", ogImage);
-    }
-
-    // Update OG Type
-    const ogTypeTag = document.querySelector('meta[property="og:type"]');
-    if (ogTypeTag) {
-      ogTypeTag.setAttribute("content", ogType);
-    }
-
-    // Update Twitter Title
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute("content", title);
-    }
-
-    // Update Twitter Description
-    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDesc) {
-      twitterDesc.setAttribute("content", description);
-    }
-
-    // Update canonical only when provided by route/page metadata
-    if (canonical) {
-      let canonicalTag = document.querySelector('link[rel="canonical"]');
-      if (!canonicalTag) {
-        canonicalTag = document.createElement("link");
-        canonicalTag.setAttribute("rel", "canonical");
-        document.head.appendChild(canonicalTag);
-      }
-      canonicalTag.setAttribute("href", canonical);
-    }
-
-    // Apply robots only when explicitly passed
-    if (typeof noindex === "boolean") {
-      const robotsValue = noindex ? "noindex,nofollow" : "index,follow";
-      const robotsTag = document.querySelector('meta[name="robots"]');
-      if (robotsTag) {
-        robotsTag.setAttribute("content", robotsValue);
-      } else {
-        const meta = document.createElement("meta");
-        meta.setAttribute("name", "robots");
-        meta.setAttribute("content", robotsValue);
-        document.head.appendChild(meta);
-      }
-    }
-  }, [title, description, ogImage, ogType, canonical, noindex]);
+    const robotsValue = resolved.noindex ? "noindex,nofollow" : "index,follow";
+    upsertMeta('meta[name="robots"]', { name: "robots" }, robotsValue);
+  }, [
+    resolved.title,
+    resolved.description,
+    resolved.ogImage,
+    resolved.ogType,
+    resolved.canonical,
+    resolved.noindex,
+  ]);
 
   return null;
 }

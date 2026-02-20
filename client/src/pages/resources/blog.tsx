@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
@@ -13,10 +12,6 @@ export function Blog() {
 
   return (
     <div className="flex flex-col">
-      <SEO
-        title="Muloo Insights | Engineering & Growth Blog"
-        description="Thoughts, tutorials, and deep dives into modern engineering, product design, and revenue operations."
-      />
       <Section className="pt-32 pb-20">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Insights.</h1>
         <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">

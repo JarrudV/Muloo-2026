@@ -47,24 +47,40 @@ const exactRouteMeta: Record<string, Partial<Omit<RouteMeta, "canonical">>> = {
   },
   "/advisory": {
     title: "Muloo Advisory | Strategic Technical Leadership",
+    description:
+      "Expert technical advisory for high-growth companies through fractional leadership and strategic planning.",
   },
   "/about": {
     title: "About Muloo | The Applied Engineering Studio",
+    description:
+      "We are an applied engineering studio building high-performance digital systems for modern revenue teams.",
   },
   "/contact": {
     title: "Contact Muloo | Discuss Your Technical Initiative",
+    description:
+      "Get in touch with Muloo to discuss architecture, integrations, AI automation, and product engineering.",
   },
   "/styleguide": {
     title: "Muloo Styleguide | Design System",
+    description: "Muloo design system reference for tokens, components, and UI patterns.",
     noindex: true,
   },
   "/resources": {
+    title: "Muloo Resources | Engineering Insights",
+    description:
+      "Practical guides and technical insights on engineering, integrations, and operations.",
     noindex: true,
   },
   "/blog": {
+    title: "Muloo Insights | Engineering & Growth Blog",
+    description:
+      "Thoughts, tutorials, and deep dives into modern engineering and revenue operations.",
     noindex: true,
   },
   "/case-studies": {
+    title: "Muloo Case Studies | Technical Outcomes",
+    description:
+      "Real-world delivery stories across HubSpot, integrations, product engineering, and AI systems.",
     noindex: true,
   },
 };

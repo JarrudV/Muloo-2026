@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Terminal, Linkedin } from "lucide-react";
@@ -20,10 +19,6 @@ const getImage = (imageName: string) => {
 export function About() {
    return (
       <div className="flex flex-col">
-         <SEO
-            title="About Muloo | The Applied Engineering Studio"
-            description="We are an applied engineering studio that builds high-performance digital products. Learn about our mission, our values, and the team behind Muloo."
-         />
          <Section className="pt-32 pb-20 bg-hero-cosmic">
             <div className="max-w-4xl">
                <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-brand-orange mb-8 backdrop-blur-md">

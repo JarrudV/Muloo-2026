@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,10 +29,6 @@ const glowEffects = [
 export function Styleguide() {
   return (
     <div className="flex flex-col" data-testid="styleguide-page">
-      <SEO
-        title="Muloo Styleguide | Design System & UI Components"
-        description="Explore the Muloo design system, UI components, and brand guidelines."
-      />
       {/* Hero */}
       <Section className="bg-hero-gradient pt-32" data-testid="styleguide-hero">
         <Badge variant="teal" className="mb-4" data-testid="badge-design-system">Design System</Badge>

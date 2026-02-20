@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SEO } from "@/components/layout/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, BookOpen, FileCode2, Settings, Smartphone } from "lucide-react";
@@ -15,10 +14,6 @@ export function ResourcesIndex() {
 
    return (
       <div className="flex flex-col">
-         <SEO
-            title="Muloo Resources | Engineering, Design & Ops Insights"
-            description="Practical guides and technical insights on engineering, design, and growth operations from the Muloo team."
-         />
          <Section className="pt-32 pb-20 bg-hero-gradient">
             <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Technical Insights.</h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
