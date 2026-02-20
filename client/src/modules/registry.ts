@@ -3,34 +3,59 @@ import {
   type ComponentType,
   type ReactElement,
 } from "react";
+import type { HomePageModule } from "@/content/home";
+import type { ServiceSectionModule } from "@/types/modules";
+import { HomeFinalCtaModule } from "@/modules/home/HomeFinalCtaModule";
+import { HomeHeroModule } from "@/modules/home/HomeHeroModule";
+import { HomeLeadMagnetModule } from "@/modules/home/HomeLeadMagnetModule";
+import { HomePainPointsModule } from "@/modules/home/HomePainPointsModule";
+import { HomeProcessModule } from "@/modules/home/HomeProcessModule";
+import { HomeResourcesPreviewModule } from "@/modules/home/HomeResourcesPreviewModule";
+import { HomeStreamsGridModule } from "@/modules/home/HomeStreamsGridModule";
+import { HomeTestimonialsModule } from "@/modules/home/HomeTestimonialsModule";
+import { HomeTrustedEcosystemModule } from "@/modules/home/HomeTrustedEcosystemModule";
+import { ServiceCapabilitiesGridModule } from "@/modules/services/sections/ServiceCapabilitiesGridModule";
+import { ServiceCtaBandModule } from "@/modules/services/sections/ServiceCtaBandModule";
+import { ServiceDiagramBlockModule } from "@/modules/services/sections/ServiceDiagramBlockModule";
+import { ServiceHeroModule } from "@/modules/services/sections/ServiceHeroModule";
+import { ServiceMiniCaseSnippetModule } from "@/modules/services/sections/ServiceMiniCaseSnippetModule";
+import { ServiceOutcomesModule } from "@/modules/services/sections/ServiceOutcomesModule";
+import { ServiceProblemFramingModule } from "@/modules/services/sections/ServiceProblemFramingModule";
+import { ServiceProcessStepsModule } from "@/modules/services/sections/ServiceProcessStepsModule";
 
-type RegistryModule = {
-  id: string;
-  type: string;
-};
+export type RegistryModule = HomePageModule | ServiceSectionModule;
 
-export type ModuleComponent<TModule extends RegistryModule> = ComponentType<{
+type RegistryModuleComponent<TModule extends RegistryModule> = ComponentType<{
   module: TModule;
 }>;
 
-const moduleRegistry: Record<string, ModuleComponent<RegistryModule>> = {};
+type RegistryMap = {
+  [K in RegistryModule["type"]]: RegistryModuleComponent<
+    Extract<RegistryModule, { type: K }>
+  >;
+};
 
-export function registerModule<TModule extends RegistryModule>(
-  type: string,
-  component: ModuleComponent<TModule>,
-) {
-  moduleRegistry[type] = component as ModuleComponent<RegistryModule>;
-}
+const moduleRegistry: RegistryMap = {
+  homeHero: HomeHeroModule,
+  homeStreamsGrid: HomeStreamsGridModule,
+  homePainPoints: HomePainPointsModule,
+  homeLeadMagnet: HomeLeadMagnetModule,
+  homeProcess: HomeProcessModule,
+  homeResourcesPreview: HomeResourcesPreviewModule,
+  homeTrustedEcosystem: HomeTrustedEcosystemModule,
+  homeTestimonials: HomeTestimonialsModule,
+  homeFinalCta: HomeFinalCtaModule,
+  serviceHero: ServiceHeroModule,
+  problemFraming: ServiceProblemFramingModule,
+  capabilitiesGrid: ServiceCapabilitiesGridModule,
+  diagramBlock: ServiceDiagramBlockModule,
+  processSteps: ServiceProcessStepsModule,
+  outcomes: ServiceOutcomesModule,
+  miniCaseSnippet: ServiceMiniCaseSnippetModule,
+  ctaBand: ServiceCtaBandModule,
+};
 
-export function getModuleComponent(type: string) {
-  return moduleRegistry[type];
-}
-
-export function renderModule(module: RegistryModule): ReactElement | null {
-  const Component = getModuleComponent(module.type);
-  if (!Component) {
-    return null;
-  }
-
+export function renderModule(module: RegistryModule): ReactElement {
+  const Component = moduleRegistry[module.type] as RegistryModuleComponent<RegistryModule>;
   return createElement(Component, { key: module.id, module });
 }
