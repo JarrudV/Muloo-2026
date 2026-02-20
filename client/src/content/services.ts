@@ -1,63 +1,1215 @@
-import type { BaseModule, ModuleCommonFields } from "@/types/modules";
+import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
+import {
+  serviceAiContent,
+  serviceBuildContent,
+  serviceConsultingContent,
+  serviceHubContent,
+  serviceProductContent,
+} from "@/lib/content";
+import type { ServiceSectionModule } from "@/types/modules";
 
-export interface ServicesHubPageModule extends BaseModule, ModuleCommonFields {
-  type: "servicesHubPage";
+export type ServiceRouteKey = "hub" | "build" | "ai" | "product" | "consulting";
+
+export interface ServiceRouteDefinition {
+  key: ServiceRouteKey;
+  path: string;
+  modules: ServiceSectionModule[];
 }
 
-export interface ServicesBuildPageModule extends BaseModule, ModuleCommonFields {
-  type: "servicesBuildPage";
-}
-
-export interface ServicesAiPageModule extends BaseModule, ModuleCommonFields {
-  type: "servicesAiPage";
-}
-
-export interface ServicesProductPageModule extends BaseModule, ModuleCommonFields {
-  type: "servicesProductPage";
-}
-
-export interface ServicesConsultingPageModule extends BaseModule, ModuleCommonFields {
-  type: "servicesConsultingPage";
-}
-
-export type ServicePageModule =
-  | ServicesHubPageModule
-  | ServicesBuildPageModule
-  | ServicesAiPageModule
-  | ServicesProductPageModule
-  | ServicesConsultingPageModule;
-
-export const servicesHubModules: ServicePageModule[] = [
+const hubModules: ServiceSectionModule[] = [
   {
-    id: "services-hub-page",
-    type: "servicesHubPage",
+    id: "services-hub-hero",
+    type: "serviceHero",
+    variant: "with-grid-overlay",
+    sectionClassName: "pt-32 pb-24 bg-hero-gradient glow-hub",
+    badgeLabel: "HubSpot Partners",
+    media: { src: hubspotBadge, alt: "HubSpot Gold Partner Badge" },
+    accentColor: "#F47621",
+    headline: serviceHubContent.h1,
+    body: serviceHubContent.intro,
+    bodyClassName: "text-xl md:text-2xl text-muted-foreground leading-[1.8] max-w-2xl",
+    note: "This is about operational calm, not configuration.",
+    primaryCta: {
+      label: "Book a HubSpot architecture review",
+      href: "/contact",
+    },
+    primaryCtaClassName: "bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14",
+    badgeClassName: "bg-[#F47621]/10 text-[#F47621] border-[#F47621]/30 hover:bg-[#F47621]/20",
+    headlineClassName: "text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]",
+  },
+  {
+    id: "services-hub-problem",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "The problem",
+    headline: "Why most portals fail",
+    accentColor: "#F47621",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-6 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white leading-tight",
+    containerClassName: "max-w-2xl mb-14",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl",
+    cardClassName: "glass-card rounded-xl p-6 group hover:border-[#F47621]/20 transition-all duration-300",
+    cardDataTestIdPrefix: "card-portal-fail",
+    itemTitleClassName: "text-base font-bold mb-2 text-white",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    iconWrapClassName: "h-10 w-10 rounded-lg bg-[#F47621]/10 flex items-center justify-center mb-5",
+    items: [
+      {
+        icon: "database",
+        title: "Overloaded properties",
+        body: "Hundreds of unused or duplicate fields that pollute every report and list.",
+      },
+      {
+        icon: "gitBranch",
+        title: "Poor pipeline structure",
+        body: "Stages that do not reflect reality, missing gates, and no enforcement logic.",
+      },
+      {
+        icon: "workflow",
+        title: "Broken automation logic",
+        body: "Workflows built on assumptions that changed months ago, firing silently on bad data.",
+      },
+      {
+        icon: "eye",
+        title: "Reporting without clarity",
+        body: "Dashboards that look busy but answer none of the questions leadership actually asks.",
+      },
+    ],
+  },
+  {
+    id: "services-hub-capabilities",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "What we do",
+    headline: "Enterprise HubSpot, Engineered",
+    accentColor: "#F47621",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white",
+    containerClassName: "mb-16 max-w-2xl",
+    columnsClassName: "grid md:grid-cols-2 gap-6",
+    cardClassName: "glass-card flex items-start gap-4 p-6 rounded-xl hover:border-[#F47621]/20 transition-all duration-300 group",
+    cardDataTestIdPrefix: "card-service",
+    iconWrapClassName: "w-10 h-10 rounded-lg bg-[#F47621]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F47621]/15 transition-colors",
+    itemTitleClassName: "text-lg font-semibold text-white mb-1",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        icon: "building2",
+        title: "Enterprise Architecture",
+        body: "Data modeling, object relationships, and pipeline configuration designed for scale.",
+      },
+      {
+        icon: "database",
+        title: "Data Migration",
+        body: "Schema mapping, validation rules, and incremental sync for moving between platforms.",
+      },
+      {
+        icon: "code2",
+        title: "Programmable Automation",
+        body: "Serverless functions, custom coded actions, and workflow orchestration.",
+      },
+      {
+        icon: "lineChart",
+        title: "Advanced Reporting",
+        body: "SQL-based analytics, attribution modeling, and real-time revenue dashboards.",
+      },
+      {
+        icon: "clipboardCheck",
+        title: "Portal Audits",
+        body: "Systematic review of portal health, data hygiene, and configuration debt.",
+      },
+      {
+        icon: "layers",
+        title: "CRM UI Extensions",
+        body: "Custom cards, sidebar modules, and UI improvements for user adoption.",
+      },
+    ],
+  },
+  {
+    id: "services-hub-diagram",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "CRM architecture",
+    accentColor: "#F47621",
+    headline: "Structured for clarity, not complexity",
+    body: "A well-architected portal is not about features. It is about clean pipelines, governed properties, transparent automation, and reporting that leadership trusts.",
+    diagramVariant: "hubCrmStructure",
+    checklist: [
+      "Lifecycle stages mapped to real buyer journeys",
+      "Properties governed with naming conventions",
+      "Automations documented and version-controlled",
+      "Permission models aligned to team structure",
+    ],
+    diagramData: {
+      headerLabel: "crm-architecture.view",
+      pipelineLabel: "Deal Pipeline",
+      pipelineStages: ["Lead In", "Qualified", "Proposal", "Negotiation", "Closed"],
+      reportingLabels: {
+        conversion: "Conversion",
+        velocity: "Velocity",
+        winRate: "Win Rate",
+      },
+      reportingValues: {
+        conversion: "34.2%",
+        velocity: "18d",
+        winRate: "28%",
+      },
+      permission: {
+        title: "Permissions",
+        sub: "Role-based access",
+      },
+      automation: {
+        title: "Automations",
+        sub: "12 active - 0 errors",
+      },
+      statusLeft: "Portal healthy",
+      statusRight: "Last audit: 3 days ago",
+    },
+  },
+  {
+    id: "services-hub-framework",
+    type: "processSteps",
+    variant: "glassCards",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Framework",
+    accentColor: "#F47621",
+    headline: "Our HubSpot framework",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white",
+    containerClassName: "mb-16 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-5 gap-4",
+    cardClassName: "hover:border-[#F47621]/20",
+    itemTitleClassName: "text-base font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        num: "01",
+        title: "Audit",
+        body: "Deep review of portal health, data hygiene, automation logic, and reporting gaps.",
+      },
+      {
+        num: "02",
+        title: "Restructure",
+        body: "Rationalise properties, clean pipelines, and document the target data model.",
+      },
+      {
+        num: "03",
+        title: "Rebuild",
+        body: "Implement the new architecture with staging environments and stakeholder validation.",
+      },
+      {
+        num: "04",
+        title: "Enable",
+        body: "Train your team, transfer knowledge, and embed governance practices.",
+      },
+      {
+        num: "05",
+        title: "Optimise",
+        body: "Ongoing monitoring, reporting refinement, and incremental improvements.",
+      },
+    ],
+  },
+];
+const buildModules: ServiceSectionModule[] = [
+  {
+    id: "services-build-hero",
+    type: "serviceHero",
+    sectionClassName: "pt-32 pb-20 bg-hero-gradient",
+    badgeLabel: "Muloo Build",
+    accentColor: "#155DFC",
+    badgeClassName: "mb-6 border-[#155DFC]/30 text-[#155DFC] bg-[#155DFC]/5",
+    headline: serviceBuildContent.h1,
+    body: serviceBuildContent.intro,
+    bodyClassName: "text-xl md:text-2xl text-muted-foreground leading-[1.8]",
+  },
+  {
+    id: "services-build-problem",
+    type: "problemFraming",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "The challenge",
+    accentColor: "#155DFC",
+    headline: "Disconnected systems quietly erode performance.",
+    body: "APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automation misfires, and scale becomes expensive. Modern businesses do not need more tools. They need coherent systems.",
+  },
+  {
+    id: "services-build-diagram",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Architecture",
+    accentColor: "#155DFC",
+    headline: "How Data Moves Through Your Stack",
+    body: "We design integration pipelines that handle failure gracefully, log extensively, and scale with your data volume. Every layer is typed, tested, and monitored.",
+    diagramVariant: "buildArchitectureFlow",
+    checklist: [
+      "Retry logic with exponential backoff",
+      "Structured logging at every pipeline stage",
+      "Schema validation before data enters any system",
+      "Graceful degradation when downstream services fail",
+    ],
+    diagramData: {
+      headerLabel: "system-architecture.diagram",
+      sourceLabel: "Source Systems",
+      sourceSystems: [
+        { label: "CRM", icon: "layers" },
+        { label: "ERP", icon: "server" },
+        { label: "External Services", icon: "zap" },
+      ],
+      apiGatewayTitle: "API Gateway",
+      apiGatewaySub: "Auth - Rate Limit - Validate",
+      middlewareTitle: "Middleware",
+      middlewareSub: "Transform - Route",
+      queueTitle: "Event Queue",
+      queueSub: "Async - Retry",
+      targetLabel: "Target Systems",
+      targetSystems: [
+        { label: "Data Warehouse", icon: "hardDrive" },
+        { label: "CRM", icon: "layers" },
+        { label: "Webhooks", icon: "webhook" },
+      ],
+      statusLeft: "Pipeline healthy",
+      statusMetrics: ["42ms avg", "99.98% uptime"],
+    },
+  },
+  {
+    id: "services-build-capabilities",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "What we build",
+    headline: "Engineering That Connects Systems",
+    accentColor: "#155DFC",
+    containerClassName: "mb-16 max-w-2xl",
+    headlineClassName: "text-3xl md:text-5xl font-bold text-white",
+    columnsClassName: "grid md:grid-cols-2 gap-6",
+    cardDataTestIdPrefix: "card-capability",
+    items: [
+      {
+        icon: "code2",
+        title: "API Development",
+        body: "RESTful and GraphQL APIs designed with typed contracts, versioning, and comprehensive documentation.",
+      },
+      {
+        icon: "webhook",
+        title: "Middleware Architecture",
+        body: "Typed data pipelines that sync, transform, and route data between systems with retry logic and structured error handling.",
+      },
+      {
+        icon: "lock",
+        title: "Client Portals",
+        body: "Authenticated web applications with role-based access, giving your customers and teams self-service capabilities.",
+      },
+      {
+        icon: "zap",
+        title: "Event-Based Integrations",
+        body: "Webhook listeners, message queues, and event-driven architectures that react to stack changes in real time.",
+      },
+      {
+        icon: "database",
+        title: "Data Sync and Governance",
+        body: "Schema mapping, validation rules, deduplication, and incremental sync to keep data consistent across every platform.",
+      },
+      {
+        icon: "refreshCw",
+        title: "Platform Connectivity",
+        body: "Connect any system - CRMs, ERPs, payment gateways, shipping providers, or proprietary internal tools.",
+      },
+    ],
+  },
+  {
+    id: "services-build-platforms",
+    type: "capabilitiesGrid",
+    variant: "tagCloud",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Ecosystem",
+    headline: "Platforms we engineer across",
+    accentColor: "#155DFC",
+    containerClassName: "mb-14 max-w-2xl",
+    items: [
+      { title: "Microsoft Azure" },
+      { title: "Google Cloud" },
+      { title: "SAP" },
+      { title: "SQL Server" },
+      { title: "Snowflake" },
+      { title: "HubSpot" },
+      { title: "Salesforce" },
+      { title: "Custom APIs" },
+    ],
+    tagClassName:
+      "px-4 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-sm font-mono text-white/50 hover:text-[#155DFC] hover:border-[#155DFC]/20 transition-all duration-300",
+  },
+  {
+    id: "services-build-approach",
+    type: "processSteps",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Our approach",
+    accentColor: "#155DFC",
+    headline: "Structured. Iterative. Transparent.",
+    headlineClassName: "text-3xl md:text-5xl font-bold text-white",
+    columnsClassName: "grid md:grid-cols-4 gap-8",
+    items: serviceBuildContent.approach.map((item) => ({
+      step: item.step,
+      title: item.title,
+      body: item.desc,
+    })),
+  },
+];
+const aiModules: ServiceSectionModule[] = [
+  {
+    id: "services-ai-hero",
+    type: "serviceHero",
+    sectionClassName: "pt-32 pb-20 bg-hero-gradient",
+    badgeLabel: "Muloo AI",
+    accentColor: "#C140FF",
+    badgeClassName: "mb-6 border-[#C140FF]/30 text-[#C140FF] bg-[#C140FF]/5",
+    headline: serviceAiContent.h1,
+    body: serviceAiContent.intro,
+    bodyClassName: "text-xl md:text-2xl text-muted-foreground leading-[1.8] max-w-2xl",
+    note: "We apply AI inside defined business boundaries, not as experimental overlays.",
+  },
+  {
+    id: "services-ai-problem",
+    type: "problemFraming",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "The problem",
+    accentColor: "#C140FF",
+    headline: "Most AI projects never leave the demo.",
+    body: "Chatbots that hallucinate. Agents with no guardrails. Prototypes that impressed in a meeting but never shipped. AI only creates value when it is deployed into real workflows with monitoring, safety nets, and measurable outcomes.",
+  },
+  {
+    id: "services-ai-systems",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "What we deploy",
+    headline: "Four Applied AI Systems",
+    accentColor: "#C140FF",
+    headlineClassName: "text-3xl md:text-5xl font-bold text-white",
+    columnsClassName: "grid md:grid-cols-2 gap-6",
+    cardDataTestIdPrefix: "card-service",
+    items: [
+      {
+        icon: "bot",
+        title: serviceAiContent.services[0].title,
+        body: serviceAiContent.services[0].desc,
+      },
+      {
+        icon: "code2",
+        title: serviceAiContent.services[1].title,
+        body: serviceAiContent.services[1].desc,
+      },
+      {
+        icon: "workflow",
+        title: serviceAiContent.services[2].title,
+        body: serviceAiContent.services[2].desc,
+      },
+      {
+        icon: "shieldCheck",
+        title: serviceAiContent.services[3].title,
+        body: serviceAiContent.services[3].desc,
+      },
+    ],
+  },
+  {
+    id: "services-ai-diagram",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "How it works",
+    accentColor: "#C140FF",
+    headline: "Agent Workflow Loop",
+    body: "Every agent follows the same disciplined loop: a trigger fires, the agent reasons and acts, results are logged, and the system learns. No black boxes.",
+    diagramVariant: "aiWorkflowLoop",
+    checklist: [
+      "Deterministic triggers with no ambiguous activation",
+      "Structured reasoning with guardrails",
+      "Actions logged and auditable",
+      "Continuous feedback improves accuracy over time",
+    ],
+    diagramData: {
+      headerLabel: "agent-workflow.loop",
+      triggerTitle: "Trigger",
+      triggerSub: "Webhook - Schedule - Event",
+      agentTitle: "Agent",
+      agentSub: "Reason - Decide - Guardrails",
+      actionTitle: "Action",
+      actionSub: "Execute - Log - Notify",
+      reportingTitle: "Reporting Loop",
+      reportingSub: "Measure - Learn - Improve",
+      statusLeft: "Agent active",
+      statusRight: "Loop: continuous",
+    },
+  },
+  {
+    id: "services-ai-codex",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Codex acceleration",
+    accentColor: "#C140FF",
+    headline: "Where AI assistance fits in production delivery",
+    body: "We use code agents to accelerate deterministic implementation tasks, then enforce human review, policy checks, and audit logging before deployment. Speed without control is still risk.",
+    diagramVariant: "codexSnippet",
+    checklist: [
+      "Agent output is scoped to defined contracts",
+      "Every action emits structured audit events",
+      "Escalation to humans is explicit and immediate",
+      "Performance and cost are monitored continuously",
+    ],
+    diagramData: {
+      title: "agent-ticket-triage.ts",
+      fileLabel: "muloo-ai/pipelines/support",
+      lines: [
+        "const ticket = await queue.next();",
+        "const context = await crm.enrich(ticket.customerId);",
+        "const plan = await agent.reason({ ticket, context, policy });",
+        "const action = await agent.execute(plan);",
+        "await audit.log({ ticketId: ticket.id, action, model: plan.model });",
+        "if (action.escalationRequired) await human.handoff(action);",
+        "return monitor.capture({ latency: action.ms, cost: action.usd });",
+      ],
+    },
+  },
+];
+const productModules: ServiceSectionModule[] = [
+  {
+    id: "services-product-hero",
+    type: "serviceHero",
+    sectionClassName: "pt-32 pb-20 bg-hero-gradient",
+    badgeLabel: "Muloo Product",
+    accentColor: "#59BF96",
+    badgeClassName: "mb-6 border-[#59BF96]/30 text-[#59BF96] bg-[#59BF96]/5",
+    headline: serviceProductContent.h1,
+    body: serviceProductContent.intro,
+    bodyClassName: "text-xl md:text-2xl text-muted-foreground leading-[1.8] max-w-2xl",
+  },
+  {
+    id: "services-product-problem",
+    type: "problemFraming",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "The challenge",
+    accentColor: "#59BF96",
+    headline: "Ideas do not fail because of code. They fail because of execution.",
+    body: "Most product builds stall in the gap between prototype and production. Feature creep, unclear architecture, and missing go-to-market engineering turn promising concepts into expensive experiments. You need a team that ships products, not just features.",
+  },
+  {
+    id: "services-product-diagram-1",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "What ships",
+    accentColor: "#59BF96",
+    headline: "Production software, not prototypes.",
+    body: "Every product we build ships with the infrastructure commercial software demands - multi-tenancy, billing, analytics, and operational dashboards included.",
+    diagramVariant: "productDashboard",
+    checklist: [
+      "Multi-tenant data isolation",
+      "Subscription billing and plan management",
+      "Usage analytics and customer health scoring",
+      "Role-based access and team management",
+    ],
+    diagramData: {
+      headerLabel: "product-dashboard.app",
+      metrics: [
+        { label: "MRR", value: "$48.2k", trend: "+12%" },
+        { label: "Active Users", value: "1,284", trend: "+8%" },
+        { label: "Churn", value: "2.1%", trend: "-0.4%" },
+      ],
+      usageLabel: "Plan Performance",
+      usageBars: [78, 52, 35],
+      tenantsTitle: "API Health",
+      tenantSub: "99.97% uptime",
+      subscriptionsTitle: "Tenants",
+      subscriptionSub: "47 active orgs",
+      statusLeft: "All systems operational",
+      statusRight: "v2.4.1",
+    },
+  },
+  {
+    id: "services-product-capabilities",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "What we build",
+    headline: "Products Built to Ship",
+    accentColor: "#59BF96",
+    headlineClassName: "text-3xl md:text-5xl font-bold text-white",
+    columnsClassName: "grid md:grid-cols-2 gap-6",
+    cardDataTestIdPrefix: "card-service",
+    items: [
+      {
+        icon: "wrench",
+        title: "Internal Tools",
+        body: "Custom-built operational tools that eliminate manual processes and spreadsheet dependency.",
+      },
+      {
+        icon: "laptop",
+        title: "Commercial SaaS",
+        body: "Market-facing products designed, built, and maintained with scalable multi-tenant architecture.",
+      },
+      {
+        icon: "rocket",
+        title: "MVP Development",
+        body: "From concept to functional product in weeks - built lean, tested with real users, iterated fast.",
+      },
+      {
+        icon: "settings",
+        title: "Ongoing Product Engineering",
+        body: "Long-term product support, feature iteration, performance tuning, and infrastructure management.",
+      },
+    ],
+  },
+  {
+    id: "services-product-lifecycle",
+    type: "processSteps",
+    variant: "glassCards",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Lifecycle",
+    accentColor: "#59BF96",
+    headline: "From idea to scale",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    itemTitleClassName: "text-base font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        num: "01",
+        title: "Ideate",
+        body: "Problem definition, market validation, and user research to ensure you are building something worth shipping.",
+      },
+      {
+        num: "02",
+        title: "Prototype",
+        body: "Rapid design and development of a functional prototype tested with real users and refined with real data.",
+      },
+      {
+        num: "03",
+        title: "Launch",
+        body: "Production deployment with monitoring, onboarding flows, and go-to-market engineering.",
+      },
+      {
+        num: "04",
+        title: "Scale",
+        body: "Infrastructure scaling, feature iteration, usage analytics, and performance optimisation as traction grows.",
+      },
+    ],
+  },
+  {
+    id: "services-product-diagram-2",
+    type: "diagramBlock",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Production-ready",
+    accentColor: "#59BF96",
+    headline: "Built for commercial operation",
+    body: "Our products ship with the infrastructure commercial software demands - multi-tenancy, usage metering, billing integration, and operational dashboards.",
+    diagramVariant: "productDashboard",
+    checklist: [
+      "Multi-tenant architecture from day one",
+      "Usage analytics and customer health scoring",
+      "Automated billing and subscription management",
+      "Role-based access and team management",
+    ],
+    diagramData: {
+      headerLabel: "saas-dashboard.app",
+      metrics: [
+        { label: "Active Users", value: "2,847" },
+        { label: "MRR", value: "$48.2K" },
+        { label: "Uptime", value: "99.97%" },
+      ],
+      usageLabel: "Monthly Usage",
+      usageBars: [35, 42, 38, 55, 48, 62, 58, 70, 65, 78, 72, 85],
+      tenantsTitle: "Tenants",
+      tenantSub: "34 active orgs",
+      subscriptionsTitle: "Subscriptions",
+      subscriptionSub: "89% retention",
+      statusLeft: "All systems operational",
+      statusRight: "v2.4.1",
+    },
+  },
+];
+const consultingModules: ServiceSectionModule[] = [
+  {
+    id: "services-consulting-hero",
+    type: "serviceHero",
+    sectionClassName: "pt-32 pb-20 bg-hero-cosmic",
+    badgeLabel: "Specialist Consulting",
+    accentColor: "#F47621",
+    badgeClassName: "mb-6 border-brand-orange/20 text-brand-orange bg-brand-orange/5",
+    headline: serviceConsultingContent.h1,
+    body: serviceConsultingContent.intro,
+    bodyClassName: "text-xl md:text-2xl text-muted-foreground leading-relaxed",
+  },
+  {
+    id: "services-consulting-offers",
+    type: "capabilitiesGrid",
+    sectionClassName: "bg-section-soft py-24",
+    sectionLabel: "Services",
+    headline: "Specialist consulting offers",
+    accentColor: "#F47621",
+    columnsClassName: "grid md:grid-cols-2 gap-8",
+    cardClassName: "glass-card p-8 rounded-2xl flex flex-col items-start group shadow-lg",
+    itemTitleClassName: "text-2xl font-bold mb-4 text-white group-hover:text-brand-orange transition-colors",
+    itemSubtitleClassName: "text-sm font-mono text-muted-foreground mb-4 border-b border-white/10 pb-2 w-full",
+    itemBodyClassName: "text-muted-foreground mb-8 leading-relaxed flex-grow",
+    itemCtaClassName:
+      "w-full border-white/10 text-white hover:bg-white/5 hover:text-brand-orange group-hover:border-brand-orange/30",
+    iconWrapClassName: "h-12 w-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-colors",
+    items: [
+      {
+        icon: "brainCircuit",
+        title: serviceConsultingContent.services[0].title,
+        subtitle: `Lead: ${serviceConsultingContent.services[0].lead}`,
+        body: serviceConsultingContent.services[0].desc,
+        href: "/contact",
+        ctaLabel: "Inquire",
+      },
+      {
+        icon: "settings",
+        title: serviceConsultingContent.services[1].title,
+        subtitle: `Lead: ${serviceConsultingContent.services[1].lead}`,
+        body: serviceConsultingContent.services[1].desc,
+        href: "/contact",
+        ctaLabel: "Inquire",
+      },
+    ],
+  },
+  {
+    id: "services-consulting-cta",
+    type: "ctaBand",
+    sectionClassName: "py-32 text-center bg-[#050A15] border-t border-white/5",
+    headline: "Need strategic direction?",
+    body: "Do not just implement. Optimize.",
+    cta: {
+      label: "Book a Strategy Session",
+      href: "/contact",
+    },
+    accentColor: "#F47621",
+    ctaClassName:
+      "bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 rounded-full shadow-[0_0_30px_-5px_hsl(24,90%,54%,0.4)]",
   },
 ];
 
-export const servicesBuildModules: ServicePageModule[] = [
+hubModules.push(
   {
-    id: "services-build-page",
-    type: "servicesBuildPage",
+    id: "services-hub-governance",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Standards",
+    headline: "Governance Built In",
+    accentColor: "#F47621",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardBorderTopColor: "rgba(244, 118, 33, 0.3)",
+    cardDataTestIdPrefix: "card-governance",
+    items: [
+      {
+        title: "Role-based access",
+        body: "Permissions aligned to team structure - no one sees or edits what they should not.",
+      },
+      {
+        title: "Version-controlled workflows",
+        body: "Every automation change is documented, testable, and reversible.",
+      },
+      {
+        title: "Structured property design",
+        body: "Naming conventions, field types, and lifecycle rules enforced from the start.",
+      },
+      {
+        title: "Executive reporting clarity",
+        body: "Dashboards built on governed data that leadership actually trusts.",
+      },
+    ],
   },
-];
+  {
+    id: "services-hub-clean-crm",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "The difference",
+    headline: "What Clean CRM Actually Feels Like",
+    accentColor: "#F47621",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardBorderTopColor: "rgba(244, 118, 33, 0.3)",
+    cardDataTestIdPrefix: "card-clean-crm",
+    items: [
+      {
+        title: "Reports you trust",
+        body: "Leadership makes decisions from dashboards - not spreadsheets exported and manually corrected.",
+      },
+      {
+        title: "Automations that hold",
+        body: "Workflows run reliably because the data model underneath them is governed and stable.",
+      },
+      {
+        title: "Sales teams that adopt",
+        body: "Reps use the CRM because it helps them sell - not because they are told to.",
+      },
+      {
+        title: "Onboarding in days",
+        body: "New hires understand the system quickly because properties, pipelines, and naming conventions make sense.",
+      },
+    ],
+  },
+  {
+    id: "services-hub-outcomes",
+    type: "outcomes",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Outcomes",
+    headline: "What changes after we are involved",
+    accentColor: "#F47621",
+    labelClassName: "font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block",
+    headlineClassName: "text-3xl md:text-4xl font-bold text-white",
+    containerClassName: "mb-16 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-6",
+    cardClassName: "glass-card rounded-xl p-6",
+    itemTitleClassName: "text-base font-bold mb-2 text-white",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        icon: "barChart3",
+        title: "Cleaner reporting",
+        body: "Dashboards built on governed data that leadership actually uses.",
+      },
+      {
+        icon: "trendingUp",
+        title: "Faster pipeline movement",
+        body: "Stages with clear entry criteria and automated progression logic.",
+      },
+      {
+        icon: "settings",
+        title: "Lower admin overhead",
+        body: "Automation handles repetitive work so your team focuses on selling.",
+      },
+      {
+        icon: "users",
+        title: "Clear executive visibility",
+        body: "Revenue, attribution, and forecasting available in real time.",
+      },
+    ],
+  },
+  {
+    id: "services-hub-case",
+    type: "miniCaseSnippet",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Case study",
+    accentColor: "#F47621",
+    quote:
+      "Muloo restructured our entire HubSpot instance in 6 weeks. Pipeline visibility improved by 40% and our sales team finally trusts the data.",
+    person: "Sarah Mitchell",
+    role: "VP Revenue Ops - TechScale Group",
+  },
+  {
+    id: "services-hub-cta",
+    type: "ctaBand",
+    variant: "with-grid-overlay",
+    sectionClassName: "text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden",
+    headline: "Ready for a structured HubSpot?",
+    body: "Let us review your portal architecture and build a roadmap.",
+    cta: {
+      label: "Book a HubSpot architecture review",
+      href: "/contact",
+    },
+    accentColor: "#F47621",
+    ctaClassName: "bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14",
+  },
+);
 
-export const servicesAiModules: ServicePageModule[] = [
+buildModules.push(
   {
-    id: "services-ai-page",
-    type: "servicesAiPage",
+    id: "services-build-principles",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Standards",
+    headline: "Engineering Principles",
+    accentColor: "#155DFC",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    cardBorderTopColor: "rgba(21, 93, 252, 0.3)",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardDataTestIdPrefix: "card-principle",
+    items: [
+      {
+        title: "Idempotent APIs",
+        body: "Every request produces the same result, no matter how many times it is sent.",
+      },
+      {
+        title: "Event-driven architecture",
+        body: "Systems react to changes in real time instead of polling for updates.",
+      },
+      {
+        title: "Data integrity first",
+        body: "Validation at every boundary so nothing enters a system unchecked.",
+      },
+      {
+        title: "Observable systems",
+        body: "Structured logging, tracing, and alerting from day one.",
+      },
+    ],
   },
-];
+  {
+    id: "services-build-philosophy",
+    type: "problemFraming",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Philosophy",
+    accentColor: "#155DFC",
+    headline: "Not Just Integration. System Design.",
+    body: "Connecting two systems is easy. Designing architecture that scales, maintains data integrity under load, and reduces technical debt with every release is engineering. We build middleware, APIs, and data pipelines that your team can extend without calling us back.",
+  },
+  {
+    id: "services-build-engagement",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Delivery",
+    headline: "How we engage",
+    accentColor: "#155DFC",
+    containerClassName: "mb-16 max-w-2xl",
+    columnsClassName: "grid md:grid-cols-3 gap-6",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-2xl p-8 group hover:border-[#155DFC]/15 transition-all duration-300",
+    itemTitleClassName: "text-lg font-bold mb-3 text-white",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    showItemUnderline: true,
+    underlineColor: "#155DFC",
+    cardDataTestIdPrefix: "card-engagement",
+    items: [
+      {
+        title: "Project-Based Builds",
+        body: "Scoped architecture and engineering engagements with defined deliverables, timelines, and handover documentation.",
+      },
+      {
+        title: "Embedded Engineering",
+        body: "Our engineers integrate into your team, attend standups, ship code, and own outcomes alongside your people.",
+      },
+      {
+        title: "Optimisation Retainers",
+        body: "Ongoing monitoring, performance tuning, and incremental improvements to keep systems stable and evolving.",
+      },
+    ],
+  },
+  {
+    id: "services-build-outcomes",
+    type: "outcomes",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Outcomes",
+    headline: "What changes after we are involved",
+    accentColor: "#155DFC",
+    headlineClassName: "text-3xl md:text-5xl font-bold text-white",
+    columnsClassName: "grid md:grid-cols-3 gap-6",
+    items: [
+      {
+        title: "Zero manual syncs",
+        body: "Data flows automatically between systems with retry logic and structured error handling.",
+      },
+      {
+        title: "Type-safe pipelines",
+        body: "Every integration is typed end-to-end. Errors are caught at build time, not discovered in production.",
+      },
+      {
+        title: "Production confidence",
+        body: "Monitoring, alerting, and graceful degradation are built into every deployment.",
+      },
+    ],
+  },
+  {
+    id: "services-build-case",
+    type: "miniCaseSnippet",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Example",
+    accentColor: "#155DFC",
+    headline: "Consolidating a fragmented stack",
+    body: "A mid-market client was running five disconnected tools across sales, finance, and operations. We designed a unified middleware layer that consolidated data flows, eliminated manual reporting, and reduced integration maintenance from 20 hours per week to zero. Clean data in, clean reports out.",
+  },
+  {
+    id: "services-build-cta",
+    type: "ctaBand",
+    variant: "with-grid-overlay",
+    sectionClassName: "text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden",
+    headline: "Ready to stabilise your architecture?",
+    body: "Let us scope your requirements and build a roadmap.",
+    cta: {
+      label: "Book an architecture call",
+      href: "/contact",
+    },
+    accentColor: "#155DFC",
+    useInlineStyleAccent: true,
+  },
+);
 
-export const servicesProductModules: ServicePageModule[] = [
+aiModules.push(
   {
-    id: "services-product-page",
-    type: "servicesProductPage",
+    id: "services-ai-guardrails",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Standards",
+    headline: "AI With Guardrails",
+    accentColor: "#C140FF",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    cardBorderTopColor: "rgba(193, 64, 255, 0.3)",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardDataTestIdPrefix: "card-guardrail",
+    items: [
+      {
+        title: "Controlled deployment",
+        body: "Staged rollouts with kill switches so no agent goes live without validation.",
+      },
+      {
+        title: "Data boundary protection",
+        body: "Strict controls on what data agents can access, process, and store.",
+      },
+      {
+        title: "Audit logging",
+        body: "Every agent decision, action, and outcome is logged and traceable.",
+      },
+      {
+        title: "Performance monitoring",
+        body: "Accuracy, latency, and cost tracked continuously across every interaction.",
+      },
+    ],
   },
-];
+  {
+    id: "services-ai-assurance",
+    type: "problemFraming",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Assurance",
+    accentColor: "#C140FF",
+    headline: "AI Should Reduce Risk, Not Add It.",
+    body: "Every AI deployment we deliver is scoped, tested, and monitored before it touches production data. We do not experiment on your business. Agents are validated against real scenarios, deployed with rollback capability, and measured against defined success criteria so leadership can approve with confidence.",
+  },
+  {
+    id: "services-ai-engagement",
+    type: "processSteps",
+    variant: "glassCards",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Engagement",
+    accentColor: "#C140FF",
+    headline: "How we engage",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    itemTitleClassName: "text-base font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        num: "01",
+        title: "Pilot",
+        body: "Identify the highest-value use case, build a scoped proof of concept, and measure impact.",
+      },
+      {
+        num: "02",
+        title: "Deploy",
+        body: "Production deployment with monitoring, guardrails, and human escalation paths.",
+      },
+      {
+        num: "03",
+        title: "Monitor",
+        body: "Track accuracy, latency, cost, and user satisfaction across every agent interaction.",
+      },
+      {
+        num: "04",
+        title: "Optimise",
+        body: "Prompt refinement, model updates, and workflow adjustments based on real usage data.",
+      },
+    ],
+  },
+  {
+    id: "services-ai-case",
+    type: "miniCaseSnippet",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Case study",
+    accentColor: "#C140FF",
+    quote:
+      "Muloo deployed a triage agent that handles 60% of our inbound support tickets automatically. Response times dropped from hours to seconds.",
+    person: "David Chen",
+    role: "Head of Support - Nexus Systems",
+    blockClassName: "glass-card rounded-2xl p-10 md:p-14 max-w-3xl",
+  },
+  {
+    id: "services-ai-cta",
+    type: "ctaBand",
+    variant: "with-grid-overlay",
+    sectionClassName: "py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden",
+    headline: "Ready to deploy applied AI?",
+    body: "Let us identify where AI creates real operational lift for your business.",
+    cta: {
+      label: "Explore AI opportunities",
+      href: "/contact",
+    },
+    accentColor: "#C140FF",
+    useInlineStyleAccent: true,
+  },
+);
 
-export const servicesConsultingModules: ServicePageModule[] = [
+productModules.push(
   {
-    id: "services-consulting-page",
-    type: "servicesConsultingPage",
+    id: "services-product-commercialisation",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Commercialisation",
+    headline: "Beyond the build",
+    accentColor: "#59BF96",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-6",
+    cardClassName: "glass-card rounded-xl p-6 group hover:border-[#59BF96]/20 transition-all duration-300",
+    cardDataTestIdPrefix: "card-commercial",
+    iconWrapClassName: "h-10 w-10 rounded-lg bg-[#59BF96]/10 flex items-center justify-center mb-5",
+    itemTitleClassName: "text-base font-bold mb-2 text-white",
+    itemBodyClassName: "text-muted-foreground text-sm leading-[1.8]",
+    items: [
+      {
+        icon: "creditCard",
+        title: "Pricing models",
+        body: "Usage-based, tiered, or flat-rate billing logic and subscription management engineered into the product.",
+      },
+      {
+        icon: "server",
+        title: "Infrastructure",
+        body: "Cloud architecture, CI/CD pipelines, monitoring, and auto-scaling designed for production SaaS workloads.",
+      },
+      {
+        icon: "users",
+        title: "Customer onboarding",
+        body: "Self-serve signup flows, guided setup wizards, and in-app onboarding that reduces time to value.",
+      },
+      {
+        icon: "headphones",
+        title: "Support model",
+        body: "Ticketing integration, knowledge bases, and escalation workflows built into the product from launch.",
+      },
+    ],
   },
-];
+  {
+    id: "services-product-scale",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Standards",
+    headline: "Designed for Scale",
+    accentColor: "#59BF96",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    cardBorderTopColor: "rgba(89, 191, 150, 0.3)",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardDataTestIdPrefix: "card-scale",
+    items: [
+      {
+        title: "Multi-tenant architecture",
+        body: "Isolated data and shared infrastructure built to serve many customers from day one.",
+      },
+      {
+        title: "Subscription-ready",
+        body: "Billing, plan management, and usage metering engineered into the product core.",
+      },
+      {
+        title: "Secure authentication",
+        body: "Role-based access, SSO support, and token management as standard.",
+      },
+      {
+        title: "Infrastructure planning",
+        body: "Cloud topology, scaling strategy, and cost modelling before the first deploy.",
+      },
+    ],
+  },
+  {
+    id: "services-product-commercial-reality",
+    type: "capabilitiesGrid",
+    sectionClassName: "py-20 md:py-[120px] border-t border-white/5",
+    sectionLabel: "Commercial",
+    headline: "Built for Commercial Reality",
+    accentColor: "#59BF96",
+    containerClassName: "mb-14 max-w-2xl",
+    columnsClassName: "grid sm:grid-cols-2 lg:grid-cols-4 gap-4",
+    hideIcons: true,
+    cardClassName: "glass-card rounded-xl p-6",
+    cardBorderTopColor: "rgba(89, 191, 150, 0.3)",
+    itemTitleClassName: "text-sm font-bold text-white mb-2",
+    itemBodyClassName: "text-muted-foreground text-xs leading-[1.8]",
+    cardDataTestIdPrefix: "card-commercial-reality",
+    items: [
+      {
+        title: "Production hosting",
+        body: "Cloud infrastructure sized for real workloads, not demo environments that collapse under traffic.",
+      },
+      {
+        title: "Subscription lifecycle",
+        body: "Trial, upgrade, downgrade, cancellation, and renewal flows engineered into the product from launch.",
+      },
+      {
+        title: "Product analytics",
+        body: "Usage tracking, cohort analysis, and churn indicators built in, not bolted on later.",
+      },
+      {
+        title: "Customer support",
+        body: "Ticketing, knowledge bases, and escalation workflows integrated so support scales with the product.",
+      },
+    ],
+  },
+  {
+    id: "services-product-case",
+    type: "miniCaseSnippet",
+    sectionClassName: "py-20 md:py-[120px] bg-section-soft border-t border-white/5",
+    sectionLabel: "Case study",
+    accentColor: "#59BF96",
+    quote:
+      "Muloo built our inventory sync tool in 4 weeks. It replaced a manual process that was costing us 15 hours a week and eliminated sync errors entirely.",
+    person: "Laura Thompson",
+    role: "Operations Manager - Atlas Commerce",
+  },
+  {
+    id: "services-product-cta",
+    type: "ctaBand",
+    variant: "with-grid-overlay",
+    sectionClassName: "py-20 md:py-[120px] text-center bg-hero-gradient border-t border-white/5 relative overflow-hidden",
+    headline: "Ready to build your product?",
+    body: "Let us scope your product vision and build a roadmap to launch.",
+    cta: {
+      label: "Discuss your product roadmap",
+      href: "/contact",
+    },
+    accentColor: "#59BF96",
+    useInlineStyleAccent: true,
+  },
+);
+
+export const services: Record<ServiceRouteKey, ServiceRouteDefinition> = {
+  hub: {
+    key: "hub",
+    path: "/services/hub",
+    modules: hubModules,
+  },
+  build: {
+    key: "build",
+    path: "/services/build",
+    modules: buildModules,
+  },
+  ai: {
+    key: "ai",
+    path: "/services/ai",
+    modules: aiModules,
+  },
+  product: {
+    key: "product",
+    path: "/services/product",
+    modules: productModules,
+  },
+  consulting: {
+    key: "consulting",
+    path: "/services/consulting",
+    modules: consultingModules,
+  },
+};
+
+export const servicesHubModules = services.hub.modules;
+export const servicesBuildModules = services.build.modules;
+export const servicesAiModules = services.ai.modules;
+export const servicesProductModules = services.product.modules;
+export const servicesConsultingModules = services.consulting.modules;
