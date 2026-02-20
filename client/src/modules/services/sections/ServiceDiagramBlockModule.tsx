@@ -9,6 +9,31 @@ interface ServiceDiagramBlockModuleProps {
   module: DiagramBlockSectionModule;
 }
 
+type HubCrmDiagramModule = Extract<
+  DiagramBlockSectionModule,
+  { diagramVariant: "hubCrmStructure" }
+>;
+type BuildArchitectureDiagramModule = Extract<
+  DiagramBlockSectionModule,
+  { diagramVariant: "buildArchitectureFlow" }
+>;
+type AiWorkflowDiagramModule = Extract<
+  DiagramBlockSectionModule,
+  { diagramVariant: "aiWorkflowLoop" }
+>;
+type ProductDashboardDiagramModule = Extract<
+  DiagramBlockSectionModule,
+  { diagramVariant: "productDashboard" }
+>;
+type CodexSnippetDiagramModule = Extract<
+  DiagramBlockSectionModule,
+  { diagramVariant: "codexSnippet" }
+>;
+
+function assertNever(value: never): never {
+  throw new Error(`Unhandled diagram variant: ${JSON.stringify(value)}`);
+}
+
 function FlowDivider({ color }: { color: string }) {
   return (
     <div className="flex justify-center py-0.5">
@@ -21,18 +46,8 @@ function FlowDivider({ color }: { color: string }) {
   );
 }
 
-function HubCrmDiagram({ module }: ServiceDiagramBlockModuleProps) {
-  const data = (module.diagramData ?? {}) as {
-    headerLabel?: string;
-    pipelineLabel?: string;
-    pipelineStages?: string[];
-    reportingLabels?: { conversion?: string; velocity?: string; winRate?: string };
-    reportingValues?: { conversion?: string; velocity?: string; winRate?: string };
-    permission?: { title?: string; sub?: string };
-    automation?: { title?: string; sub?: string };
-    statusLeft?: string;
-    statusRight?: string;
-  };
+function HubCrmDiagram({ module }: { module: HubCrmDiagramModule }) {
+  const data = module.diagramData;
 
   return (
     <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="diagram-crm-structure">
@@ -153,22 +168,8 @@ function HubCrmDiagram({ module }: ServiceDiagramBlockModuleProps) {
   );
 }
 
-function BuildArchitectureDiagram({ module }: ServiceDiagramBlockModuleProps) {
-  const data = (module.diagramData ?? {}) as {
-    headerLabel?: string;
-    sourceLabel?: string;
-    sourceSystems?: Array<{ label: string; icon: string }>;
-    apiGatewayTitle?: string;
-    apiGatewaySub?: string;
-    middlewareTitle?: string;
-    middlewareSub?: string;
-    queueTitle?: string;
-    queueSub?: string;
-    targetLabel?: string;
-    targetSystems?: Array<{ label: string; icon: string }>;
-    statusLeft?: string;
-    statusMetrics?: string[];
-  };
+function BuildArchitectureDiagram({ module }: { module: BuildArchitectureDiagramModule }) {
+  const data = module.diagramData;
 
   return (
     <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="diagram-architecture">
@@ -266,20 +267,8 @@ function BuildArchitectureDiagram({ module }: ServiceDiagramBlockModuleProps) {
   );
 }
 
-function AiWorkflowDiagram({ module }: ServiceDiagramBlockModuleProps) {
-  const data = (module.diagramData ?? {}) as {
-    headerLabel?: string;
-    triggerTitle?: string;
-    triggerSub?: string;
-    agentTitle?: string;
-    agentSub?: string;
-    actionTitle?: string;
-    actionSub?: string;
-    reportingTitle?: string;
-    reportingSub?: string;
-    statusLeft?: string;
-    statusRight?: string;
-  };
+function AiWorkflowDiagram({ module }: { module: AiWorkflowDiagramModule }) {
+  const data = module.diagramData;
 
   return (
     <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="diagram-ai-workflow">
@@ -353,19 +342,8 @@ function AiWorkflowDiagram({ module }: ServiceDiagramBlockModuleProps) {
   );
 }
 
-function ProductDashboardDiagram({ module }: ServiceDiagramBlockModuleProps) {
-  const data = (module.diagramData ?? {}) as {
-    headerLabel?: string;
-    metrics?: Array<{ label: string; value: string; trend?: string }>;
-    usageLabel?: string;
-    usageBars?: number[];
-    tenantsTitle?: string;
-    tenantSub?: string;
-    subscriptionsTitle?: string;
-    subscriptionSub?: string;
-    statusLeft?: string;
-    statusRight?: string;
-  };
+function ProductDashboardDiagram({ module }: { module: ProductDashboardDiagramModule }) {
+  const data = module.diagramData;
 
   return (
     <div className="bg-[#080c1a] border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden" data-testid="mock-dashboard">
@@ -440,24 +418,37 @@ function ProductDashboardDiagram({ module }: ServiceDiagramBlockModuleProps) {
   );
 }
 
-function CodexSnippetDiagram({ module }: ServiceDiagramBlockModuleProps) {
-  const data = (module.diagramData ?? {}) as {
-    title?: string;
-    fileLabel?: string;
-    lines?: string[];
-  };
+function CodexSnippetDiagram({ module }: { module: CodexSnippetDiagramModule }) {
+  const data = module.diagramData;
 
   return (
     <CodexSnippet
-      title={data.title ?? ""}
-      fileLabel={data.fileLabel ?? ""}
-      lines={data.lines ?? []}
+      title={data.title}
+      fileLabel={data.fileLabel}
+      lines={data.lines}
       accentColor={module.accentColor}
     />
   );
 }
 
 export function ServiceDiagramBlockModule({ module }: ServiceDiagramBlockModuleProps) {
+  const renderDiagram = () => {
+    switch (module.diagramVariant) {
+      case "hubCrmStructure":
+        return <HubCrmDiagram module={module} />;
+      case "buildArchitectureFlow":
+        return <BuildArchitectureDiagram module={module} />;
+      case "aiWorkflowLoop":
+        return <AiWorkflowDiagram module={module} />;
+      case "productDashboard":
+        return <ProductDashboardDiagram module={module} />;
+      case "codexSnippet":
+        return <CodexSnippetDiagram module={module} />;
+      default:
+        return assertNever(module);
+    }
+  };
+
   return (
     <Section className={module.sectionClassName ?? "py-20 md:py-[120px] border-t border-white/5"}>
       <div className={cn("grid lg:grid-cols-2 gap-16 items-start", module.containerClassName)}>
@@ -483,11 +474,7 @@ export function ServiceDiagramBlockModule({ module }: ServiceDiagramBlockModuleP
           ) : null}
         </div>
 
-        {module.diagramVariant === "hubCrmStructure" ? <HubCrmDiagram module={module} /> : null}
-        {module.diagramVariant === "buildArchitectureFlow" ? <BuildArchitectureDiagram module={module} /> : null}
-        {module.diagramVariant === "aiWorkflowLoop" ? <AiWorkflowDiagram module={module} /> : null}
-        {module.diagramVariant === "productDashboard" ? <ProductDashboardDiagram module={module} /> : null}
-        {module.diagramVariant === "codexSnippet" ? <CodexSnippetDiagram module={module} /> : null}
+        {renderDiagram()}
       </div>
     </Section>
   );

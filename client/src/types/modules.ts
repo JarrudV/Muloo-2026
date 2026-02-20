@@ -111,22 +111,123 @@ export interface CapabilitiesGridSectionModule
   underlineColor?: string;
 }
 
-export interface DiagramBlockSectionModule extends BaseModule, ModuleCommonFields {
+export type DiagramVariant =
+  | "hubCrmStructure"
+  | "buildArchitectureFlow"
+  | "aiWorkflowLoop"
+  | "productDashboard"
+  | "codexSnippet";
+
+export interface DiagramNode {
+  label: string;
+  icon: string;
+}
+
+export interface HubCrmDiagramData {
+  headerLabel: string;
+  pipelineLabel: string;
+  pipelineStages: string[];
+  reportingLabels: {
+    conversion: string;
+    velocity: string;
+    winRate: string;
+  };
+  reportingValues: {
+    conversion: string;
+    velocity: string;
+    winRate: string;
+  };
+  permission: {
+    title: string;
+    sub: string;
+  };
+  automation: {
+    title: string;
+    sub: string;
+  };
+  statusLeft: string;
+  statusRight: string;
+}
+
+export interface BuildArchitectureFlowDiagramData {
+  headerLabel: string;
+  sourceLabel: string;
+  sourceSystems: DiagramNode[];
+  apiGatewayTitle: string;
+  apiGatewaySub: string;
+  middlewareTitle: string;
+  middlewareSub: string;
+  queueTitle: string;
+  queueSub: string;
+  targetLabel: string;
+  targetSystems: DiagramNode[];
+  statusLeft: string;
+  statusMetrics: string[];
+}
+
+export interface AiWorkflowLoopDiagramData {
+  headerLabel: string;
+  triggerTitle: string;
+  triggerSub: string;
+  agentTitle: string;
+  agentSub: string;
+  actionTitle: string;
+  actionSub: string;
+  reportingTitle: string;
+  reportingSub: string;
+  statusLeft: string;
+  statusRight: string;
+}
+
+export interface ProductDashboardDiagramData {
+  headerLabel: string;
+  metrics: Array<{
+    label: string;
+    value: string;
+    trend?: string;
+  }>;
+  usageLabel: string;
+  usageBars: number[];
+  tenantsTitle: string;
+  tenantSub: string;
+  subscriptionsTitle: string;
+  subscriptionSub: string;
+  statusLeft: string;
+  statusRight: string;
+}
+
+export interface CodexSnippetDiagramData {
+  title: string;
+  fileLabel: string;
+  lines: string[];
+}
+
+export type DiagramDataByVariant = {
+  hubCrmStructure: HubCrmDiagramData;
+  buildArchitectureFlow: BuildArchitectureFlowDiagramData;
+  aiWorkflowLoop: AiWorkflowLoopDiagramData;
+  productDashboard: ProductDashboardDiagramData;
+  codexSnippet: CodexSnippetDiagramData;
+};
+
+export type DiagramData = DiagramDataByVariant[DiagramVariant];
+
+interface DiagramBlockSectionBase extends BaseModule, ModuleCommonFields {
   type: "diagramBlock";
   sectionLabel: string;
   accentColor: string;
   checklist?: string[];
-  diagramVariant:
-    | "hubCrmStructure"
-    | "buildArchitectureFlow"
-    | "aiWorkflowLoop"
-    | "productDashboard"
-    | "codexSnippet";
-  diagramData?: Record<string, unknown>;
   labelClassName?: string;
   headlineClassName?: string;
   bodyClassName?: string;
 }
+
+export type DiagramBlockSectionModule = {
+  [K in DiagramVariant]: DiagramBlockSectionBase & {
+    diagramVariant: K;
+    diagramData: DiagramDataByVariant[K];
+  };
+}[DiagramVariant];
 
 export interface ProcessStepsSectionModule
   extends BaseModule,
