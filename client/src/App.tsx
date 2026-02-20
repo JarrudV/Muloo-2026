@@ -15,18 +15,35 @@ import { CaseStudyDetail } from "./pages/resources/case-study-detail";
 import { Blog } from "./pages/resources/blog";
 import { BlogPost } from "./pages/resources/blog-post";
 import NotFound from "./pages/not-found";
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { Layout } from "./components/layout/Layout";
 import { SEO } from "./components/layout/SEO";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
+import { getRouteMeta } from "@/content/meta";
+
+function RouteSEO() {
+  const [pathname] = useLocation();
+  const meta = getRouteMeta(pathname);
+
+  return (
+    <SEO
+      title={meta.title}
+      description={meta.description}
+      ogImage={meta.ogImage}
+      ogType={meta.ogType}
+      canonical={meta.canonical}
+      noindex={meta.noindex}
+    />
+  );
+}
 
 function Router() {
   return (
     <Layout>
-      <SEO />
+      <RouteSEO />
       <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />

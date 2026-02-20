@@ -5,6 +5,8 @@ interface SEOProps {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  canonical?: string;
+  noindex?: boolean;
 }
 
 const DEFAULT_TITLE = "Muloo | Technical Systems & AI Acceleration Partner";
@@ -17,6 +19,8 @@ export function SEO({
   description = DEFAULT_DESCRIPTION,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = DEFAULT_OG_TYPE,
+  canonical,
+  noindex,
 }: SEOProps) {
   useEffect(() => {
     // Update Document Title
@@ -51,6 +55,12 @@ export function SEO({
       ogImg.setAttribute("content", ogImage);
     }
 
+    // Update OG Type
+    const ogTypeTag = document.querySelector('meta[property="og:type"]');
+    if (ogTypeTag) {
+      ogTypeTag.setAttribute("content", ogType);
+    }
+
     // Update Twitter Title
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) {
@@ -62,7 +72,32 @@ export function SEO({
     if (twitterDesc) {
       twitterDesc.setAttribute("content", description);
     }
-  }, [title, description, ogImage, ogType]);
+
+    // Update canonical only when provided by route/page metadata
+    if (canonical) {
+      let canonicalTag = document.querySelector('link[rel="canonical"]');
+      if (!canonicalTag) {
+        canonicalTag = document.createElement("link");
+        canonicalTag.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalTag);
+      }
+      canonicalTag.setAttribute("href", canonical);
+    }
+
+    // Apply robots only when explicitly passed
+    if (typeof noindex === "boolean") {
+      const robotsValue = noindex ? "noindex,nofollow" : "index,follow";
+      const robotsTag = document.querySelector('meta[name="robots"]');
+      if (robotsTag) {
+        robotsTag.setAttribute("content", robotsValue);
+      } else {
+        const meta = document.createElement("meta");
+        meta.setAttribute("name", "robots");
+        meta.setAttribute("content", robotsValue);
+        document.head.appendChild(meta);
+      }
+    }
+  }, [title, description, ogImage, ogType, canonical, noindex]);
 
   return null;
 }
