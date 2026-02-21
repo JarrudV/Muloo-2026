@@ -26,6 +26,52 @@ const glowEffects = [
   { name: "glow-green-sm", className: "glow-green-sm", color: "border-stream-product" },
 ];
 
+const accentUsageRules = [
+  "Accent colour is reserved for stream identification.",
+  "Never stack accent colours in a single component.",
+  "Core navy and neutral surfaces must dominate each layout.",
+];
+
+const spacingRhythmRules = [
+  {
+    title: "Section padding scale",
+    desc: "Use consistent vertical rhythm between page bands.",
+    token: "py-20 md:py-[120px]"
+  },
+  {
+    title: "Generous whitespace",
+    desc: "Maintain clear separation between heading, copy, and content blocks.",
+    token: "mb-6 / mb-8 / gap-6"
+  },
+  {
+    title: "Mobile density control",
+    desc: "Avoid compressed grids on mobile; step down to one or two columns before desktop.",
+    token: "grid-cols-1 md:grid-cols-2"
+  },
+];
+
+const typographyHierarchyRules = [
+  "Apply heading levels in order with one clear H1 per page.",
+  "Keep subheadings visually below section titles.",
+  "Body copy must remain readable at all breakpoints with stable line length.",
+];
+
+const componentPatterns = [
+  { name: "Hero", use: "Primary headline, concise intro, and one dominant CTA." },
+  { name: "Stream Grid", use: "Service overview cards mapped to one accent per stream." },
+  { name: "CTA Band", use: "Single decision-focused action with short support copy." },
+  { name: "Card Grids", use: "Consistent card rhythm for capabilities, rules, and outcomes." },
+];
+
+const copyRules = [
+  "Use direct language.",
+  "Write with technical clarity.",
+  "State scope and action clearly.",
+  "Avoid hype and vague claims.",
+];
+
+const banList = ["unlock", "empower", "seamless", "transform", "next-level", "growth engine"];
+
 export function Styleguide() {
   return (
     <div className="flex flex-col" data-testid="styleguide-page">
@@ -34,7 +80,7 @@ export function Styleguide() {
         <Badge variant="teal" className="mb-4" data-testid="badge-design-system">Design System</Badge>
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4" data-testid="text-styleguide-title">Muloo Styleguide</h1>
         <p className="text-xl text-muted-foreground max-w-2xl" data-testid="text-styleguide-subtitle">
-          A comprehensive reference for the Muloo design system — color tokens, typography, components, and utility classes.
+          Reference for visual rules, spacing rhythm, component patterns, and copy standards.
         </p>
       </Section>
 
@@ -56,15 +102,28 @@ export function Styleguide() {
       {/* Stream Accent Colors */}
       <Section data-testid="section-stream-colors">
         <h2 className="text-3xl font-bold mb-2" data-testid="text-section-streams">Stream Accent Colors</h2>
-        <p className="text-muted-foreground mb-8">Each Muloo stream has its own accent color</p>
+        <p className="text-muted-foreground mb-8">Each Muloo stream has one accent color</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6" data-testid="grid-stream-colors">
           {streamColors.map((c) => (
             <div key={c.hex} className="space-y-2" data-testid={`swatch-stream-${c.label.toLowerCase()}`}>
               <div className="h-24 w-full rounded-lg" style={{ backgroundColor: c.hex }} />
               <p className="font-semibold text-sm">{c.name}</p>
-              <p className="font-mono text-xs text-muted-foreground">{c.label} · {c.hex}</p>
+              <p className="font-mono text-xs text-muted-foreground">{c.label} - {c.hex}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10" data-testid="section-accent-usage-rules">
+          <h3 className="text-2xl font-bold mb-3">Accent Usage Rules</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {accentUsageRules.map((rule, i) => (
+              <Card key={i} className="glass-card border-white/10">
+                <CardContent className="p-5">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{rule}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -112,40 +171,89 @@ export function Styleguide() {
         </div>
       </Section>
 
+      {/* Spacing Rhythm Rules */}
+      <Section data-testid="section-spacing-rhythm">
+        <h2 className="text-3xl font-bold mb-2">Spacing Rhythm Rules</h2>
+        <p className="text-muted-foreground mb-8">Consistent section rhythm with generous whitespace</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {spacingRhythmRules.map((rule) => (
+            <Card key={rule.title} className="glass-card border-white/10">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">{rule.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <p className="text-sm text-muted-foreground leading-relaxed">{rule.desc}</p>
+                <p className="font-mono text-xs text-brand-teal">{rule.token}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
       {/* Typography */}
       <Section data-testid="section-typography">
         <h2 className="text-3xl font-bold mb-2" data-testid="text-section-typography">Typography</h2>
-        <p className="text-muted-foreground mb-8">Montserrat for headings &amp; body · JetBrains Mono for code</p>
+        <p className="text-muted-foreground mb-8">Montserrat for headings and body. JetBrains Mono for code.</p>
+
+        <div className="mb-10" data-testid="section-typography-hierarchy">
+          <h3 className="text-2xl font-bold mb-3">Typography Hierarchy</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {typographyHierarchyRules.map((rule, i) => (
+              <Card key={i} className="glass-card border-white/10">
+                <CardContent className="p-5">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{rule}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
         <div className="space-y-6">
           <div data-testid="typography-h1">
-            <h1 className="text-6xl font-extrabold">Heading 1 — Extra Bold</h1>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans · text-6xl · font-extrabold</p>
+            <h1 className="text-6xl font-extrabold">Heading 1 - Extra Bold</h1>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans - text-6xl - font-extrabold</p>
           </div>
           <div data-testid="typography-h2">
-            <h2 className="text-5xl font-bold">Heading 2 — Bold</h2>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans · text-5xl · font-bold</p>
+            <h2 className="text-5xl font-bold">Heading 2 - Bold</h2>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans - text-5xl - font-bold</p>
           </div>
           <div data-testid="typography-h3">
-            <h3 className="text-3xl font-semibold">Heading 3 — SemiBold</h3>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans · text-3xl · font-semibold</p>
+            <h3 className="text-3xl font-semibold">Heading 3 - SemiBold</h3>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans - text-3xl - font-semibold</p>
           </div>
           <div data-testid="typography-subtitle">
-            <p className="text-xl font-light">Subtitle — Extra Light</p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans · text-xl · font-light</p>
+            <p className="text-xl font-light">Subtitle - Light</p>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans - text-xl - font-light</p>
           </div>
           <div data-testid="typography-body">
             <p className="leading-relaxed max-w-2xl">
-              Body text (Regular). Muloo empowers organisations with scalable digital transformation solutions —
-              from HubSpot consulting to custom AI-driven workflows. Clear, accessible copy that pairs with
-              Montserrat's clean geometry.
+              Body text sample. Keep sentence structure simple, describe technical scope clearly,
+              and keep line length readable across breakpoints.
             </p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans · text-base · font-normal</p>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-sans - text-base - font-normal</p>
           </div>
           <div data-testid="typography-mono">
             <p className="font-mono text-sm">const stream = "JetBrains Mono for inline code";</p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">font-mono · text-sm</p>
+            <p className="font-mono text-xs text-muted-foreground mt-1">font-mono - text-sm</p>
           </div>
+        </div>
+      </Section>
+
+      {/* Component Patterns */}
+      <Section className="bg-section-soft" data-testid="section-component-patterns">
+        <h2 className="text-3xl font-bold mb-2">Component Patterns</h2>
+        <p className="text-muted-foreground mb-8">Reusable composition patterns</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {componentPatterns.map((pattern) => (
+            <Card key={pattern.name} className="glass-card border-white/10">
+              <CardHeader>
+                <CardTitle className="text-lg">{pattern.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{pattern.use}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </Section>
 
@@ -244,7 +352,7 @@ export function Styleguide() {
 
         <div className="max-w-2xl">
           <pre className="code-block" data-testid="code-block-example">
-{`// Muloo Design System — Tailwind config tokens
+{`// Muloo Design System - Tailwind config tokens
 const colors = {
   brand: {
     navy:   "#050A30",
@@ -285,6 +393,40 @@ const colors = {
             <Badge variant="outline" data-testid="badge-outline">Outline</Badge>
             <Badge variant="navy" data-testid="badge-navy">Navy</Badge>
           </div>
+        </div>
+      </Section>
+
+      {/* Copy Rules */}
+      <Section data-testid="section-copy-rules">
+        <h2 className="text-3xl font-bold mb-2">Copy Rules</h2>
+        <p className="text-muted-foreground mb-8">Direct, technical, controlled language</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="glass-card border-white/10">
+            <CardHeader>
+              <CardTitle className="text-lg">Writing Standard</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                {copyRules.map((rule) => (
+                  <p key={rule} className="text-sm text-muted-foreground">{rule}</p>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="glass-card border-white/10" data-testid="section-ban-list">
+            <CardHeader>
+              <CardTitle className="text-lg">Ban List</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {banList.map((term) => (
+                  <Badge key={term} variant="outline">{term}</Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </Section>
     </div>

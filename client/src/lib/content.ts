@@ -83,79 +83,76 @@ export const homeContent = {
 };
 
 export const serviceHubContent = {
-  h1: "HubSpot. Built properly.",
-  intro: "Most portals are configured quickly and grow messy over time. We design CRM architecture with structure, governance, reporting clarity, and long-term scalability.",
+  h1: "HubSpot decisions, de-risked.",
+  intro: "We advise before you commit, guide your HubSpot sales process, design onboarding architecture, and engineer governance that holds as your team scales.",
   features: [
-    "HubSpot Enterprise Implementation",
-    "Complex Data Modeling & Custom Objects",
-    "Serverless Functions & Programmable Automation",
-    "CRM UI/UX Customization",
-    "Advanced Reporting & SQL",
-    "Attribution Modeling",
-    "Migration Engineering",
-    "Portal Audits & Refactoring"
+    "CRM Selection Support Before HubSpot Purchase",
+    "Technical Advisory Through the HubSpot Sales Cycle",
+    "Onboarding Architecture and Implementation Planning",
+    "Data Model, Pipeline, and Lifecycle Engineering",
+    "Governance, Permissions, and Change Control",
+    "Adoption Systems for Sales, Marketing, and Success",
+    "Reporting, Automation, and Attribution Architecture",
+    "Long-Term Optimisation, Audits, and Refactoring"
   ],
   cta: {
-    headline: "Ready for a structured HubSpot?",
-    body: "Let's review your portal architecture and build a roadmap."
+    headline: "Need a controlled HubSpot rollout?",
+    body: "We map the decisions, sequence delivery, and maintain the technical standard."
   }
 };
-
 export const serviceBuildContent = {
-  h1: "Muloo Build",
-  intro: "Where platforms disconnect, we connect them. Custom middleware, secure integrations, and purpose-built applications that orchestrate your business logic across any stack.",
+  h1: "Full-stack delivery engine.",
+  intro: "We design and ship production-grade software across backend systems, integrations, middleware, and application architecture. We also stabilise and refactor broken builds already in market.",
   approach: [
-    { step: "01", title: "Discover", desc: "Technical requirements gathering, API schema definition, and stakeholder alignment." },
-    { step: "02", title: "Architect", desc: "System design with typed contracts, data flow diagrams, and infrastructure planning." },
-    { step: "03", title: "Ship", desc: "Iterative development with CI/CD, testing, and staging environment validation." },
-    { step: "04", title: "Support", desc: "Production monitoring, error tracking, performance optimisation, and knowledge transfer." }
+    { step: "01", title: "Diagnose", desc: "Audit the current stack, isolate failure points, and define scope with explicit technical constraints." },
+    { step: "02", title: "Architect", desc: "Design backend services, integration contracts, middleware flows, and infrastructure boundaries." },
+    { step: "03", title: "Build", desc: "Implement and refactor with tested code, CI/CD, and controlled releases across environments." },
+    { step: "04", title: "Operate", desc: "Harden runtime behaviour with monitoring, incident response, performance tuning, and maintenance plans." }
   ]
 };
-
 export const serviceProductContent = {
-  h1: "From concept to commercial SaaS.",
-  intro: "We design, build, and scale software products — internal tools and commercial platforms.",
+  h1: "Products with operational value.",
+  intro: "We design, build, and run focused software products that solve clear workflow and data problems. For selected opportunities, we enter build-for-equity partnerships through a structured qualification process and a long-term alignment model.",
   products: [
     {
-      title: "Inventory Sync",
-      desc: "Real-time bidirectional sync between ERP systems and CRM platforms.",
+      title: "FamPal",
+      desc: "Consumer application helping families find accessible, family-friendly places.",
+      status: "In Development"
+    },
+    {
+      title: "eCrafter",
+      desc: "Market organiser and vendor management platform. Link: https://ecrafter.co.za/",
       status: "Live"
     },
     {
-      title: "Portal Framework",
-      desc: "A starter kit for building authenticated client portals on top of CRM data.",
+      title: "HubSpot Audit Tool",
+      desc: "Automated HubSpot portal audit identifying duplicates, automation issues and data risks. Link: https://audit.wearemuloo.com/",
       status: "Beta"
-    },
-    {
-      title: "Data Sanitizer",
-      desc: "Middleware service for normalizing phone numbers and addresses before CRM ingestion.",
-      status: "Internal"
     }
   ]
 };
-
 export const serviceAiContent = {
-  h1: "Applied AI. Not experimentation.",
-  intro: "We deploy AI agents and workflow automation where it creates measurable operational lift — not novelty.",
+  h1: "AI that ships.",
+  intro: "We build AI systems with guardrails, accelerate delivery with vibe coding, and harden outputs for secure production release.",
   services: [
     {
-      title: "Service Agents",
-      desc: "Autonomous agents that handle customer inquiries, triage tickets, and resolve routine requests without human intervention.",
+      title: "Guardrailed AI Agents",
+      desc: "Task-specific agents with scoped permissions, approval paths, and audit trails for customer and internal operations.",
       lead: "Operations"
     },
     {
-      title: "Dev Acceleration Agents",
-      desc: "AI-powered engineering support — code generation, review automation, and testing acceleration embedded in your dev workflow.",
+      title: "Vibe Coding Acceleration",
+      desc: "Practical AI coding workflows that speed delivery while preserving code standards, test coverage, and architectural discipline.",
       lead: "Engineering"
     },
     {
-      title: "Workflow AI Automation",
-      desc: "Intelligent automation that connects AI reasoning to your existing business processes, replacing manual steps with agent-driven logic.",
-      lead: "Process"
+      title: "Vibe-Coded App Hardening",
+      desc: "Refactoring and stabilisation for AI-generated applications, including reliability fixes, data integrity checks, and runtime controls.",
+      lead: "Engineering"
     },
     {
-      title: "AI QA & Security Review",
-      desc: "Auditing LLM prompts, data pipelines, and agent behaviour for vulnerabilities, hallucination risk, and data leakage.",
+      title: "Security and Production Readiness",
+      desc: "Security review, deployment support, observability setup, and go-live criteria so AI workloads run safely in production.",
       lead: "Security"
     }
   ]
@@ -181,7 +178,7 @@ export const serviceConsultingContent = {
 export const advisoryContent = {
   hero: {
     headline: "Embedded leadership without permanent overhead.",
-    subtext: "We step in where clarity, structure, and execution are required."
+    subtext: "We step in where clarity, structure, and execution are required. Advisory is delivered as founder-level peer collaboration, with an invite-only business roundtable in Cape Town initially to address shared operational challenges and opportunities."
   },
   services: [
     {
@@ -278,3 +275,4 @@ export const aboutContent = {
     }
   ]
 };
+

@@ -83,6 +83,8 @@
   --ring: 182 100% 40%;
 
   --radius: 0.5rem;
+  --section-pad-mobile: 4.5rem;
+  --section-pad-desktop: 7rem;
 }
 
 @layer base {
@@ -137,19 +139,19 @@
 
   /* Stream Accent Glows */
   .glow-hub {
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244, 118, 33, 0.06), transparent), #050A30;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244, 118, 33, 0.04), transparent), #050A30;
   }
 
   .glow-build {
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(21, 93, 252, 0.06), transparent), #050A30;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(21, 93, 252, 0.04), transparent), #050A30;
   }
 
   .glow-ai {
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193, 64, 255, 0.06), transparent), #050A30;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193, 64, 255, 0.04), transparent), #050A30;
   }
 
   .glow-product {
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(89, 191, 150, 0.06), transparent), #050A30;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(89, 191, 150, 0.04), transparent), #050A30;
   }
 
   /* Soft Section Alternation */
@@ -165,7 +167,7 @@
      2. GLASS CARDS
      ───────────────────────────────────── */
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] transition-all duration-300;
+    @apply bg-white/[0.025] backdrop-blur-sm border border-white/[0.06] transition-all duration-300;
   }
 
   /* ─────────────────────────────────────
@@ -219,27 +221,27 @@
      6. GLOW EFFECTS
      ───────────────────────────────────── */
   .glow-muloo-sm {
-    box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.4);
+    box-shadow: 0 0 16px -8px rgba(193, 64, 255, 0.3);
   }
 
   .glow-teal-sm {
-    box-shadow: 0 0 20px -5px rgba(0, 196, 204, 0.3);
+    box-shadow: 0 0 16px -8px rgba(0, 196, 204, 0.22);
   }
 
   .glow-orange-sm {
-    box-shadow: 0 0 20px -5px rgba(244, 118, 33, 0.3);
+    box-shadow: 0 0 16px -8px rgba(244, 118, 33, 0.22);
   }
 
   .glow-blue-sm {
-    box-shadow: 0 0 20px -5px rgba(21, 93, 252, 0.3);
+    box-shadow: 0 0 16px -8px rgba(21, 93, 252, 0.22);
   }
 
   .glow-purple-sm {
-    box-shadow: 0 0 20px -5px rgba(193, 64, 255, 0.3);
+    box-shadow: 0 0 16px -8px rgba(193, 64, 255, 0.22);
   }
 
   .glow-green-sm {
-    box-shadow: 0 0 20px -5px rgba(89, 191, 150, 0.3);
+    box-shadow: 0 0 16px -8px rgba(89, 191, 150, 0.22);
   }
 
   /* ─────────────────────────────────────
@@ -298,5 +300,38 @@
 
   .animate-marquee {
     animation: marquee 35s linear infinite;
+  }
+
+  /* 9. LAYOUT RHYTHM + MOBILE DENSITY */
+  @media (max-width: 767px) {
+    section[class*="py-16"],
+    section[class*="py-20"],
+    section[class*="py-24"],
+    section[class*="py-32"] {
+      padding-top: var(--section-pad-mobile);
+      padding-bottom: var(--section-pad-mobile);
+    }
+
+    .grid[class*="sm:grid-cols-2"],
+    .grid[class*="md:grid-cols-2"],
+    .grid[class*="md:grid-cols-3"],
+    .grid[class*="lg:grid-cols-3"],
+    .grid[class*="lg:grid-cols-4"] {
+      gap: 1.5rem;
+    }
+
+    .glass-card .text-xs,
+    .glass-card .text-sm {
+      line-height: 1.65;
+    }
+  }
+
+  @media (min-width: 768px) {
+    section[class*="md:py-24"],
+    section[class*="md:py-32"],
+    section[class*="md:py-[120px]"] {
+      padding-top: var(--section-pad-desktop);
+      padding-bottom: var(--section-pad-desktop);
+    }
   }
 }

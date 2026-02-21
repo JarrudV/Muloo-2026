@@ -106,7 +106,7 @@ export function ServicesBuild() {
             Disconnected systems quietly erode performance.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automation misfires, and scale becomes expensive. Modern businesses don't need more tools. They need coherent systems.
+            APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automations misfire, and change becomes expensive. Modern businesses don’t need more tools. They need systems that are designed to work together.
           </p>
         </div>
       </Section>
@@ -116,9 +116,9 @@ export function ServicesBuild() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="max-w-xl">
             <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Architecture</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">How Data Moves Through Your Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">How data moves through your stack</h2>
             <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
-              We design integration pipelines that handle failure gracefully, log extensively, and scale with your data volume. Every layer is typed, tested, and monitored.
+              We design and build the layer between systems: APIs, middleware, event queues, and data pipelines. It handles failure gracefully, logs consistently, and scales as volume grows. Every boundary is validated, tested, and monitored.
             </p>
             <ul className="space-y-4">
               {[
@@ -280,17 +280,17 @@ export function ServicesBuild() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">What we build</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Engineering That Connects Systems</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Engineering that ships</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { icon: Code2, title: "API Development", desc: "RESTful and GraphQL APIs designed with typed contracts, versioning, and comprehensive documentation." },
-            { icon: Webhook, title: "Middleware Architecture", desc: "Typed data pipelines that sync, transform, and route data between any two systems with retry logic and structured error handling." },
-            { icon: Lock, title: "Client Portals", desc: "Authenticated web applications with role-based access, giving your customers and teams self-service capabilities." },
-            { icon: Zap, title: "Event-Based Integrations", desc: "Webhook listeners, message queues, and event-driven architectures that react to changes across your stack in real time." },
-            { icon: Database, title: "Data Sync & Governance", desc: "Schema mapping, validation rules, deduplication, and incremental sync to keep data consistent across every platform." },
-            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect any system â€” CRMs, ERPs, payment gateways, shipping providers, or proprietary internal tools." },
+            { icon: Code2, title: "API Development", desc: "Production APIs with typed contracts, versioning, observability, and documentation your team can actually use." },
+            { icon: Webhook, title: "Middleware Architecture", desc: "Reliable integration layers that sync, transform, and route data with retries, dead-letter handling, and clear error reporting." },
+            { icon: Lock, title: "Client Portals", desc: "Secure customer and internal portals with role-based access, audit trails, and clean UX for self-service." },
+            { icon: Zap, title: "Event-Based Integrations", desc: "Event-driven systems using webhooks, queues, and background workers to react in real time without breaking under load." },
+            { icon: Database, title: "Data Sync & Governance", desc: "Schema mapping, validation, deduplication, and incremental sync so data stays consistent across every platform." },
+            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect CRMs, ERPs, payments, shipping, and internal tools — including legacy systems and custom APIs." },
           ].map((item, i) => (
             <div
               key={i}
@@ -343,7 +343,7 @@ export function ServicesBuild() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Our approach</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Structured. Iterative. Transparent.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Structured delivery, no surprises</h2>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8">
@@ -363,11 +363,11 @@ export function ServicesBuild() {
         </div>
       </Section>
 
-      {/* Engineering Principles */}
+      {/* Engineering standards */}
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-14 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Standards</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Engineering Principles</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Engineering standards</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -396,7 +396,7 @@ export function ServicesBuild() {
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Philosophy</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Not Just Integration. System Design.</h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Connecting two systems is easy. Designing architecture that scales, maintains data integrity under load, and reduces technical debt with every release â€” that's engineering. We build middleware, APIs, and data pipelines that your team can extend without calling us back.
+            Connecting two systems is easy. Engineering a stack that scales, keeps data clean under load, and reduces technical debt with every release is the real work. We build APIs, middleware, and pipelines your team can extend without needing us for every change.
           </p>
         </div>
       </Section>
@@ -443,7 +443,7 @@ export function ServicesBuild() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-4 block">Outcomes</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">What changes after we're involved</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">What changes after we deliver</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -475,7 +475,7 @@ export function ServicesBuild() {
           <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Example</span>
           <h3 className="text-2xl font-bold text-white mb-6">Consolidating a fragmented stack</h3>
           <p className="text-muted-foreground leading-[1.8]">
-            A mid-market client was running five disconnected tools across sales, finance, and operations. We designed a unified middleware layer that consolidated data flows, eliminated manual reporting, and reduced integration maintenance from 20 hours per week to zero. Clean data in, clean reports out.
+            A mid-market team was running five disconnected tools across sales, finance, and operations. We built a single integration layer that consolidated data flows, removed manual reporting, and reduced integration maintenance from 20 hours per week to near zero. Clean data in, reliable reporting out.
           </p>
         </div>
       </Section>
@@ -486,7 +486,7 @@ export function ServicesBuild() {
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to stabilise your architecture?</h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            Let's scope your requirements and build a roadmap.
+            We’ll map the current stack, identify breakpoints, and ship a clear build plan.
           </p>
           <Link href="/contact">
             <Button
@@ -495,7 +495,7 @@ export function ServicesBuild() {
               style={{ backgroundColor: streamBlue }}
               data-testid="button-book-architecture-call"
             >
-              Book an architecture call <ArrowRight className="ml-2" />
+              Book a Technical Scoping Session <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>
@@ -503,3 +503,5 @@ export function ServicesBuild() {
     </div>
   );
 }
+
+

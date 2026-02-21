@@ -9,12 +9,12 @@ import hubspotBadge from "@assets/gold-badge-color_1771487221441.png";
 const streamOrange = "#F47621";
 
 const services = [
-  { icon: Building2, title: "Enterprise Architecture", desc: "Data modeling, object relationships, and pipeline configuration designed for scale." },
-  { icon: Database, title: "Data Migration", desc: "Schema mapping, validation rules, and incremental sync for moving between platforms." },
-  { icon: Code2, title: "Programmable Automation", desc: "Serverless functions, custom coded actions, and workflow orchestration." },
-  { icon: LineChart, title: "Advanced Reporting", desc: "SQL-based analytics, attribution modeling, and real-time revenue dashboards." },
-  { icon: ClipboardCheck, title: "Portal Audits", desc: "Systematic review of portal health, data hygiene, and configuration debt." },
-  { icon: Layers, title: "CRM UI Extensions", desc: "Custom cards, sidebar modules, and UI improvements for user adoption." },
+  { icon: Building2, title: "Enterprise Architecture", desc: "Data models, object relationships, and pipelines designed for clarity, governance, and scale." },
+  { icon: Database, title: "Data Migration", desc: "Mapping, validation, deduplication, and controlled migrations between platforms." },
+  { icon: Code2, title: "Programmable Automation", desc: "Custom-coded actions, serverless functions, and workflow orchestration with auditability." },
+  { icon: LineChart, title: "Advanced Reporting", desc: "Leadership reporting, attribution, and revenue visibility built on governed data." },
+  { icon: ClipboardCheck, title: "Portal Audits", desc: "Structured audits of data hygiene, automation risk, and configuration debt." },
+  { icon: Layers, title: "CRM UI Extensions", desc: "UI improvements that drive adoption: custom cards, sidebar modules, and workflow UX." },
 ];
 
 export function ServicesHub() {
@@ -46,7 +46,7 @@ export function ServicesHub() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#F47621] pl-6 max-w-2xl">
                 {serviceHubContent.intro}
               </p>
-              <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">This is about operational calm, not configuration.</p>
+              <p className="text-sm text-white/40 font-mono mt-6 max-w-2xl">From CRM selection to onboarding and governance. Built for long-term adoption.</p>
               <div className="mt-10">
                 <Link href="/contact">
                   <Button
@@ -54,7 +54,7 @@ export function ServicesHub() {
                     data-testid="button-hero-cta"
                     className="bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14"
                   >
-                    Book a HubSpot architecture review <ArrowRight className="ml-2 h-5 w-5" />
+                    Book a CRM & HubSpot Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
@@ -139,16 +139,16 @@ export function ServicesHub() {
         <div className="max-w-2xl mb-14">
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-6 block">The problem</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-            Why most portals fail
+            Why CRM rollouts fail
           </h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
           {[
-            { icon: Database, title: "Overloaded properties", desc: "Hundreds of unused or duplicate fields that pollute every report and list." },
-            { icon: GitBranch, title: "Poor pipeline structure", desc: "Stages that don't reflect reality, missing gates, and no enforcement logic." },
-            { icon: Workflow, title: "Broken automation logic", desc: "Workflows built on assumptions that changed months ago, firing silently on bad data." },
-            { icon: Eye, title: "Reporting without clarity", desc: "Dashboards that look busy but answer none of the questions leadership actually asks." },
+            { icon: Database, title: "Overloaded properties", desc: "Too many fields, inconsistent naming, and duplicates that pollute reporting and slow adoption." },
+            { icon: GitBranch, title: "Poor pipeline structure", desc: "Pipelines that don’t reflect reality, unclear stage criteria, and no operational enforcement." },
+            { icon: Workflow, title: "Broken automation logic", desc: "Automation built on old assumptions, firing on unreliable data and creating hidden operational debt." },
+            { icon: Eye, title: "Reporting without clarity", desc: "Dashboards that look busy but don’t answer the questions leadership needs for decisions." },
           ].map((item, i) => (
             <div
               key={i}
@@ -169,7 +169,7 @@ export function ServicesHub() {
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">What we do</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Enterprise HubSpot, Engineered</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">HubSpot, engineered for adoption</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
@@ -197,7 +197,7 @@ export function ServicesHub() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">CRM architecture</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Structured for clarity, not complexity</h2>
             <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
-              A well-architected portal isn't about features. It's about clean pipelines, governed properties, transparent automation, and reporting that leadership trusts.
+              A well-architected CRM isn’t about features. It’s clean pipelines, governed properties, auditable automation, and reporting leadership can trust.
             </p>
             <ul className="space-y-4">
               {[
@@ -318,11 +318,11 @@ export function ServicesHub() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {[
-            { num: "01", title: "Audit", desc: "Deep review of portal health, data hygiene, automation logic, and reporting gaps." },
-            { num: "02", title: "Restructure", desc: "Rationalise properties, clean pipelines, and document the target data model." },
-            { num: "03", title: "Rebuild", desc: "Implement the new architecture with staging environments and stakeholder validation." },
-            { num: "04", title: "Enable", desc: "Train your team, transfer knowledge, and embed governance practices." },
-            { num: "05", title: "Optimise", desc: "Ongoing monitoring, reporting refinement, and incremental improvements." },
+            { num: "01", title: "Audit", desc: "Review goals, portal health, data hygiene, automation logic, and reporting gaps." },
+            { num: "02", title: "Restructure", desc: "Rationalise properties, clean pipelines, and define the target data model and governance rules." },
+            { num: "03", title: "Rebuild", desc: "Implement in controlled stages with validation, change tracking, and stakeholder sign-off." },
+            { num: "04", title: "Enable", desc: "Train teams, document standards, and embed ownership so adoption sticks." },
+            { num: "05", title: "Optimise", desc: "Monitor performance, refine reporting, and improve workflows based on real usage." },
           ].map((step, i) => (
             <div
               key={i}
@@ -399,7 +399,7 @@ export function ServicesHub() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-4 block">Outcomes</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">What changes after we're involved</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">What changes after we deliver</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -434,11 +434,11 @@ export function ServicesHub() {
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "Muloo restructured our entire HubSpot instance in 6 weeks. Pipeline visibility improved by 40% and our sales team finally trusts the data."
+            "Muloo rebuilt our CRM architecture and governance. Our sales team finally trusts the data, and reporting stopped being a monthly fire drill."
           </blockquote>
           <div>
-            <p className="text-white font-bold">Sarah Mitchell</p>
-            <p className="text-muted-foreground text-sm">VP Revenue Ops — TechScale Group</p>
+            <p className="text-white font-bold">Revenue Operations Lead</p>
+            <p className="text-muted-foreground text-sm">B2B SaaS Team</p>
           </div>
         </div>
       </Section>
@@ -451,7 +451,7 @@ export function ServicesHub() {
             Ready for a structured HubSpot?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            Let's review your portal architecture and build a roadmap.
+            We’ll review your current CRM setup, clarify requirements, and map the next build and adoption steps.
           </p>
           <Link href="/contact">
             <Button
@@ -459,7 +459,7 @@ export function ServicesHub() {
               data-testid="button-cta-contact"
               className="bg-[#F47621] text-white hover:bg-[#F47621]/90 font-bold px-10 h-14"
             >
-              Book a HubSpot architecture review <ArrowRight className="ml-2 h-5 w-5" />
+              Book a CRM & HubSpot Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>

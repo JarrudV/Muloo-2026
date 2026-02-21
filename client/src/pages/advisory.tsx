@@ -224,7 +224,7 @@ export function Advisory() {
                   </a>
                   <Link href="/contact" data-testid={`link-meeting-${i}`}>
                     <Button size="sm" className="text-white hover:opacity-90 font-bold transition-opacity" style={{ backgroundColor: leader.accent }}>
-                      <Calendar className="h-4 w-4 mr-2" /> Book a Meeting
+                      <Calendar className="h-4 w-4 mr-2" /> Book an Advisory Call
                     </Button>
                   </Link>
                 </div>
@@ -350,7 +350,7 @@ export function Advisory() {
           </p>
           <Link href="/contact">
             <Button size="lg" className="bg-brand-teal text-white hover:bg-brand-teal/90 font-bold px-10 h-14 rounded-lg" data-testid="button-advisory-cta">
-              Discuss leadership support <ArrowRight className="ml-2" />
+              Book an Advisory Call <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

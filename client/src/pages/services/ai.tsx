@@ -42,7 +42,7 @@ export function ServicesAi() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-[#C140FF] pl-6">
                 {serviceAiContent.intro}
               </p>
-              <p className="text-sm text-white/40 font-mono mt-6">We apply AI inside defined business boundaries, not as experimental overlays.</p>
+              <p className="text-sm text-white/40 font-mono mt-6">We ship AI inside defined boundaries: guardrails, observability, rollback.</p>
             </div>
 
             <div className="hidden lg:block flex-1">
@@ -118,7 +118,7 @@ export function ServicesAi() {
             Most AI projects never leave the demo.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Chatbots that hallucinate. Agents with no guardrails. Prototypes that impressed in a meeting but never shipped. AI only creates value when it's deployed into real workflows with monitoring, safety nets, and measurable outcomes.
+            Most AI projects are demos. Some are fragile agents. Others are vibe-coded prototypes that never survive production. AI only creates value when it runs inside real workflows with guardrails, monitoring, and measurable outcomes.
           </p>
         </div>
       </Section>
@@ -127,7 +127,7 @@ export function ServicesAi() {
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">What we deploy</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Four Applied AI Systems</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Four Production AI Patterns</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -161,7 +161,7 @@ export function ServicesAi() {
             <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">How it works</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Agent Workflow Loop</h2>
             <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
-              Every agent follows the same disciplined loop: a trigger fires, the agent reasons and acts, results are logged, and the system learns. No black boxes.
+              Every agent follows a disciplined loop: a trigger fires, the agent reasons and acts, results are logged, and performance is reviewed. No black boxes.
             </p>
             <ul className="space-y-4">
               {[
@@ -328,7 +328,7 @@ export function ServicesAi() {
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-4 block">Assurance</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">AI Should Reduce Risk, Not Add It.</h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Every AI deployment we deliver is scoped, tested, and monitored before it touches production data. We don't experiment on your business. Agents are validated against real scenarios, deployed with rollback capability, and measured against defined success criteria — so leadership can approve with confidence, not anxiety.
+            Every AI deployment we deliver is scoped, tested, and monitored before it touches production data. We don't experiment on your business. Agents are validated against real scenarios, shipped with rollback capability, and owned with clear success criteria so leadership can approve with confidence.
           </p>
         </div>
       </Section>
@@ -342,8 +342,8 @@ export function ServicesAi() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { num: "01", title: "Pilot", desc: "Identify the highest-value use case, build a scoped proof of concept, and measure impact." },
-            { num: "02", title: "Deploy", desc: "Production deployment with monitoring, guardrails, and human escalation paths." },
+            { num: "01", title: "Pilot", desc: "Identify the highest-value use case, build a scoped pilot, and measure impact." },
+            { num: "02", title: "Deploy", desc: "Production deployment with workflow integration, monitoring, guardrails, and human escalation paths." },
             { num: "03", title: "Monitor", desc: "Track accuracy, latency, cost, and user satisfaction across every agent interaction." },
             { num: "04", title: "Optimise", desc: "Prompt refinement, model updates, and workflow adjustments based on real usage data." },
           ].map((step, i) => (
@@ -373,11 +373,11 @@ export function ServicesAi() {
         >
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "Muloo deployed a triage agent that handles 60% of our inbound support tickets automatically. Response times dropped from hours to seconds."
+            "We deployed an AI triage layer that categorises and routes inbound requests, drafts first responses, and escalates edge cases to humans. Time to first response dropped significantly without sacrificing control."
           </blockquote>
           <div>
-            <p className="text-white font-bold">David Chen</p>
-            <p className="text-muted-foreground text-sm">Head of Support — Nexus Systems</p>
+            <p className="text-white font-bold">Operations Lead</p>
+            <p className="text-muted-foreground text-sm">B2B Support Team</p>
           </div>
         </div>
       </Section>
@@ -390,7 +390,7 @@ export function ServicesAi() {
             Ready to deploy applied AI?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            Let's identify where AI creates real operational lift for your business.
+            We'll identify one workflow worth automating, ship a scoped pilot, and measure impact with clear guardrails.
           </p>
           <Link href="/contact">
             <Button
@@ -399,7 +399,7 @@ export function ServicesAi() {
               style={{ backgroundColor: streamPurple }}
               data-testid="button-explore-ai"
             >
-              Explore AI opportunities <ArrowRight className="ml-2" />
+              Ship an AI Pilot <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

@@ -101,7 +101,7 @@ export function ServicesProduct() {
             Ideas don't fail because of code. They fail because of execution.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            Most product builds stall in the gap between prototype and production. Feature creep, unclear architecture, and missing go-to-market engineering turn promising concepts into expensive experiments. You need a team that ships products, not just features.
+            Most product builds stall between prototype and production. Requirements drift, shaky foundations, and missing operational thinking turn good ideas into expensive experiments. You need a team that ships production software and owns the boring parts too.
           </p>
         </div>
       </Section>
@@ -113,14 +113,14 @@ export function ServicesProduct() {
             <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">What ships</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Production software, not prototypes.</h2>
             <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
-              Every product we build ships with the infrastructure commercial software demands — multi-tenancy, billing, analytics, and operational dashboards included.
+              We build products we can operate in the real world: authentication, environments, telemetry, and a roadmap you can actually ship against. If it can't run safely in production, it's not done.
             </p>
             <ul className="space-y-4">
               {[
-                "Multi-tenant data isolation",
-                "Subscription billing and plan management",
-                "Usage analytics and customer health scoring",
-                "Role-based access and team management",
+                "Authentication and role-based access",
+                "Billing readiness (when you need it)",
+                "Usage telemetry and product analytics",
+                "Operational dashboards and audit trails",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm text-white/70">
                   <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: streamGreen }} />
@@ -206,14 +206,14 @@ export function ServicesProduct() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">What we build</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Products Built to Ship</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Products we can take to market</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { icon: Wrench, title: "Internal Tools", desc: "Custom-built operational tools that eliminate manual processes and spreadsheet dependency." },
-            { icon: Laptop, title: "Commercial SaaS", desc: "Market-facing products designed, built, and maintained with scalable multi-tenant architecture." },
-            { icon: Rocket, title: "MVP Development", desc: "From concept to functional product in weeks — built lean, tested with real users, iterated fast." },
-            { icon: Settings, title: "Ongoing Product Engineering", desc: "Long-term product support, feature iteration, performance tuning, and infrastructure management." },
+            { icon: Wrench, title: "Internal Tools", desc: "Operational tools that remove manual work, reduce errors, and give teams one source of truth." },
+            { icon: Laptop, title: "Commercial SaaS", desc: "Commercial software designed for multi-tenancy, security, and ongoing iteration from day one." },
+            { icon: Rocket, title: "MVP Development", desc: "Rapid MVP delivery with tight scope, real-user feedback loops, and a clear path to production." },
+            { icon: Settings, title: "Ongoing Product Engineering", desc: "Long-term engineering support: reliability, performance, security updates, and feature releases." },
           ].map((item, i) => (
             <div
               key={i}
@@ -243,10 +243,10 @@ export function ServicesProduct() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { num: "01", title: "Ideate", desc: "Problem definition, market validation, and user research to ensure you're building something worth shipping." },
-            { num: "02", title: "Prototype", desc: "Rapid design and development of a functional prototype — tested with real users, refined with real data." },
-            { num: "03", title: "Launch", desc: "Production deployment with monitoring, onboarding flows, and go-to-market engineering." },
-            { num: "04", title: "Scale", desc: "Infrastructure scaling, feature iteration, usage analytics, and performance optimisation as traction grows." },
+            { num: "01", title: "Ideate", desc: "Define the problem, validate the demand, and map the first version that delivers value." },
+            { num: "02", title: "Prototype", desc: "Build a usable prototype to test the workflow, not just the UI." },
+            { num: "03", title: "Launch", desc: "Ship to production with monitoring, onboarding, and an iteration plan." },
+            { num: "04", title: "Scale", desc: "Improve reliability, performance, analytics, and product depth as traction grows." },
           ].map((step, i) => (
             <div
               key={i}
@@ -272,14 +272,14 @@ export function ServicesProduct() {
             <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">Production-ready</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Built for commercial operation</h2>
             <p className="text-muted-foreground leading-[1.8] mb-8 max-w-lg">
-              Our products ship with the infrastructure commercial software demands — multi-tenancy, usage metering, billing integration, and operational dashboards.
+              We ship with the operational foundations: telemetry, environments, access control, and release discipline. Billing and metering are added when the business case makes sense.
             </p>
             <ul className="space-y-4">
               {[
                 "Multi-tenant architecture from day one",
-                "Usage analytics and customer health scoring",
+                "Usage telemetry and product analytics",
                 "Automated billing and subscription management",
-                "Role-based access and team management",
+                "Operational dashboards and audit trails",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm text-white/70">
                   <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: streamGreen }} />
@@ -388,10 +388,10 @@ export function ServicesProduct() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: CreditCard, title: "Pricing models", desc: "Usage-based, tiered, or flat-rate — we engineer the billing logic and subscription management into the product." },
-            { icon: Server, title: "Infrastructure", desc: "Cloud architecture, CI/CD pipelines, monitoring, and auto-scaling designed for production SaaS workloads." },
-            { icon: Users, title: "Customer onboarding", desc: "Self-serve signup flows, guided setup wizards, and in-app onboarding that reduces time to value." },
-            { icon: HeadphonesIcon, title: "Support model", desc: "Ticketing integration, knowledge bases, and escalation workflows built into the product from launch." },
+            { icon: CreditCard, title: "Pricing models", desc: "Tiered, usage-based, or flat-rate - we design the pricing logic and build the product to support it." },
+            { icon: Server, title: "Infrastructure", desc: "Cloud architecture, CI/CD, monitoring, and scaling patterns we use in our own products too." },
+            { icon: Users, title: "Customer onboarding", desc: "Signup flows, guided setup, and in-app onboarding that reduces time to value." },
+            { icon: HeadphonesIcon, title: "Support model", desc: "Support workflows, ticketing integrations, and knowledge-base structure so support can scale." },
           ].map((item, i) => (
             <div
               key={i}
@@ -412,15 +412,15 @@ export function ServicesProduct() {
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="mb-14 max-w-2xl">
           <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">Standards</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Designed for Scale</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Built for longevity</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { title: "Multi-tenant architecture", desc: "Isolated data, shared infrastructure — built to serve many customers from day one." },
-            { title: "Subscription-ready", desc: "Billing, plan management, and usage metering engineered into the product core." },
-            { title: "Secure authentication", desc: "Role-based access, SSO support, and token management as standard." },
-            { title: "Infrastructure planning", desc: "Cloud topology, scaling strategy, and cost modelling before the first deploy." },
+            { title: "Multi-tenant architecture", desc: "Clear tenant boundaries and shared infrastructure when required." },
+            { title: "Subscription-ready", desc: "Plan structure and billing readiness built to evolve with the business." },
+            { title: "Secure authentication", desc: "Role-based access with sensible defaults, with SSO options when needed." },
+            { title: "Infrastructure planning", desc: "Scaling and cost thinking before the first real customer arrives." },
           ].map((item, i) => (
             <div
               key={i}
@@ -439,15 +439,15 @@ export function ServicesProduct() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="mb-14 max-w-2xl">
           <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">Commercial</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Built for Commercial Reality</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Built to run in production</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { title: "Production hosting", desc: "Cloud infrastructure sized for real workloads — not demo environments that collapse under traffic." },
-            { title: "Subscription lifecycle", desc: "Trial, upgrade, downgrade, cancellation, and renewal flows engineered into the product from launch." },
-            { title: "Product analytics", desc: "Usage tracking, cohort analysis, and churn indicators built in — not bolted on after the fact." },
-            { title: "Customer support", desc: "Ticketing, knowledge bases, and escalation workflows integrated so support scales with the product." },
+            { title: "Production hosting", desc: "Hosting designed for real usage, observability, and safe releases." },
+            { title: "Subscription lifecycle", desc: "Trial, upgrades, downgrades, cancellations, and renewals designed when your model requires it." },
+            { title: "Product analytics", desc: "Usage tracking and retention signals built in so decisions aren't guesses." },
+            { title: "Customer support", desc: "Support tooling integrated so customer issues don't disappear into inboxes." },
           ].map((item, i) => (
             <div
               key={i}
@@ -471,11 +471,11 @@ export function ServicesProduct() {
         >
           <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "Muloo built our inventory sync tool in 4 weeks. It replaced a manual process that was costing us 15 hours a week and eliminated sync errors entirely."
+            "Muloo built a custom operations tool that replaced manual reconciliation and reduced sync issues. The team regained visibility and stopped losing time to repetitive admin."
           </blockquote>
           <div>
-            <p className="text-white font-bold">Laura Thompson</p>
-            <p className="text-muted-foreground text-sm">Operations Manager — Atlas Commerce</p>
+            <p className="text-white font-bold">Operations lead</p>
+            <p className="text-muted-foreground text-sm">Ecommerce operations team</p>
           </div>
         </div>
       </Section>
@@ -488,7 +488,7 @@ export function ServicesProduct() {
             Ready to build your product?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            Let's scope your product vision and build a roadmap to launch.
+            Bring the idea. We'll validate the scope, define the first shippable version, and map the build and launch steps.
           </p>
           <Link href="/contact">
             <Button
@@ -497,7 +497,7 @@ export function ServicesProduct() {
               style={{ backgroundColor: streamGreen }}
               data-testid="button-discuss-roadmap"
             >
-              Discuss your product roadmap <ArrowRight className="ml-2" />
+              Discuss Your Product Idea <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

@@ -10,7 +10,7 @@ export function ServicesConsulting() {
     <div className="flex flex-col">
       <Section className="pt-20 pb-16 md:pt-28 md:pb-20 bg-hero-cosmic">
         <div className="max-w-4xl">
-          <Badge variant="outline" className="mb-6 border-brand-orange/20 text-brand-orange bg-brand-orange/5">Specialist Consulting</Badge>
+          <Badge variant="outline" className="mb-6 border-brand-orange/20 text-brand-orange bg-brand-orange/5">Advisory</Badge>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white">{serviceConsultingContent.h1}</h1>
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed border-l-4 border-brand-orange pl-6">
             {serviceConsultingContent.intro}
@@ -32,7 +32,7 @@ export function ServicesConsulting() {
                   
                   <Link href="/contact">
                     <Button variant="outline" className="w-full border-white/10 text-white hover:bg-white/5 hover:text-brand-orange group-hover:border-brand-orange/30">
-                       Inquire <ArrowRight className="ml-2 h-4 w-4" />
+                       Enquire <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                </div>
@@ -41,11 +41,11 @@ export function ServicesConsulting() {
       </Section>
 
       <Section className="py-32 text-center bg-[#050A15] border-t border-white/5">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Need strategic direction?</h2>
-        <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Don't just implement. Optimize.</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Need senior support without the overhead?</h2>
+        <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Bring us in to diagnose, prioritise, and guide delivery with clear decisions.</p>
         <Link href="/contact">
           <Button size="lg" className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 rounded-full shadow-[0_0_30px_-5px_hsl(24,90%,54%,0.4)]">
-            Book a Strategy Session <ArrowRight className="ml-2" />
+            Book an Advisory Call <ArrowRight className="ml-2" />
           </Button>
         </Link>
       </Section>

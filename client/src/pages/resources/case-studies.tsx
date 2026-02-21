@@ -6,9 +6,24 @@ import { SEO } from "@/components/layout/SEO";
 
 export function CaseStudies() {
   const cases = [
-    { id: 1, client: "FinTech Corp", title: "Migrating 50k contacts to HubSpot", tag: "Migration" },
-    { id: 2, client: "SaaS Scaleup", title: "Custom onboarding portal build", tag: "Product" },
-    { id: 3, client: "Global Retailer", title: "Integrations for inventory sync", tag: "Integration" },
+    {
+      id: 1,
+      client: "Global HR Technology Group",
+      title: "Multi-region HubSpot architecture redesign across sales, marketing and CMS. Implemented structured pipelines, reporting governance and regional rollout model.",
+      tag: "HubSpot Architecture"
+    },
+    {
+      id: 2,
+      client: "UK Law Firm",
+      title: "Rebuilt service workflows, automated appointment communication and introduced structured case tracking inside HubSpot.",
+      tag: "Workflow Automation"
+    },
+    {
+      id: 3,
+      client: "B2B SaaS Platform",
+      title: "CRM redesign, sales enablement dashboards and lifecycle reporting overhaul.",
+      tag: "CRM Optimisation"
+    },
   ];
 
   return (
@@ -16,7 +31,6 @@ export function CaseStudies() {
       <SEO
         title="Case Studies | Muloo"
         description="Muloo case studies."
-        robots="noindex,nofollow"
       />
       <Section className="pt-20 pb-16 md:pt-28 md:pb-20">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8">Case Studies.</h1>
