@@ -172,7 +172,7 @@ export function Advisory() {
               <div className="flex items-center justify-between mb-3 gap-3">
                 <h3 className="text-lg font-bold text-white">Operator Circle</h3>
                 <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded border border-brand-orange/30 text-brand-orange bg-brand-orange/10">
-                  In Development
+                  Coming soon
                 </span>
               </div>
               <p className="text-sm text-muted-foreground leading-[1.8]">

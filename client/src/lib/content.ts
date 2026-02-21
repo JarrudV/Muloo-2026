@@ -10,7 +10,13 @@ export const navLinks = [
       { name: "Muloo Product", href: "/services/product", desc: "SaaS & Internal Tools" }
     ]
   },
-  { name: "Advisory", href: "/advisory" },
+  {
+    name: "Advisory", href: "/advisory",
+    subItems: [
+      { name: "Advisory Overview", href: "/advisory", desc: "Fractional technical leadership" },
+      { name: "Operator Circle", href: "/advisory/operator-circle", desc: "Coming soon" }
+    ]
+  },
   {
     name: "Resources", href: "/resources",
     subItems: [

@@ -40,6 +40,24 @@ export function ServicesConsulting() {
         </div>
       </Section>
 
+      {/* Case Study */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div
+          className="glass-card rounded-2xl p-10 md:p-14 max-w-3xl"
+          style={{ borderLeft: "4px solid hsl(24,90%,54%)" }}
+          data-testid="card-case-study"
+        >
+          <span className="text-sm font-mono text-brand-orange uppercase tracking-widest mb-6 block">Case study</span>
+          <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
+            "Strategic advisory engagement focused on CRM architecture, reporting governance, and executive visibility alignment."
+          </blockquote>
+          <div>
+            <p className="text-white font-bold">South African founder-led business</p>
+            <p className="text-muted-foreground text-sm">Systems and governance advisory</p>
+          </div>
+        </div>
+      </Section>
+
       <Section className="py-32 text-center bg-[#050A15] border-t border-white/5">
         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Need senior support without the overhead?</h2>
         <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Bring us in to diagnose, prioritise, and guide delivery with clear decisions.</p>

@@ -472,10 +472,10 @@ export function ServicesBuild() {
           style={{ borderLeft: `4px solid ${streamBlue}` }}
           data-testid="card-case-example"
         >
-          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Systems integration & backend architecture</span>
-          <h3 className="text-2xl font-bold text-white mb-6">International B2B organisation</h3>
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Case study</span>
+          <h3 className="text-2xl font-bold text-white mb-6">Systems integration & backend architecture</h3>
           <p className="text-muted-foreground leading-[1.8]">
-            "We consolidated multiple disconnected systems into a unified backend architecture with controlled integrations and versioned deployment workflows."
+            An international B2B organisation consolidated disconnected systems into a unified backend architecture with controlled integrations and versioned deployment workflows.
           </p>
         </div>
       </Section>

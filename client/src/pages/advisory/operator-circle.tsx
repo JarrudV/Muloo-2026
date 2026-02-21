@@ -17,15 +17,15 @@ export function OperatorCircle() {
               className="mb-6 border-brand-orange/30 text-brand-orange bg-brand-orange/5"
               data-testid="badge-operator-circle-status"
             >
-              In Development
+              Coming soon
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Operator Circle</h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-[1.8] border-l-4 border-brand-orange pl-6 mb-6">
-              A private forum in development for founders navigating systems, scale, and AI adoption.
+              A paid operators club we’re incubating. Content, live sessions, templates, and optional delivery support.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-[1.8] max-w-2xl">
-              Operator Circle is being designed as a focused environment for practical decision-making. The intent is
-              to create a forum where experienced operators can work through real constraints with peers.
+              Operator Circle is being designed as a practical environment for founders and operators making decisions
+              around systems, scale, and AI adoption.
             </p>
           </div>
         </div>
@@ -35,15 +35,20 @@ export function OperatorCircle() {
       <Section className="py-20 md:py-[120px] border-t border-white/5">
         <div className="max-w-3xl">
           <span className="text-sm font-mono text-brand-orange uppercase tracking-widest mb-6 block">Concept</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Structured operator conversations</h2>
-          <p className="text-lg text-muted-foreground leading-[1.8] mb-6">
-            The model is built around curated operator discussions with a practical focus on systems, governance, AI,
-            and capital decisions.
-          </p>
-          <p className="text-lg text-muted-foreground leading-[1.8]">
-            This is not a panel format and not a networking event. The goal is disciplined, useful conversations that
-            lead to clearer decisions.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">What it may include</h2>
+          <ul className="space-y-4">
+            {[
+              "Monthly operator sessions (RevOps, systems, AI)",
+              "Playbooks + templates (HubSpot governance, workflows, reporting packs)",
+              "Office hours + implementation add-ons",
+              "Community channel and peer reviews",
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 text-sm text-white/70">
+                <span className="h-1.5 w-1.5 rounded-full shrink-0 bg-brand-orange" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -51,16 +56,15 @@ export function OperatorCircle() {
       <Section className="py-20 md:py-[120px] bg-section-soft border-t border-white/5">
         <div className="max-w-3xl">
           <span className="text-sm font-mono text-brand-orange uppercase tracking-widest mb-6 block">Status</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Currently in design</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Current status</h2>
           <p className="text-lg text-muted-foreground leading-[1.8] mb-6">
-            We are currently designing the session format, including options for a hybrid model.
+            We’re validating demand. If you want early access, contact us.
           </p>
           <p className="text-lg text-muted-foreground leading-[1.8] mb-6">
-            We are also evaluating a paid membership structure that keeps participation intentional and high quality.
+            We are designing the format now, including hybrid delivery options.
           </p>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            The initiative is aligned with Muloo&apos;s advisory and selective build-for-equity work so conversations
-            remain connected to real operating and delivery experience.
+            Membership and support options are being shaped to align with advisory and delivery capability.
           </p>
         </div>
       </Section>
@@ -79,7 +83,7 @@ export function OperatorCircle() {
               className="bg-brand-orange text-white hover:bg-brand-orange/90 font-bold px-10 h-14 rounded-lg"
               data-testid="button-register-interest"
             >
-              Register Interest <ArrowRight className="ml-2" />
+              Register interest <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>

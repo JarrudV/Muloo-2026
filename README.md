@@ -47,4 +47,10 @@ To port this to a HubSpot Theme:
 
 -   Run `npm run dev` to start the local server.
 -   Edit content in `client/src/lib/content.ts` or directly in page components.
+
+## Railway Domain SSL Checklist
+
+- Verify custom domain DNS records (CNAME/A) are correct.
+- Confirm the domain is verified in Railway.
+- Wait for certificate issuance and DNS propagation to complete.
 # Muloo-2026
