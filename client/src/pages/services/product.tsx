@@ -471,12 +471,51 @@ export function ServicesProduct() {
         >
           <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "Muloo built a custom operations tool that replaced manual reconciliation and reduced sync issues. The team regained visibility and stopped losing time to repetitive admin."
+            "Muloo delivered a custom operational platform that replaced fragmented tools and manual reconciliation. The system now runs with structured access control, telemetry, and a clear roadmap for iteration."
           </blockquote>
           <div>
-            <p className="text-white font-bold">Operations lead</p>
-            <p className="text-muted-foreground text-sm">Ecommerce operations team</p>
+            <p className="text-white font-bold">Ecommerce operations team</p>
+            <p className="text-muted-foreground text-sm">Custom internal platform build</p>
           </div>
+        </div>
+      </Section>
+
+      {/* Products We Are Building */}
+      <Section className="py-20 md:py-[120px] border-t border-white/5">
+        <div className="mb-16 max-w-2xl">
+          <span className="text-sm font-mono text-[#59BF96] uppercase tracking-widest mb-4 block">In progress</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Products we are building</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "FamPal",
+              desc: "A consumer app helping families discover, filter, and share real-world experiences with accessibility and operational intelligence.",
+            },
+            {
+              title: "eCrafter",
+              desc: "A market operations tool designed to simplify inventory, vendor workflows, and reporting for retail environments.",
+            },
+            {
+              title: "HubSpot Audit",
+              desc: "A structured CRM audit tool evolving into a deeper diagnostic product for CRM governance and architecture clarity.",
+            },
+            {
+              title: "Selective Build-for-Equity",
+              desc: "We occasionally partner on high-conviction ideas, investing build capability in exchange for structured equity participation.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="glass-card rounded-2xl p-8"
+              style={{ borderTop: `2px solid rgba(89, 191, 150, 0.3)` }}
+              data-testid={`card-products-building-${i}`}
+            >
+              <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+              <p className="text-muted-foreground text-sm leading-[1.8]">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </Section>
 

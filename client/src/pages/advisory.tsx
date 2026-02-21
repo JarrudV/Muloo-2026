@@ -165,6 +165,22 @@ export function Advisory() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8 max-w-xl">
+          <Link href="/advisory/operator-circle" data-testid="link-operator-circle">
+            <div className="glass-card rounded-xl p-6 border border-brand-orange/20 hover:border-brand-orange/35 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-between mb-3 gap-3">
+                <h3 className="text-lg font-bold text-white">Operator Circle</h3>
+                <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded border border-brand-orange/30 text-brand-orange bg-brand-orange/10">
+                  In Development
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-[1.8]">
+                A private forum in development for founders and operators working through systems, scale, and AI decisions.
+              </p>
+            </div>
+          </Link>
+        </div>
       </Section>
 
       {/* Leadership Grid */}

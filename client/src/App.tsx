@@ -5,6 +5,7 @@ import { ServicesProduct } from "./pages/services/product";
 import { ServicesConsulting } from "./pages/services/consulting";
 import { ServicesAi } from "./pages/services/ai";
 import { Advisory } from "./pages/advisory";
+import { OperatorCircle } from "./pages/advisory/operator-circle";
 import { About } from "./pages/about";
 import { Contact } from "./pages/contact";
 import { Styleguide } from "./pages/styleguide";
@@ -42,6 +43,7 @@ function Router() {
         <Route path="/services/product" component={ServicesProduct} />
         <Route path="/services/consulting" component={ServicesConsulting} />
         <Route path="/services/ai" component={ServicesAi} />
+        <Route path="/advisory/operator-circle" component={OperatorCircle} />
         <Route path="/advisory" component={Advisory} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />

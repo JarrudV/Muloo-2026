@@ -434,11 +434,11 @@ export function ServicesHub() {
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#F47621] mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "Muloo rebuilt our CRM architecture and governance. Our sales team finally trusts the data, and reporting stopped being a monthly fire drill."
+            "We restructured a multi-region HubSpot instance for a global technology services group. Pipelines were rebuilt, lifecycle stages aligned to real buyer journeys, and reporting governance introduced. Leadership regained visibility without exporting spreadsheets."
           </blockquote>
           <div>
-            <p className="text-white font-bold">Revenue Operations Lead</p>
-            <p className="text-muted-foreground text-sm">B2B SaaS Team</p>
+            <p className="text-white font-bold">Global technology services organisation</p>
+            <p className="text-muted-foreground text-sm">Multi-region CRM restructure</p>
           </div>
         </div>
       </Section>

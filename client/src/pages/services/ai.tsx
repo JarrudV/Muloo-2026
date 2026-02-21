@@ -373,11 +373,11 @@ export function ServicesAi() {
         >
           <span className="text-sm font-mono text-[#C140FF] uppercase tracking-widest mb-6 block">Case study</span>
           <blockquote className="text-lg md:text-xl text-white/90 leading-[1.8] mb-8">
-            "We deployed an AI triage layer that categorises and routes inbound requests, drafts first responses, and escalates edge cases to humans. Time to first response dropped significantly without sacrificing control."
+            "Muloo hardened an experimental AI workflow into a production-ready service with logging, validation layers, and deployment controls."
           </blockquote>
           <div>
-            <p className="text-white font-bold">Operations Lead</p>
-            <p className="text-muted-foreground text-sm">B2B Support Team</p>
+            <p className="text-white font-bold">Mid-market product team</p>
+            <p className="text-muted-foreground text-sm">AI workflow production hardening</p>
           </div>
         </div>
       </Section>

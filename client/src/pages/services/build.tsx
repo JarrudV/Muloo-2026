@@ -106,7 +106,7 @@ export function ServicesBuild() {
             Disconnected systems quietly erode performance.
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.8]">
-            APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automations misfire, and change becomes expensive. Modern businesses don�t need more tools. They need systems that are designed to work together.
+            APIs exist. Tools exist. Data exists. But when architecture is fragmented, reporting breaks, automations misfire, and change becomes expensive. Modern businesses don’t need more tools. They need systems that are designed to work together.
           </p>
         </div>
       </Section>
@@ -290,7 +290,7 @@ export function ServicesBuild() {
             { icon: Lock, title: "Client Portals", desc: "Secure customer and internal portals with role-based access, audit trails, and clean UX for self-service." },
             { icon: Zap, title: "Event-Based Integrations", desc: "Event-driven systems using webhooks, queues, and background workers to react in real time without breaking under load." },
             { icon: Database, title: "Data Sync & Governance", desc: "Schema mapping, validation, deduplication, and incremental sync so data stays consistent across every platform." },
-            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect CRMs, ERPs, payments, shipping, and internal tools � including legacy systems and custom APIs." },
+            { icon: RefreshCw, title: "Platform Connectivity", desc: "Connect CRMs, ERPs, payments, shipping, and internal tools — including legacy systems and custom APIs." },
           ].map((item, i) => (
             <div
               key={i}
@@ -374,7 +374,7 @@ export function ServicesBuild() {
           {[
             { title: "Idempotent APIs", desc: "Every request produces the same result, no matter how many times it's sent." },
             { title: "Event-driven architecture", desc: "Systems react to changes in real time instead of polling for updates." },
-            { title: "Data integrity first", desc: "Validation at every boundary — nothing enters a system unchecked." },
+            { title: "Data integrity first", desc: "Validation at every boundary â€” nothing enters a system unchecked." },
             { title: "Observable systems", desc: "Structured logging, tracing, and alerting from day one." },
           ].map((item, i) => (
             <div
@@ -416,7 +416,7 @@ export function ServicesBuild() {
             },
             {
               title: "Embedded Engineering",
-              desc: "Our engineers integrate directly into your team — attending standups, shipping code, and owning outcomes alongside your people.",
+              desc: "Our engineers integrate directly into your team â€” attending standups, shipping code, and owning outcomes alongside your people.",
             },
             {
               title: "Optimisation Retainers",
@@ -472,10 +472,10 @@ export function ServicesBuild() {
           style={{ borderLeft: `4px solid ${streamBlue}` }}
           data-testid="card-case-example"
         >
-          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Example</span>
-          <h3 className="text-2xl font-bold text-white mb-6">Consolidating a fragmented stack</h3>
+          <span className="text-sm font-mono text-[#155DFC] uppercase tracking-widest mb-6 block">Systems integration & backend architecture</span>
+          <h3 className="text-2xl font-bold text-white mb-6">International B2B organisation</h3>
           <p className="text-muted-foreground leading-[1.8]">
-            A mid-market team was running five disconnected tools across sales, finance, and operations. We built a single integration layer that consolidated data flows, removed manual reporting, and reduced integration maintenance from 20 hours per week to near zero. Clean data in, reliable reporting out.
+            "We consolidated multiple disconnected systems into a unified backend architecture with controlled integrations and versioned deployment workflows."
           </p>
         </div>
       </Section>
@@ -486,7 +486,7 @@ export function ServicesBuild() {
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to stabilise your architecture?</h2>
           <p className="text-xl text-muted-foreground mb-10 leading-[1.8]">
-            We�ll map the current stack, identify breakpoints, and ship a clear build plan.
+            We’ll map the current stack, identify breakpoints, and ship a clear build plan.
           </p>
           <Link href="/contact">
             <Button
